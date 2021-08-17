@@ -16,6 +16,7 @@ public class Turret : MonoBehaviour
     public Transform target;
     public GameObject cannonBallPrefab;
     public Transform cannonBallSpawn;
+    public float turnSpeed = 10.0f;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
@@ -24,6 +25,11 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
             return;
+
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookrotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookrotation, Time.deltaTime * turnSpeed).eulerAngles;
+        pivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCountdown <= 0)
         {

@@ -1210,11 +1210,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2060755951729683071, guid: 7ece74fab3165064580121ad87dea1fc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3085184945478953423, guid: 7ece74fab3165064580121ad87dea1fc,
         type: 3}
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 3622240909016271874, guid: 7ece74fab3165064580121ad87dea1fc,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 7784590678315440477, guid: 7717b150c3c258d45aac3c7d6327adf3,
+        type: 3}
     - target: {fileID: 7210406230934603356, guid: 7ece74fab3165064580121ad87dea1fc,
         type: 3}
       propertyPath: range
