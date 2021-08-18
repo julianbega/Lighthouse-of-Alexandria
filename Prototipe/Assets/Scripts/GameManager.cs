@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int money;
+    
     void Start()
     {
         
@@ -14,5 +15,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int getMoney()
+    {
+        return money;
     }
 }
