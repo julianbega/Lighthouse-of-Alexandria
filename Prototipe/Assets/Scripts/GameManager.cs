@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
     public int money;
     public int lives;
     
+    public int gainPerKill;
     void Start()
     {
         Enemy.SubtractLives += SubtractLives;
-       // Node.GetMoney += getMoney;
+        Enemy.GainMoney += AddMoney;
+        // Node.GetMoney += getMoney;
     }
     private void OnDisable()
     {
@@ -24,6 +26,10 @@ public class GameManager : MonoBehaviour
     public void moneySubtract(int price)
     {
         money = money - price;
+    }
+    public void AddMoney()
+    {
+        money += gainPerKill;
     }
     public int GetLives()
     {
