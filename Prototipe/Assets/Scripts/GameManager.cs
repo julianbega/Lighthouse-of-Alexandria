@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        
+       // Node.GetMoney += getMoney;
     }
 
     // Update is called once per frame
@@ -17,8 +17,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public int getMoney()
+    public int GetMoney()
     {
         return money;
+    }
+    public void moneySubtract(int price)
+    {
+        money = money - price;
     }
 }

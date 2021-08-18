@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Node : MonoBehaviour
@@ -9,15 +10,26 @@ public class Node : MonoBehaviour
     private Color startColor;
     private Renderer render;
     private GameObject turret;
+
+    public GameManager gm;
+
+    //public static event Action<int> GetMoney;
+
     private void Awake()
     {
         render = GetComponent<Renderer>();
         startColor = render.material.color;
     }
+    private void Start()
+    {
+    }
     private void OnMouseEnter()
     {
+        if (gm == null)
+        {
+            gm = GetComponent<GameManager>();
+        }
         render.material.color = selectedColor;
-
     }
     private void OnMouseExit()
     {
@@ -26,12 +38,21 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (gm == null)
+        {
+            gm = GetComponent<GameManager>();
+        }
         if (turret != null)
         {
             Debug.Log("not Buildable");
             return;
         }
+        
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + offset, transform.rotation);
+        if (gm.GetMoney() >= BuildManager.instance.turretPrice)
+        {
+            turret = (GameObject)Instantiate(turretToBuild, transform.position + offset, transform.rotation);
+            gm.moneySubtract(BuildManager.instance.turretPrice);
+        }
     }
 }

@@ -37,5 +37,11 @@ public class WaveSpawner : MonoBehaviour
     {
         Instantiate(enemyPrefab, spawnStart, true);
     }
-    
+
+    public int GetWaveCount()
+    {
+        return waveCount;
+    }
+
+
 }

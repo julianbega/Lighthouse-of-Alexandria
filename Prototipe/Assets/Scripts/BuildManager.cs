@@ -19,6 +19,7 @@ public class BuildManager : MonoBehaviour
     }
 
     public GameObject turretPrefab;
+    public int turretPrice;
 
     private void Start()
     {
@@ -29,5 +30,9 @@ public class BuildManager : MonoBehaviour
     public GameObject GetTurretToBuild()
     {
         return turret;
+    }
+    public int GetTurretPrice()
+    {
+        return turretPrice;
     }
 }
