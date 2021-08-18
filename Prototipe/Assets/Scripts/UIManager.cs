@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public WaveSpawner ws;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
+    public TextMeshProUGUI lives;
     public Image Store;
     void Start()
     {
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
     {
         money.text = "Money: " + gm.GetMoney();
         wave.text = "Wave: " + ws.GetWaveCount();
+        lives.text = "Lives: " + gm.GetLives();
 
     }
 }

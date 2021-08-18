@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int money;
+    public int lives;
     
     void Start()
     {
+        Enemy.SubtractLives += SubtractLives;
        // Node.GetMoney += getMoney;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        Enemy.SubtractLives -= SubtractLives;
     }
 
     public int GetMoney()
@@ -24,5 +24,13 @@ public class GameManager : MonoBehaviour
     public void moneySubtract(int price)
     {
         money = money - price;
+    }
+    public int GetLives()
+    {
+        return lives;
+    }
+    public void SubtractLives()
+    {
+        lives--;
     }
 }

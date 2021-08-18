@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
     public float speed;
     public Transform target;
     public int wavePointIndex;
+    private GameManager gm;
+
+    public static Action SubtractLives;
     private void Start()
     {
+        gm = GetComponent<GameManager>();
         wavePointIndex = 0;
         target = Waypoints.enemyMovmentPoints[0];
     }
@@ -29,6 +34,7 @@ public class Enemy : MonoBehaviour
         if (wavePointIndex >= Waypoints.enemyMovmentPoints.Length -1)
         {
             Destroy(this.gameObject);
+            SubtractLives?.Invoke();
             return;
         }
         if (wavePointIndex < Waypoints.enemyMovmentPoints.Length)

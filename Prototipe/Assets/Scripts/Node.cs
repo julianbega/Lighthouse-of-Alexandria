@@ -25,10 +25,6 @@ public class Node : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (gm == null)
-        {
-            gm = GetComponent<GameManager>();
-        }
         render.material.color = selectedColor;
     }
     private void OnMouseExit()
@@ -38,10 +34,6 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gm == null)
-        {
-            gm = GetComponent<GameManager>();
-        }
         if (turret != null)
         {
             Debug.Log("not Buildable");
