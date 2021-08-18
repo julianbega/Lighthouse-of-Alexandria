@@ -37,4 +37,10 @@ public class Enemy : MonoBehaviour
         }
         target = Waypoints.enemyMovmentPoints[wavePointIndex];
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+            Destroy(this.gameObject);
+    }
 }
