@@ -8,9 +8,11 @@ public class Enemy : MonoBehaviour
     public float speed;
     public Transform target;
     public int wavePointIndex;
+    public bool enlightened;
 
     public static Action SubtractLives;
     public static Action GainMoney;
+    static public event Action EnemyDie;
     private void Start()
     {
         wavePointIndex = 0;
@@ -33,7 +35,8 @@ public class Enemy : MonoBehaviour
         if (wavePointIndex >= Waypoints.enemyMovmentPoints.Length -1)
         {
             Destroy(this.gameObject);
-            SubtractLives?.Invoke();            
+            SubtractLives?.Invoke();
+            EnemyDie?.Invoke();
             return;
         }
         if (wavePointIndex < Waypoints.enemyMovmentPoints.Length)
@@ -43,12 +46,27 @@ public class Enemy : MonoBehaviour
         target = Waypoints.enemyMovmentPoints[wavePointIndex];
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Light"))
+        {
+            enlightened = true;
+            return;
+        }
+        if (other.gameObject.CompareTag("Bullet"))
         {
             GainMoney?.Invoke();
+            EnemyDie?.Invoke();
             Destroy(this.gameObject);
+            return;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            enlightened = false;
             return;
         }
     }

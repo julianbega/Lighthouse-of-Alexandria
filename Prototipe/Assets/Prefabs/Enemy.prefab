@@ -89,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6992583201472237291}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -109,3 +109,4 @@ MonoBehaviour:
   speed: 10
   target: {fileID: 0}
   wavePointIndex: 0
+  enlightened: 0

@@ -8,29 +8,57 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnStart;
 
     public float timeBetweenWaves;
+    public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
     private float timerContdown = 2.0f;
     private int waveCount = 0;
+    private int enemyCount;
+
+    private bool startWave;
+
+    private void Start()
+    {
+        WaveManager.StartWaveEvent += StartWaveCycle;
+        Enemy.EnemyDie += DecreaseEnemyCount;
+        enemyCount = 0;
+        startWave = false;
+    }
 
     private void Update()
     {
-        if (timerContdown <= 0)
+        if (startWave && enemyCount <= 0)
         {
             StartCoroutine(SpawnWave());
-            timerContdown = timeBetweenWaves;
+            //if(enemyCount <= 0 && enemyCount <= maxCantOfEnemiesPerWave)
+            //    StartCoroutine(SpawnWave());
+            //if (timerContdown <= 0)
+            //{
+            //    StartCoroutine(SpawnWave());
+            //    timerContdown = timeBetweenWaves;
+            //}
+            //timerContdown -= Time.deltaTime;
         }
-        timerContdown -= Time.deltaTime;
+        Debug.Log("enemyCount: " + enemyCount);
+        Debug.Log("waves: " + waveCount);
+    }
+
+    void StartWaveCycle()
+    {
+        startWave = true;
     }
 
     IEnumerator SpawnWave()
     {
-        waveCount++;
-        for (int i = 0; i < waveCount; i++)
+        for (int i = 0; i < maxCantOfEnemiesPerWave; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.25f);
+            if(enemyCount < maxCantOfEnemiesPerWave && waveCount <= 7) //maximo 7 oleadas
+            {
+                 SpawnEnemy();
+                 enemyCount++;
+                 yield return new WaitForSeconds(0.25f);
+            }
         }
-
+        waveCount++;
     }
 
     void SpawnEnemy() 
@@ -38,10 +66,20 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(enemyPrefab, spawnStart, true);
     }
 
+    void DecreaseEnemyCount()
+    {
+        if(enemyCount >= 0)
+            enemyCount--;
+    }
+
     public int GetWaveCount()
     {
         return waveCount;
     }
 
-
+    private void OnDisable()
+    {
+        WaveManager.StartWaveEvent -= StartWaveCycle;
+        Enemy.EnemyDie -= DecreaseEnemyCount;
+    }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +12,11 @@ public class GameManager : MonoBehaviour
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney;
         // Node.GetMoney += getMoney;
+    }
+    private void Update()
+    {
+        if (lives <= 0)
+            SceneManager.LoadScene("SampleScene");
     }
     private void OnDisable()
     {
