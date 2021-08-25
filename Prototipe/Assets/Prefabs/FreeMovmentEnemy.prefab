@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7944849721996369542}
   - component: {fileID: 7944849721996369537}
   - component: {fileID: 7944849721996369536}
+  - component: {fileID: 719577324378010777}
   - component: {fileID: 7944849721996369539}
   - component: {fileID: 7944849721996369538}
-  - component: {fileID: 8782503689513119879}
   m_Layer: 0
   m_Name: FreeMovmentEnemy
   m_TagString: Enemy
@@ -82,6 +82,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &719577324378010777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944849721996369548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec3ed6ad61c25b468b783de6d59b250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  enlightened: 0
 --- !u!135 &7944849721996369539
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -111,19 +125,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &8782503689513119879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7944849721996369548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fce506837238d488629b5d5a78dcb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  target: {fileID: 0}
-  wavePointIndex: 0
-  enlightened: 0
