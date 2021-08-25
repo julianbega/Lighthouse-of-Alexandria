@@ -20,6 +20,7 @@ public class WaveSpawner : MonoBehaviour
     {
         WaveManager.StartWaveEvent += StartWaveCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
+        FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         startWave = false;
     }
@@ -29,14 +30,6 @@ public class WaveSpawner : MonoBehaviour
         if (startWave && enemyCount <= 0)
         {
             StartCoroutine(SpawnWave());
-            //if(enemyCount <= 0 && enemyCount <= maxCantOfEnemiesPerWave)
-            //    StartCoroutine(SpawnWave());
-            //if (timerContdown <= 0)
-            //{
-            //    StartCoroutine(SpawnWave());
-            //    timerContdown = timeBetweenWaves;
-            //}
-            //timerContdown -= Time.deltaTime;
         }
         Debug.Log("enemyCount: " + enemyCount);
         Debug.Log("waves: " + waveCount);
@@ -81,5 +74,6 @@ public class WaveSpawner : MonoBehaviour
     {
         WaveManager.StartWaveEvent -= StartWaveCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
+        FreeEnemy.EnemyDie -= DecreaseEnemyCount;
     }
 }

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     {
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney;
+        FreeEnemy.SubtractLives += SubtractLives;
+        FreeEnemy.GainMoney += AddMoney;
         // Node.GetMoney += getMoney;
     }
     private void Update()
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         Enemy.SubtractLives -= SubtractLives;
+        Enemy.GainMoney -= AddMoney;
+        FreeEnemy.SubtractLives -= SubtractLives;
+        FreeEnemy.GainMoney -= AddMoney;
     }
 
     public int GetMoney()
