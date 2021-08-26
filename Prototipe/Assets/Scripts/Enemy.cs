@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public static Action SubtractLives;
     public static Action GainMoney;
     static public event Action EnemyDie;
-
+    static public event Action DestroyCannonBall;
 
     [Header("LivesColor")]
     private MeshRenderer renderer;
@@ -84,10 +84,9 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
-            life -= bullet.damage;
+            DestroyCannonBall?.Invoke();
+            life -= bullet.damage;           
             
-            GainMoney?.Invoke();
-            EnemyDie?.Invoke();
             switch (life)
             {
                 case 3:
@@ -106,7 +105,11 @@ public class Enemy : MonoBehaviour
                     break;
             }
             if(life <= 0)
+            { 
                 Destroy(this.gameObject);
+                GainMoney?.Invoke();
+                EnemyDie?.Invoke();
+            }
             return;
         }
     }
