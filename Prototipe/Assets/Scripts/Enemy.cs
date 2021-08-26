@@ -15,8 +15,35 @@ public class Enemy : MonoBehaviour
     public static Action SubtractLives;
     public static Action GainMoney;
     static public event Action EnemyDie;
+
+
+    [Header("LivesColor")]
+    private MeshRenderer renderer;
+    public Material hp1;
+    public Material hp2;
+    public Material hp3;
+    public Material hp4;
     private void Start()
     {
+        switch (life)
+        {
+            case 4:
+                renderer.material = hp4;
+                break;
+            case 3:
+                renderer.material = hp3;
+                break;
+            case 2:
+                renderer.material = hp2;
+                break;
+            case 1:
+                renderer.material = hp1;
+                break;
+            default:
+                break;
+        }
+
+        renderer = this.gameObject.GetComponent<MeshRenderer>();
         wavePointIndex = 0;
         target = Waypoints.enemyMovmentPoints[0];
     }
@@ -58,8 +85,26 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             life -= bullet.damage;
+            
             GainMoney?.Invoke();
             EnemyDie?.Invoke();
+            switch (life)
+            {
+                case 3:
+                    renderer.material = hp3;
+                    speed += 5;
+                    break;
+                case 2:
+                    renderer.material = hp2;
+                    speed += 5;
+                    break;
+                case 1:
+                    renderer.material = hp1;
+                    speed += 5;
+                    break;
+                default:
+                    break;
+            }
             if(life <= 0)
                 Destroy(this.gameObject);
             return;
