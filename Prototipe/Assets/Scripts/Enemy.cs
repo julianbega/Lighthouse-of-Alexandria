@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public int wavePointIndex;
     public bool enlightened;
+    public int life;
 
+    public Bullet bullet;
     public static Action SubtractLives;
     public static Action GainMoney;
     static public event Action EnemyDie;
@@ -55,9 +57,11 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
+            life -= bullet.damage;
             GainMoney?.Invoke();
             EnemyDie?.Invoke();
-            Destroy(this.gameObject);
+            if(life <= 0)
+                Destroy(this.gameObject);
             return;
         }
     }

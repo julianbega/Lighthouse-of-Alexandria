@@ -111,6 +111,8 @@ MonoBehaviour:
   target: {fileID: 0}
   wavePointIndex: 0
   enlightened: 0
+  life: 2
+  bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
 --- !u!54 &6683851140007840602
 Rigidbody:
   m_ObjectHideFlags: 0
