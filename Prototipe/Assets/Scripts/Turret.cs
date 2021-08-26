@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
     public float power;
     public float attacksPerSecond;
     private float fireCountdown = 0f;
+    private bool preventShootOnSpawn;
 
     [Header("SetUps")]
     public string enemyTag = "Enemy";
@@ -19,6 +20,7 @@ public class Turret : MonoBehaviour
     public float turnSpeed = 10.0f;
     void Start()
     {
+        preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }
     void Update()
@@ -66,11 +68,16 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        if(preventShootOnSpawn)
+        { 
+        Debug.Log("Shoot");
         GameObject bulletGO = (GameObject)Instantiate(cannonBallPrefab, cannonBallSpawn.position, cannonBallSpawn.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if (bullet != null)
             bullet.Seek(target);
+        }
+        preventShootOnSpawn = true;
     }
 
     private void OnDrawGizmosSelected()
