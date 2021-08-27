@@ -23,6 +23,7 @@ public class Turret : MonoBehaviour
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }
+
     void Update()
     {
         if (target == null)

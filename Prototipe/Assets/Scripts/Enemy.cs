@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
+using System.IO;
 
 public class Enemy : MonoBehaviour
 {
@@ -23,8 +22,22 @@ public class Enemy : MonoBehaviour
     public Material hp2;
     public Material hp3;
     public Material hp4;
+    private void Awake()
+    {
+        SaveObject saveObject = new SaveObject
+        {
+            pos = transform.position,
+        };
+        string json = JsonUtility.ToJson(saveObject);
+        Debug.Log(json);
+
+        SaveObject loadedSaveObject = JsonUtility.FromJson<SaveObject>(json);
+        Debug.Log(loadedSaveObject.pos);
+    }
+
     private void Start()
     {
+        renderer = this.gameObject.GetComponent<MeshRenderer>();
         switch (life)
         {
             case 4:
@@ -43,7 +56,6 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        renderer = this.gameObject.GetComponent<MeshRenderer>();
         wavePointIndex = 0;
         target = Waypoints.enemyMovmentPoints[0];
     }
@@ -57,6 +69,9 @@ public class Enemy : MonoBehaviour
         {
             SetNextTarget();
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+            Save();
     }
 
     void SetNextTarget()
@@ -121,5 +136,23 @@ public class Enemy : MonoBehaviour
             enlightened = false;
             return;
         }
+    }
+
+    private void Save()
+    {
+        Vector3 enemyPos = transform.position;
+
+        SaveObject saveObject = new SaveObject {
+            pos = enemyPos,
+        };
+
+        string json = JsonUtility.ToJson(saveObject);
+
+        File.WriteAllText(Application.dataPath + "/save.txt", json);
+    }
+
+    private class SaveObject
+    {
+        public Vector3 pos;
     }
 }
