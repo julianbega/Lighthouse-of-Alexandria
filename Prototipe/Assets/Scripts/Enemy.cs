@@ -91,15 +91,15 @@ public class Enemy : MonoBehaviour
             {
                 case 3:
                     renderer.material = hp3;
-                    speed += 5;
+                    speed += 3;
                     break;
                 case 2:
                     renderer.material = hp2;
-                    speed += 5;
+                    speed += 3;
                     break;
                 case 1:
                     renderer.material = hp1;
-                    speed += 5;
+                    speed += 3;
                     break;
                 default:
                     break;
