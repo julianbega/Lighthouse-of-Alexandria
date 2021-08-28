@@ -18,6 +18,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Start()
     {
+       
         WaveManager.StartWaveEvent += StartWaveCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
@@ -57,7 +58,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
     void SpawnEnemy()
     {
         int spawner = Random.Range(0, spawnStart.Length);
-        Instantiate(enemyPrefab, spawnStart[spawner].transform, true);
+        Debug.Log("spawn: " + spawnStart[spawner].position);
+        Instantiate(enemyPrefab, spawnStart[spawner].transform.localPosition, Quaternion.identity);
     }
 
     void DecreaseEnemyCount()
