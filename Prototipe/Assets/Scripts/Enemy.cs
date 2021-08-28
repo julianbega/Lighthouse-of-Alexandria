@@ -5,7 +5,7 @@ using System.IO;
 public class Enemy : MonoBehaviour
 {
     public float speed;
-    public Transform target;
+    //public Transform target;
     public int wavePointIndex;
     public bool enlightened;
     public int life;
@@ -56,19 +56,21 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
+        Debug.Log(transform.position);
+
         wavePointIndex = 0;
-        target = Waypoints.enemyMovmentPoints[0];
+        //target = Waypoints.enemyMovmentPoints[0];
     }
 
     private void Update()
     {
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.1f)
-        {
-            SetNextTarget();
-        }
+        //Vector3 direction = target.position - transform.position;
+        //transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        //
+        //if (Vector3.Distance(transform.position, target.position) <= 0.1f)
+        //{
+        //    SetNextTarget();
+        //}
 
         if (Input.GetKeyDown(KeyCode.S))
             Save();
@@ -87,7 +89,7 @@ public class Enemy : MonoBehaviour
         {
             wavePointIndex++;
         }
-        target = Waypoints.enemyMovmentPoints[wavePointIndex];
+        //target = Waypoints.enemyMovmentPoints[wavePointIndex];
     }
 
     private void OnTriggerEnter(Collider other)
@@ -149,10 +151,5 @@ public class Enemy : MonoBehaviour
         string json = JsonUtility.ToJson(saveObject);
 
         File.WriteAllText(Application.dataPath + "/save.txt", json);
-    }
-
-    private class SaveObject
-    {
-        public Vector3 pos;
     }
 }

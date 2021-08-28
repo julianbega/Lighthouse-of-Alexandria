@@ -7,7 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public GameManager gm;
-    public WaveSpawner ws;
+    public WaveSpawnerProto3 ws;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
     public TextMeshProUGUI lives;
@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        ws = FindObjectOfType<WaveSpawner>();
+        ws = FindObjectOfType<WaveSpawnerProto3>();
     }
 
     // Update is called once per frame

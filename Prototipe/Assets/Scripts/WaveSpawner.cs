@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        WaveManager.StartWaveEvent += StartWaveCycle;
+        //WaveManager.StartWaveEvent += StartWaveCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        WaveManager.StartWaveEvent -= StartWaveCycle;
+        //WaveManager.StartWaveEvent -= StartWaveCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
         FreeEnemy.EnemyDie -= DecreaseEnemyCount;
     }

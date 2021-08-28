@@ -81,6 +81,11 @@ public class Turret : MonoBehaviour
         preventShootOnSpawn = true;
     }
 
+    private void Save()
+    {
+
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
