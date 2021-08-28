@@ -15064,6 +15064,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 828907588}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &829211257 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5128339850128796904, guid: 206452f222d50054994bf26d601167ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1415856113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &830104503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24270,7 +24276,7 @@ PrefabInstance:
     - target: {fileID: 5128339850098323339, guid: 206452f222d50054994bf26d601167ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5128339850098323339, guid: 206452f222d50054994bf26d601167ad,
         type: 3}
@@ -24321,6 +24327,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128339850128796904, guid: 206452f222d50054994bf26d601167ad,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128339850128796907, guid: 206452f222d50054994bf26d601167ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128339850128796907, guid: 206452f222d50054994bf26d601167ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 206452f222d50054994bf26d601167ad, type: 3}
@@ -27215,7 +27236,8 @@ MonoBehaviour:
   money: {fileID: 1968414298}
   wave: {fileID: 347512910}
   lives: {fileID: 2107276833}
-  Store: {fileID: 0}
+  Light: {fileID: 829211257}
+  day: {fileID: 1528231184}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32730,7 +32752,7 @@ Transform:
   - {fileID: 1431344456}
   - {fileID: 1992836141}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1901981938
 PrefabInstance:
@@ -34752,6 +34774,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1577804615}
         m_MethodName: StartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: LightOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: finishDay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

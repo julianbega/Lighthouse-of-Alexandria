@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
     public TextMeshProUGUI lives;
-    public Image Store;
+    public Light Light;
+    public Light day;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -25,5 +26,25 @@ public class UIManager : MonoBehaviour
         wave.text = "Wave: " + ws.GetWaveCount();
         lives.text = "Lives: " + gm.GetLives();
 
+    }
+
+    public void LightOn()
+    {
+        Light.enabled = true;
+    }
+
+    public void Lightoff()
+    {
+        Light.enabled = false;
+    }
+
+    public void StartDay()
+    {
+        day.enabled = true;
+    }
+
+    public void finishDay()
+    {
+        day.enabled = false;
     }
 }
