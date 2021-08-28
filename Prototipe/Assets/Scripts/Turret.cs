@@ -12,7 +12,6 @@ public class Turret : MonoBehaviour
     private bool preventShootOnSpawn;
 
     [Header("SetUps")]
-    public string enemyTag = "Enemy";
     public Transform pivot;
     public Transform target;
     public GameObject cannonBallPrefab;
@@ -44,13 +43,16 @@ public class Turret : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
         float shortestDistance = Mathf.Infinity;
-        GameObject actualEnemyFocus = null;
-        foreach (GameObject enemy in enemies)
+        Enemy actualEnemyFocus = null;
+        foreach (Enemy enemy in enemies)
         {
+
+            /// apunta al más cercano
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
+
+            if (distanceToEnemy < shortestDistance && enemy.enlightened)
             {
                 shortestDistance = distanceToEnemy;
                 actualEnemyFocus = enemy;

@@ -22,6 +22,7 @@ public class Node : MonoBehaviour
     }
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
     }
     private void OnMouseEnter()
     {
