@@ -44,7 +44,7 @@ public class Node : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         if (gm.GetMoney() >= BuildManager.instance.turretPrice)
         {
-            turret = (GameObject)Instantiate(turretToBuild, transform.position + offset, transform.rotation);
+            turret = Instantiate(turretToBuild, transform.position + offset, transform.rotation);
             gm.moneySubtract(BuildManager.instance.turretPrice);
         }
     }
