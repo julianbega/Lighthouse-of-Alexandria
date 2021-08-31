@@ -17,13 +17,13 @@ public class FreeEnemy : MonoBehaviour
 
     private void Update()
     {
-       
+        MoveShip();
     }
 
    void MoveShip()
-    {
+   {
 
-    }
+   }
 
     private void OnTriggerEnter(Collider other)
     {
