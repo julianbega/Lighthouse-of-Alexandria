@@ -32,8 +32,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
         }
-        Debug.Log("enemyCount: " + enemyCount);
-        Debug.Log("waves: " + waveCount);
+        //Debug.Log("enemyCount: " + enemyCount);
+        //Debug.Log("waves: " + waveCount);
     }
 
     void StartWaveCycle()
@@ -58,7 +58,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
     void SpawnEnemy()
     {
         int spawner = Random.Range(0, spawnStart.Length);
-        Debug.Log("spawn: " + spawnStart[spawner].position);
+        //Debug.Log("spawn: " + spawnStart[spawner].position);
         Instantiate(enemyPrefab, spawnStart[spawner].transform.localPosition, Quaternion.identity);
     }
 
