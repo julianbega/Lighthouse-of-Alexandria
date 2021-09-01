@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5647686040996723706}
   - component: {fileID: 4203453235225256593}
   - component: {fileID: 6683851140007840602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -109,10 +109,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 0}
-  wavePointIndex: 0
+  wayPointIndex: 0
   enlightened: 0
   life: 4
+  myPath: 0
   bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
+  wp: {fileID: 0}
   hp1: {fileID: 2100000, guid: 8c411b528db39374099be6914f7a3299, type: 2}
   hp2: {fileID: 2100000, guid: 36924d1294abe1244a1cc145115ceeae, type: 2}
   hp3: {fileID: 2100000, guid: 8fe6480463fb5b5428bd8f82f023ddcc, type: 2}
