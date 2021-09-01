@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-
+        Cheats.increaseEnemySpeed += IncreaseSpeed;
         //Debug.Log(transform.position);
 
         wayPointIndex = 0;
@@ -70,8 +70,8 @@ public class Enemy : MonoBehaviour
     {
         if (target != null)
         { 
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+            Vector3 direction = target.position - transform.position;
+            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
         
         if (Vector3.Distance(transform.position, target.position) <= 0.1f)
         {
@@ -889,5 +889,15 @@ public class Enemy : MonoBehaviour
         string json = JsonUtility.ToJson(saveObject);
 
         File.WriteAllText(Application.dataPath + "/save.txt", json);
+    }
+
+    private void IncreaseSpeed()
+    {
+        speed += 1;
+    }
+
+    private void OnDisable()
+    {
+        Cheats.increaseEnemySpeed -= IncreaseSpeed;
     }
 }

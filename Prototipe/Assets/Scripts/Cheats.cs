@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Cheats : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Cheats : MonoBehaviour
 
     public int MoneyToAdd;
     public int LivesToAdd;
+
+    static public event Action increaseEnemySpeed;
     void Start()
     {
         gm = GetComponent<GameManager>();
@@ -31,6 +34,10 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             gm.lives -= 1;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            increaseEnemySpeed?.Invoke();
         }
     }
 }
