@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int gainPerKill;
 
     private WaveSpawnerProto3 ws;
+    private Levels lvl;
     void Start()
     {
         Enemy.SubtractLives += SubtractLives;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
         FreeEnemy.SubtractLives += SubtractLives;
         FreeEnemy.GainMoney += AddMoney;
         ws = GetComponent<WaveSpawnerProto3>();
+        lvl = GetComponent<Levels>();
         WaveSpawnerProto3.winEvent += Win;
         // Node.GetMoney += getMoney;
     }
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        SceneManager.LoadScene("Prototype3");
+        lvl.actualLvl++;
     }
 
     public int GetMoney()
