@@ -11,6 +11,7 @@ public class Cheats : MonoBehaviour
     public int LivesToAdd;
 
     static public event Action increaseEnemySpeed;
+    static public event Action killEnemy;
     void Start()
     {
         gm = GetComponent<GameManager>();
@@ -34,6 +35,10 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             gm.lives -= 1;
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            killEnemy?.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {

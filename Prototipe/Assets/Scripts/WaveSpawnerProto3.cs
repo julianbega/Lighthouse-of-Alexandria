@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class WaveSpawnerProto3 : MonoBehaviour
 {
@@ -11,10 +13,14 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
     private float timerContdown = 2.0f;
+    public int waveLimit;
+    [SerializeField]
     private int waveCount = 0;
-    private int enemyCount;
+    public int enemyCount;
 
     private bool startWave;
+
+    static public event Action winEvent;
 
     private void Start()
     {
@@ -28,10 +34,12 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Update()
     {
-        if (startWave && enemyCount <= 0 && waveCount <= 7)
+        if (startWave && enemyCount <= 0 && waveCount <= waveLimit)
         {
             StartCoroutine(SpawnWave());
         }
+        if (waveCount >= waveLimit)
+            winEvent?.Invoke();
         //Debug.Log("enemyCount: " + enemyCount);
         //Debug.Log("waves: " + waveCount);
     }
@@ -57,7 +65,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int spawner = Random.Range(0, spawnStart.Length);
+        int spawner = UnityEngine.Random.Range(0, spawnStart.Length);
         //Debug.Log("spawn: " + spawnStart[spawner].position);
         Instantiate(enemyPrefab, spawnStart[spawner].transform.localPosition, Quaternion.identity);
     }

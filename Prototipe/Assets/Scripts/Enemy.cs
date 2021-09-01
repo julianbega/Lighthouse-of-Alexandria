@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
         Cheats.increaseEnemySpeed += IncreaseSpeed;
+        Cheats.killEnemy += Kill;
         //Debug.Log(transform.position);
 
         wayPointIndex = 0;
@@ -896,8 +897,19 @@ public class Enemy : MonoBehaviour
         speed += 1;
     }
 
+    private void Kill()
+    {
+        if(life > 0)
+        {
+            life = 0;
+            Destroy(gameObject);
+            EnemyDie?.Invoke();
+        }
+    }
+
     private void OnDisable()
     {
         Cheats.increaseEnemySpeed -= IncreaseSpeed;
+        Cheats.killEnemy -= Kill;
     }
 }
