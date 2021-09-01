@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (lives <= 0)
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Prototype3");
     }
     private void OnDisable()
     {
