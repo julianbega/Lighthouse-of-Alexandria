@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public GameManager gm;
+    public Levels lvl;
     public WaveSpawnerProto3 ws;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
@@ -17,7 +18,9 @@ public class UIManager : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         ws = FindObjectOfType<WaveSpawnerProto3>();
+        lvl = FindObjectOfType<Levels>();
     }
+
 
     // Update is called once per frame
     void Update()

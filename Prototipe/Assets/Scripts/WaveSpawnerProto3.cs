@@ -7,8 +7,11 @@ using System;
 public class WaveSpawnerProto3 : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject HeavyEnemyPrefab;
+    public GameObject FastEnemyPrefab;
     public Transform[] spawnStart;
 
+    private Levels lvl;
     public float timeBetweenWaves;
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
@@ -24,7 +27,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Start()
     {
-       
+        lvl = GetComponent<Levels>();
         WaveManager.StartWaveEvent += StartWaveCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
@@ -51,19 +54,30 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        for (int i = 0; i < maxCantOfEnemiesPerWave; i++)
+        switch (lvl.actualLvl)
         {
-            if (enemyCount < maxCantOfEnemiesPerWave) //maximo 7 oleadas
-            {
-                SpawnEnemy();
-                enemyCount++;
-                yield return new WaitForSeconds(0.25f);
-            }
+            case 1:
+                break;
+           
+            
+            
+            default:
+                for (int i = 0; i < maxCantOfEnemiesPerWave; i++)
+                {
+                    if (enemyCount < maxCantOfEnemiesPerWave) //maximo 7 oleadas
+                    {
+                        SpawnEnemy(false,false,true,false,false);
+                        enemyCount++;
+                        yield return new WaitForSeconds(0.25f);
+                    }
+                }
+                waveCount++;
+                break;
         }
-        waveCount++;
+        
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(bool spawner1, bool spawner2, bool spawner3, bool spawner4, bool spawner5)
     {
         int spawner = UnityEngine.Random.Range(0, spawnStart.Length);
         //Debug.Log("spawn: " + spawnStart[spawner].position);
