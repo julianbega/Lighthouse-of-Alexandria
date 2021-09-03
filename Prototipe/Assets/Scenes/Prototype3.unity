@@ -24623,7 +24623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1251596295
 Transform:
   m_ObjectHideFlags: 0
@@ -36414,9 +36414,9 @@ MonoBehaviour:
     type: 3}
   HeavyEnemyPrefab: {fileID: 0}
   FastEnemyPrefab: {fileID: 0}
-  spawnStart:
-  - {fileID: 1925106383}
+  spawnStarts:
   - {fileID: 2044421829}
+  - {fileID: 1925106383}
   - {fileID: 1139325197}
   - {fileID: 1431344456}
   - {fileID: 1992836141}

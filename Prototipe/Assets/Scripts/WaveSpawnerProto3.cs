@@ -9,7 +9,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;
     public GameObject FastEnemyPrefab;
-    public Transform[] spawnStart;
+    public Transform[] spawnStarts;
+    private Transform[] activeSpawnStarts;
 
     private Levels lvl;
     public float timeBetweenWaves;
@@ -79,9 +80,13 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     void SpawnEnemy(bool spawner1, bool spawner2, bool spawner3, bool spawner4, bool spawner5)
     {
-        int spawner = UnityEngine.Random.Range(0, spawnStart.Length);
+        if (spawner1)
+        {
+            activeSpawnStarts[activeSpawnStarts.Length+1] = spawnStarts[0];
+        }
+        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
         //Debug.Log("spawn: " + spawnStart[spawner].position);
-        Instantiate(enemyPrefab, spawnStart[spawner].transform.localPosition, Quaternion.identity);
+        Instantiate(enemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
 
     void DecreaseEnemyCount()
