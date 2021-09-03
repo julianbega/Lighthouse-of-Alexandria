@@ -71,564 +71,124 @@ public class Enemy : MonoBehaviour
         switch (myPath)
         {
             case 1:
-                if (wayPointIndex < wp.Path1.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path1[wayPointIndex];
-                }
-                else 
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path1);
                 break;
             case 2:
-                if (wayPointIndex < wp.Path2.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path2[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path2);
                 break;
             case 3:
-                if (wayPointIndex < wp.Path3.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path3[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path3);
                 break;
             case 4:
-                if (wayPointIndex < wp.Path4.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path4[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path4);
                 break;
             case 5:
-                if (wayPointIndex < wp.Path5.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path5[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path5);
                 break;
             case 6:
-                if (wayPointIndex < wp.Path6.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path6[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path6);
                 break;
             case 7:
-                if (wayPointIndex < wp.Path7.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path7[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path7);                
                 break;
             case 8:
-                if (wayPointIndex < wp.Path8.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path8[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path8);                
                 break;
             case 9:
-                if (wayPointIndex < wp.Path9.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path9[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path9);
                 break;
             case 10:
-                if (wayPointIndex < wp.Path10.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path10[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path10);
                 break;
             case 11:
-                if (wayPointIndex < wp.Path11.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path11[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path11);
                 break;
             case 12:
-                if (wayPointIndex < wp.Path12.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path12[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path12);
                 break;
             case 13:
-                if (wayPointIndex < wp.Path13.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path13[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path13);
                 break;
             case 14:
-                if (wayPointIndex < wp.Path14.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path14[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path14);
                 break;
             case 15:
-                if (wayPointIndex < wp.Path15.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path15[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path15);
                 break;
             case 16:
-                if (wayPointIndex < wp.Path16.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path16[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path16);
                 break;
             case 17:
-                if (wayPointIndex < wp.Path17.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path17[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path17);
                 break;
             case 18:
-                if (wayPointIndex < wp.Path18.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path18[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path18);
                 break;
             case 19:
-                if (wayPointIndex < wp.Path19.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path19[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path19);
                 break;
             case 20:
-                if (wayPointIndex < wp.Path20.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path20[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path20); 
                 break;
             case 21:
-                if (wayPointIndex < wp.Path21.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path21[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path21);
                 break;
             case 22:
-                if (wayPointIndex < wp.Path22.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path22[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path22);
                 break;
             case 23:
-                if (wayPointIndex < wp.Path23.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path23[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path23);
                 break;
             case 24:
-                if (wayPointIndex < wp.Path24.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path24[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path24);
                 break;
             case 25:
-                if (wayPointIndex < wp.Path25.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path25[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path25);
                 break;
             case 26:
-                if (wayPointIndex < wp.Path26.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path26[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path26);
                 break;
             case 27:
-                if (wayPointIndex < wp.Path27.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path27[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path27);
                 break;
             case 28:
-                if (wayPointIndex < wp.Path28.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path28[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path28);
                 break;
             case 29:
-                if (wayPointIndex < wp.Path29.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path29[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path29);
                 break;
             case 30:
-                if (wayPointIndex < wp.Path30.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path30[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path30);
                 break;
             case 31:
-                if (wayPointIndex < wp.Path31.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path31[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path31);
                 break;
             case 32:
-                if (wayPointIndex < wp.Path32.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path32[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path32);
                 break;
             case 33:
-                if (wayPointIndex < wp.Path33.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path33[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path33);
                 break;
             case 34:
-                if (wayPointIndex < wp.Path34.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path34[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path34);
                 break;
             case 35:
-                if (wayPointIndex < wp.Path35.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path35[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path35);
                 break;
             case 36:
-                if (wayPointIndex < wp.Path36.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path36[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path36);
                 break;
             case 37:
-                if (wayPointIndex < wp.Path37.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path37[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path37);
                 break;
             case 38:
-                if (wayPointIndex < wp.Path38.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path38[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path38);
                 break;
             case 39:
-                if (wayPointIndex < wp.Path39.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path39[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path39);
                 break;
             case 40:
-                if (wayPointIndex < wp.Path40.Length)
-                {
-                    wayPointIndex++;
-                    target = wp.Path40[wayPointIndex];
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                    SubtractLives?.Invoke();
-                    EnemyDie?.Invoke();
-                    return;
-                }
+                NextTargetInPath(wp.Path40);
                 break;
 
         }
@@ -869,6 +429,25 @@ public class Enemy : MonoBehaviour
             life = 0;
             Destroy(gameObject);
             EnemyDie?.Invoke();
+        }
+    }
+    private void NoMorePath()
+    {
+        Destroy(this.gameObject);
+        SubtractLives?.Invoke();
+        EnemyDie?.Invoke();
+        return;
+    }
+    private void NextTargetInPath(Transform[] path)
+    {
+        if (wayPointIndex < path.Length)
+        {
+            wayPointIndex++;
+            target = path[wayPointIndex];
+        }
+        else
+        {
+            NoMorePath();
         }
     }
 
