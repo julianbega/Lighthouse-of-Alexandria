@@ -1,18 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIShop : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject ShopPanel;
     void Start()
+    {
+        Node.OpenShop += ActivateShopPanel;
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CloseShop()
     {
-        
+        ShopPanel.gameObject.SetActive(false);
+    }
+
+    private void ActivateShopPanel()
+    {
+        ShopPanel.gameObject.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        Node.OpenShop -= ActivateShopPanel;
     }
 }

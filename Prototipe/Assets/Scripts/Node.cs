@@ -13,6 +13,7 @@ public class Node : MonoBehaviour
 
     public GameManager gm;
 
+    public static event Action OpenShop;
     //public static event Action<int> GetMoney;
 
     private void Awake()
@@ -46,6 +47,7 @@ public class Node : MonoBehaviour
         {
             turret = Instantiate(turretToBuild, transform.position + offset, transform.rotation);
             gm.moneySubtract(BuildManager.instance.turretPrice);
+            OpenShop?.Invoke();
         }
     }
 }
