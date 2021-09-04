@@ -8,7 +8,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;
-    public GameObject FastEnemyPrefab;
+    public GameObject LightEnemyPrefab;
     public Transform[] spawnStarts;
     private Transform[] activeSpawnStarts;
 
@@ -25,6 +25,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
     private bool startWave;
 
     static public event Action winEvent;
+
+    
 
     private void Start()
     {
@@ -67,7 +69,11 @@ public class WaveSpawnerProto3 : MonoBehaviour
                 {
                     if (enemyCount < maxCantOfEnemiesPerWave) //maximo 7 oleadas
                     {
-                        SpawnEnemy(false,false,true,false,false);
+                        SpawnEnemy(spawnStarts[0]);
+                        SpawnEnemy(spawnStarts[1]);
+                        SpawnEnemy(spawnStarts[2]); 
+                        SpawnEnemy(spawnStarts[3]);
+                        SpawnEnemy(spawnStarts[4]);
                         enemyCount++;
                         yield return new WaitForSeconds(0.25f);
                     }
@@ -78,15 +84,17 @@ public class WaveSpawnerProto3 : MonoBehaviour
         
     }
 
-    void SpawnEnemy(bool spawner1, bool spawner2, bool spawner3, bool spawner4, bool spawner5)
+    void SpawnEnemy(Transform spawner)
     {
-        if (spawner1)
-        {
-            activeSpawnStarts[activeSpawnStarts.Length+1] = spawnStarts[0];
-        }
-        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
-        //Debug.Log("spawn: " + spawnStart[spawner].position);
-        Instantiate(enemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
+        Instantiate(enemyPrefab, spawner.transform.localPosition, Quaternion.identity);
+    }
+    void SpawnHeavyEnemy(Transform spawner)
+    {
+        Instantiate(HeavyEnemyPrefab, spawner.transform.localPosition, Quaternion.identity);
+    }
+    void SpawnLightEnemy(Transform spawner)
+    {
+        Instantiate(LightEnemyPrefab, spawner.transform.localPosition, Quaternion.identity);
     }
 
     void DecreaseEnemyCount()

@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 2385789709203740909}
   - component: {fileID: -383375764979782153}
   m_Layer: 0
-  m_Name: Barco
+  m_Name: BarcoRapido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,11 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fce506837238d488629b5d5a78dcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
   target: {fileID: 0}
   wayPointIndex: 0
   enlightened: 0
-  life: 3
+  life: 5
   myPath: 0
   bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
   wp: {fileID: 0}

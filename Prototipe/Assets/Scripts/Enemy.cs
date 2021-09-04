@@ -18,11 +18,8 @@ public class Enemy : MonoBehaviour
     static public event Action DestroyCannonBall;
     public Waypoints wp;
 
-    private MeshRenderer renderer;
-    public Material material;
     private void Awake()
     {
-        renderer.material = material;
         SaveObject saveObject = new SaveObject
         {
             pos = transform.position,
@@ -37,8 +34,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        wp = FindObjectOfType<Waypoints>();
-        renderer = this.gameObject.GetComponent<MeshRenderer>();       
+        wp = FindObjectOfType<Waypoints>(); 
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
         //Debug.Log(transform.position);
