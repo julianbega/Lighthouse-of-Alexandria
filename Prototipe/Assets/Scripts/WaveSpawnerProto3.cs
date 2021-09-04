@@ -9,14 +9,13 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;
     public GameObject LightEnemyPrefab;
-    public Transform[] spawnStarts;
-    private Transform[] activeSpawnStarts;
+    private Transform[] spawnStarts;
+
 
     private Levels lvl;
     public float timeBetweenWaves;
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
-    private float timerContdown = 2.0f;
     public int waveLimit;
     [SerializeField]
     private int waveCount = 0;
@@ -36,6 +35,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         startWave = false;
+        spawnStarts = lvl.activeSpawnStarts;
     }
 
     private void Update()
@@ -52,49 +52,47 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     void StartWaveCycle()
     {
+        spawnStarts = lvl.activeSpawnStarts;
         startWave = true;
     }
 
     IEnumerator SpawnWave()
     {
-        switch (lvl.actualLvl)
+        for (int i = 0; i < lvl.standardEnemies; i++)
         {
-            case 1:
-                break;
-           
-            
-            
-            default:
-                for (int i = 0; i < maxCantOfEnemiesPerWave; i++)
-                {
-                    if (enemyCount < maxCantOfEnemiesPerWave) //maximo 7 oleadas
-                    {
-                        SpawnEnemy(spawnStarts[0]);
-                        SpawnEnemy(spawnStarts[1]);
-                        SpawnEnemy(spawnStarts[2]); 
-                        SpawnEnemy(spawnStarts[3]);
-                        SpawnEnemy(spawnStarts[4]);
-                        enemyCount++;
-                        yield return new WaitForSeconds(0.25f);
-                    }
-                }
-                waveCount++;
-                break;
+            SpawnEnemy();
+            yield return new WaitForSeconds(0.25f);
         }
-        
+        for (int i = 0; i < lvl.heavyEnemies; i++)
+        {
+            SpawnHeavyEnemy();
+            yield return new WaitForSeconds(0.25f);
+        }
+        for (int i = 0; i < lvl.lightEnemies; i++)
+        {
+            SpawnLightEnemy();
+            yield return new WaitForSeconds(0.25f);
+        }
+
     }
 
-    void SpawnEnemy(Transform spawner)
+    void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawner.transform.localPosition, Quaternion.identity);
+        enemyCount++;
+        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
+        Instantiate(enemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
-    void SpawnHeavyEnemy(Transform spawner)
+    void SpawnHeavyEnemy()
     {
-        Instantiate(HeavyEnemyPrefab, spawner.transform.localPosition, Quaternion.identity);
+        enemyCount++;
+        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
+        Instantiate(HeavyEnemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
-    void SpawnLightEnemy(Transform spawner)
+    void SpawnLightEnemy()
     {
-        Instantiate(LightEnemyPrefab, spawner.transform.localPosition, Quaternion.identity);
+        enemyCount++;
+        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
+        Instantiate(LightEnemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
 
     void DecreaseEnemyCount()
@@ -114,4 +112,5 @@ public class WaveSpawnerProto3 : MonoBehaviour
         Enemy.EnemyDie -= DecreaseEnemyCount;
         FreeEnemy.EnemyDie -= DecreaseEnemyCount;
     }
+
 }

@@ -47,6 +47,7 @@ public class Waypoints : MonoBehaviour
     public Transform[] Path40;
     public Transform father;
 
+
     private void Awake()
     {
         

@@ -369,7 +369,7 @@ MonoBehaviour:
   target: {fileID: 0}
   wayPointIndex: 0
   enlightened: 0
-  life: 5
+  life: 7
   myPath: 0
   bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
   wp: {fileID: 0}
