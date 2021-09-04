@@ -9,7 +9,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;
     public GameObject LightEnemyPrefab;
-    private Transform[] spawnStarts;
 
 
     private Levels lvl;
@@ -23,7 +22,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private bool startWave;
 
-    static public event Action winEvent;
+    static public event Action winGameEvent;
 
     
 
@@ -35,24 +34,25 @@ public class WaveSpawnerProto3 : MonoBehaviour
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         startWave = false;
-        spawnStarts = lvl.activeSpawnStarts;
     }
 
     private void Update()
     {
-        if (startWave && enemyCount <= 0 && waveCount <= waveLimit)
+        if (startWave && enemyCount <= 0)
         {
             StartCoroutine(SpawnWave());
+            lvl.startLvl();
+            lvl.actualLvl++;
         }
         if (waveCount >= waveLimit)
-            winEvent?.Invoke();
+            winGameEvent?.Invoke();
         //Debug.Log("enemyCount: " + enemyCount);
         //Debug.Log("waves: " + waveCount);
     }
 
     void StartWaveCycle()
     {
-        spawnStarts = lvl.activeSpawnStarts;
+        lvl.startLvl();
         startWave = true;
     }
 
@@ -61,12 +61,12 @@ public class WaveSpawnerProto3 : MonoBehaviour
         for (int i = 0; i < lvl.standardEnemies; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.5f);
         }
         for (int i = 0; i < lvl.heavyEnemies; i++)
         {
             SpawnHeavyEnemy();
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(1.0f);
         }
         for (int i = 0; i < lvl.lightEnemies; i++)
         {
@@ -79,20 +79,20 @@ public class WaveSpawnerProto3 : MonoBehaviour
     void SpawnEnemy()
     {
         enemyCount++;
-        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
-        Instantiate(enemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
+        int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Length);
+        Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
     void SpawnHeavyEnemy()
     {
         enemyCount++;
-        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
-        Instantiate(HeavyEnemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
+        int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Length);
+        Instantiate(HeavyEnemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
     void SpawnLightEnemy()
     {
         enemyCount++;
-        int spawner = UnityEngine.Random.Range(0, spawnStarts.Length);
-        Instantiate(LightEnemyPrefab, spawnStarts[spawner].transform.localPosition, Quaternion.identity);
+        int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Length);
+        Instantiate(LightEnemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
 
     void DecreaseEnemyCount()

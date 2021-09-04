@@ -20,15 +20,20 @@ public class Levels : MonoBehaviour
         standardEnemies = 0;
         lightEnemies = 0;
     }
-    private void startLvl()
+    public void startLvl()
     {
         switch (actualLvl)
         {
             case 0:
                 ActivateSpawner(2);
+                heavyEnemies = 0;
                 standardEnemies = 1;
+                lightEnemies = 0;
                 break;
             case 1:
+                heavyEnemies = 0;
+                standardEnemies = 2;
+                lightEnemies = 0;
                 break;
 
             case 2:
@@ -66,6 +71,15 @@ public class Levels : MonoBehaviour
 
 private void ActivateSpawner(int Index)
     {
-        activeSpawnStarts[activeSpawnStarts.Length+1] = allSpawners[Index];
+        Debug.Log(activeSpawnStarts.Length);
+        Transform[] aux = activeSpawnStarts;
+        activeSpawnStarts = new Transform[activeSpawnStarts.Length + 1];
+        activeSpawnStarts[activeSpawnStarts.Length - 1] = allSpawners[Index];
+        for (int i = 0; i < aux.Length; i++)
+        {
+            Debug.Log(activeSpawnStarts[i]);
+            activeSpawnStarts[i] = aux[i];
+        }
+            //+= allSpawners[Index];
     }
 }
