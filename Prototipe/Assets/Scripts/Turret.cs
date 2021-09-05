@@ -17,6 +17,8 @@ public class Turret : MonoBehaviour
     public GameObject cannonBallPrefab;
     public Transform cannonBallSpawn;
     public float turnSpeed = 10.0f;
+
+    public int price;
     void Start()
     {
         preventShootOnSpawn = false;

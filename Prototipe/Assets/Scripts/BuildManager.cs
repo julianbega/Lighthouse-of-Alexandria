@@ -6,6 +6,8 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
+    public Node actualNode;
+
     private void Awake()
     {
         if (instance == null)
@@ -18,21 +20,14 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public GameObject turretPrefab;
-    public int turretPrice;
+    public GameObject[] turretPrefabs;
 
-    private void Start()
+    public GameObject GetTurretToBuild(int index)
     {
-        turret = turretPrefab;
+        return turretPrefabs[index];
     }
-    private GameObject turret;
-
-    public GameObject GetTurretToBuild()
+    public int GetTurretPrice(int index)
     {
-        return turret;
-    }
-    public int GetTurretPrice()
-    {
-        return turretPrice;
+        return turretPrefabs[index].GetComponent<Turret>().price;
     }
 }

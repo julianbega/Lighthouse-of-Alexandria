@@ -9,7 +9,7 @@ public class Node : MonoBehaviour
     public Vector3 offset;
     private Color startColor;
     private Renderer render;
-    private GameObject turret;
+    public GameObject turret;
 
     public GameManager gm;
 
@@ -41,13 +41,15 @@ public class Node : MonoBehaviour
             Debug.Log("not Buildable");
             return;
         }
+
+        OpenShop?.Invoke();
+        BuildManager.instance.actualNode = this;
         
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        if (gm.GetMoney() >= BuildManager.instance.turretPrice)
-        {
-            turret = Instantiate(turretToBuild, transform.position + offset, transform.rotation);
-            gm.moneySubtract(BuildManager.instance.turretPrice);
-            OpenShop?.Invoke();
-        }
+        //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        //if (gm.GetMoney() >= BuildManager.instance.turretPrice)
+        //{
+        //    turret = Instantiate(turretToBuild, transform.position + offset, transform.rotation);
+        //    gm.moneySubtract(BuildManager.instance.turretPrice);
+        //}
     }
 }
