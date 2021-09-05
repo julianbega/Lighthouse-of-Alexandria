@@ -5368,7 +5368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -22510,7 +22510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.05724907, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -37732,9 +37732,9 @@ MonoBehaviour:
   actualNode: {fileID: 0}
   turretPrefabs:
   - {fileID: 2670055620850643100, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
-  - {fileID: 3085184945478953423, guid: 7ece74fab3165064580121ad87dea1fc, type: 3}
-  - {fileID: 2670055620850643100, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
-  - {fileID: 3085184945478953423, guid: 7ece74fab3165064580121ad87dea1fc, type: 3}
+  - {fileID: 2670055620850643100, guid: 0a65e7bdc67623a41b5460fbe6a42c8a, type: 3}
+  - {fileID: 2670055620850643100, guid: 2945eedd0ee054742973320f5caad765, type: 3}
+  - {fileID: 2670055620850643100, guid: accb889a177b24d449fb792bd2110815, type: 3}
 --- !u!114 &1847785817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40165,7 +40165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.030314207, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
