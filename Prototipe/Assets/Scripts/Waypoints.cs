@@ -129,7 +129,7 @@ public class Waypoints : MonoBehaviour
         #endregion
 
         #region Spawner2
-        /// Arriba - Ariiba - Arriba - End  /// Piedra 2 /// Piedra 3
+        /// Arriba - Ariiba - Arriba - End  /// Piedra 2 /// Piedra 3---
         #region Path6
         Path6[0] = AllWaypoints[7];
         Path6[1] = AllWaypoints[8];
@@ -141,7 +141,7 @@ public class Waypoints : MonoBehaviour
         Path6[7] = AllWaypoints[23];
         Path6[8] = AllWaypoints[52];
         #endregion
-        /// Arriba - Arriba - Abajo - End /// Piedra 2 /// Piedra 3  /// Piedra 4 
+        /// Arriba - Arriba - Abajo - End /// Piedra 2 /// Piedra 3  /// Piedra 4 ---
         #region Path7
         Path7[0] = AllWaypoints[7];
         Path7[1] = AllWaypoints[8];
@@ -152,7 +152,7 @@ public class Waypoints : MonoBehaviour
         Path7[6] = AllWaypoints[21];
         Path7[7] = AllWaypoints[52];
         #endregion
-        /// Arriba - Abajo - Abajo - End /// Piedra 2
+        /// Arriba - Abajo - Abajo - End /// Piedra 2---
         #region Path8
         Path8[0] = AllWaypoints[7];
         Path8[1] = AllWaypoints[8];
@@ -162,7 +162,7 @@ public class Waypoints : MonoBehaviour
         Path8[5] = AllWaypoints[21];
         Path8[6] = AllWaypoints[52];
         #endregion
-        /// Abajo - Arriba - Abajo - Abajo - End     /// Piedra 5   /// Piedra 6 
+        /// Abajo - Arriba - Abajo - Abajo - End     /// Piedra 5   /// Piedra 6 --
         #region Path9
         Path9[0] = AllWaypoints[7];
         Path9[1] = AllWaypoints[16];
@@ -174,7 +174,7 @@ public class Waypoints : MonoBehaviour
         Path9[7] = AllWaypoints[21];
         Path9[8] = AllWaypoints[52];
         #endregion 
-        /// Abajo - Arriba - Arriba - Abajo - End    /// Piedra 5 /// Piedra 6 /// Piedra 3 /// Piedra 4 
+        /// Abajo - Arriba - Arriba - Abajo - End    /// Piedra 5 /// Piedra 6 /// Piedra 3 /// Piedra 4 ---
         #region Path10
         Path10[0] = AllWaypoints[7];
         Path10[1] = AllWaypoints[16];
@@ -187,7 +187,7 @@ public class Waypoints : MonoBehaviour
         Path10[8] = AllWaypoints[21];
         Path10[9] = AllWaypoints[52];
         #endregion
-        /// Abajo - Arriba - Arriba - Arriba - End   /// Piedra 5 /// Piedra 6 /// Piedra 3
+        /// Abajo - Arriba - Arriba - Arriba - End   /// Piedra 5 /// Piedra 6 /// Piedra 3--
         #region Path11
         Path11[0] = AllWaypoints[7];
         Path11[1] = AllWaypoints[16];
@@ -201,7 +201,7 @@ public class Waypoints : MonoBehaviour
         Path11[9] = AllWaypoints[23];
         Path11[10] = AllWaypoints[52];
         #endregion
-        /// Abajo - Centro - Arriba - Abajo - End   /// Piedra 5 /// Piedra 7
+        /// Abajo - Centro - Arriba - Abajo - End   /// Piedra 5 /// Piedra 7 ---
         #region Path12
         Path12[0] = AllWaypoints[7];
         Path12[1] = AllWaypoints[16];
@@ -214,7 +214,7 @@ public class Waypoints : MonoBehaviour
         Path12[8] = AllWaypoints[21];
         Path12[9] = AllWaypoints[52];
         #endregion
-        /// Abajo - Centro - Abajo - End    /// Piedra 5
+        /// Abajo - Centro - Abajo - End    /// Piedra 5 ---
         #region Path13
         Path13[0] = AllWaypoints[7];
         Path13[1] = AllWaypoints[16];
@@ -226,7 +226,7 @@ public class Waypoints : MonoBehaviour
         Path13[7] = AllWaypoints[20];
         Path13[8] = AllWaypoints[52];
         #endregion
-        /// Abajo - Abajo - Arriba - End    /// Piedra 5/// Piedra 8
+        /// Abajo - Abajo - Arriba - End    /// Piedra 5/// Piedra 8 ---
         #region Path14
         Path14[0] = AllWaypoints[7];
         Path14[1] = AllWaypoints[16];

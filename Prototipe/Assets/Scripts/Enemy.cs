@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
     public Waypoints wp;
+    public Levels lvl;
 
     private void Awake()
     {
@@ -34,7 +35,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        wp = FindObjectOfType<Waypoints>(); 
+        wp = FindObjectOfType<Waypoints>();
+        lvl = FindObjectOfType<Levels>();
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
         //Debug.Log(transform.position);
@@ -203,6 +205,10 @@ public class Enemy : MonoBehaviour
             if (other.gameObject.name == "Start1")
             { 
                 myPath = UnityEngine.Random.Range(1, 6);
+                while (lvl.ActivePaths[myPath-1] == false)
+                {
+                    myPath = UnityEngine.Random.Range(1, 6);
+                }
                 switch (myPath)
                 {
                     case 1:
@@ -223,10 +229,15 @@ public class Enemy : MonoBehaviour
                     default:
                         break;
                 }
+
             }
             if (other.gameObject.name == "Start2")
-            { 
+            {
                 myPath = UnityEngine.Random.Range(6, 16);
+                while (lvl.ActivePaths[myPath - 1] == false)
+                {
+                    myPath = UnityEngine.Random.Range(6, 16);
+                }
                 switch (myPath)
                 {
                     case 6:
@@ -266,6 +277,10 @@ public class Enemy : MonoBehaviour
             if (other.gameObject.name == "Start3")
             {
                 myPath = UnityEngine.Random.Range(16, 23);
+                while (lvl.ActivePaths[myPath - 1] == false)
+                {
+                    myPath = UnityEngine.Random.Range(16, 23);
+                }
                 switch (myPath)
                 {
                     case 16:
@@ -296,6 +311,10 @@ public class Enemy : MonoBehaviour
             if (other.gameObject.name == "Start4")
             {
                 myPath = UnityEngine.Random.Range(23, 38);
+                while (lvl.ActivePaths[myPath - 1] == false)
+                {
+                    myPath = UnityEngine.Random.Range(23, 38);
+                }
                 switch (myPath)
                 {                    
                     case 23:
@@ -349,9 +368,12 @@ public class Enemy : MonoBehaviour
                     
             }
             if (other.gameObject.name == "Start5")
-            {
-               
+            {               
                 myPath = UnityEngine.Random.Range(38, 41);
+                while (lvl.ActivePaths[myPath - 1] == false)
+                {
+                    myPath = UnityEngine.Random.Range(38, 41);
+                }
                 switch (myPath)
                 {
                     
@@ -439,7 +461,10 @@ public class Enemy : MonoBehaviour
         if (wayPointIndex < path.Length)
         {
             wayPointIndex++;
+            if(path[wayPointIndex] != null)
+            { 
             target = path[wayPointIndex];
+            }
         }
         else
         {
