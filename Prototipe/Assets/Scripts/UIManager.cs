@@ -14,6 +14,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI lives;
     public Light Light;
     public Light day;
+    public Image Cheats;
+    public Image CheatsButtonImage;    
+    public TextMeshProUGUI CheatsText;
+    public Button CheatsButton;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -49,5 +53,19 @@ public class UIManager : MonoBehaviour
     public void finishDay()
     {
         day.enabled = false;
+    }
+    public void ShowCheats()
+    {
+        Cheats.enabled = true;
+        CheatsText.enabled = true;
+        CheatsButton.enabled = true;
+        CheatsButtonImage.enabled = true;
+    }
+    public void HideCheats()
+    {
+        Cheats.enabled = false;
+        CheatsText.enabled = false;
+        CheatsButton.enabled = false;
+        CheatsButtonImage.enabled = false;
     }
 }
