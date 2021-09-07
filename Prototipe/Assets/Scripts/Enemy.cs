@@ -437,7 +437,7 @@ public class Enemy : MonoBehaviour
 
     private void IncreaseSpeed()
     {
-        speed += 1;
+        speed += 10;
     }
 
     private void Kill()

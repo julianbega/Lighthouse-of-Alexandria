@@ -60,10 +60,12 @@ public class Levels : MonoBehaviour
                 break;
 
             case 6:
+                ClearRock(5);
                 break;
 
             case 7:
                 ActivateSpawner(1);
+              
                 break;
 
             case 8:
@@ -177,31 +179,31 @@ private void ActivateSpawner(int Index)
         {
             ActivePaths[19] = true;
             /// path 20 va
-            if (activeRocks[5])
+            if (activeRocks[5] == false)
             {
                 ActivePaths[15] = true;
                 /// path 16 va
-                if (activeRocks[2])
+                if (activeRocks[2] == false)
                 {
                     ActivePaths[17] = true;
                     /// path 18 va
-                    if (activeRocks[3])
+                    if (activeRocks[3] == false)
                     {
                         ActivePaths[16] = true;
                         /// path 17 va
                     }
                 }
             }
-            if (activeRocks[6])
+            if (activeRocks[6] == false)
             {
                 ActivePaths[18] = true;
                 /// path 19 va
             }
-            if (activeRocks[7])
+            if (activeRocks[7] == false)
             {
                 ActivePaths[20] = true;
                 /// path 21 va
-                if (activeRocks[11])
+                if (activeRocks[11] == false)
                 {
                     ActivePaths[21] = true;
                     /// path 22 va
@@ -286,7 +288,7 @@ private void ActivateSpawner(int Index)
         }
         if (activeSpawners[4] == true)
         {
-            if (activeRocks[15] == false && activeRocks[14])
+            if (activeRocks[15] == false && activeRocks[14] == false)
             {
                 ActivePaths[39] = true;
                 //Path40 va
