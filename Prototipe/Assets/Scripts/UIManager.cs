@@ -18,8 +18,10 @@ public class UIManager : MonoBehaviour
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
     public Button CheatsButton;
+    public bool LightsOnDayOff ;
     void Start()
     {
+        LightsOnDayOff = false;
         gm = FindObjectOfType<GameManager>();
         ws = FindObjectOfType<WaveSpawnerProto3>();
         lvl = FindObjectOfType<Levels>();
@@ -47,11 +49,13 @@ public class UIManager : MonoBehaviour
 
     public void StartDay()
     {
+        LightsOnDayOff = false;
         day.enabled = true;
     }
 
     public void finishDay()
     {
+        LightsOnDayOff = true ;
         day.enabled = false;
     }
     public void ShowCheats()

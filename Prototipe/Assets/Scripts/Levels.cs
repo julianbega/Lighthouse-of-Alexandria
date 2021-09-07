@@ -11,7 +11,7 @@ public class Levels : MonoBehaviour
     private bool[] activeRocks = { true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
     public int actualLvl;
     public static Action ActivateLvlSpawners;
-    public Transform[] activeSpawnStarts;
+    public List<Transform> activeSpawnStarts;
     public Transform[] allSpawners;
     public int heavyEnemies;
     public int standardEnemies;
@@ -24,7 +24,8 @@ public class Levels : MonoBehaviour
 
 
     private void Start()
-    {        
+    {
+        actualLvl = -1;
         wp = FindObjectOfType<Waypoints>();
         heavyEnemies = 0;
         standardEnemies = 0;
@@ -38,8 +39,10 @@ public class Levels : MonoBehaviour
             case 0:
                 ActivateSpawner(2);
                 standardEnemies = 1;
+                ClearRock(5);
                 break;
             case 1:
+                ActivateSpawner(1);
                 standardEnemies = 2;
                 break;
             case 2:
@@ -54,27 +57,38 @@ public class Levels : MonoBehaviour
                 break;
 
             case 4:
+                standardEnemies = 1;
+                lightEnemies = 2;
                 break;
 
             case 5:
+                standardEnemies = 0;
+                lightEnemies = 4;
                 break;
 
             case 6:
-                ClearRock(5);
+                standardEnemies = 4;
+                lightEnemies = 2;
                 break;
 
             case 7:
-                ActivateSpawner(1);
-              
+                lightEnemies = 5;       
                 break;
 
             case 8:
+                lightEnemies = 5;
+                ClearRock(6);
                 break;
 
             case 9:
+                standardEnemies = 3;
+                lightEnemies = 3;
                 break;
 
             case 10:
+                ClearRock(2);
+                standardEnemies = 3;
+                lightEnemies = 4;
                 break;
             default:
                 break;
@@ -86,17 +100,10 @@ private void ActivateSpawner(int Index)
     {
         activeSpawners[Index] = true;
         allSpawners[Index].gameObject.SetActive(true);
-        Debug.Log(activeSpawnStarts.Length);
-        Transform[] aux = activeSpawnStarts;
-        activeSpawnStarts = new Transform[activeSpawnStarts.Length + 1];
-        activeSpawnStarts[activeSpawnStarts.Length - 1] = allSpawners[Index];
-        for (int i = 0; i < aux.Length; i++)
-        {
-            Debug.Log(activeSpawnStarts[i]);
-            activeSpawnStarts[i] = aux[i];
-        }
+        //---------------------------------------------------//
+       
+        activeSpawnStarts.Add (allSpawners[Index]);       
 
-            //+= allSpawners[Index];
     }
 
     private void ClearRock(int Index)

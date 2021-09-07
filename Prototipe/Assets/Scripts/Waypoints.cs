@@ -55,8 +55,6 @@ public class Waypoints : MonoBehaviour
         lvl = FindObjectOfType<Levels>();
         AllWaypoints = new Transform[father.childCount+1];
         AllWaypoints[0] = father;
-        Debug.Log("father" + (father.childCount + 1));
-        Debug.Log("father" + (AllWaypoints.Length + 1));
         for (int i = 1; i <= AllWaypoints.Length-1 ; i++)
         {
             AllWaypoints[i] = father.GetChild(i-1);
