@@ -39,10 +39,8 @@ public class Levels : MonoBehaviour
             case 0:
                 ActivateSpawner(2);
                 standardEnemies = 1;
-                ClearRock(5);
                 break;
             case 1:
-                ActivateSpawner(1);
                 standardEnemies = 2;
                 break;
             case 2:
@@ -64,6 +62,7 @@ public class Levels : MonoBehaviour
             case 5:
                 standardEnemies = 0;
                 lightEnemies = 4;
+                ClearRock(5);
                 break;
 
             case 6:
@@ -72,6 +71,8 @@ public class Levels : MonoBehaviour
                 break;
 
             case 7:
+                standardEnemies = 0;
+                ActivateSpawner(1);
                 lightEnemies = 5;       
                 break;
 

@@ -9,7 +9,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;
     public GameObject LightEnemyPrefab;
-    public UIManager lights;
 
     private Levels lvl;
     public float timeBetweenWaves;
@@ -19,6 +18,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
     [SerializeField]
     private int waveCount = 0;
     public int enemyCount;
+    private GameManager gm;
+
 
     private bool startWave;
 
@@ -28,7 +29,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Start()
     {
-        lights = FindObjectOfType<UIManager>();
+        gm = FindObjectOfType<GameManager>();
         lvl = GetComponent<Levels>();
         WaveManager.StartWaveEvent += StartWaveCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
@@ -39,11 +40,13 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Update()
     {
-        if (enemyCount <=0)
+        if (enemyCount <= 0)
         {
-            if (lights.LightsOnDayOff)
-            lights.StartDay();
-            lights.Lightoff();
+            if (gm.LightsOnDayOff)
+            {
+                gm.StartDay();
+                gm.Lightoff();
+            }
         }
         if (waveCount >= waveLimit)
             winGameEvent?.Invoke();
@@ -53,9 +56,14 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     void StartWaveCycle()
     {
-        lvl.actualLvl++;
-        lvl.startLvl();
-        StartCoroutine(SpawnWave());
+        if (enemyCount <= 0)
+        {
+            gm.finishDay();
+            gm.LightOn();
+            lvl.actualLvl++;
+            lvl.startLvl();
+            StartCoroutine(SpawnWave());
+        }
     }
 
     IEnumerator SpawnWave()

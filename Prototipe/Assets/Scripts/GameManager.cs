@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour
 
     public int gainPerKill;
 
+    public Light Light;
+    public Light day;
     private WaveSpawnerProto3 ws;
     private Levels lvl;
+    public bool LightsOnDayOff;
     void Start()
     {
+        LightsOnDayOff = false;
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney;
         FreeEnemy.SubtractLives += SubtractLives;
@@ -58,5 +62,27 @@ public class GameManager : MonoBehaviour
     public void SubtractLives()
     {
         lives--;
+    }
+
+    public void LightOn()
+    {
+        Light.gameObject.SetActive(true);
+    }
+
+    public void Lightoff()
+    {
+        Light.gameObject.SetActive(false);
+    }
+
+    public void StartDay()
+    {
+        LightsOnDayOff = false;
+        day.gameObject.SetActive(true);
+    }
+
+    public void finishDay()
+    {
+        LightsOnDayOff = true;
+        day.gameObject.SetActive(false);
     }
 }

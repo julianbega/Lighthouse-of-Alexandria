@@ -39039,13 +39039,10 @@ MonoBehaviour:
   money: {fileID: 1968414298}
   wave: {fileID: 347512910}
   lives: {fileID: 2107276833}
-  Light: {fileID: 829211257}
-  day: {fileID: 1528231184}
   Cheats: {fileID: 296384442}
   CheatsButtonImage: {fileID: 220195589}
   CheatsText: {fileID: 1297297453}
   CheatsButton: {fileID: 220195586}
-  LightsOnDayOff: 0
 --- !u!114 &1577804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45580,6 +45577,9 @@ MonoBehaviour:
   money: 1000
   lives: 5
   gainPerKill: 333
+  Light: {fileID: 829211257}
+  day: {fileID: 1528231184}
+  LightsOnDayOff: 0
 --- !u!4 &1847785815
 Transform:
   m_ObjectHideFlags: 0
@@ -45630,7 +45630,6 @@ MonoBehaviour:
     type: 3}
   LightEnemyPrefab: {fileID: 7901156221061492026, guid: fbdfcf6d3f26b204d9ce5a1183cd1387,
     type: 3}
-  lights: {fileID: 0}
   timeBetweenWaves: 0.5
   maxCantOfEnemiesPerWave: 5
   waveIsInCourse: 0

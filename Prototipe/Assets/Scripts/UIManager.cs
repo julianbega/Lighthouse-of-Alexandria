@@ -12,16 +12,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
     public TextMeshProUGUI lives;
-    public Light Light;
-    public Light day;
     public Image Cheats;
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
     public Button CheatsButton;
-    public bool LightsOnDayOff ;
     void Start()
     {
-        LightsOnDayOff = false;
+        
         gm = FindObjectOfType<GameManager>();
         ws = FindObjectOfType<WaveSpawnerProto3>();
         lvl = FindObjectOfType<Levels>();
@@ -37,27 +34,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void LightOn()
-    {
-        Light.enabled = true;
-    }
-
-    public void Lightoff()
-    {
-        Light.enabled = false;
-    }
-
-    public void StartDay()
-    {
-        LightsOnDayOff = false;
-        day.enabled = true;
-    }
-
-    public void finishDay()
-    {
-        LightsOnDayOff = true ;
-        day.enabled = false;
-    }
+    
     public void ShowCheats()
     {
         Cheats.enabled = true;
