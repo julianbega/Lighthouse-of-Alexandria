@@ -40,14 +40,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private void Update()
     {
-        if (enemyCount <= 0)
-        {
-            if (gm.LightsOnDayOff)
-            {
-                gm.StartDay();
-                gm.Lightoff();
-            }
-        }
+       
         if (waveCount >= waveLimit)
             winGameEvent?.Invoke();
         //Debug.Log("enemyCount: " + enemyCount);
@@ -111,6 +104,14 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         if (enemyCount >= 0)
             enemyCount--;
+        if (enemyCount <= 0)
+        {
+            if (gm.LightsOnDayOff)
+            {
+                gm.StartDay();
+                gm.Lightoff();
+            }
+        }
     }
 
     public int GetWaveCount()

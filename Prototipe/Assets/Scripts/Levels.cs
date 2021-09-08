@@ -103,8 +103,8 @@ private void ActivateSpawner(int Index)
         allSpawners[Index].gameObject.SetActive(true);
         //---------------------------------------------------//
        
-        activeSpawnStarts.Add (allSpawners[Index]);       
-
+        activeSpawnStarts.Add (allSpawners[Index]);
+        activatePaths();
     }
 
     private void ClearRock(int Index)

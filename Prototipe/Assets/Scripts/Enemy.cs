@@ -190,11 +190,7 @@ public class Enemy : MonoBehaviour
                 break;
 
         }
-        /*if (wayPointIndex < wp.Length)
-        {
-            wayPointIndex++;
-        }*/
-        //target = Waypoints.enemyMovmentPoints[wavePointIndex];
+
     }
 
     private void OnTriggerEnter(Collider other)
