@@ -24,7 +24,7 @@ public class UIShop : MonoBehaviour
     public void BuyTurret1()
     {
         GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
-        if (gm.GetMoney() >= 10)
+        if (gm.GetMoney() >= 10 && turretToBuild.gameObject.GetComponent<Turret>().unlocked)
         {
             BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);

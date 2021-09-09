@@ -23431,7 +23431,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859030358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577804618}
+        m_MethodName: CloseLibraryPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &859030358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39432,7 +39443,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1532820184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577804618}
+        m_MethodName: UnlockTurretOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1532820184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40396,6 +40418,7 @@ GameObject:
   - component: {fileID: 1577804615}
   - component: {fileID: 1577804616}
   - component: {fileID: 1577804617}
+  - component: {fileID: 1577804618}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -40539,6 +40562,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopPanel: {fileID: 1107044764}
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &1577804618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577804610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef21c71768f6620458f4247706297b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  LibraryPanel: {fileID: 53767332}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
