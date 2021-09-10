@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
         FreeEnemy.GainMoney += AddMoney;
         ws = GetComponent<WaveSpawnerProto3>();
         lvl = GetComponent<Levels>();
-        WaveSpawnerProto3.winGameEvent += Win;
         // Node.GetMoney += getMoney;
     }
     private void Update()
@@ -36,7 +35,6 @@ public class GameManager : MonoBehaviour
         Enemy.GainMoney -= AddMoney;
         FreeEnemy.SubtractLives -= SubtractLives;
         FreeEnemy.GainMoney -= AddMoney;
-        WaveSpawnerProto3.winGameEvent -= Win;
     }
 
     public void Win()
@@ -66,12 +64,12 @@ public class GameManager : MonoBehaviour
 
     public void LightOn()
     {
-        Light.gameObject.SetActive(true);
+        Light.enabled = true;
     }
 
     public void Lightoff()
     {
-        Light.gameObject.SetActive(false);
+        Light.enabled = false;
     }
 
     public void StartDay()

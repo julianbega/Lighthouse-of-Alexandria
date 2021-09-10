@@ -4,7 +4,6 @@ using System;
 public class WaveManager : MonoBehaviour
 {
     static public event Action StartWaveEvent;
-    static public event Action NextWave;
     void Start()
     {
         

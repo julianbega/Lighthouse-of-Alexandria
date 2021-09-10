@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         money.text = "Money: " + gm.GetMoney();
-        wave.text = "Wave: " + ws.GetWaveCount();
+        wave.text = "Wave: " + lvl.GetActualWave();
         lives.text = "Lives: " + gm.GetLives();
 
     }

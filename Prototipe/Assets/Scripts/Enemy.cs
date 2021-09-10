@@ -197,7 +197,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Start"))
         {
-            Debug.Log("está en start " + other.gameObject.name);
             if (other.gameObject.name == "Start1")
             { 
                 myPath = UnityEngine.Random.Range(1, 6);

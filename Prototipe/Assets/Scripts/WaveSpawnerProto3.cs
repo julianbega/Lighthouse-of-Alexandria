@@ -14,78 +14,74 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public float timeBetweenWaves;
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
-    public int waveLimit;
-    [SerializeField]
-    private int waveCount = 0;
     public int enemyCount;
     private GameManager gm;
-
-
-    private bool startWave;
-
-    static public event Action winGameEvent;
-
-    
+ 
 
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
         lvl = GetComponent<Levels>();
-        WaveManager.StartWaveEvent += StartWaveCycle;
+        WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
-        startWave = false;
     }
 
     private void Update()
     {
        
-        if (waveCount >= waveLimit)
-            winGameEvent?.Invoke();
-        //Debug.Log("enemyCount: " + enemyCount);
-        //Debug.Log("waves: " + waveCount);
+      
     }
 
-    void StartWaveCycle()
+    void StartLvlCycle()
     {
         if (enemyCount <= 0)
-        {
+        {            
             gm.finishDay();
             gm.LightOn();
-            lvl.actualLvl++;
-            lvl.startLvl();
+            lvl.ResetActualWave();
+            lvl.IncreaseLVL();
+            lvl.FindLvlInformation();
             StartCoroutine(SpawnWave());
         }
     }
 
     IEnumerator SpawnWave()
     {
-        for (int i = 0; i < lvl.standardEnemies; i++)
+        while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
-        }
-        for (int i = 0; i < lvl.heavyEnemies; i++)
-        {
-            SpawnHeavyEnemy();
-            yield return new WaitForSeconds(1.0f);
-        }
-        for (int i = 0; i < lvl.lightEnemies; i++)
-        {
-            SpawnLightEnemy();
-            yield return new WaitForSeconds(0.25f);
-        }
+            Debug.Log("total and actual waves are ecual: " + lvl.CompareActualWaveAndTotalWavesAreEquals());
+            Debug.Log("actual wave: " + lvl.GetActualWave());
+            Debug.Log("total waves: " + lvl.GetTotalWaves());
+            lvl.FindEnemiesSpawnInformation();
+            for (int i = 0; i < lvl.GetStandardEnemies(); i++)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(0.75f);
+            }
+            for (int i = 0; i < lvl.GetHeavyEnemies(); i++)
+            {
+                SpawnHeavyEnemy();
+                yield return new WaitForSeconds(1.0f);
+            }
+            for (int i = 0; i < lvl.GetLightEnemies(); i++)
+            {
+                SpawnLightEnemy();
+                yield return new WaitForSeconds(0.5f);
+            }
+            lvl.IncreaseActualWave();
+            Debug.Log("actual wave post spawn: " + lvl.GetActualWave());
+            yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
 
+        }
     }
 
     void SpawnEnemy()
     {
         enemyCount++;
         int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
-        Debug.Log("llega");
         Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
-        Debug.Log("llega2");
     }
     void SpawnHeavyEnemy()
     {
@@ -114,14 +110,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
         }
     }
 
-    public int GetWaveCount()
-    {
-        return waveCount;
-    }
-
+   
     private void OnDisable()
     {
-        WaveManager.StartWaveEvent -= StartWaveCycle;
+        WaveManager.StartWaveEvent -= StartLvlCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
         FreeEnemy.EnemyDie -= DecreaseEnemyCount;
     }

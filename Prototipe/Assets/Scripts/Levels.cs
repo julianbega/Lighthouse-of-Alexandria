@@ -9,15 +9,17 @@ public class Levels : MonoBehaviour
     private Waypoints wp;
     private bool[] activeSpawners = { false, false, false, false, false };
     private bool[] activeRocks = { true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
-    public int actualLvl;
+    private int actualLvl;
     public static Action ActivateLvlSpawners;
     public List<Transform> activeSpawnStarts;
     public Transform[] allSpawners;
-    public int heavyEnemies;
-    public int standardEnemies;
-    public int lightEnemies;
-    ///public Transform[][] ActivePaths;
-    ///
+    [SerializeField]private int heavyEnemies;
+    [SerializeField] private int standardEnemies;
+    [SerializeField] private int lightEnemies;
+
+    private int totalWaves;
+    private int actualWave;
+    private float timeBetweenWaves;
     public bool[] ActivePaths = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
 
@@ -32,72 +34,107 @@ public class Levels : MonoBehaviour
         lightEnemies = 0;
         activatePaths();
     }
-    public void startLvl()
-    {
+    public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
+    {        
         switch (actualLvl)
         {
             case 0:
                 ActivateSpawner(2);
-                standardEnemies = 1;
+                totalWaves = 2;
+                timeBetweenWaves = 4f;
                 break;
             case 1:
-                standardEnemies = 2;
                 break;
             case 2:
-                standardEnemies = 1;
-                lightEnemies = 1;
                 break;
 
             case 3:
                 ClearRock(7);
-                standardEnemies = 0;
-                lightEnemies = 2;
                 break;
 
             case 4:
-                standardEnemies = 1;
-                lightEnemies = 2;
                 break;
 
             case 5:
-                standardEnemies = 0;
-                lightEnemies = 4;
                 ClearRock(5);
                 break;
 
             case 6:
-                standardEnemies = 4;
-                lightEnemies = 2;
                 break;
 
             case 7:
-                standardEnemies = 0;
-                ActivateSpawner(1);
-                lightEnemies = 5;       
+                ActivateSpawner(1);  
                 break;
 
             case 8:
-                lightEnemies = 5;
                 ClearRock(6);
                 break;
 
             case 9:
-                standardEnemies = 3;
-                lightEnemies = 3;
                 break;
 
             case 10:
                 ClearRock(2);
-                standardEnemies = 3;
-                lightEnemies = 4;
+                break;
+            default:
+                break;
+        }
+    }
+    public void FindEnemiesSpawnInformation() /// setea cuantos y cuales enemigos va a haber en cada wave en cada lvl
+    {
+        switch (actualLvl)
+        {
+            case 0: 
+                switch (actualWave)
+                {
+                    case 0:
+                        heavyEnemies = 0;
+                        standardEnemies = 1;
+                        lightEnemies = 0;
+                        break;
+                    case 1:
+                        heavyEnemies = 0;
+                        standardEnemies = 0;
+                        lightEnemies = 1;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 1:                
+                break;
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
+
+            case 7:
+                break;
+
+            case 8:
+                break;
+
+            case 9:
+                break;
+
+            case 10:
                 break;
             default:
                 break;
         }
     }
 
-
-private void ActivateSpawner(int Index)
+    private void ActivateSpawner(int Index)
     {
         activeSpawners[Index] = true;
         allSpawners[Index].gameObject.SetActive(true);
@@ -313,5 +350,51 @@ private void ActivateSpawner(int Index)
             }
 
         }
+    }
+
+
+    public int GetStandardEnemies()
+    {
+        return standardEnemies;
+    }
+    public int GetLightEnemies()
+    {
+        return lightEnemies;
+    }
+    public int GetHeavyEnemies()
+    {
+        return heavyEnemies;
+    }
+    public int GetActualLVL()
+    {
+        return actualLvl;
+    }
+    public void IncreaseLVL()
+    {
+        actualLvl++;
+    }
+    public int GetActualWave()
+    {
+        return actualWave;
+    }
+    public void IncreaseActualWave()
+    {
+        actualWave++;
+    }
+    public void ResetActualWave()
+    {
+        actualWave = 0;
+    }
+    public int GetTotalWaves()
+    {
+        return totalWaves;
+    }
+    public bool CompareActualWaveAndTotalWavesAreEquals()
+    {
+        return ((totalWaves == actualWave));
+    }
+    public float GetTimeBetweenWaves()
+    {
+        return timeBetweenWaves;
     }
 }
