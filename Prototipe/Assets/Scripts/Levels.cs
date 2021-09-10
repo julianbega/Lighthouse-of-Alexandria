@@ -17,6 +17,9 @@ public class Levels : MonoBehaviour
     [SerializeField] private int standardEnemies;
     [SerializeField] private int lightEnemies;
 
+
+    public static Action SetDayOn;
+    public static Action SetNightOn;
     private int totalWaves;
     private int actualWave;
     private float timeBetweenWaves;
@@ -35,10 +38,12 @@ public class Levels : MonoBehaviour
         activatePaths();
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
-    {        
+    {
+        StartNight();
         switch (actualLvl)
         {
             case 0:
+                StartDay();
                 ActivateSpawner(2);
                 totalWaves = 2;
                 timeBetweenWaves = 4f;
@@ -396,5 +401,13 @@ public class Levels : MonoBehaviour
     public float GetTimeBetweenWaves()
     {
         return timeBetweenWaves;
+    }
+    public void StartDay()
+    {
+       SetDayOn?.Invoke();
+    }
+    public void StartNight()
+    {
+        SetNightOn?.Invoke();
     }
 }

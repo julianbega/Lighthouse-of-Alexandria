@@ -10,35 +10,31 @@ public class GameManager : MonoBehaviour
 
     public Light Light;
     public Light day;
-    private WaveSpawnerProto3 ws;
     private Levels lvl;
-    public bool LightsOnDayOff;
+
     void Start()
     {
-        LightsOnDayOff = false;
+        lvl = FindObjectOfType<Levels>();
         Enemy.SubtractLives += SubtractLives;
-        Enemy.GainMoney += AddMoney;
+        Enemy.GainMoney += AddMoney; 
+        Levels.SetNightOn += SetNight;
+        Levels.SetDayOn += SetDay;
         FreeEnemy.SubtractLives += SubtractLives;
         FreeEnemy.GainMoney += AddMoney;
-        ws = GetComponent<WaveSpawnerProto3>();
-        lvl = GetComponent<Levels>();
         // Node.GetMoney += getMoney;
+
     }
-    private void Update()
-    {
-        if (lives <= 0)
-            SceneManager.LoadScene("Prototype3");
-    }
+    
+
     private void OnDisable()
     {
         Enemy.SubtractLives -= SubtractLives;
         Enemy.GainMoney -= AddMoney;
         FreeEnemy.SubtractLives -= SubtractLives;
         FreeEnemy.GainMoney -= AddMoney;
-    }
-
-    public void Win()
-    {
+        Levels.SetNightOn -= SetNight;
+        Levels.SetDayOn -= SetDay;
+       
     }
 
     public int GetMoney()
@@ -61,26 +57,19 @@ public class GameManager : MonoBehaviour
     {
         lives--;
     }
-
-    public void LightOn()
+    public void SetNight()
     {
+        if(lvl.GetActualLVL()<= 0)
+        { 
+        day.gameObject.SetActive(false);
         Light.enabled = true;
+        }
     }
-
-    public void Lightoff()
+    public void SetDay()
     {
+        day.gameObject.SetActive(true);
         Light.enabled = false;
     }
+  
 
-    public void StartDay()
-    {
-        LightsOnDayOff = false;
-        day.gameObject.SetActive(true);
-    }
-
-    public void finishDay()
-    {
-        LightsOnDayOff = true;
-        day.gameObject.SetActive(false);
-    }
 }

@@ -15,12 +15,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
     public int enemyCount;
-    private GameManager gm;
  
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
         lvl = GetComponent<Levels>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
@@ -28,18 +26,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
         enemyCount = 0;
     }
 
-    private void Update()
-    {
-       
-      
-    }
-
     void StartLvlCycle()
     {
         if (enemyCount <= 0)
-        {            
-            gm.finishDay();
-            gm.LightOn();
+        {    
             lvl.ResetActualWave();
             lvl.IncreaseLVL();
             lvl.FindLvlInformation();
@@ -51,9 +41,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
-            Debug.Log("total and actual waves are ecual: " + lvl.CompareActualWaveAndTotalWavesAreEquals());
-            Debug.Log("actual wave: " + lvl.GetActualWave());
-            Debug.Log("total waves: " + lvl.GetTotalWaves());
             lvl.FindEnemiesSpawnInformation();
             for (int i = 0; i < lvl.GetStandardEnemies(); i++)
             {
@@ -71,7 +58,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
             lvl.IncreaseActualWave();
-            Debug.Log("actual wave post spawn: " + lvl.GetActualWave());
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
 
         }
@@ -102,11 +88,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
             enemyCount--;
         if (enemyCount <= 0)
         {
-            if (gm.LightsOnDayOff)
-            {
-                gm.StartDay();
-                gm.Lightoff();
-            }
+            
         }
     }
 
