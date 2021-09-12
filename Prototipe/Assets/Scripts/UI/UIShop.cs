@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class UIShop : MonoBehaviour
 {
     public GameObject ShopPanel;
     public Vector3 offset;
     private GameManager gm;
+    public Library library;
+    public List<GameObject> turrets = new List<GameObject>();
+    public List<GameObject> buyTurretButtons = new List<GameObject>();
     void Start()
     {
         Node.OpenShop += ActivateShopPanel;
@@ -61,8 +66,21 @@ public class UIShop : MonoBehaviour
         }
     }
 
+    public void ShowTurret()
+    {
+        for(int i = 0; i < turrets.Count; i++)
+        {
+            if (library.turretUnlocked[i] && !turrets[i].gameObject.activeSelf)
+            {
+                turrets[i].gameObject.SetActive(true);
+                buyTurretButtons[i].gameObject.SetActive(true);
+            }
+        }   
+    }
+
     private void ActivateShopPanel()
     {
+        ShowTurret();
         ShopPanel.gameObject.SetActive(true);
     }
 
