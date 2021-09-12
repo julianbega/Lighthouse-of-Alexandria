@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
     public Button CheatsButton;
+    public bool canOpenShop;
     void Start()
     {
         
@@ -48,5 +49,15 @@ public class UIManager : MonoBehaviour
         CheatsText.enabled = false;
         CheatsButton.enabled = false;
         CheatsButtonImage.enabled = false;
+    }
+
+    public void CanOpenShopTrue()
+    {
+        canOpenShop = true;
+    }
+
+    public void CanOpenShopFlase()
+    {
+        canOpenShop = false;
     }
 }

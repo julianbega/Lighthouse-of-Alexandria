@@ -7,6 +7,7 @@ public class UILibrary : MonoBehaviour
     public GameObject LibraryPanel;
     static public event Action UnlockTurretOneEvent;
     public Library library;
+    public UIManager uiManager;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -21,11 +22,13 @@ public class UILibrary : MonoBehaviour
     public void ActivateLibraryPanel()
     {
         LibraryPanel.gameObject.SetActive(true);
+        uiManager.CanOpenShopFlase();
     }
 
     public void CloseLibraryPanel()
     {
         LibraryPanel.gameObject.SetActive(false);
+        uiManager.CanOpenShopTrue();
     }
 
     public void UnlockTurret(int index)

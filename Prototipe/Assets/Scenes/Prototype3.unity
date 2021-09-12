@@ -6694,6 +6694,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: CanOpenShopTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &220195587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11175,6 +11186,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1577804616}
         m_MethodName: ShowCheats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: CanOpenShopFlase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40718,6 +40740,7 @@ MonoBehaviour:
   CheatsButtonImage: {fileID: 220195589}
   CheatsText: {fileID: 1297297453}
   CheatsButton: {fileID: 220195586}
+  canOpenShop: 1
 --- !u!114 &1577804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40744,6 +40767,7 @@ MonoBehaviour:
   - {fileID: 1187419797}
   - {fileID: 1095618234}
   - {fileID: 955015048}
+  uiManager: {fileID: 1577804616}
 --- !u!114 &1577804618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40759,6 +40783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LibraryPanel: {fileID: 53767332}
   library: {fileID: 1587736456}
+  uiManager: {fileID: 1577804616}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56618,6 +56643,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6000595289289830077, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000595289289830077, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CanOpenShopTrue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000595289289830077, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6000595289391495209, guid: 04aa5008783de5e4f9e896008987e561,
         type: 3}
       propertyPath: m_Color.b
@@ -56728,6 +56768,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 6000595289665233694, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000595289665233694, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CanOpenShopFlase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000595289665233694, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6000595289665284637, guid: 04aa5008783de5e4f9e896008987e561,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -56833,6 +56888,11 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1847785814}
+    - target: {fileID: 6000595290582951671, guid: 04aa5008783de5e4f9e896008987e561,
+        type: 3}
+      propertyPath: canOpenShop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6000595290582951673, guid: 04aa5008783de5e4f9e896008987e561,
         type: 3}
       propertyPath: m_Pivot.x

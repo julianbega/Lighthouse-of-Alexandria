@@ -10,6 +10,7 @@ public class UIShop : MonoBehaviour
     public Library library;
     public List<GameObject> turrets = new List<GameObject>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
+    public UIManager uiManager;
     void Start()
     {
         Node.OpenShop += ActivateShopPanel;
@@ -24,6 +25,7 @@ public class UIShop : MonoBehaviour
     public void CloseShop()
     {
         ShopPanel.gameObject.SetActive(false);
+        uiManager.CanOpenShopTrue();
     }
 
     public void BuyTurret1()
@@ -81,7 +83,9 @@ public class UIShop : MonoBehaviour
     private void ActivateShopPanel()
     {
         ShowTurret();
-        ShopPanel.gameObject.SetActive(true);
+        if(uiManager.canOpenShop)
+            ShopPanel.gameObject.SetActive(true);
+        uiManager.CanOpenShopFlase();
     }
 
     private void OnDisable()
