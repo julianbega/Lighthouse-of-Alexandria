@@ -402,6 +402,8 @@ MonoBehaviour:
     type: 3}
   cannonBallSpawn: {fileID: 2875308949640464870}
   turnSpeed: 5
+  price: 0
+  unlocked: 0
 --- !u!1 &3049461916471045824
 GameObject:
   m_ObjectHideFlags: 0

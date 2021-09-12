@@ -41,7 +41,7 @@ public class Node : MonoBehaviour
             Debug.Log("not Buildable");
             return;
         }
-
+        
         OpenShop?.Invoke();
         BuildManager.instance.actualNode = this;
         

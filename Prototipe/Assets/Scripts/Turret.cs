@@ -19,22 +19,12 @@ public class Turret : MonoBehaviour
     public float turnSpeed = 10.0f;
 
     public int price;
-    public enum Type
-    {
-        One,
-        Two,
-        Three,
-        Four
-    }
-    public Type type;
-    public bool unlocked;
 
     void Start()
     {
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
-        //UILibrary.UnlockTurretOneEvent += UnlockTurret;
-        unlocked = false;
+        UILibrary.UnlockTurretOneEvent += UnlockTurretOne;
     }
 
     void Update()
@@ -108,13 +98,13 @@ public class Turret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    private void UnlockTurret()
+    private void UnlockTurretOne()
     {
-        unlocked = true;
+        Debug.Log("Se desbloqueo esta wea");
     }
 
     private void OnDisable()
     {
-       // UILibrary.UnlockTurretOneEvent -= UnlockTurret;
+       UILibrary.UnlockTurretOneEvent -= UnlockTurretOne;
     }
 }

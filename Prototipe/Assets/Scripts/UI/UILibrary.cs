@@ -4,15 +4,12 @@ using System;
 public class UILibrary : MonoBehaviour
 {
     private GameManager gm;
-    public Turret turret;
-
     public GameObject LibraryPanel;
-
-    //static public event Action UnlockTurretOneEvent;
+    static public event Action UnlockTurretOneEvent;
+    public Library library;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        turret = FindObjectOfType<Turret>();
         Library.OpenLibrary += ActivateLibraryPanel;
     }
 
@@ -23,12 +20,17 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel()
     {
-        LibraryPanel.SetActive(true);
+        LibraryPanel.gameObject.SetActive(true);
     }
 
     public void CloseLibraryPanel()
     {
-        LibraryPanel.SetActive(false);
+        LibraryPanel.gameObject.SetActive(false);
+    }
+
+    public void UnlockTurret(int index)
+    {
+        library.turretUnlocked[index] = true;
     }
 
     private void OnDisable()
