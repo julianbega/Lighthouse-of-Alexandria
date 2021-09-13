@@ -19,6 +19,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private UIManager uim;
 
+    public static Action ShowNPC;
+
     private void Start()
     {
         lvl = GetComponent<Levels>();
@@ -97,6 +99,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
         if (enemyCount <= 0 && spawnsAreFinished)
         {
             lvl.StartDay();
+            /// Evento de intercambio entre flow de defensa y de managmente (sacar las vidas y poner la plata)
+            // aparece el npc
+            Debug.Log("Llama al invoke 1");
+            ShowNPC?.Invoke();
             uim.CanOpenShopTrue();
         }
     }

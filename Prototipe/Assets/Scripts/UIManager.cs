@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameManager gm;
     public Levels lvl;
+    private NPCsImages npcs;
     public WaveSpawnerProto3 ws;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
@@ -17,14 +18,24 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CheatsText;
     public Button CheatsButton;
     public bool canOpenShop;
+    public GameObject NPC;
+    public TextMeshProUGUI NPCDialoge;
+    public Image NPCImage;
+    public Image DialogeBackground;
+    public GameObject startWave;
     void Start()
     {
         
         gm = FindObjectOfType<GameManager>();
         ws = FindObjectOfType<WaveSpawnerProto3>();
         lvl = FindObjectOfType<Levels>();
+        npcs = FindObjectOfType<NPCsImages>();
+        Levels.ShowNPCs += NPCTalk;
     }
-
+    private void OnDisable()
+    {
+        Levels.ShowNPCs -= NPCTalk;
+    }
 
     // Update is called once per frame
     void Update()
@@ -59,5 +70,33 @@ public class UIManager : MonoBehaviour
     public void CanOpenShopFlase()
     {
         canOpenShop = false;
+    }
+
+    private void NPCTalk(int npcIndex, string Dialoge)
+    {
+        Debug.Log("Llega a la parte de UI");
+        if (npcIndex != 0)
+        {
+            NPC.SetActive(true);
+            HideStartWave();
+            CanOpenShopFlase();
+        }
+        NPCImage.sprite = npcs.SelectNPC(npcIndex);
+        DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
+        NPCDialoge.text = Dialoge;
+    }
+
+    public void CloseNPCTalk()
+    {
+        NPC.SetActive(false);
+    }
+
+    public void HideStartWave()
+    {
+        startWave.SetActive(false);
+    }
+    public void ShowStartWave()
+    {
+        startWave.SetActive(true);
     }
 }

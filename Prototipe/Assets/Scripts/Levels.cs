@@ -25,17 +25,24 @@ public class Levels : MonoBehaviour
     private float timeBetweenWaves;
     public bool[] ActivePaths = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
-
+    public static Action<int, string> ShowNPCs;
+    private int NPCToTalk;
+    private string Dialog;
 
 
     private void Start()
     {
+        WaveSpawnerProto3.ShowNPC += InvokeNPCShow;
         actualLvl = -1;
         wp = FindObjectOfType<Waypoints>();
         heavyEnemies = 0;
         standardEnemies = 0;
         lightEnemies = 0;
         activatePaths();
+    }
+    private void OnDisable()
+    {
+        WaveSpawnerProto3.ShowNPC -= InvokeNPCShow;
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
@@ -47,6 +54,8 @@ public class Levels : MonoBehaviour
                 ActivateSpawner(2);
                 totalWaves = 2;
                 timeBetweenWaves = 4f;
+                NPCToTalk = 1;
+                Dialog = "HOLA K ACE";
                 break;
             case 1:
                 break;
@@ -411,5 +420,10 @@ public class Levels : MonoBehaviour
     {
         itIsDay = false;
         SetNightOn?.Invoke();
+    }
+    public void InvokeNPCShow()
+    {
+        Debug.Log("Llama al invoke 2");
+        ShowNPCs?.Invoke(NPCToTalk,Dialog);
     }
 }
