@@ -58,11 +58,18 @@ public class Levels : MonoBehaviour
                 Dialog = "HOLA K ACE";
                 break;
             case 1:
+                NPCToTalk = 0;
+                Dialog = "";
                 break;
             case 2:
+
+                NPCToTalk = 2;
+                Dialog = "Una piedra está por colapsar";
                 break;
 
             case 3:
+                NPCToTalk = 0;
+                Dialog = "";
                 ClearRock(7);
                 break;
 
@@ -74,10 +81,15 @@ public class Levels : MonoBehaviour
                 break;
 
             case 6:
+                NPCToTalk = 3;
+                Dialog = "Va a venir otra flota de barcos";
                 break;
 
             case 7:
-                ActivateSpawner(1);  
+                NPCToTalk = 0;
+                Dialog = "";
+                ActivateSpawner(1);
+
                 break;
 
             case 8:
@@ -102,40 +114,140 @@ public class Levels : MonoBehaviour
                 switch (actualWave)
                 {
                     case 0:
-                        heavyEnemies = 0;
                         standardEnemies = 1;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 1:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 2;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 2:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 1;
+                        lightEnemies = 1;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case 3:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 2;
                         lightEnemies = 0;
                         break;
                     case 1:
-                        heavyEnemies = 0;
                         standardEnemies = 0;
+                        lightEnemies = 2;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case 4:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 1;
+                        lightEnemies = 1;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
                         lightEnemies = 1;
                         break;
                     default:
                         break;
                 }
                 break;
-            case 1:                
-                break;
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
 
             case 5:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 1;
+                        lightEnemies = 1;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
+                        lightEnemies = 2;
+                        break;
+                    default:
+                        break;
+                }
                 break;
 
             case 6:
+                switch (actualWave)
+                {
+                    case 0:
+                        standardEnemies = 1;
+                        lightEnemies = 2;
+                        break;
+                    case 1:
+                        standardEnemies = 1;
+                        lightEnemies = 2;
+                        break;
+                    default:
+                        break;
+                }
                 break;
 
             case 7:
+                switch (actualWave)
+                {
+                    case 0:
+                        heavyEnemies = 1;
+                        standardEnemies = 1;
+                        lightEnemies = 0;
+                        break;
+                    case 1:
+                        heavyEnemies = 0;
+                        standardEnemies = 0;
+                        lightEnemies = 3;
+                        break;
+                    default:
+                        break;
+                }
                 break;
 
             case 8:
+                switch (actualWave)
+                {
+                    case 0:
+                        heavyEnemies = 0;
+                        standardEnemies = 1;
+                        lightEnemies = 3;
+                        break;
+                    case 1:
+                        standardEnemies = 2;
+                        lightEnemies = 2;
+                        break;
+                    default:
+                        break;
+                }
                 break;
 
             case 9:
