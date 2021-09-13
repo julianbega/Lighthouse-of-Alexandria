@@ -15,15 +15,19 @@ public class WaveSpawnerProto3 : MonoBehaviour
     public int maxCantOfEnemiesPerWave;
     public bool waveIsInCourse;
     public int enemyCount;
- 
+    private bool spawnsAreFinished;
+
+    private UIManager uim;
 
     private void Start()
     {
         lvl = GetComponent<Levels>();
+        uim = FindObjectOfType<UIManager>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
+        spawnsAreFinished = true;
     }
 
     void StartLvlCycle()
@@ -41,6 +45,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
+
+            spawnsAreFinished = false;
             lvl.FindEnemiesSpawnInformation();
             for (int i = 0; i < lvl.GetStandardEnemies(); i++)
             {
@@ -58,9 +64,11 @@ public class WaveSpawnerProto3 : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
             lvl.IncreaseActualWave();
+            if(lvl.CompareActualWaveAndTotalWavesAreEquals())
+            { spawnsAreFinished = true; }
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
-
         }
+        
     }
 
     void SpawnEnemy()
@@ -84,15 +92,16 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     void DecreaseEnemyCount()
     {
-        if (enemyCount >= 0)
-            enemyCount--;
-        if (enemyCount <= 0)
+        enemyCount--;
+
+        if (enemyCount <= 0 && spawnsAreFinished)
         {
-            
+            lvl.StartDay();
+            uim.CanOpenShopTrue();
         }
     }
 
-   
+
     private void OnDisable()
     {
         WaveManager.StartWaveEvent -= StartLvlCycle;

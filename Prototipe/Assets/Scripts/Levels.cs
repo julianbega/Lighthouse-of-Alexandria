@@ -9,7 +9,7 @@ public class Levels : MonoBehaviour
     private Waypoints wp;
     private bool[] activeSpawners = { false, false, false, false, false };
     private bool[] activeRocks = { true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
-    private int actualLvl;
+    public int actualLvl;
     public static Action ActivateLvlSpawners;
     public List<Transform> activeSpawnStarts;
     public Transform[] allSpawners;
@@ -17,7 +17,7 @@ public class Levels : MonoBehaviour
     [SerializeField] private int standardEnemies;
     [SerializeField] private int lightEnemies;
 
-
+    public bool itIsDay;
     public static Action SetDayOn;
     public static Action SetNightOn;
     private int totalWaves;
@@ -404,10 +404,12 @@ public class Levels : MonoBehaviour
     }
     public void StartDay()
     {
+        itIsDay = true;
        SetDayOn?.Invoke();
     }
     public void StartNight()
     {
+        itIsDay = false;
         SetNightOn?.Invoke();
     }
 }

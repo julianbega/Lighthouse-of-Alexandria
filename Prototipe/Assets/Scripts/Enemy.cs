@@ -39,11 +39,8 @@ public class Enemy : MonoBehaviour
         lvl = FindObjectOfType<Levels>();
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
-        //Debug.Log(transform.position);
-
+        enlightened = lvl.itIsDay;
         wayPointIndex = 0;
-       
-
     }
 
     private void Update()
@@ -472,4 +469,6 @@ public class Enemy : MonoBehaviour
         Cheats.increaseEnemySpeed -= IncreaseSpeed;
         Cheats.killEnemy -= Kill;
     }
+
+
 }

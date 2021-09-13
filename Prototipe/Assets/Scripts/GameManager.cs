@@ -59,17 +59,17 @@ public class GameManager : MonoBehaviour
     }
     public void SetNight()
     {
-        if(lvl.GetActualLVL()<= 0)
-        { 
-        day.gameObject.SetActive(false);
-        Light.enabled = true;
+        if (lvl.GetActualLVL() > 0)
+        {
+            day.enabled = false;
+            Light.enabled = true;
         }
     }
     public void SetDay()
     {
-        day.gameObject.SetActive(true);
+        day.enabled = true;
         Light.enabled = false;
     }
-  
+
 
 }
