@@ -9,7 +9,7 @@ public class Waypoint : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i <= Targets.Count; i++)
+        for (int i = 0; i < Targets.Count; i++)
         {
             openPath.Add(false);
         }

@@ -6,7 +6,6 @@ using System;
 public class Levels : MonoBehaviour
 {
     public GameObject[] rocks;
-    private Waypoints wp;
     private bool[] activeSpawners = { false, false, false, false, false };
     private bool[] activeRocks = { true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
     public int actualLvl;
@@ -34,7 +33,6 @@ public class Levels : MonoBehaviour
     {
         WaveSpawnerProto3.ShowNPC += InvokeNPCShow;
         actualLvl = -1;
-        wp = FindObjectOfType<Waypoints>();
         heavyEnemies = 0;
         standardEnemies = 0;
         lightEnemies = 0;

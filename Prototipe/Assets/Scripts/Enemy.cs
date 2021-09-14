@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour
     public static Action GainMoney;
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
-    public Waypoints wp;
     public Levels lvl;
 
     private void Awake()
@@ -36,7 +35,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        wp = FindObjectOfType<Waypoints>();
         lvl = FindObjectOfType<Levels>();
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
@@ -63,6 +61,10 @@ public class Enemy : MonoBehaviour
 
     void SetNextTarget()
     {
+        for (int i = 0; i < target.Targets.Count; i++)
+        {
+            
+        }
         target = target.Targets[UnityEngine.Random.Range(0, target.Targets.Count)];        
     }
 
