@@ -55,7 +55,7 @@ public class Levels : MonoBehaviour
                 totalWaves = 2;
                 timeBetweenWaves = 4f;
                 NPCToTalk = 1;
-                Dialog = "HOLA K ACE";
+                Dialog = "Nos van a venir de noche, usá el faro para iluminar a los enemigos y que nuestras torres puedan atacarlos";
                 break;
             case 1:
                 NPCToTalk = 0;
@@ -71,39 +71,60 @@ public class Levels : MonoBehaviour
                 NPCToTalk = 0;
                 Dialog = "";
                 ClearRock(7);
+                /// npc dice que van a venir barcos más rapidos
                 break;
 
             case 4:
+                /// Introducir Barco rapido
                 break;
 
             case 5:
-                ClearRock(5);
+                ClearRock(6);
                 break;
 
             case 6:
                 NPCToTalk = 3;
                 Dialog = "Va a venir otra flota de barcos";
+            
                 break;
 
             case 7:
+                ClearRock(5);
                 NPCToTalk = 0;
                 Dialog = "";
                 ActivateSpawner(1);
-
                 break;
 
             case 8:
-                ClearRock(6);
+                // Biblioteca
                 break;
 
             case 9:
+                ClearRock(8);
+                // npc que diga que los enemigos parecen estar reagrupandose
                 break;
 
             case 10:
+                // Nivel de descanzo (vienen menos enemigos)
+                break;
+            case 11:
+                // Nivel de descanzo (vienen menos enemigos)
+                break;
+            case 12:
                 ClearRock(2);
                 break;
-            default:
+            case 13:
                 break;
+            case 14:
+                /// Desbloqueo de nueva rama de la biblioteca  // charla con npc
+                break;
+            case 15:
+
+                break;
+            case 16:
+                ClearRock(3);
+                break;
+  
         }
     }
     public void FindEnemiesSpawnInformation() /// setea cuantos y cuales enemigos va a haber en cada wave en cada lvl
