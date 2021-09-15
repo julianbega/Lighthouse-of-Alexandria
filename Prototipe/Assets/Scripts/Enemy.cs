@@ -63,11 +63,12 @@ public class Enemy : MonoBehaviour
     {
         for (int i = 0; i < target.targets.Count; i++)
         {
-            Ray ray = new Ray(transform.position, target.targets[i].transform.position);
+            Ray ray = new Ray(transform.position, target.targets[i].transform.position);            
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
             {
-                if(hit.collider.gameObject.layer != LayerMask.NameToLayer("Barrier"))
+                Debug.DrawRay(ray.origin, ray.direction * Vector3.Distance(transform.position, target.targets[i].transform.position), Color.yellow);
+                if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Barrier"))
                 {
                     target.openTargets.Add(target.targets[i]);
                 }
