@@ -61,16 +61,29 @@ public class Enemy : MonoBehaviour
 
     void SetNextTarget()
     {
-        for (int i = 0; i < target.targets.Count; i++)
+        if (target.targets.Count != target.openTargets.Count)
         {
-            Ray ray = new Ray(transform.position, target.targets[i].transform.position);            
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
+            for (int i = 0; i < target.targets.Count; i++)
             {
-                Debug.DrawRay(ray.origin, ray.direction * Vector3.Distance(transform.position, target.targets[i].transform.position), Color.yellow);
-                if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Barrier"))
+                Debug.Log("Llega0");
+                Ray ray = new Ray(transform.position, -(transform.position - target.targets[i].transform.position).normalized);
+                Debug.DrawLine(transform.position, target.targets[i].transform.position, Color.red);
+                Debug.DrawRay(ray.origin, ray.direction , Color.yellow);
+                Debug.DrawRay(ray.origin, ray.direction, Color.green,3f);
+                RaycastHit hit;
+                 if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
+                //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position), 9))
+                //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position)))
                 {
-                    target.openTargets.Add(target.targets[i]);
+                    Debug.Log("Llega1");
+                }
+                else
+                {
+                    Debug.Log("Llega2");
+                    if (!target.openTargets.Contains(target.targets[i]))
+                    {
+                        target.openTargets.Add(target.targets[i]);
+                    }
                 }
             }
         }

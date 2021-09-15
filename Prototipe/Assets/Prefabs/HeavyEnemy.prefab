@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5370520498409591245}
   - component: {fileID: 9202269222712108772}
   - component: {fileID: 1583614280483467641}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SostenVela2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 22230118759502511}
   - component: {fileID: 7298862801838382533}
   - component: {fileID: 2650417332868451931}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barcoSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 3697498554290302785}
   - component: {fileID: 7134340404233593487}
   - component: {fileID: 2111978711947680205}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: sostenVela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4384418231977373290}
   - component: {fileID: 475986100016748645}
   - component: {fileID: 146922203971607969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PaloGuiaVela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: -6527390721349461952}
   - component: {fileID: 2385789709203740909}
   - component: {fileID: -383375764979782153}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HeavyEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,6 @@ MonoBehaviour:
   life: 7
   myPath: 0
   bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
-  wp: {fileID: 0}
   lvl: {fileID: 0}
 --- !u!54 &2385789709203740909
 Rigidbody:

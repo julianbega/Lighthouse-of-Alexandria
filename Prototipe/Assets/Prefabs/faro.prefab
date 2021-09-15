@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045294807281904758}
   - component: {fileID: 6486201446598868611}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: faro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797968695244479715}
   - component: {fileID: 7775210236318951977}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 5602079645034277220}
   - component: {fileID: 6331505121621243689}
   - component: {fileID: 3455787919687614571}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: espejo_reflector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 8166972398738909326}
   - component: {fileID: 4530834893661018929}
   - component: {fileID: 6774056921426399333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: faro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
