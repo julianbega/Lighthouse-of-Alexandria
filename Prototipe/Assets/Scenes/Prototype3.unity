@@ -49327,6 +49327,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5b633a052754245982c4bc3342715e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 11400000, guid: 59ac633087f553e46966b9f21a6c3477, type: 2}
+  - {fileID: 11400000, guid: 18067086b685248489b46fee9110a04e, type: 2}
+  - {fileID: 11400000, guid: d4e6c79af18ba38499f4b36bdef70764, type: 2}
+  - {fileID: 11400000, guid: c84c3b72f6b07204f842cb98a5c0706a, type: 2}
+  - {fileID: 11400000, guid: e0525c02cd4fc044f8cc4840bcd3e818, type: 2}
+  - {fileID: 11400000, guid: f4fb73dc98c634b47a832dde241e6c71, type: 2}
+  - {fileID: 11400000, guid: 3f289514755295746874e4bbcc2bbf3d, type: 2}
+  - {fileID: 11400000, guid: 70b08570bd7e47947992532e6072aa87, type: 2}
+  - {fileID: 11400000, guid: f4ec0fa1a54aaa14982eaaeaa82d388b, type: 2}
+  - {fileID: 11400000, guid: 613d3b6eb8285a541b89af81bcf67ce8, type: 2}
+  - {fileID: 11400000, guid: 0a95ade460cfa324f893a3d672f9ed98, type: 2}
   rocks:
   - {fileID: 717658520}
   - {fileID: 1718614423}
@@ -49344,7 +49356,7 @@ MonoBehaviour:
   - {fileID: 288022905}
   - {fileID: 1687318804}
   - {fileID: 2009729215}
-  actualLvl: 0
+  actualLvl: -1
   activeSpawnStarts: []
   allSpawners:
   - {fileID: 2044421829}
@@ -49352,11 +49364,6 @@ MonoBehaviour:
   - {fileID: 1139325197}
   - {fileID: 1431344456}
   - {fileID: 1992836141}
-  heavyEnemies: 0
-  standardEnemies: 0
-  lightEnemies: 0
-  itIsDay: 0
-  ActivePaths: 00000000000000000000000000000000000000010000000000000000000000000000000000000000
 --- !u!1001 &1850757520
 PrefabInstance:
   m_ObjectHideFlags: 0
