@@ -22,9 +22,7 @@ public class GameManager : MonoBehaviour
         FreeEnemy.SubtractLives += SubtractLives;
         FreeEnemy.GainMoney += AddMoney;
         // Node.GetMoney += getMoney;
-
     }
-    
 
     private void OnDisable()
     {
@@ -34,7 +32,6 @@ public class GameManager : MonoBehaviour
         FreeEnemy.GainMoney -= AddMoney;
         Levels.SetNightOn -= SetNight;
         Levels.SetDayOn -= SetDay;
-       
     }
 
     public int GetMoney()
@@ -70,6 +67,4 @@ public class GameManager : MonoBehaviour
         day.enabled = true;
         Light.enabled = false;
     }
-
-
 }

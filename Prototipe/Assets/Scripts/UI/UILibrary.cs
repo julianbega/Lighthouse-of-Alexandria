@@ -5,18 +5,12 @@ public class UILibrary : MonoBehaviour
 {
     private GameManager gm;
     public GameObject LibraryPanel;
-    static public event Action UnlockTurretOneEvent;
     public Library library;
     public UIManager uiManager;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
         Library.OpenLibrary += ActivateLibraryPanel;
-    }
-
-    void Update()
-    {
-        
     }
 
     public void ActivateLibraryPanel()

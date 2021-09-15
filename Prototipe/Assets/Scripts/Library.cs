@@ -17,14 +17,8 @@ public class Library : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnMouseDown()
     {
         OpenLibrary?.Invoke();
-
     }
 }

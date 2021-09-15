@@ -43,9 +43,7 @@ public class UIManager : MonoBehaviour
         money.text = "Money: " + gm.GetMoney();
         wave.text = "Wave: " + lvl.GetActualWave();
         lives.text = "Lives: " + gm.GetLives();
-
     }
-
     
     public void ShowCheats()
     {

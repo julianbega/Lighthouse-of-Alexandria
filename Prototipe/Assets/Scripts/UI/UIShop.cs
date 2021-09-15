@@ -17,11 +17,6 @@ public class UIShop : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void CloseShop()
     {
         ShopPanel.gameObject.SetActive(false);

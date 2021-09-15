@@ -24,7 +24,6 @@ public class Turret : MonoBehaviour
     {
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
-        UILibrary.UnlockTurretOneEvent += UnlockTurretOne;
     }
 
     void Update()
@@ -87,24 +86,9 @@ public class Turret : MonoBehaviour
         preventShootOnSpawn = true;
     }
 
-    private void Save()
-    {
-
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
-    }
-
-    private void UnlockTurretOne()
-    {
-        Debug.Log("Se desbloqueo esta wea");
-    }
-
-    private void OnDisable()
-    {
-       UILibrary.UnlockTurretOneEvent -= UnlockTurretOne;
     }
 }

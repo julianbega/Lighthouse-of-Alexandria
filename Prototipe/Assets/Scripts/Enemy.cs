@@ -19,20 +19,6 @@ public class Enemy : MonoBehaviour
     static public event Action DestroyCannonBall;
     public Levels lvl;
 
-    private void Awake()
-    {
-        SaveObject saveObject = new SaveObject
-        {
-            pos = transform.position,
-        };
-        string json = JsonUtility.ToJson(saveObject);
-       // Debug.Log(json);
-
-        SaveObject loadedSaveObject = JsonUtility.FromJson<SaveObject>(json);
-      //  Debug.Log(loadedSaveObject.pos);
-
-    }
-
     private void Start()
     {
         lvl = FindObjectOfType<Levels>();
@@ -45,17 +31,14 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (target != null)
-        { 
+        {
             Vector3 direction = target.transform.position - transform.position;
             transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-        
-        if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
-        {
-            SetNextTarget();
-        }
 
-        if (Input.GetKeyDown(KeyCode.S))
-            Save();
+            if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
+            {
+                SetNextTarget();
+            }
         }
     }
 
@@ -68,13 +51,13 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Llega0");
                 Ray ray = new Ray(transform.position, -(transform.position - target.targets[i].transform.position).normalized);
                 Debug.DrawLine(transform.position, target.targets[i].transform.position, Color.red);
-                Debug.DrawRay(ray.origin, ray.direction , Color.yellow);
-                Debug.DrawRay(ray.origin, ray.direction, Color.green,3f);
+                Debug.DrawRay(ray.origin, ray.direction, Color.yellow);
+                Debug.DrawRay(ray.origin, ray.direction, Color.green, 3f);
                 RaycastHit hit;
-                 if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
+                if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
+                {
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position), 9))
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position)))
-                {
                     Debug.Log("Llega1");
                 }
                 else
@@ -105,11 +88,11 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             DestroyCannonBall?.Invoke();
-            life -= bullet.damage;           
-            
-           
-            if(life <= 0)
-            { 
+            life -= bullet.damage;
+
+
+            if (life <= 0)
+            {
                 Destroy(this.gameObject);
                 GainMoney?.Invoke();
                 EnemyDie?.Invoke();
@@ -127,19 +110,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Save()
-    {
-        Vector3 enemyPos = transform.position;
-
-        SaveObject saveObject = new SaveObject {
-            pos = enemyPos,
-        };
-
-        string json = JsonUtility.ToJson(saveObject);
-
-        File.WriteAllText(Application.dataPath + "/save.txt", json);
-    }
-
     private void IncreaseSpeed()
     {
         speed += 10;
@@ -147,7 +117,7 @@ public class Enemy : MonoBehaviour
 
     private void Kill()
     {
-        if(life > 0)
+        if (life > 0)
         {
             life = 0;
             Destroy(gameObject);
@@ -155,12 +125,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
     private void OnDisable()
     {
         Cheats.increaseEnemySpeed -= IncreaseSpeed;
         Cheats.killEnemy -= Kill;
     }
-
-
 }
