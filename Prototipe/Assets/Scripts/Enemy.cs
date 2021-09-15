@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
         lvl = FindObjectOfType<Levels>();
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
-        enlightened = lvl.itIsDay;
+        enlightened = lvl.askIfDay();
         wayPointIndex = 0;
     }
 

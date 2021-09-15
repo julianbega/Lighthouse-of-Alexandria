@@ -36,7 +36,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         if (enemyCount <= 0)
         {    
-            lvl.ResetActualWave();
             lvl.IncreaseLVL();
             lvl.FindLvlInformation();
             StartCoroutine(SpawnWave());
@@ -47,9 +46,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
-
             spawnsAreFinished = false;
-            lvl.FindEnemiesSpawnInformation();
             for (int i = 0; i < lvl.GetStandardEnemies(); i++)
             {
                 SpawnEnemy();
@@ -99,9 +96,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
         if (enemyCount <= 0 && spawnsAreFinished)
         {
             lvl.StartDay();
-            /// Evento de intercambio entre flow de defensa y de managmente (sacar las vidas y poner la plata)
-            // aparece el npc
-            Debug.Log("Llama al invoke 1");
             ShowNPC?.Invoke();
             uim.CanOpenShopTrue();
         }
