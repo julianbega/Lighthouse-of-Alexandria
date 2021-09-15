@@ -61,18 +61,26 @@ public class Enemy : MonoBehaviour
 
     void SetNextTarget()
     {
-        for (int i = 0; i < target.Targets.Count; i++)
+        for (int i = 0; i < target.targets.Count; i++)
         {
-            
+            Ray ray = new Ray(transform.position, target.targets[i].transform.position);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
+            {
+                if(hit.collider.gameObject.layer != LayerMask.NameToLayer("Barrier"))
+                {
+                    target.openTargets.Add(target.targets[i]);
+                }
+            }
         }
-        target = target.Targets[UnityEngine.Random.Range(0, target.Targets.Count)];        
+        target = target.openTargets[UnityEngine.Random.Range(0, target.openTargets.Count)];
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Start"))
         {
-            target = other.gameObject.GetComponent<Waypoint>().Targets[UnityEngine.Random.Range(0, other.gameObject.GetComponent<Waypoint>().Targets.Count)];
+            target = other.gameObject.GetComponent<Waypoint>().targets[UnityEngine.Random.Range(0, other.gameObject.GetComponent<Waypoint>().targets.Count)];
 
         }
         if (other.gameObject.CompareTag("Light"))
