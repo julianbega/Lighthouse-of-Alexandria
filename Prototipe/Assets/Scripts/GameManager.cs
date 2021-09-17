@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public int money;
     public int lives;
-
+   
     public int gainPerKill;
 
     public Light Light;

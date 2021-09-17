@@ -6,7 +6,7 @@ using System;
 public class Levels : MonoBehaviour
 {
     public List<LevelDataSO> levels;
-    private LevelDataSO actualLevelDataSO;
+    public LevelDataSO actualLevelDataSO;
 
     public GameObject[] rocks;
     public int actualLvl;
@@ -21,7 +21,6 @@ public class Levels : MonoBehaviour
     private void Start()
     {
         WaveSpawnerProto3.ShowNPC += InvokeNPCShow;
-        actualLvl = -1;
     }
     private void OnDisable()
     {
@@ -70,12 +69,19 @@ public class Levels : MonoBehaviour
     }
     public void IncreaseLVL()
     {
+        if (actualLevelDataSO != null)
+        { 
         actualLvl++;
         actualLevelDataSO = levels[actualLvl];
+        }
     }
     public int GetActualWave()
     {
+        if (actualLevelDataSO != null)
+        { 
         return actualLevelDataSO.actualWave;
+        }
+        return 0;
     }
     public void IncreaseActualWave()
     {

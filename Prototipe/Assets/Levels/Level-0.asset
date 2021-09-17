@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Level-0
   m_EditorClassIdentifier: 
   ItIsDay: 1
-  activateSpawner: 3
+  activateSpawner: 2
   clearRock: -1
   NPCToTalk: 1
   Dialog: "Nos van a atacar de noche, us\xE1 el faro para que nuestras torres vean
     a los enemigos"
   waves:
   - heavyEnemies: 0
-    standardEnemies: 0
+    standardEnemies: 1
     lightEnemies: 0
-    timeBetweenWaves: 0
+    timeBetweenWaves: 1
   - heavyEnemies: 0
-    standardEnemies: 0
+    standardEnemies: 1
     lightEnemies: 0
     timeBetweenWaves: 0
   actualWave: 0

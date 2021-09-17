@@ -18,9 +18,10 @@ public class Enemy : MonoBehaviour
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
     public Levels lvl;
-
+    private Cheats cheat;
     private void Start()
     {
+        cheat = FindObjectOfType<Cheats>();
         lvl = FindObjectOfType<Levels>();
         Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
         if (target != null)
         {
             Vector3 direction = target.transform.position - transform.position;
-            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+            transform.Translate(direction.normalized * speed * Time.deltaTime * cheat.speed, Space.World);
 
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
             {

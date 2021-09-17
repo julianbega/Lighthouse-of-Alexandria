@@ -6,15 +6,18 @@ using System;
 public class Cheats : MonoBehaviour
 {
     private GameManager gm;
-
+    private UIManager UIm;
     public int MoneyToAdd;
     public int LivesToAdd;
+    public int speed;
 
     static public event Action increaseEnemySpeed;
     static public event Action killEnemy;
     void Start()
     {
+        speed = 1;
         gm = GetComponent<GameManager>();
+        UIm = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -42,7 +45,11 @@ public class Cheats : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            increaseEnemySpeed?.Invoke();
+            speed ++;
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            UIm.npcsOn = !UIm.npcsOn;
         }
     }
 }

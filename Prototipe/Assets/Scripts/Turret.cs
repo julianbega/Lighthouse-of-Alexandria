@@ -18,10 +18,12 @@ public class Turret : MonoBehaviour
     public Transform cannonBallSpawn;
     public float turnSpeed = 10.0f;
 
+    private Cheats cheat;
     public int price;
 
     void Start()
     {
+        cheat = FindObjectOfType<Cheats>();
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }
@@ -33,7 +35,7 @@ public class Turret : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookrotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookrotation, Time.deltaTime * turnSpeed).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookrotation, Time.deltaTime * turnSpeed * cheat.speed).eulerAngles;
         pivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCountdown <= 0)
@@ -41,7 +43,7 @@ public class Turret : MonoBehaviour
             Shoot();
             fireCountdown = 1f / attacksPerSecond;
         }
-        fireCountdown -= Time.deltaTime;
+        fireCountdown -= Time.deltaTime * cheat.speed;
     }
 
     void UpdateTarget()

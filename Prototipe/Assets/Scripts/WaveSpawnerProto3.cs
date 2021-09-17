@@ -12,8 +12,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     private Levels lvl;
     public float timeBetweenWaves;
-    public int maxCantOfEnemiesPerWave;
-    public bool waveIsInCourse;
     public int enemyCount;
     private bool spawnsAreFinished;
 
@@ -37,6 +35,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
         if (enemyCount <= 0)
         {    
             lvl.IncreaseLVL();
+            Debug.Log("actualLvl: " + lvl.actualLvl);
             lvl.FindLvlInformation();
             StartCoroutine(SpawnWave());
         }
@@ -44,6 +43,8 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
+
+        Debug.Log("CompareActualWaveAndTotalWavesAreEquals: " + lvl.CompareActualWaveAndTotalWavesAreEquals());
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
             spawnsAreFinished = false;
@@ -64,7 +65,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
             }
             lvl.IncreaseActualWave();
             if(lvl.CompareActualWaveAndTotalWavesAreEquals())
-            { spawnsAreFinished = true; }
+            { 
+                spawnsAreFinished = true;
+                lvl.actualLevelDataSO.actualWave = 0;
+            }
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
         }
         

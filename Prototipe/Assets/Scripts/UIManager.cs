@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public GameManager gm;
+    public bool npcsOn;
     public Levels lvl;
     private NPCsImages npcs;
     public WaveSpawnerProto3 ws;
@@ -23,14 +24,16 @@ public class UIManager : MonoBehaviour
     public Image NPCImage;
     public Image DialogeBackground;
     public GameObject startWave;
+    public string gameFirstDialoge;
+    public int gameFirstDialogeNPC;
     void Start()
     {
-        
         gm = FindObjectOfType<GameManager>();
         ws = FindObjectOfType<WaveSpawnerProto3>();
         lvl = FindObjectOfType<Levels>();
         npcs = FindObjectOfType<NPCsImages>();
         Levels.ShowNPCs += NPCTalk;
+        NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
     }
     private void OnDisable()
     {
@@ -72,16 +75,18 @@ public class UIManager : MonoBehaviour
 
     private void NPCTalk(int npcIndex, string Dialoge)
     {
-        Debug.Log("Llega a la parte de UI");
-        if (npcIndex != 0)
+        if (npcsOn)
         {
-            NPC.SetActive(true);
-            HideStartWave();
-            CanOpenShopFlase();
+            if (npcIndex != 0)
+            {
+                NPC.SetActive(true);
+                HideStartWave();
+                CanOpenShopFlase();
+            }
+            NPCImage.sprite = npcs.SelectNPC(npcIndex);
+            DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
+            NPCDialoge.text = Dialoge;
         }
-        NPCImage.sprite = npcs.SelectNPC(npcIndex);
-        DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
-        NPCDialoge.text = Dialoge;
     }
 
     public void CloseNPCTalk()

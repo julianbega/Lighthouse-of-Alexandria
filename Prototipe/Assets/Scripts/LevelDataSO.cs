@@ -12,7 +12,7 @@ public class LevelDataSO : ScriptableObject
     public int NPCToTalk = 0;
     public string Dialog = "";
     public List<WaveData> waves;
-    public int actualWave;
+    public int actualWave = 0;
 
     [Serializable]
     public class WaveData
@@ -22,4 +22,6 @@ public class LevelDataSO : ScriptableObject
         public int lightEnemies;
         public float timeBetweenWaves = 4f;
     }
+
+    
 }
