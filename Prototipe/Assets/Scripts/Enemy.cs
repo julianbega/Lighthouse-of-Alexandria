@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     static public event Action DestroyCannonBall;
     public Levels lvl;
     private Cheats cheat;
+    private bool firstRotation;
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -27,10 +28,20 @@ public class Enemy : MonoBehaviour
         Cheats.killEnemy += Kill;
         enlightened = lvl.askIfDay();
         wayPointIndex = 0;
+        firstRotation = true;
     }
 
     private void Update()
     {
+        if (firstRotation)
+        {
+            Quaternion targetRotation = Quaternion.identity;
+            Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
+            targetRotation = (Quaternion.LookRotation(targetDirection));
+            transform.rotation = targetRotation;
+            firstRotation = !firstRotation;
+
+        }
         if (target != null)
         {
             Vector3 direction = target.transform.position - transform.position;           
@@ -40,9 +51,8 @@ public class Enemy : MonoBehaviour
             {
                 SetNextTarget();
                 Quaternion targetRotation = Quaternion.identity;
-                Vector3 targetDirection = (transform.position - target.transform.position ).normalized; //cambiar
-                targetRotation = (Quaternion.LookRotation(-targetDirection));
-                targetRotation.y = targetRotation.y + 90;
+                Vector3 targetDirection = ( target.transform.position - transform.position).normalized; //cambiar
+                targetRotation = (Quaternion.LookRotation(targetDirection));
                 transform.rotation = targetRotation;
             }
         }
