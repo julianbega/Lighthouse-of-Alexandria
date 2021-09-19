@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42014,6 +42014,7 @@ MonoBehaviour:
   CheatsText: {fileID: 1297297453}
   CheatsButton: {fileID: 220195586}
   canOpenShop: 1
+  canOpenLibrary: 0
   NPC: {fileID: 270171239}
   NPCDialoge: {fileID: 1393418031}
   NPCImage: {fileID: 1816053292}
@@ -51396,6 +51397,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: CanOpenShopTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: CanOpenLibraryTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1911313049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54781,6 +54804,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1577804617}
         m_MethodName: CloseShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1577804616}
+        m_MethodName: CanOpenLibraryTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

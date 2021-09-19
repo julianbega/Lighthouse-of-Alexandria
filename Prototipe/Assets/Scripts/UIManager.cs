@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CheatsText;
     public Button CheatsButton;
     public bool canOpenShop;
+    public bool canOpenLibrary;
     public GameObject NPC;
     public TextMeshProUGUI NPCDialoge;
     public Image NPCImage;
@@ -68,9 +69,19 @@ public class UIManager : MonoBehaviour
         canOpenShop = true;
     }
 
-    public void CanOpenShopFlase()
+    public void CanOpenLibraryTrue()
+    {
+        canOpenLibrary = true;
+    }
+
+    public void CanOpenShopFalse()
     {
         canOpenShop = false;
+    }
+
+    public void CanOpenLibraryFalse()
+    {
+        canOpenLibrary = false;
     }
 
     private void NPCTalk(int npcIndex, string Dialoge)
@@ -80,8 +91,10 @@ public class UIManager : MonoBehaviour
             if (npcIndex != 0)
             {
                 NPC.SetActive(true);
+                CanOpenShopFalse();
+                CanOpenLibraryFalse();
                 HideStartWave();
-                CanOpenShopFlase();
+                CanOpenShopFalse();
             }
             NPCImage.sprite = npcs.SelectNPC(npcIndex);
             DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);

@@ -21,6 +21,7 @@ public class UIShop : MonoBehaviour
     {
         ShopPanel.gameObject.SetActive(false);
         uiManager.CanOpenShopTrue();
+        uiManager.CanOpenLibraryTrue();
     }
 
     public void BuyTurret1()
@@ -80,7 +81,8 @@ public class UIShop : MonoBehaviour
         ShowTurret();
         if(uiManager.canOpenShop)
             ShopPanel.gameObject.SetActive(true);
-        uiManager.CanOpenShopFlase();
+        uiManager.CanOpenShopFalse();
+        uiManager.CanOpenLibraryFalse();
     }
 
     private void OnDisable()

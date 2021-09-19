@@ -15,14 +15,16 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel()
     {
-        LibraryPanel.gameObject.SetActive(true);
-        uiManager.CanOpenShopFlase();
+        if(uiManager.canOpenLibrary)
+            LibraryPanel.gameObject.SetActive(true);
+        uiManager.CanOpenShopFalse();
     }
 
     public void CloseLibraryPanel()
     {
         LibraryPanel.gameObject.SetActive(false);
         uiManager.CanOpenShopTrue();
+        uiManager.CanOpenLibraryTrue();
     }
 
     public void UnlockTurret(int index)
