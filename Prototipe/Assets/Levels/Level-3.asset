@@ -19,11 +19,15 @@ MonoBehaviour:
   Dialog: 
   waves:
   - heavyEnemies: 0
-    standardEnemies: 1
+    standardEnemies: 2
     lightEnemies: 0
     timeBetweenWaves: 4
   - heavyEnemies: 0
-    standardEnemies: 1
+    standardEnemies: 2
+    lightEnemies: 0
+    timeBetweenWaves: 4
+  - heavyEnemies: 0
+    standardEnemies: 2
     lightEnemies: 0
     timeBetweenWaves: 0
   actualWave: 0

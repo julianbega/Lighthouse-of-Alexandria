@@ -66,12 +66,10 @@ public class WaveSpawnerProto3 : MonoBehaviour
             lvl.IncreaseActualWave();
             if(lvl.CompareActualWaveAndTotalWavesAreEquals())
             { 
-                spawnsAreFinished = true;
-                lvl.actualLevelDataSO.actualWave = 0;
+                spawnsAreFinished = true;               
             }
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
         }
-        
     }
 
     void SpawnEnemy()

@@ -20,10 +20,10 @@ MonoBehaviour:
   waves:
   - heavyEnemies: 0
     standardEnemies: 1
-    lightEnemies: 0
+    lightEnemies: 2
     timeBetweenWaves: 4
   - heavyEnemies: 0
     standardEnemies: 1
-    lightEnemies: 0
-    timeBetweenWaves: 0
+    lightEnemies: 2
+    timeBetweenWaves: 4
   actualWave: 0

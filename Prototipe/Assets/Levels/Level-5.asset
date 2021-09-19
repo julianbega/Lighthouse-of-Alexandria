@@ -21,9 +21,17 @@ MonoBehaviour:
   - heavyEnemies: 0
     standardEnemies: 1
     lightEnemies: 0
-    timeBetweenWaves: 4
+    timeBetweenWaves: 3
+  - heavyEnemies: 0
+    standardEnemies: 2
+    lightEnemies: 0
+    timeBetweenWaves: 3
   - heavyEnemies: 0
     standardEnemies: 1
     lightEnemies: 0
-    timeBetweenWaves: 0
+    timeBetweenWaves: 3
+  - heavyEnemies: 0
+    standardEnemies: 2
+    lightEnemies: 0
+    timeBetweenWaves: 3
   actualWave: 0

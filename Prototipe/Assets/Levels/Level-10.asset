@@ -14,16 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItIsDay: 0
   activateSpawner: -1
-  clearRock: -1
+  clearRock: 3
   NPCToTalk: 0
   Dialog: 
   waves:
   - heavyEnemies: 0
     standardEnemies: 1
-    lightEnemies: 0
+    lightEnemies: 1
+    timeBetweenWaves: 3
+  - heavyEnemies: 0
+    standardEnemies: 1
+    lightEnemies: 1
     timeBetweenWaves: 4
   - heavyEnemies: 0
     standardEnemies: 1
-    lightEnemies: 0
-    timeBetweenWaves: 0
+    lightEnemies: 1
+    timeBetweenWaves: 4
   actualWave: 0

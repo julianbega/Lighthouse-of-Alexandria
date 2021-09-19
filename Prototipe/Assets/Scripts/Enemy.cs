@@ -33,12 +33,17 @@ public class Enemy : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 direction = target.transform.position - transform.position;
+            Vector3 direction = target.transform.position - transform.position;           
             transform.Translate(direction.normalized * speed * Time.deltaTime * cheat.speed, Space.World);
 
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
             {
                 SetNextTarget();
+                Quaternion targetRotation = Quaternion.identity;
+                Vector3 targetDirection = (transform.position - target.transform.position ).normalized; //cambiar
+                targetRotation = (Quaternion.LookRotation(-targetDirection));
+                targetRotation.y = targetRotation.y + 90;
+                transform.rotation = targetRotation;
             }
         }
     }
@@ -60,10 +65,7 @@ public class Enemy : MonoBehaviour
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position), 9))
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position)))
                     Debug.Log("Llega1");
-                    Quaternion targetRotation = Quaternion.identity;
-                    Vector3 targetDirection = (hit.point - target.targets[i].transform.position).normalized; //cambiar
-                    targetRotation = Quaternion.LookRotation(targetDirection);
-                    transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, targetRotation, 10.0f);
+                  
                 }
                 else
                 {

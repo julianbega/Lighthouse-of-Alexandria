@@ -20,6 +20,10 @@ public class Levels : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < levels.Count; i++)
+        {
+            levels[i].actualWave = 0;
+        }
         WaveSpawnerProto3.ShowNPC += InvokeNPCShow;
     }
     private void OnDisable()
