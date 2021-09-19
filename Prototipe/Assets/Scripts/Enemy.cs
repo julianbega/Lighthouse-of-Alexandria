@@ -60,6 +60,10 @@ public class Enemy : MonoBehaviour
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position), 9))
                 //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position)))
                     Debug.Log("Llega1");
+                    Quaternion targetRotation = Quaternion.identity;
+                    Vector3 targetDirection = (hit.point - target.targets[i].transform.position).normalized; //cambiar
+                    targetRotation = Quaternion.LookRotation(targetDirection);
+                    transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, targetRotation, 10.0f);
                 }
                 else
                 {
