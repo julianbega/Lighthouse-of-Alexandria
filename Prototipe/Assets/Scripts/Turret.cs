@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class Turret : MonoBehaviour
 
     private Cheats cheat;
     public int price;
+
+    static public event Action OpenUpgradeSystem;
 
     void Start()
     {
@@ -92,5 +95,10 @@ public class Turret : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private void OnMouseDown()
+    {
+        OpenUpgradeSystem?.Invoke();
     }
 }
