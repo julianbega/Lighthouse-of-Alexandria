@@ -106,7 +106,17 @@ public class UIManager : MonoBehaviour
     {
         NPC.SetActive(false);
     }
-
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
     public void HideStartWave()
     {
         startWave.SetActive(false);
