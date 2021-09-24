@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     {
         cheat = FindObjectOfType<Cheats>();
         lvl = FindObjectOfType<Levels>();
-        Cheats.increaseEnemySpeed += IncreaseSpeed;
         Cheats.killEnemy += Kill;
         enlightened = lvl.askIfDay();
         wayPointIndex = 0;
@@ -144,7 +143,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable()
     {
-        Cheats.increaseEnemySpeed -= IncreaseSpeed;
         Cheats.killEnemy -= Kill;
     }
 }
