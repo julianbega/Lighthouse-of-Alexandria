@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Cheats : MonoBehaviour
@@ -11,7 +12,6 @@ public class Cheats : MonoBehaviour
     public int LivesToAdd;
     public int speed;
 
-    static public event Action increaseEnemySpeed;
     static public event Action killEnemy;
     void Start()
     {
@@ -50,6 +50,10 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             UIm.npcsOn = !UIm.npcsOn;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Prototype3");
         }
     }
 }
