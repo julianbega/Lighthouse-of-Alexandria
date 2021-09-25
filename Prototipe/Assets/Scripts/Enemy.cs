@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private bool firstRotation;
 
     public HealthBar healthBar;
+    public GameObject healthBarGO;
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -31,10 +32,12 @@ public class Enemy : MonoBehaviour
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
+        
     }
 
     private void Update()
     {
+        healthBarGO.SetActive(enlightened);  // activa o desactiva la barra de vida si está o no iluminada
         if (firstRotation)
         {
             Quaternion targetRotation = Quaternion.identity;

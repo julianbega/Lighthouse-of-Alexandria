@@ -375,6 +375,7 @@ MonoBehaviour:
   bullet: {fileID: 4379411591081819719, guid: 72b313382b80198419ee3248f8006961, type: 3}
   lvl: {fileID: 0}
   healthBar: {fileID: 217539220905344174}
+  healthBarGO: {fileID: 7929855175869210535}
 --- !u!54 &2385789709203740909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -552,6 +553,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5213825588861173588, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
+--- !u!1 &7929855175869210535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6692879273845498581, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3669698645266578802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7929855175869210534 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6692879273845498580, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,
