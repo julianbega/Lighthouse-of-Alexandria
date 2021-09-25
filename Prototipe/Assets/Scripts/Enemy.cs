@@ -107,6 +107,12 @@ public class Enemy : MonoBehaviour
             enlightened = true;
             return;
         }
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Destroy(this.gameObject);
+            EnemyDie?.Invoke();
+            return;
+        }
         if (other.gameObject.CompareTag("Bullet"))
         {
             DestroyCannonBall?.Invoke();
@@ -118,6 +124,8 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
                 GainMoney?.Invoke();
                 EnemyDie?.Invoke();
+                SubtractLives?.Invoke();
+                return;
             }
             return;
         }
