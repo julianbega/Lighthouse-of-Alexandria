@@ -106,6 +106,8 @@ public class UIManager : MonoBehaviour
     public void CloseNPCTalk()
     {
         NPC.SetActive(false);
+        CanOpenShopTrue();
+        CanOpenLibraryTrue();
     }
     public void Pause()
     {
