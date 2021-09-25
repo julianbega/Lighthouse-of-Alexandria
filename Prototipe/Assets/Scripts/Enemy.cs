@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     public Levels lvl;
     private Cheats cheat;
     private bool firstRotation;
+
+    public HealthBar healthBar;
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -28,6 +30,7 @@ public class Enemy : MonoBehaviour
         enlightened = lvl.askIfDay();
         wayPointIndex = 0;
         firstRotation = true;
+        healthBar.SetMaxHealth(life);
     }
 
     private void Update()
@@ -106,7 +109,7 @@ public class Enemy : MonoBehaviour
             DestroyCannonBall?.Invoke();
             life -= bullet.damage;
 
-
+            healthBar.SetHealth(life);
             if (life <= 0)
             {
                 Destroy(this.gameObject);
