@@ -113,10 +113,16 @@ public class UIManager : MonoBehaviour
         {
             startWave.SetActive(false);
             PauseGO.SetActive(true);
+            gm.Light.enabled = false;
             Time.timeScale = 0;
         }
         else
         {
+            if (!gm.day.isActiveAndEnabled)
+            {
+                gm.Light.enabled = true;
+            }
+            Debug.Log("despausa");
             startWave.SetActive(true);
             PauseGO.SetActive(false);
             Time.timeScale = 1;
