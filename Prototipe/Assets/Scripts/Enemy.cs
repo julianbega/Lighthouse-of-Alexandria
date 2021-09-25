@@ -129,7 +129,10 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Light"))
         {
-            enlightened = false;
+            if (!lvl.askIfDay())
+            {
+                enlightened = false;
+            }
             return;
         }
     }
