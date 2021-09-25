@@ -75,13 +75,7 @@ public class Enemy : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction, Color.yellow);
                 Debug.DrawRay(ray.origin, ray.direction, Color.green, 3f);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position)))
-                {
-                //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position), 9))
-                //if (Physics.Raycast(transform.position, (transform.position - target.targets[i].transform.position).normalized, Vector3.Distance(transform.position, target.targets[i].transform.position)))
-                    Debug.Log("Llega1");
-                  
-                }
+                if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position))){}
                 else
                 {
                     Debug.Log("Llega2");

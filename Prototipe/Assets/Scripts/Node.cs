@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
 {
     public Color selectedColor;
     public Vector3 offset;
-    private Color startColor;
+    public Color startColor;
     private Renderer render;
     public GameObject turret;
 
@@ -19,7 +19,7 @@ public class Node : MonoBehaviour
     private void Awake()
     {
         render = GetComponent<Renderer>();
-        startColor = render.material.color;
+        render.material.color = startColor;
     }
     private void Start()
     {

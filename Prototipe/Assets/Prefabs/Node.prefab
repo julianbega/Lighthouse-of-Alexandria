@@ -108,4 +108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedColor: {r: 1, g: 0.8605479, b: 0.16509432, a: 0}
   offset: {x: 0, y: 2, z: 0}
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  turret: {fileID: 0}
   gm: {fileID: 0}
