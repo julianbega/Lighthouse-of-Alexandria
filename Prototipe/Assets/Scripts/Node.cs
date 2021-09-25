@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public Material selectedColor;
+    public Material onMouseColor;
     public Vector3 offset;
     public Material startColor;
     private Renderer render;
@@ -27,7 +27,7 @@ public class Node : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        render.material = selectedColor;
+        render.material = onMouseColor;
     }
     private void OnMouseExit()
     {
@@ -43,13 +43,7 @@ public class Node : MonoBehaviour
         }
         
         OpenShop?.Invoke();
-        BuildManager.instance.actualNode = this;
+        BuildManager.instance.actualNode = this;        
         
-        //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        //if (gm.GetMoney() >= BuildManager.instance.turretPrice)
-        //{
-        //    turret = Instantiate(turretToBuild, transform.position + offset, transform.rotation);
-        //    gm.moneySubtract(BuildManager.instance.turretPrice);
-        //}
     }
 }

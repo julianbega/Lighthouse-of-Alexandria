@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject startWave;
     public string gameFirstDialoge;
     public int gameFirstDialogeNPC;
+    public GameObject PauseGO;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -110,10 +111,14 @@ public class UIManager : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
+            startWave.SetActive(false);
+            PauseGO.SetActive(true);
             Time.timeScale = 0;
         }
         else
         {
+            startWave.SetActive(true);
+            PauseGO.SetActive(false);
             Time.timeScale = 1;
         }
     }

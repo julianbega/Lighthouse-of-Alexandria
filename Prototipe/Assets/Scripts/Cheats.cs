@@ -55,7 +55,7 @@ public class Cheats : MonoBehaviour
         {
             SceneManager.LoadScene("Prototype3");
         }
-        if (Input.GetKeyDown(KeyCode.P))
+       /* if (Input.GetKeyDown(KeyCode.P))
         {
             if (Time.timeScale == 1)
             {
@@ -65,6 +65,6 @@ public class Cheats : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
-        }
+        }*/
     }
 }
