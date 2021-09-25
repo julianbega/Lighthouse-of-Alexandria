@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public Color selectedColor;
+    public Material selectedColor;
     public Vector3 offset;
-    public Color startColor;
+    public Material startColor;
     private Renderer render;
     public GameObject turret;
 
@@ -19,7 +19,7 @@ public class Node : MonoBehaviour
     private void Awake()
     {
         render = GetComponent<Renderer>();
-        render.material.color = startColor;
+        render.material = startColor;
     }
     private void Start()
     {
@@ -27,11 +27,11 @@ public class Node : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        render.material.color = selectedColor;
+        render.material = selectedColor;
     }
     private void OnMouseExit()
     {
-        render.material.color = startColor;
+        render.material = startColor;
     }
 
     private void OnMouseDown()

@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09dfb9fe735e08a4bb0b64d7738cd52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedColor: {r: 1, g: 0.8605479, b: 0.16509432, a: 0}
+  selectedColor: {fileID: 2100000, guid: 6769e062d9dc5134db53327b576d96ba, type: 2}
   offset: {x: 0, y: 2, z: 0}
-  startColor: {r: 1, g: 1, b: 1, a: 0}
+  startColor: {fileID: 2100000, guid: 3c6db1bbf5cde0d46bfd704258c1a8c4, type: 2}
   turret: {fileID: 0}
   gm: {fileID: 0}
