@@ -93,7 +93,8 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Start"))
         {
-            target = other.gameObject.GetComponent<Waypoint>().targets[UnityEngine.Random.Range(0, other.gameObject.GetComponent<Waypoint>().targets.Count)];
+            Debug.Log("colisona con start");
+            target = other.gameObject.GetComponent<Waypoint>().targets[0];
 
         }
         if (other.gameObject.CompareTag("Light"))
