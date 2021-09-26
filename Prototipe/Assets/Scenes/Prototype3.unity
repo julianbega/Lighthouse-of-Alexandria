@@ -9500,11 +9500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atack per second:
-
-    Power:
-
-    Range:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9567,7 +9563,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -2.334443, z: 38.198765, w: 0.24749675}
+  m_margin: {x: 0, y: -2.334443, z: -0.43526846, w: 0.24749675}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -21638,11 +21634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atack per second:
-
-    Power:
-
-    Range:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44140,11 +44132,16 @@ MonoBehaviour:
   - {fileID: 1095618234}
   - {fileID: 955015048}
   statsTurrets:
-  - {fileID: 307324846}
-  - {fileID: 1712215425}
-  - {fileID: 1899103970}
-  - {fileID: 719159380}
+  - {fileID: 307324848}
+  - {fileID: 1712215427}
+  - {fileID: 1899103972}
+  - {fileID: 719159382}
   uiManager: {fileID: 1577804616}
+  turretComponent:
+  - {fileID: 5529081113759405803, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
+  - {fileID: 5529081113759405803, guid: 0a65e7bdc67623a41b5460fbe6a42c8a, type: 3}
+  - {fileID: 5529081113759405803, guid: 2945eedd0ee054742973320f5caad765, type: 3}
+  - {fileID: 5529081113759405803, guid: accb889a177b24d449fb792bd2110815, type: 3}
 --- !u!114 &1577804618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48467,11 +48464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atack per second:
-
-    Power:
-
-    Range:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -54275,11 +54268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atack per second:
-
-    Power:
-
-    Range:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

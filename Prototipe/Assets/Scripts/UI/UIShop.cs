@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,16 @@ public class UIShop : MonoBehaviour
     public Library library;
     public List<GameObject> turrets = new List<GameObject>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
-    public List<GameObject> statsTurrets = new List<GameObject>();
+    public List<TMP_Text> statsTurrets = new List<TMP_Text>();
+    //public TMP_Text statsTurret1;
     public UIManager uiManager;
+    //[SerializeField] private List<GameObject> turretPrefabs = new List<GameObject>();
+    public List<Turret> turretComponent = new List<Turret>();
     void Start()
     {
         Node.OpenShop += ActivateShopPanel;
         gm = FindObjectOfType<GameManager>();
+        ShowTurretStats(0);
     }
 
     public void CloseShop()
@@ -74,8 +79,16 @@ public class UIShop : MonoBehaviour
                 turrets[i].gameObject.SetActive(true);
                 buyTurretButtons[i].gameObject.SetActive(true);
                 statsTurrets[i].gameObject.SetActive(true);
+                ShowTurretStats(i);
             }
         }   
+    }
+
+    private void ShowTurretStats(int index)
+    {
+        statsTurrets[index].text = "Attack per second: " + turretComponent[index].attacksPerSecond + "\n"
+            + "Power: " + turretComponent[index].power + "\n"
+            + "Range: " + turretComponent[index].range;
     }
 
     private void ActivateShopPanel()
