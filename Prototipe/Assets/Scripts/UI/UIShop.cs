@@ -10,6 +10,7 @@ public class UIShop : MonoBehaviour
     public Library library;
     public List<GameObject> turrets = new List<GameObject>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
+    public List<GameObject> statsTurrets = new List<GameObject>();
     public UIManager uiManager;
     void Start()
     {
@@ -72,6 +73,7 @@ public class UIShop : MonoBehaviour
             {
                 turrets[i].gameObject.SetActive(true);
                 buyTurretButtons[i].gameObject.SetActive(true);
+                statsTurrets[i].gameObject.SetActive(true);
             }
         }   
     }
