@@ -12,9 +12,7 @@ public class UIShop : MonoBehaviour
     public List<GameObject> turrets = new List<GameObject>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
     public List<TMP_Text> statsTurrets = new List<TMP_Text>();
-    //public TMP_Text statsTurret1;
     public UIManager uiManager;
-    //[SerializeField] private List<GameObject> turretPrefabs = new List<GameObject>();
     public List<Turret> turretComponent = new List<Turret>();
     void Start()
     {

@@ -21,8 +21,10 @@ public class Turret : MonoBehaviour
 
     private Cheats cheat;
     public int price;
+    private Turret actualTurret;
 
     static public event Action OpenUpgradeSystem;
+    static public event Action<Turret> SelectedTurret;
 
     void Start()
     {
@@ -100,5 +102,7 @@ public class Turret : MonoBehaviour
     private void OnMouseDown()
     {
         OpenUpgradeSystem?.Invoke();
+        actualTurret = this;
+        SelectedTurret?.Invoke(actualTurret);
     }
 }
