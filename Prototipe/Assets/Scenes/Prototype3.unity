@@ -6421,7 +6421,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 193836583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: UpgradeTurret
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: attacks
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &193836583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33266,7 +33277,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179969599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: UpgradeTurret
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: range
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179969599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44324,7 +44346,9 @@ MonoBehaviour:
   upgradeSystemPanel: {fileID: 1807437572}
   uiManager: {fileID: 1577804616}
   selectedTurretStats: {fileID: 603884447}
-  selectedTurret: {fileID: 0}
+  attacksPerSecondsUpgradeValue: 1
+  rangeUpgradeValue: 1
+  powerUpgradeValue: 1
 --- !u!114 &1577804621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46245,7 +46269,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621412062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: UpgradeTurret
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: power
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621412062
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,15 +6,35 @@ public class UIUpgradeSystem : MonoBehaviour
     public GameObject upgradeSystemPanel;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private TMP_Text selectedTurretStats;
+    [SerializeField] private int attacksPerSecondsUpgradeValue;
+    [SerializeField] private float rangeUpgradeValue;
+    [SerializeField] private int powerUpgradeValue;
+    private Turret actualTurretToUpgrade;
     void Start()
     {
         Turret.OpenUpgradeSystem += ActivateUpgradeSystemPanel;
         Turret.SelectedTurret += ShowTurretStats;
+        Turret.SelectedTurret += SetSelectedTurret;
     }
 
     void Update()
     {
-        
+        ShowTurretStats(actualTurretToUpgrade);
+    }
+
+    private void SetSelectedTurret(Turret selectedTurret)
+    {
+        actualTurretToUpgrade = selectedTurret;
+    }
+
+    public void UpgradeTurret(string attribute)
+    {
+        if (attribute == "attacks")
+            actualTurretToUpgrade.attacksPerSecond += attacksPerSecondsUpgradeValue;
+        else if (attribute == "power")
+            actualTurretToUpgrade.power += powerUpgradeValue;
+        else if (attribute == "range")
+            actualTurretToUpgrade.range += rangeUpgradeValue;
     }
 
     private void ActivateUpgradeSystemPanel()
@@ -42,5 +62,6 @@ public class UIUpgradeSystem : MonoBehaviour
     {
         Turret.OpenUpgradeSystem -= ActivateUpgradeSystemPanel;
         Turret.SelectedTurret -= ShowTurretStats;
+        Turret.SelectedTurret -= SetSelectedTurret;
     }
 }
