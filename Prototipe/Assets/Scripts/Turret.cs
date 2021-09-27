@@ -26,6 +26,8 @@ public class Turret : MonoBehaviour
     static public event Action OpenUpgradeSystem;
     static public event Action<Turret> SelectedTurret;
 
+    public GameObject rangeSprite;
+
     void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -105,4 +107,13 @@ public class Turret : MonoBehaviour
         actualTurret = this;
         SelectedTurret?.Invoke(actualTurret);
     }
+    private void OnMouseEnter()
+    {
+        rangeSprite.SetActive(true);
+    }
+    private void OnMouseExit()
+    {
+        rangeSprite.SetActive(false);
+    }
+
 }
