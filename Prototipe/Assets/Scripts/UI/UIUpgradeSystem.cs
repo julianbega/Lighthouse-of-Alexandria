@@ -1,6 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
-
+using System;
 public class UIUpgradeSystem : MonoBehaviour
 {
     public GameObject upgradeSystemPanel;
@@ -10,6 +10,8 @@ public class UIUpgradeSystem : MonoBehaviour
     [SerializeField] private float rangeUpgradeValue;
     [SerializeField] private int powerUpgradeValue;
     private Turret actualTurretToUpgrade;
+
+    public static Action changeActualNode;
     void Start()
     {
         Turret.OpenUpgradeSystem += ActivateUpgradeSystemPanel;
@@ -49,6 +51,7 @@ public class UIUpgradeSystem : MonoBehaviour
         upgradeSystemPanel.SetActive(false);
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
+        changeActualNode?.Invoke();
     }
 
     private void ShowTurretStats(Turret selectedTurret)

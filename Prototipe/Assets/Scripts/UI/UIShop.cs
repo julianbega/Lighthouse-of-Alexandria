@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIShop : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UIShop : MonoBehaviour
     public List<TMP_Text> statsTurrets = new List<TMP_Text>();
     public UIManager uiManager;
     public List<Turret> turretComponent = new List<Turret>();
+
+    public static Action changeActualNode;
     void Start()
     {
         Node.OpenShop += ActivateShopPanel;
@@ -26,6 +29,7 @@ public class UIShop : MonoBehaviour
         ShopPanel.gameObject.SetActive(false);
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
+        changeActualNode?.Invoke();
     }
 
     public void BuyTurret1()

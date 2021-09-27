@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-
     public Node actualNode;
 
     private void Awake()

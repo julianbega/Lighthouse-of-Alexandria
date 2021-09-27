@@ -109,5 +109,6 @@ MonoBehaviour:
   onMouseColor: {fileID: 2100000, guid: 6769e062d9dc5134db53327b576d96ba, type: 2}
   offset: {x: 0, y: 2, z: 0}
   startColor: {fileID: 2100000, guid: 3c6db1bbf5cde0d46bfd704258c1a8c4, type: 2}
+  selectedColor: {fileID: 2100000, guid: d75e536ab030d614bbb3b08fd421df06, type: 2}
   turret: {fileID: 0}
   gm: {fileID: 0}
