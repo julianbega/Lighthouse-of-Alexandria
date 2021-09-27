@@ -5,18 +5,20 @@ using System;
 
 public class BuildManager : MonoBehaviour
 {
-    public static BuildManager instance;
+    static public BuildManager instance;
+    static public BuildManager GetInstance { get { return instance; } }
     public Node actualNode;
+    public Turret selectedTurret;
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
+            Destroy(this.gameObject);
         }
         else 
         {
-            return;
+            instance = this;
         }
     }
 

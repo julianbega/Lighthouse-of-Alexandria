@@ -9,34 +9,29 @@ public class UIUpgradeSystem : MonoBehaviour
     [SerializeField] private int attacksPerSecondsUpgradeValue;
     [SerializeField] private float rangeUpgradeValue;
     [SerializeField] private int powerUpgradeValue;
-    private Turret actualTurretToUpgrade;
+    //private Turret actualTurretToUpgrade;
 
     public static Action changeActualNode;
     void Start()
     {
         Turret.OpenUpgradeSystem += ActivateUpgradeSystemPanel;
-        Turret.SelectedTurret += ShowTurretStats;
-        Turret.SelectedTurret += SetSelectedTurret;
+        //Turret.SelectedTurret += ShowTurretStats;
+        //Turret.SelectedTurret += SetSelectedTurret;
     }
 
-    void Update()
+    private void Update()
     {
-        ShowTurretStats(actualTurretToUpgrade);
-    }
-
-    private void SetSelectedTurret(Turret selectedTurret)
-    {
-        actualTurretToUpgrade = selectedTurret;
+        ShowTurretStats();
     }
 
     public void UpgradeTurret(string attribute)
     {
         if (attribute == "attacks")
-            actualTurretToUpgrade.attacksPerSecond += attacksPerSecondsUpgradeValue;
+            BuildManager.instance.selectedTurret.attacksPerSecond += attacksPerSecondsUpgradeValue;
         else if (attribute == "power")
-            actualTurretToUpgrade.power += powerUpgradeValue;
+            BuildManager.instance.selectedTurret.power += powerUpgradeValue;
         else if (attribute == "range")
-            actualTurretToUpgrade.range += rangeUpgradeValue;
+            BuildManager.instance.selectedTurret.range += rangeUpgradeValue;
     }
 
     private void ActivateUpgradeSystemPanel()
@@ -44,6 +39,7 @@ public class UIUpgradeSystem : MonoBehaviour
         upgradeSystemPanel.SetActive(true);
         uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
+        ShowTurretStats();
     }
 
     public void DisableUpgradeSystemPanel()
@@ -54,17 +50,18 @@ public class UIUpgradeSystem : MonoBehaviour
         changeActualNode?.Invoke();
     }
 
-    private void ShowTurretStats(Turret selectedTurret)
+    public void ShowTurretStats()
     {
-        selectedTurretStats.text = "Attacks per second: " + selectedTurret.attacksPerSecond 
-            + "\n" + "Power: " + selectedTurret.power 
-            + "\n" + "Range: " + selectedTurret.range;
+        if(BuildManager.instance.selectedTurret != null)
+            selectedTurretStats.text = "Attacks per second: " + BuildManager.instance.selectedTurret.attacksPerSecond 
+                + "\n" + "Power: " + BuildManager.instance.selectedTurret.power 
+                + "\n" + "Range: " + BuildManager.instance.selectedTurret.range;
     }
 
     private void OnDisable()
     {
         Turret.OpenUpgradeSystem -= ActivateUpgradeSystemPanel;
-        Turret.SelectedTurret -= ShowTurretStats;
-        Turret.SelectedTurret -= SetSelectedTurret;
+        //Turret.SelectedTurret -= ShowTurretStats;
+        //Turret.SelectedTurret -= SetSelectedTurret;
     }
 }

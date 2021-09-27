@@ -6433,6 +6433,17 @@ MonoBehaviour:
           m_StringArgument: attacks
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: ShowTurretStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &193836583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33289,6 +33300,17 @@ MonoBehaviour:
           m_StringArgument: range
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: ShowTurretStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179969599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46281,6 +46303,17 @@ MonoBehaviour:
           m_StringArgument: power
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1577804620}
+        m_MethodName: ShowTurretStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621412062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52609,6 +52642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualNode: {fileID: 0}
+  selectedTurret: {fileID: 0}
   turretPrefabs:
   - {fileID: 2670055620850643100, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
   - {fileID: 2670055620850643100, guid: 0a65e7bdc67623a41b5460fbe6a42c8a, type: 3}
