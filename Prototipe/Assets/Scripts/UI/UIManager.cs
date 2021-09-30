@@ -8,12 +8,12 @@ public class UIManager : MonoBehaviour
 {
     public GameManager gm;
     public bool npcsOn;
-    public Levels lvl;
     private NPCsImages npcs;
-    public WaveSpawnerProto3 ws;
+    public Levels levels;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
     public TextMeshProUGUI lives;
+    public TextMeshProUGUI level;
     public Image Cheats;
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
@@ -28,26 +28,48 @@ public class UIManager : MonoBehaviour
     public string gameFirstDialoge;
     public int gameFirstDialogeNPC;
     public GameObject PauseGO;
+    public GameObject EndGameGO;
+    public TextMeshProUGUI endGameText;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        ws = FindObjectOfType<WaveSpawnerProto3>();
-        lvl = FindObjectOfType<Levels>();
+        levels = FindObjectOfType<Levels>();
         npcs = FindObjectOfType<NPCsImages>();
         Levels.ShowNPCs += NPCTalk;
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
+        GameManager.ShowEndGame += ShowEndGameSign;
+        
+        EndGameGO.SetActive(false);
     }
     private void OnDisable()
     {
         Levels.ShowNPCs -= NPCTalk;
+        GameManager.ShowEndGame -= ShowEndGameSign;
     }
 
     // Update is called once per frame
     void Update()
     {
         money.text = "Money: " + gm.GetMoney();
-        wave.text = "Wave: " + lvl.GetActualWave();
+        //wave.text = "Wave: " + lvl.GetActualWave();
         lives.text = "Lives: " + gm.GetLives();
+        
+        if (levels.actualLvl > 0)
+        { 
+            if(gm.isDayTime )
+            {
+                level.text = "Dia " + (levels.actualLvl+1);
+            }
+            else { level.text = "Noche " + (levels.actualLvl+1); }
+        }
+        else
+        {
+            if (gm.isDayTime)
+            {
+                level.text = "Dia 1 ";
+            }
+            else { level.text = "Noche 1 "; }
+        }
     }
     
     public void ShowCheats()
@@ -137,5 +159,19 @@ public class UIManager : MonoBehaviour
     public void ShowStartWave()
     {
         startWave.SetActive(true);
+    }
+
+    public void ShowEndGameSign()
+    {
+        Time.timeScale = 0;
+        EndGameGO.SetActive(true);
+        if (gm.victory)
+        {
+            endGameText.text = "Victory";
+        }
+        else 
+        {
+            endGameText.text = "Defeat";
+        }
     }
 }
