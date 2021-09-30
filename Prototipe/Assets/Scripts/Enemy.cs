@@ -40,12 +40,14 @@ public class Enemy : MonoBehaviour
         healthBarGO.SetActive(enlightened);  // activa o desactiva la barra de vida si está o no iluminada
         if (firstRotation)
         {
-            Quaternion targetRotation = Quaternion.identity;
+            if (target != null)
+            {
+                Quaternion targetRotation = Quaternion.identity;
             Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
             targetRotation = (Quaternion.LookRotation(targetDirection));
             transform.rotation = targetRotation;
             firstRotation = !firstRotation;
-
+            }
         }
         if (target != null)
         {
@@ -104,8 +106,10 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Finish"))
         {
-            Destroy(this.gameObject);
+
+            SubtractLives?.Invoke();
             EnemyDie?.Invoke();
+            Destroy(this.gameObject);
             return;
         }
         if (other.gameObject.CompareTag("Bullet"))
@@ -116,10 +120,9 @@ public class Enemy : MonoBehaviour
             healthBar.SetHealth(life);
             if (life <= 0)
             {
-                Destroy(this.gameObject);
                 GainMoney?.Invoke();
                 EnemyDie?.Invoke();
-                SubtractLives?.Invoke();
+                Destroy(this.gameObject);
                 return;
             }
             return;
