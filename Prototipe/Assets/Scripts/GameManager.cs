@@ -1,5 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,26 +11,29 @@ public class GameManager : MonoBehaviour
 
     public Light Light;
     public Light day;
+    public bool isDayTime;
+    public int lastLvl;
     private Levels lvl;
+
+    public bool victory;
+    static public event Action ShowEndGame;
 
     void Start()
     {
+        victory = false;
         lvl = FindObjectOfType<Levels>();
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney; 
         Levels.SetNightOn += SetNight;
         Levels.SetDayOn += SetDay;
-        FreeEnemy.SubtractLives += SubtractLives;
-        FreeEnemy.GainMoney += AddMoney;
         // Node.GetMoney += getMoney;
+        isDayTime = true;
     }
 
     private void OnDisable()
     {
         Enemy.SubtractLives -= SubtractLives;
         Enemy.GainMoney -= AddMoney;
-        FreeEnemy.SubtractLives -= SubtractLives;
-        FreeEnemy.GainMoney -= AddMoney;
         Levels.SetNightOn -= SetNight;
         Levels.SetDayOn -= SetDay;
     }
@@ -53,6 +57,11 @@ public class GameManager : MonoBehaviour
     public void SubtractLives()
     {
         lives--;
+        if (lives<= 0)
+        {
+            Defeat();
+        }
+        return;
     }
     public void SetNight()
     {
@@ -60,11 +69,21 @@ public class GameManager : MonoBehaviour
         {
             day.enabled = false;
             Light.enabled = true;
+            isDayTime = false;
         }
     }
     public void SetDay()
     {
         day.enabled = true;
         Light.enabled = false;
+        isDayTime = true;
+        if (lvl.actualLvl >= lastLvl)
+        {
+            ShowEndGame?.Invoke();
+        }
+    }
+    public void Defeat()
+    {
+        ShowEndGame?.Invoke();
     }
 }
