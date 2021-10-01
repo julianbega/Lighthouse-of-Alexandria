@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
             {
                 level.text = "Dia " + (levels.actualLvl+1);
             }
-            else { level.text = "Noche " + (levels.actualLvl+1); }
+            else { level.text = "Noche " + (levels.actualLvl); }
         }
         else
         {

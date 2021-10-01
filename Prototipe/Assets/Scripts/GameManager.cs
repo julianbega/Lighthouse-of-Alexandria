@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         isDayTime = true;
         if (lvl.actualLvl >= lastLvl)
         {
+            victory = true;
             ShowEndGame?.Invoke();
         }
     }
