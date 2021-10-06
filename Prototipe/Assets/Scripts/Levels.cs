@@ -17,6 +17,7 @@ public class Levels : MonoBehaviour
     public static Action SetNightOn;  
     public static Action<int, string> ShowNPCs;
     private bool itIsDay;
+    [SerializeField] private Animator dayCycle;
 
     private void Start()
     {
@@ -33,7 +34,13 @@ public class Levels : MonoBehaviour
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
         StartNight();
-        if(actualLevelDataSO.ItIsDay) StartDay();
+        //dayCycle.SetBool("isDay", actualLevelDataSO.ItIsDay);
+        if (actualLevelDataSO.ItIsDay)
+        {
+            StartDay();
+            Debug.Log("Es de dia xd");
+            //dayCycle.SetBool("isDay", actualLevelDataSO.ItIsDay);
+        }
         ActivateSpawner(actualLevelDataSO.activateSpawner);
         ClearRock(actualLevelDataSO.clearRock);        
     }
