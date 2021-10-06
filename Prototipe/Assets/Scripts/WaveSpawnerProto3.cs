@@ -25,7 +25,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
         uim = FindObjectOfType<UIManager>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
-        FreeEnemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         spawnsAreFinished = true;
     }
@@ -34,6 +33,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         if (enemyCount <= 0)
         {    
+            /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
             lvl.IncreaseLVL();
             Debug.Log("actualLvl: " + lvl.actualLvl);
             lvl.FindLvlInformation();
@@ -97,6 +97,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
         if (enemyCount <= 0 && spawnsAreFinished)
         {
+            /// se hace de dia y cuando termina la animacion pasa esto
             lvl.StartDay();
             ShowNPC?.Invoke();
             uim.CanOpenShopTrue();
@@ -108,7 +109,6 @@ public class WaveSpawnerProto3 : MonoBehaviour
     {
         WaveManager.StartWaveEvent -= StartLvlCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
-        FreeEnemy.EnemyDie -= DecreaseEnemyCount;
     }
 
 }
