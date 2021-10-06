@@ -38854,7 +38854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1847785814}
-  npcsOn: 0
+  npcsOn: 1
   levels: {fileID: 0}
   money: {fileID: 1968414298}
   wave: {fileID: 347512910}
