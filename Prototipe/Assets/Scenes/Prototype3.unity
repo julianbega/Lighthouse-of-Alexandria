@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44660026, g: 0.4964391, b: 0.5748325, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659972, g: 0.49643826, b: 0.5748314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42981,6 +42981,7 @@ MonoBehaviour:
   isDayTime: 0
   lastLvl: 4
   victory: 0
+  dayCycle: {fileID: 1528231186}
 --- !u!4 &1847785815
 Transform:
   m_ObjectHideFlags: 0
@@ -43099,7 +43100,6 @@ MonoBehaviour:
   - {fileID: 1139325197}
   - {fileID: 1431344456}
   - {fileID: 1992836141}
-  dayCycle: {fileID: 1528231186}
 --- !u!1001 &1850757520
 PrefabInstance:
   m_ObjectHideFlags: 0

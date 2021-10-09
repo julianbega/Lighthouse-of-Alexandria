@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public Light Light;
     public Light day;
+    public bool finishDay { get; set; }
+    public bool finishNight { get; set; }
     public bool isDayTime;
     public int lastLvl;
     private Levels lvl;
@@ -18,15 +21,32 @@ public class GameManager : MonoBehaviour
     public bool victory;
     static public event Action ShowEndGame;
 
+    [SerializeField] private Animator dayCycle;
+
+    static public GameManager instance;
+
+    static public GameManager GetInstance { get { return instance; } }
+
+    private void Awake()
+    {
+        if (instance != this && instance != null)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+    }
+
     void Start()
     {
         victory = false;
         lvl = FindObjectOfType<Levels>();
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney; 
-        Levels.SetNightOn += SetNight;
-        Levels.SetDayOn += SetDay;
+        //Levels.SetNightOn += SetNight;
+        //Levels.SetDayOn += SetDay;
         // Node.GetMoney += getMoney;
+        WaveSpawnerProto3.SetStateDayAnim += DayCycle;
+        Levels.SetDayOn += DayCycle;
+        Levels.SetNightOn += DayCycle;
         isDayTime = true;
     }
 
@@ -34,8 +54,11 @@ public class GameManager : MonoBehaviour
     {
         Enemy.SubtractLives -= SubtractLives;
         Enemy.GainMoney -= AddMoney;
-        Levels.SetNightOn -= SetNight;
-        Levels.SetDayOn -= SetDay;
+        //Levels.SetNightOn -= SetNight;
+        //Levels.SetDayOn -= SetDay;
+        WaveSpawnerProto3.SetStateDayAnim -= DayCycle;
+        Levels.SetDayOn -= DayCycle;
+        Levels.SetNightOn -= DayCycle;
     }
 
     public int GetMoney()
@@ -86,5 +109,44 @@ public class GameManager : MonoBehaviour
     public void Defeat()
     {
         ShowEndGame?.Invoke();
+    }
+
+    private void DayCycle(string state)
+    {
+        if (state == "Day")
+        {
+            dayCycle.SetBool("isDay", true);
+            StartCoroutine(WaitForDayAnim(state));
+        }
+        else
+        {
+            dayCycle.SetBool("isDay", false);
+            StartCoroutine(WaitForDayAnim(state));
+        }
+    }
+
+    public IEnumerator WaitForDayAnim(string state)
+    {
+        yield return new WaitForSeconds(2);
+        if (state == "Day")
+        {
+            finishDay = true;
+            finishNight = false;
+        }
+        else
+        {
+            finishNight = true;
+            finishDay = false;
+        }
+    }
+
+    public bool GetFinishDay()
+    {
+        return finishDay;
+    }
+
+    public bool GetFinishNight()
+    {
+        return finishNight;
     }
 }

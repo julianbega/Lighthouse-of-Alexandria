@@ -18,6 +18,7 @@ public class WaveSpawnerProto3 : MonoBehaviour
     private UIManager uim;
 
     public static Action ShowNPC;
+    static public event Action<string> SetStateDayAnim;
 
     private void Start()
     {
@@ -27,17 +28,23 @@ public class WaveSpawnerProto3 : MonoBehaviour
         Enemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         spawnsAreFinished = true;
+        SetStateDayAnim?.Invoke("Day");
     }
 
     void StartLvlCycle()
     {
         if (enemyCount <= 0)
-        {    
+        {
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
-            lvl.IncreaseLVL();
-            Debug.Log("actualLvl: " + lvl.actualLvl);
-            lvl.FindLvlInformation();
-            StartCoroutine(SpawnWave());
+            //SetStateDayAnim?.Invoke("Night");
+            //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
+            if (!GameManager.GetInstance.finishNight && GameManager.instance.finishDay)
+            {
+                lvl.IncreaseLVL();
+                Debug.Log("actualLvl: " + lvl.actualLvl);
+                lvl.FindLvlInformation();
+                StartCoroutine(SpawnWave());
+            }
         }
     }
 

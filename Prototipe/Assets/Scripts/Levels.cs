@@ -13,11 +13,10 @@ public class Levels : MonoBehaviour
     public static Action ActivateLvlSpawners;
     public List<Transform> activeSpawnStarts;
     public Transform[] allSpawners;
-    public static Action SetDayOn;
-    public static Action SetNightOn;  
+    public static Action<string> SetDayOn;
+    public static Action<string> SetNightOn;  
     public static Action<int, string> ShowNPCs;
     private bool itIsDay;
-    [SerializeField] private Animator dayCycle;
 
     private void Start()
     {
@@ -33,13 +32,11 @@ public class Levels : MonoBehaviour
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
-        StartNight();
-        //dayCycle.SetBool("isDay", actualLevelDataSO.ItIsDay);
-        if (actualLevelDataSO.ItIsDay)
+        if(GameManager.instance.finishDay)
+            StartNight();
+        if (actualLevelDataSO.ItIsDay && GameManager.instance.finishNight)
         {
             StartDay();
-            Debug.Log("Es de dia xd");
-            //dayCycle.SetBool("isDay", actualLevelDataSO.ItIsDay);
         }
         ActivateSpawner(actualLevelDataSO.activateSpawner);
         ClearRock(actualLevelDataSO.clearRock);        
@@ -82,8 +79,8 @@ public class Levels : MonoBehaviour
     {
         if (actualLevelDataSO != null)
         { 
-        actualLvl++;
-        actualLevelDataSO = levels[actualLvl];
+            actualLvl++;
+            actualLevelDataSO = levels[actualLvl];
         }
     }
     public int GetActualWave()
@@ -113,12 +110,14 @@ public class Levels : MonoBehaviour
     public void StartDay()
     {
         itIsDay = true;
-        SetDayOn?.Invoke();
+        //Con este evento llamar a la funcion del gamemanager que controla los ciclos
+        SetDayOn?.Invoke("Day");
     }
     public void StartNight()
     {
         itIsDay = false;
-        SetNightOn?.Invoke();
+        //Con este evento llamar a la funcion del gamemanager que controla los ciclos
+        SetNightOn?.Invoke("Night");
     }
     public void InvokeNPCShow()
     {
