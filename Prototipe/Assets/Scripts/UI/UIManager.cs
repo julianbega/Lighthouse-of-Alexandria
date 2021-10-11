@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public Button closeCheatsButton;
     public bool canOpenShop;
     public bool canOpenLibrary;
+    public bool canOpenUpgradeSystem;
     public GameObject NPC;
     public TextMeshProUGUI NPCDialoge;
     public Image NPCImage;
@@ -44,6 +45,7 @@ public class UIManager : MonoBehaviour
         GameManager.StopUIInteractions += StopInteractions;
         canOpenShop = false;
         canOpenLibrary = false;
+        canOpenUpgradeSystem = false;
         EndGameGO.SetActive(false);
     }
     private void OnDisable()
@@ -115,6 +117,16 @@ public class UIManager : MonoBehaviour
     public void CanOpenLibraryFalse()
     {
         canOpenLibrary = false;
+    }
+
+    public void CanOpenUpgradeSystemTrue()
+    {
+        canOpenUpgradeSystem = true;
+    }
+
+    public void CanOpenUpgradeSystemFalse()
+    {
+        canOpenUpgradeSystem = false;
     }
 
     private void NPCTalk(int npcIndex, string Dialoge)
@@ -197,6 +209,7 @@ public class UIManager : MonoBehaviour
     {
         CanOpenLibraryFalse();
         CanOpenShopFalse();
+        CanOpenUpgradeSystemFalse();
         pauseButton.SetActive(false);
         cheatsButton.SetActive(false);
         Time.timeScale = 0;

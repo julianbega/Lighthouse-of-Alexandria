@@ -29,6 +29,7 @@ public class UIShop : MonoBehaviour
         ShopPanel.gameObject.SetActive(false);
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
+        uiManager.CanOpenUpgradeSystemTrue();
         changeActualNode?.Invoke();
     }
 
@@ -100,6 +101,7 @@ public class UIShop : MonoBehaviour
             ShopPanel.gameObject.SetActive(true);
         //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
+        uiManager.CanOpenUpgradeSystemFalse();
     }
 
     private void OnDisable()

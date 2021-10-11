@@ -36,7 +36,8 @@ public class UIUpgradeSystem : MonoBehaviour
 
     private void ActivateUpgradeSystemPanel()
     {
-        upgradeSystemPanel.SetActive(true);
+        if(uiManager.canOpenUpgradeSystem)
+            upgradeSystemPanel.SetActive(true);
         uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
         ShowTurretStats();
@@ -47,6 +48,7 @@ public class UIUpgradeSystem : MonoBehaviour
         upgradeSystemPanel.SetActive(false);
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
+        uiManager.CanOpenUpgradeSystemTrue();
         changeActualNode?.Invoke();
     }
 
