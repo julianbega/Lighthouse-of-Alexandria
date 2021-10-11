@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public bool victory;
     static public event Action ShowEndGame;
+    static public event Action StopUIInteractions;
 
     [SerializeField] private Animator dayCycle;
 
@@ -104,11 +105,13 @@ public class GameManager : MonoBehaviour
         {
             victory = true;
             ShowEndGame?.Invoke();
+            StopUIInteractions?.Invoke();
         }
     }
     public void Defeat()
     {
         ShowEndGame?.Invoke();
+        StopUIInteractions?.Invoke();
     }
 
     private void DayCycle(string state)

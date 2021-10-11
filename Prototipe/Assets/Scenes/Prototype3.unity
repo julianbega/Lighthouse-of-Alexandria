@@ -36104,8 +36104,8 @@ MonoBehaviour:
   Cheats: {fileID: 296384442}
   CheatsButtonImage: {fileID: 220195589}
   CheatsText: {fileID: 1297297453}
-  CheatsButton: {fileID: 220195586}
-  canOpenShop: 1
+  closeCheatsButton: {fileID: 220195586}
+  canOpenShop: 0
   canOpenLibrary: 0
   NPC: {fileID: 270171239}
   NPCDialoge: {fileID: 1393418031}
@@ -36118,6 +36118,8 @@ MonoBehaviour:
   PauseGO: {fileID: 222443896}
   EndGameGO: {fileID: 1181557538}
   endGameText: {fileID: 1225060355}
+  pauseButton: {fileID: 759296664}
+  cheatsButton: {fileID: 394241695}
 --- !u!114 &1577804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47796,17 +47798,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1577804617}
         m_MethodName: CloseShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1577804616}
-        m_MethodName: CanOpenLibraryTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

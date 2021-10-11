@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     public Image Cheats;
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
-    public Button CheatsButton;
+    public Button closeCheatsButton;
     public bool canOpenShop;
     public bool canOpenLibrary;
     public GameObject NPC;
@@ -30,6 +30,9 @@ public class UIManager : MonoBehaviour
     public GameObject PauseGO;
     public GameObject EndGameGO;
     public TextMeshProUGUI endGameText;
+
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject cheatsButton;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -38,13 +41,16 @@ public class UIManager : MonoBehaviour
         Levels.ShowNPCs += NPCTalk;
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
         GameManager.ShowEndGame += ShowEndGameSign;
-        
+        GameManager.StopUIInteractions += StopInteractions;
+        canOpenShop = false;
+        canOpenLibrary = false;
         EndGameGO.SetActive(false);
     }
     private void OnDisable()
     {
         Levels.ShowNPCs -= NPCTalk;
         GameManager.ShowEndGame -= ShowEndGameSign;
+        GameManager.StopUIInteractions -= StopInteractions;
     }
 
     // Update is called once per frame
@@ -76,15 +82,19 @@ public class UIManager : MonoBehaviour
     {
         Cheats.enabled = true;
         CheatsText.enabled = true;
-        CheatsButton.enabled = true;
+        closeCheatsButton.enabled = true;
         CheatsButtonImage.enabled = true;
+        CanOpenShopFalse();
+        CanOpenLibraryFalse();
     }
     public void HideCheats()
     {
         Cheats.enabled = false;
         CheatsText.enabled = false;
-        CheatsButton.enabled = false;
+        closeCheatsButton.enabled = false;
         CheatsButtonImage.enabled = false;
+        CanOpenShopTrue();
+        CanOpenLibraryTrue();
     }
 
     public void CanOpenShopTrue()
@@ -114,10 +124,14 @@ public class UIManager : MonoBehaviour
             if (npcIndex != 0)
             {
                 NPC.SetActive(true);
-                CanOpenShopFalse();
-                CanOpenLibraryFalse();
+                Debug.Log("open shop" + canOpenShop);
+                Debug.Log("open library" + canOpenLibrary);
+                if(canOpenShop && canOpenLibrary)
+                {
+                    CanOpenShopFalse();
+                    CanOpenLibraryFalse();
+                }
                 HideStartWave();
-                CanOpenShopFalse();
             }
             NPCImage.sprite = npcs.SelectNPC(npcIndex);
             DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
@@ -139,6 +153,8 @@ public class UIManager : MonoBehaviour
             PauseGO.SetActive(true);
             gm.Light.enabled = false;
             Time.timeScale = 0;
+            CanOpenShopFalse();
+            CanOpenLibraryFalse();
         }
         else
         {
@@ -150,6 +166,8 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(true);
             PauseGO.SetActive(false);
             Time.timeScale = 1;
+            CanOpenShopTrue();
+            CanOpenLibraryTrue();
         }
     }
     public void HideStartWave()
@@ -173,5 +191,14 @@ public class UIManager : MonoBehaviour
         {
             endGameText.text = "Defeat";
         }
+    }
+
+    private void StopInteractions()
+    {
+        CanOpenLibraryFalse();
+        CanOpenShopFalse();
+        pauseButton.SetActive(false);
+        cheatsButton.SetActive(false);
+        Time.timeScale = 0;
     }
 }

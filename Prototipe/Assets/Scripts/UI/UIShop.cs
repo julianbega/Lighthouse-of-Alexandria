@@ -98,7 +98,7 @@ public class UIShop : MonoBehaviour
         ShowTurret();
         if(uiManager.canOpenShop)
             ShopPanel.gameObject.SetActive(true);
-        uiManager.CanOpenShopFalse();
+        //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
     }
 
