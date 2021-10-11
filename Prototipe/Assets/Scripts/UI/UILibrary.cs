@@ -19,6 +19,8 @@ public class UILibrary : MonoBehaviour
             LibraryPanel.gameObject.SetActive(true);
         uiManager.CanOpenShopFalse();
         uiManager.CanOpenUpgradeSystemFalse();
+        uiManager.HidePauseBtn();
+        uiManager.HideStartWave();
     }
 
     public void CloseLibraryPanel()
@@ -27,6 +29,8 @@ public class UILibrary : MonoBehaviour
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
         uiManager.CanOpenUpgradeSystemTrue();
+        uiManager.ShowPauseBtn();
+        uiManager.ShowStartWave();
     }
 
     public void UnlockTurret(int index)

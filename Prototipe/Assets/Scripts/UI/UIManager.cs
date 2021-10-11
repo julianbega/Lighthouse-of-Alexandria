@@ -99,6 +99,16 @@ public class UIManager : MonoBehaviour
         CanOpenLibraryTrue();
     }
 
+    public void ShowPauseBtn()
+    {
+        pauseButton.SetActive(true);
+    }
+
+    public void HidePauseBtn()
+    {
+        pauseButton.SetActive(false);
+    }
+
     public void CanOpenShopTrue()
     {
         canOpenShop = true;
@@ -144,6 +154,7 @@ public class UIManager : MonoBehaviour
                     CanOpenLibraryFalse();
                 }
                 HideStartWave();
+                HidePauseBtn();
             }
             NPCImage.sprite = npcs.SelectNPC(npcIndex);
             DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
@@ -154,6 +165,7 @@ public class UIManager : MonoBehaviour
     public void CloseNPCTalk()
     {
         NPC.SetActive(false);
+        ShowPauseBtn();
         CanOpenShopTrue();
         CanOpenLibraryTrue();
     }
@@ -210,7 +222,7 @@ public class UIManager : MonoBehaviour
         CanOpenLibraryFalse();
         CanOpenShopFalse();
         CanOpenUpgradeSystemFalse();
-        pauseButton.SetActive(false);
+        HidePauseBtn();
         cheatsButton.SetActive(false);
         Time.timeScale = 0;
     }

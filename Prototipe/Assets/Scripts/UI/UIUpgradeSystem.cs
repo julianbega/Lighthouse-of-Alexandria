@@ -40,6 +40,8 @@ public class UIUpgradeSystem : MonoBehaviour
             upgradeSystemPanel.SetActive(true);
         uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
+        uiManager.HidePauseBtn();
+        uiManager.HideStartWave();
         ShowTurretStats();
     }
 
@@ -49,6 +51,8 @@ public class UIUpgradeSystem : MonoBehaviour
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
         uiManager.CanOpenUpgradeSystemTrue();
+        uiManager.ShowPauseBtn();
+        uiManager.ShowStartWave();
         changeActualNode?.Invoke();
     }
 

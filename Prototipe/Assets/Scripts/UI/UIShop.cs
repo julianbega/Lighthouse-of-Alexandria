@@ -30,6 +30,8 @@ public class UIShop : MonoBehaviour
         uiManager.CanOpenShopTrue();
         uiManager.CanOpenLibraryTrue();
         uiManager.CanOpenUpgradeSystemTrue();
+        uiManager.ShowStartWave();
+        uiManager.ShowPauseBtn();
         changeActualNode?.Invoke();
     }
 
@@ -102,6 +104,9 @@ public class UIShop : MonoBehaviour
         //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
         uiManager.CanOpenUpgradeSystemFalse();
+        uiManager.HideCheats();
+        uiManager.HidePauseBtn();
+        uiManager.HideStartWave();
     }
 
     private void OnDisable()
