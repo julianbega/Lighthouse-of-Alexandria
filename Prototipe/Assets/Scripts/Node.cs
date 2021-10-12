@@ -25,6 +25,7 @@ public class Node : MonoBehaviour
     }
     private void Start()
     {
+        UIManager.ChangeAllNodesToStartColor += InvokeChangeToStartColor;
         Node.ChangeAllNodesToStartColor += changeToStartColor;
         UIShop.changeActualNode += changeToStartColor;
         UIUpgradeSystem.changeActualNode += changeToStartColor;
@@ -32,6 +33,7 @@ public class Node : MonoBehaviour
     }
     private void OnDisable()
     {
+        UIManager.ChangeAllNodesToStartColor -= InvokeChangeToStartColor;
         Node.ChangeAllNodesToStartColor -= changeToStartColor;
         UIShop.changeActualNode -= changeToStartColor;
         UIUpgradeSystem.changeActualNode -= changeToStartColor;
@@ -55,16 +57,26 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+       
+    }
+
+    private void OnMouseUp()
+    {
         if (turret != null)
         {
             Debug.Log("not Buildable");
             return;
         }
         ChangeAllNodesToStartColor?.Invoke();
-        render.material = selectedColor;        
+        render.material = selectedColor;
         OpenShop?.Invoke();
-        BuildManager.instance.actualNode = this;        
-        
+        BuildManager.instance.actualNode = this;
+
+    }
+
+    private void InvokeChangeToStartColor()
+    {
+        ChangeAllNodesToStartColor?.Invoke();
     }
 
     private void changeToStartColor()

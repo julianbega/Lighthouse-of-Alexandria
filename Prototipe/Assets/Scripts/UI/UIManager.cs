@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class UIManager : MonoBehaviour
     public GameObject EndGameGO;
     public TextMeshProUGUI endGameText;
 
+    public static event Action ChangeAllNodesToStartColor;
+
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject cheatsButton;
     void Start()
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
         Levels.ShowNPCs -= NPCTalk;
         GameManager.ShowEndGame -= ShowEndGameSign;
         GameManager.StopUIInteractions -= StopInteractions;
+
     }
 
     // Update is called once per frame
@@ -98,7 +102,10 @@ public class UIManager : MonoBehaviour
         CanOpenShopTrue();
         CanOpenLibraryTrue();
     }
-
+    public void SetAllNodesDefaultColor()
+    {
+        ChangeAllNodesToStartColor?.Invoke();
+    }
     public void ShowPauseBtn()
     {
         pauseButton.SetActive(true);
