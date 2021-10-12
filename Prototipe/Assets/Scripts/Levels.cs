@@ -9,6 +9,7 @@ public class Levels : MonoBehaviour
     public LevelDataSO actualLevelDataSO;
 
     public GameObject[] rocks;
+    public GameObject[] WaterPaths;
     public int actualLvl;
     public static Action ActivateLvlSpawners;
     public List<Transform> activeSpawnStarts;
@@ -39,7 +40,8 @@ public class Levels : MonoBehaviour
             StartDay();
         }
         ActivateSpawner(actualLevelDataSO.activateSpawner);
-        ClearRock(actualLevelDataSO.clearRock);        
+        ClearRock(actualLevelDataSO.clearRock);
+        ActivatePath(actualLevelDataSO.activateWater);
     }
     
     private void ActivateSpawner(int Index)
@@ -55,9 +57,16 @@ public class Levels : MonoBehaviour
     {
         if (Index != -1)
         {
-            rocks[Index-1].SetActive(false);
+            rocks[Index - 1].SetActive(false);
         }
-    }  
+    }
+    private void ActivatePath(int Index)
+    {
+        if (Index != -1)
+        {
+            WaterPaths[Index - 1].SetActive(true);
+        }
+    }
 
     public int GetStandardEnemies()
     {

@@ -9,6 +9,7 @@ public class LevelDataSO : ScriptableObject
     public bool ItIsDay;
     public int activateSpawner = -1;
     public int clearRock = -1;
+    public int activateWater = -1;
     public int NPCToTalk = 0;
     public string Dialog = "";
     public List<WaveData> waves;

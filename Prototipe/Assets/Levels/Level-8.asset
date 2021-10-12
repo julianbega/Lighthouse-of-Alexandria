@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItIsDay: 0
   activateSpawner: -1
-  clearRock: 2
+  clearRock: 4
+  activateWater: 3
   NPCToTalk: 0
   Dialog: 
   waves:
