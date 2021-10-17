@@ -15,7 +15,7 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel()
     {
-        if(uiManager.canOpenLibrary)
+        if(uiManager.canOpenLibrary && !uiManager.NPC.activeSelf)
             LibraryPanel.gameObject.SetActive(true);
         uiManager.CanOpenShopFalse();
         uiManager.CanOpenUpgradeSystemFalse();

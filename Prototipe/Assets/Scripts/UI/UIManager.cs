@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -153,8 +154,6 @@ public class UIManager : MonoBehaviour
             if (npcIndex != 0)
             {
                 NPC.SetActive(true);
-                Debug.Log("open shop" + canOpenShop);
-                Debug.Log("open library" + canOpenLibrary);
                 if(canOpenShop && canOpenLibrary)
                 {
                     CanOpenShopFalse();
@@ -171,7 +170,8 @@ public class UIManager : MonoBehaviour
 
     public void CloseNPCTalk()
     {
-        NPC.SetActive(false);
+        if(EventSystem.current.IsPointerOverGameObject())
+            NPC.SetActive(false);
         ShowPauseBtn();
         CanOpenShopTrue();
         CanOpenLibraryTrue();

@@ -40,15 +40,12 @@ public class UIShop : MonoBehaviour
 
     public void BuyTurret1()
     {
-       // if (!EventSystem.current.IsPointerOverGameObject())
-        //{
-            GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
-            if (gm.GetMoney() >= 10)
-            {
-                BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
-                gm.moneySubtract(10);
-            }
-        //}   
+        GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
+        if (gm.GetMoney() >= 10)
+        {
+            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+            gm.moneySubtract(10);
+        }   
     }
 
     public void BuyTurret2()
@@ -105,7 +102,7 @@ public class UIShop : MonoBehaviour
     private void ActivateShopPanel()
     {
         ShowTurret();
-        if(uiManager.canOpenShop)
+        if(uiManager.canOpenShop && !uiManager.NPC.activeSelf)
             ShopPanel.gameObject.SetActive(true);
         //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
