@@ -17,6 +17,9 @@ public class UIShop : MonoBehaviour
     public List<Turret> turretComponent = new List<Turret>();
 
     public static Action changeActualNode;
+
+    public object EventSystemManager { get; private set; }
+
     void Start()
     {
         Node.OpenShop += ActivateShopPanel;
@@ -37,12 +40,15 @@ public class UIShop : MonoBehaviour
 
     public void BuyTurret1()
     {
-        GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
-        if (gm.GetMoney() >= 10)
-        {
-            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.moneySubtract(10);
-        }
+       // if (!EventSystem.current.IsPointerOverGameObject())
+        //{
+            GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
+            if (gm.GetMoney() >= 10)
+            {
+                BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+                gm.moneySubtract(10);
+            }
+        //}   
     }
 
     public void BuyTurret2()

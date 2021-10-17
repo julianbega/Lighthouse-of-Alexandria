@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -69,9 +70,11 @@ public class Node : MonoBehaviour
         }
         ChangeAllNodesToStartColor?.Invoke();
         render.material = selectedColor;
-        OpenShop?.Invoke();
-        BuildManager.instance.actualNode = this;
-
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            OpenShop?.Invoke();
+            BuildManager.instance.actualNode = this;
+        }
     }
 
     private void InvokeChangeToStartColor()
