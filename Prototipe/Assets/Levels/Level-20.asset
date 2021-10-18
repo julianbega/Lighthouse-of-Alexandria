@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a918d482185617438640e6b69ac9045, type: 3}
-  m_Name: Level-10
+  m_Name: Level-20
   m_EditorClassIdentifier: 
   ItIsDay: 0
   activateSpawner: -1
-  clearRock: 5
-  activateWater: 4
+  clearRock: 10
+  activateWater: 8
   NPCToTalk: 0
   Dialog: 
   waves:
