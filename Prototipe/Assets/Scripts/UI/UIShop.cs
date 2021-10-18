@@ -6,11 +6,11 @@ using System;
 
 public class UIShop : MonoBehaviour
 {
-    public GameObject ShopPanel;
+    public RectTransform ShopPanel;
     public Vector3 offset;
     private GameManager gm;
     public Library library;
-    public List<GameObject> turrets = new List<GameObject>();
+    public List<Button> turrets = new List<Button>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
     public List<TMP_Text> statsTurrets = new List<TMP_Text>();
     public UIManager uiManager;
@@ -103,7 +103,10 @@ public class UIShop : MonoBehaviour
     {
         ShowTurret();
         if(uiManager.canOpenShop && !uiManager.NPC.activeSelf)
+        {
             ShopPanel.gameObject.SetActive(true);
+            ShopPanel.transform.position = Input.mousePosition;
+        }
         //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
         uiManager.CanOpenUpgradeSystemFalse();
