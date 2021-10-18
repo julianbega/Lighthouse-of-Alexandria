@@ -119,14 +119,21 @@ public class Levels : MonoBehaviour
     public void StartDay()
     {
         itIsDay = true;
+
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-        SetDayOn?.Invoke("Day");
+        if (actualLevelDataSO.ItIsDay)
+        {
+            SetDayOn?.Invoke("Day");
+        }
     }
     public void StartNight()
     {
         itIsDay = false;
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-        SetNightOn?.Invoke("Night");
+        if (!actualLevelDataSO.ItIsDay)
+        {
+            SetNightOn?.Invoke("Night");
+        }
     }
     public void InvokeNPCShow()
     {
