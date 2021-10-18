@@ -71,9 +71,9 @@ public class WaveSpawnerProto3 : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
             lvl.IncreaseActualWave();
-            if(lvl.CompareActualWaveAndTotalWavesAreEquals())
-            { 
-                spawnsAreFinished = true;               
+            if (lvl.CompareActualWaveAndTotalWavesAreEquals())
+            {
+                spawnsAreFinished = true;
             }
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());
         }

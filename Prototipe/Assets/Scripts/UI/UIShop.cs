@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 
 public class UIShop : MonoBehaviour
 {
@@ -15,16 +16,25 @@ public class UIShop : MonoBehaviour
     public List<TMP_Text> statsTurrets = new List<TMP_Text>();
     public UIManager uiManager;
     public List<Turret> turretComponent = new List<Turret>();
-
+    private Transform node;
+    private Camera cam;
     public static Action changeActualNode;
 
     public object EventSystemManager { get; private set; }
 
     void Start()
     {
+        cam = Camera.main;
         Node.OpenShop += ActivateShopPanel;
         gm = FindObjectOfType<GameManager>();
         ShowTurretStats(0);
+    }
+    private void Update()
+    {
+        if (BuildManager.instance.actualNode != null && BuildManager.instance.actualNode != node)
+        { 
+        node = BuildManager.instance.actualNode.transform;
+        }
     }
 
     public void CloseShop()
@@ -105,7 +115,7 @@ public class UIShop : MonoBehaviour
         if(uiManager.canOpenShop && !uiManager.NPC.activeSelf)
         {
             ShopPanel.gameObject.SetActive(true);
-            ShopPanel.transform.position = Input.mousePosition;
+            StartCoroutine(Wait());
         }
         //uiManager.CanOpenShopFalse();
         uiManager.CanOpenLibraryFalse();
@@ -115,6 +125,11 @@ public class UIShop : MonoBehaviour
         uiManager.HideStartWave();
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.001f);
+        ShopPanel.transform.position = cam.WorldToScreenPoint(node.position);
+    }
     private void OnDisable()
     {
         Node.OpenShop -= ActivateShopPanel;
