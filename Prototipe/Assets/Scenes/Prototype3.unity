@@ -1782,7 +1782,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock12 (4)
+      value: Rock12 (4) PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -3899,7 +3899,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock12 (3)
+      value: Rock12 (3) PIEDRA
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -19570,7 +19570,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra7
+      value: Piedra7 PIEDRA. NO PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -20217,7 +20217,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: w
+      value: PIEDRA, NO PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -21574,7 +21574,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock2 (2)
+      value: PIEDRA, NO Pared
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -28571,7 +28571,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock12 (1)
+      value: Rock12 (1) PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -32081,7 +32081,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra6
+      value: Piedra6-Pared
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -35446,7 +35446,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra2
+      value: 'Piedra2 -Pared '
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -45171,7 +45171,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra4
+      value: Piedra4 -Pared
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -46659,7 +46659,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock3 (1)
+      value: PIEDRA, NO PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -49916,7 +49916,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra9
+      value: Piedra9 -Pared
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -51430,7 +51430,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Piedra1
+      value: Piedra1-Pared
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
@@ -53530,7 +53530,7 @@ PrefabInstance:
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
       propertyPath: m_Name
-      value: Rock12 (2)
+      value: Rock12 (2) PARED
       objectReference: {fileID: 0}
     - target: {fileID: 5163654509933405379, guid: 659558103659dd44bb24e973d156126d,
         type: 3}
