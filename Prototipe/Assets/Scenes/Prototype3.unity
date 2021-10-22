@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659972, g: 0.49643826, b: 0.5748314, a: 1}
+  m_IndirectSpecularColor: {r: 0.44660026, g: 0.4964391, b: 0.5748325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11752,12 +11752,12 @@ GameObject:
   - component: {fileID: 417515234}
   - component: {fileID: 417515233}
   m_Layer: 10
-  m_Name: Cube
+  m_Name: WaterWallForNightShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &417515233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50142,6 +50142,7 @@ MonoBehaviour:
   lives: 5
   gainPerKill: 333
   Light: {fileID: 5128339851379413112}
+  waterBarrierForShader: {fileID: 417515232}
   day: {fileID: 1528231184}
   isDayTime: 0
   lastLvl: 4
@@ -61858,7 +61859,7 @@ Light:
   m_Color: {r: 1, g: 0.80035514, b: 0.43867922, a: 1}
   m_Intensity: 1.7
   m_Range: 100
-  m_SpotAngle: 20.7
+  m_SpotAngle: 14
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
