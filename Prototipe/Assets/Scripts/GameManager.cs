@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
    
     public int gainPerKill;
 
-    public Light Light;
+    public GameObject Light;
+    public GameObject waterBarrierForShader;
     public Light day;
     public bool finishDay { get; set; }
     public bool finishNight { get; set; }
@@ -62,6 +63,20 @@ public class GameManager : MonoBehaviour
         Levels.SetNightOn -= DayCycle;
     }
 
+    private void Update()
+    {
+        if(!Light.activeInHierarchy && !isDayTime )
+        {
+            Light.SetActive(true);
+            waterBarrierForShader.SetActive(true);
+        }
+        if (Light.activeInHierarchy && isDayTime)
+        {
+            Light.SetActive(false);
+            waterBarrierForShader.SetActive(false);
+        }
+    }
+
     public int GetMoney()
     {
         return money;
@@ -92,14 +107,13 @@ public class GameManager : MonoBehaviour
         if (lvl.GetActualLVL() > 0)
         {
             day.enabled = false;
-            Light.enabled = true;
             isDayTime = false;
+
         }
     }
     public void SetDay()
     {
         day.enabled = true;
-        Light.enabled = false;
         isDayTime = true;
         if (lvl.actualLvl >= lastLvl)
         {
@@ -118,11 +132,13 @@ public class GameManager : MonoBehaviour
     {
         if (state == "Day")
         {
+            isDayTime = true;
             dayCycle.SetBool("isDay", true);
             StartCoroutine(WaitForDayAnim(state));
         }
         else
         {
+            isDayTime = false;
             dayCycle.SetBool("isDay", false);
             StartCoroutine(WaitForDayAnim(state));
         }

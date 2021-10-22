@@ -141,6 +141,6 @@ public class Levels : MonoBehaviour
     }
     public bool askIfDay()
     {
-        return itIsDay;
+        return actualLevelDataSO.ItIsDay;
     }
 }

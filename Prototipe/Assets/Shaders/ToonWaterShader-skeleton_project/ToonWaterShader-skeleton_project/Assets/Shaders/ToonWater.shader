@@ -11,7 +11,7 @@
 		_SurfaceNoiseScroll("Surface Noise Scroll Amount", Vector) = (0.03, 0.03, 0, 0)
 		_SurfaceDistortion("Surface Distortion", 2D) = "white" {}
 		_SurfaceDistortionAmount("Surface Distortion Amount", Range(0, 1)) = 0.27
-
+		
 
 	}
 		SubShader

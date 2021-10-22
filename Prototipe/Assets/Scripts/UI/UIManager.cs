@@ -182,7 +182,6 @@ public class UIManager : MonoBehaviour
         {
             startWave.SetActive(false);
             PauseGO.SetActive(true);
-            gm.Light.enabled = false;
             Time.timeScale = 0;
             CanOpenShopFalse();
             CanOpenLibraryFalse();
@@ -191,7 +190,6 @@ public class UIManager : MonoBehaviour
         {
             if (!gm.day.isActiveAndEnabled)
             {
-                gm.Light.enabled = true;
             }
             Debug.Log("despausa");
             startWave.SetActive(true);

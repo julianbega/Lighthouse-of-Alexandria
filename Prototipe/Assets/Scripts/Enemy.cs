@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         lvl = FindObjectOfType<Levels>();
         Cheats.killEnemy += Kill;
         enlightened = lvl.askIfDay();
+        Debug.Log(lvl.askIfDay());
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
