@@ -35,3 +35,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Wwise_TowerDefenseGame_2021/Wwise_TowerDefenseGame_2021.crossover.wsettings
+*.validationcache
+*.wsettings
+*.validationcache
+*.wsettings

@@ -19,6 +19,21 @@
 								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<ObjectRef Name="New_Wwise_Gain" ID="{445B6543-3F05-49C7-A8AF-A6B18E6749C9}" WorkUnitID="{BA70712F-9982-44B2-9ED3-21BFAD5B143D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Bus Name="Towers" ID="{B2886719-8A0C-4F16-9549-05E20A8075CA}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+											<ObjectRef Name="New_Wwise_Gain" ID="{445B6543-3F05-49C7-A8AF-A6B18E6749C9}" WorkUnitID="{BA70712F-9982-44B2-9ED3-21BFAD5B143D}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</Bus>
+							</ChildrenList>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="Music" ID="{A42E9F81-A40C-40D0-92DE-B8EB248C2F1B}">
@@ -33,7 +48,6 @@
 								<Property Name="Color" Type="int16" Value="15"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
-							<ReferenceList/>
 							<ObjectLists/>
 						</AuxBus>
 					</ChildrenList>

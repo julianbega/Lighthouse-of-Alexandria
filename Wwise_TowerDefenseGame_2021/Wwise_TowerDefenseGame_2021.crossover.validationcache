@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="103">
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Wwise_TowerDefenseGame_2021.wproj" DateLow="1634943371" DateHigh="0"/>
-	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Wwise_TowerDefenseGame_2021.crossover.wsettings" DateLow="1634955093" DateHigh="0"/>
+	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Wwise_TowerDefenseGame_2021.crossover.wsettings" DateLow="1635000022" DateHigh="0"/>
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Virtual Acoustics\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Triggers\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Switches\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
@@ -37,5 +37,5 @@
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Control Surface Sessions\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Audio Devices\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
 	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Attenuations\Default Work Unit.wwu" DateLow="1634943371" DateHigh="0"/>
-	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1634955073" DateHigh="0"/>
+	<ValidationCacheItem File="Z:\Volumes\Projects\6. REPOSITORIES\Lighthouse-of-Alexandria\Wwise_TowerDefenseGame_2021\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1635000006" DateHigh="0"/>
 </ValidationCache>

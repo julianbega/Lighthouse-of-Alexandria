@@ -3,27 +3,109 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{9347299A-8678-47DE-9A39-076ED4811A22}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="play_gamestart" ID="{F539FA8B-D1C0-47A7-AC13-AF51B9A3EFFE}">
+				<Folder Name="Towers" ID="{6A9966FB-0B2F-4E48-8BCC-DEE38BC6B767}" ShortID="14291328">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
-						<Action Name="" ID="{03B3901E-0CB3-4AE7-9F41-6841F9D0F9F6}" ShortID="187493547">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="22"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}" WorkUnitID="{861D8495-A811-4CC3-AE88-F9E370F791C0}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{D2FCF6DC-B4E3-4D8D-AEEB-94CAAF33477D}" ShortID="813896018">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="DayTIme" ID="{C7EEC013-D018-4A62-A2D6-3A9315E9DD90}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="impact_cannontower" ID="{4775E535-BD75-42AD-98DF-D6ED498A2324}">
+							<ChildrenList>
+								<Action Name="" ID="{D4CE0C7F-3BE5-405C-A240-46CD720DDC6F}" ShortID="780232472">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact_Cannon" ID="{251741D9-F690-4CC5-B804-0B6437836EBE}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="impact_crossbowtower" ID="{756A38EF-21DD-4F30-9573-E83CC58E00D7}">
+							<ChildrenList>
+								<Action Name="" ID="{3899835E-018F-487B-A1C5-B112947015C9}" ShortID="496323435">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact_Crossbow" ID="{A8FD4CAC-D7A9-46D0-9196-B9FF9B785884}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="attack_cannontower" ID="{1B7690D3-9756-4E0C-A225-969A3CEE828B}">
+							<ChildrenList>
+								<Action Name="" ID="{EB49700A-B159-4DB4-B004-8A681C94F239}" ShortID="531172216">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack_Cannon" ID="{2602C0C7-1F36-4563-9769-BDDC1799FA57}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="attack_crossbowtower" ID="{25F06FE1-9211-47AC-B577-5A003FD01731}">
+							<ChildrenList>
+								<Action Name="" ID="{C5E9F79C-502C-468F-86B2-CFEEC8925CB0}" ShortID="277997310">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack_Crossbow" ID="{F5B8F141-7B11-44CC-9E4F-D11D68122AA3}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="attack_archertower" ID="{A159A2CB-F092-4936-9844-5E474957D7B0}">
+							<ChildrenList>
+								<Action Name="" ID="{D39C4CE9-2F2B-4B37-98F9-D50B30F59CE2}" ShortID="348911530">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack_Archer" ID="{2294F187-499E-46A1-A34C-4BD1EB718050}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="impact_archertower" ID="{B4E987EB-D4BB-4415-B1AB-2C0E932E8B8D}">
+							<ChildrenList>
+								<Action Name="" ID="{31C06E16-60CD-4B0B-87C7-067CABEF6FC6}" ShortID="383344717">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact_Archer" ID="{98852261-6972-4AD5-B5A6-69D40E25A13B}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
+				<Folder Name="Global_Game_Events" ID="{FFC3A8E7-9DE4-4F7B-92AC-C7DB5982F32D}" ShortID="362255995">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="play_gamestart" ID="{F539FA8B-D1C0-47A7-AC13-AF51B9A3EFFE}">
+							<ChildrenList>
+								<Action Name="" ID="{03B3901E-0CB3-4AE7-9F41-6841F9D0F9F6}" ShortID="187493547">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}" WorkUnitID="{861D8495-A811-4CC3-AE88-F9E370F791C0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D2FCF6DC-B4E3-4D8D-AEEB-94CAAF33477D}" ShortID="813896018">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DayTIme" ID="{C7EEC013-D018-4A62-A2D6-3A9315E9DD90}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

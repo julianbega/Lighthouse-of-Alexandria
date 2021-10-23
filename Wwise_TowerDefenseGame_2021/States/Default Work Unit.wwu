@@ -6,7 +6,7 @@
 				<StateGroup Name="daytime" ID="{ED82310E-4B4F-490C-87AE-FD7184458A53}">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="19"/>
-						<Property Name="DefaultTransitionTime" Type="Real64" Value="4"/>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
@@ -15,6 +15,26 @@
 						<State Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}"/>
 						<State Name="night" ID="{636FACFB-5570-44A1-8A7D-49F3E0AFC2AE}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{331043A3-78FD-45B8-AED3-15AC24E35356}"/>
+							<EndState Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="notime" ID="{31922188-D5F5-4F74-946D-2833C2AF7883}"/>
+							<EndState Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="night" ID="{636FACFB-5570-44A1-8A7D-49F3E0AFC2AE}"/>
+							<EndState Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}"/>
+							<Time>4</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>

@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{23DDD78B-9427-4929-A559-DF41174F6D0B}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{23DDD78B-9427-4929-A559-DF41174F6D0B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{23DDD78B-9427-4929-A559-DF41174F6D0B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Towers" ID="{FD0CA9A2-207C-4164-B427-A4EC9CAF6CC2}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Attack_Archer" ID="{2294F187-499E-46A1-A34C-4BD1EB718050}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Impact_Archer" ID="{98852261-6972-4AD5-B5A6-69D40E25A13B}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Attack_Crossbow" ID="{F5B8F141-7B11-44CC-9E4F-D11D68122AA3}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Impact_Crossbow" ID="{A8FD4CAC-D7A9-46D0-9196-B9FF9B785884}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Attack_Cannon" ID="{2602C0C7-1F36-4563-9769-BDDC1799FA57}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Impact_Cannon" ID="{251741D9-F690-4CC5-B804-0B6437836EBE}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="night" ID="{636FACFB-5570-44A1-8A7D-49F3E0AFC2AE}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>
