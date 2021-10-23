@@ -119,12 +119,11 @@ public class Levels : MonoBehaviour
     public void StartDay()
     {
         itIsDay = true;
-
+        Debug.Log("start day");
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-        if (actualLevelDataSO.ItIsDay)
-        {
+        
+            Debug.Log("StartDay2");
             SetDayOn?.Invoke("Day");
-        }
     }
     public void StartNight()
     {

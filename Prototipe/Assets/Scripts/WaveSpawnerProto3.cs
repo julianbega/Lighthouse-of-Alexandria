@@ -104,8 +104,9 @@ public class WaveSpawnerProto3 : MonoBehaviour
 
         if (enemyCount <= 0 && spawnsAreFinished)
         {
-            /// se hace de dia y cuando termina la animacion pasa esto
+            Debug.Log("No hay enemigos vivos ni faltan spawnear");
             lvl.StartDay();
+
             ShowNPC?.Invoke();
             uim.CanOpenShopTrue();
         }

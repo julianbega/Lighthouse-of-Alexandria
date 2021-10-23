@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
     {
         if (state == "Day")
         {
+            Debug.Log("se hace de dia");
             isDayTime = true;
             dayCycle.SetBool("isDay", true);
             StartCoroutine(WaitForDayAnim(state));
