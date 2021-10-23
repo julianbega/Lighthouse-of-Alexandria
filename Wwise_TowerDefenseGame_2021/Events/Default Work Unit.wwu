@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{9347299A-8678-47DE-9A39-076ED4811A22}" SchemaVersion="103">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{9347299A-8678-47DE-9A39-076ED4811A22}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{9347299A-8678-47DE-9A39-076ED4811A22}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="play_gamestart" ID="{F539FA8B-D1C0-47A7-AC13-AF51B9A3EFFE}">
+					<ChildrenList>
+						<Action Name="" ID="{03B3901E-0CB3-4AE7-9F41-6841F9D0F9F6}" ShortID="187493547">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="day" ID="{4C39E7C3-7B06-4B2B-885D-5962B2B50E8B}" WorkUnitID="{861D8495-A811-4CC3-AE88-F9E370F791C0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D2FCF6DC-B4E3-4D8D-AEEB-94CAAF33477D}" ShortID="813896018">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DayTIme" ID="{C7EEC013-D018-4A62-A2D6-3A9315E9DD90}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
