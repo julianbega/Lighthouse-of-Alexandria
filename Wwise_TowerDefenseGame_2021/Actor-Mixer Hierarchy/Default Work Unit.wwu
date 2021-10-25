@@ -13,7 +13,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="FX" ID="{50082DDF-17DD-4FCB-9E01-B508716BEF9E}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+							<ObjectRef Name="Ambiences" ID="{1255C2E5-789D-49C7-BCB5-68686EC950B9}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1690,13 +1690,6 @@
 									<ObjectLists/>
 								</BlendContainer>
 								<BlendContainer Name="Impact_Archer" ID="{98852261-6972-4AD5-B5A6-69D40E25A13B}" ShortID="750219570">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>2</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
@@ -3171,7 +3164,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>2</Value>
+												<Value>3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3484,6 +3477,918 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="UI" ID="{0DDA985E-7AAC-48AE-A351-B8A7347587C3}" ShortID="763021662">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI" ID="{C8DBADF2-1F0B-4340-8E08-04034DCDC1FC}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<BlendContainer Name="Button_Hover" ID="{EDDA25E9-BC16-417C-BCC7-49B886CC99FC}" ShortID="264561290">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E876F727-720E-4AA9-8CD2-49D332DAC91E}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Layer 1" ID="{6EA3D183-E7EE-43AB-8D4C-D79B9E90D830}" ShortID="302487479">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{744E085D-19AD-42BB-881E-42F3E012D49C}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_hover_button_Layer1_1" ID="{D22AFA62-60AF-49D6-B7B6-DDA32ADD8536}" ShortID="597956947">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer1_1" ID="{C60FBF58-9731-4EF5-8703-ECF41FD72689}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer1_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="249333721"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer1_1" ID="{C60FBF58-9731-4EF5-8703-ECF41FD72689}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_hover_button_Layer1_2" ID="{A83BBE68-CB1A-4CE1-A115-13941C7027C5}" ShortID="656262291">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer1_2" ID="{3E14C960-2798-43AE-B410-F95C52FB0C9D}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer1_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="926342653"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer1_2" ID="{3E14C960-2798-43AE-B410-F95C52FB0C9D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_hover_button_Layer1_3" ID="{212F19EB-36AA-4300-891F-A2C5A639EF16}" ShortID="345214054">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer1_3" ID="{129FEF4F-1505-4AC2-AEBA-EBE6CC18C19C}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer1_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="404432004"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer1_3" ID="{129FEF4F-1505-4AC2-AEBA-EBE6CC18C19C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 2" ID="{3010EEE0-714A-457C-AC88-9C7ED142B9BD}" ShortID="425894549">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7DFD3F68-469D-49AC-AC62-70486656ECC7}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_hover_button_Layer2_1" ID="{D5769E46-2A96-42CE-A773-0EE944E93CE6}" ShortID="1032625433">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer2_1" ID="{8E41DE74-38DD-4354-AB96-B07F6C144923}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer2_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="43339676"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer2_1" ID="{8E41DE74-38DD-4354-AB96-B07F6C144923}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_hover_button_Layer2_2" ID="{E0C800DE-1994-44A6-9314-4A436D28BDAC}" ShortID="989434779">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer2_2" ID="{6CB09E54-C1FE-4DE5-9C25-1E868B89A8FB}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer2_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="465929706"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer2_2" ID="{6CB09E54-C1FE-4DE5-9C25-1E868B89A8FB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_hover_button_Layer2_3" ID="{896AF2CB-76B6-4709-B4AF-EAC9A2E7F19C}" ShortID="139972004">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_hover_button_Layer2_3" ID="{B8E4B381-045B-4630-B48F-9011AEBBAD32}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_hover_button_Layer2_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="672085957"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_hover_button_Layer2_3" ID="{B8E4B381-045B-4630-B48F-9011AEBBAD32}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+						</BlendContainer>
+						<BlendContainer Name="Button_Click" ID="{AEF1B802-FC52-4447-A1A0-4EDFB49CDC59}" ShortID="609101902">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Layer 1" ID="{264A287D-0A88-4DFA-A58B-77A2EE713062}" ShortID="524235226">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{002E4282-0230-45F3-BE88-7863A2BB9082}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="15"/>
+															<Property Name="Min" Type="Real64" Value="-15"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_button_Layer1_1" ID="{64B3EFFE-D13D-4B57-ADE2-0656FDF65FB5}" ShortID="818319253">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer1_1" ID="{1834F669-F13D-4798-9170-73309F3F03CA}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer1_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="383764927"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer1_1" ID="{1834F669-F13D-4798-9170-73309F3F03CA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_button_Layer1_2" ID="{15F88D2E-3D91-4465-8588-33C0A98F0F6C}" ShortID="787395102">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer1_2" ID="{2A5C3912-1A76-4987-914D-FD960CD4F5AE}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer1_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1042871076"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer1_2" ID="{2A5C3912-1A76-4987-914D-FD960CD4F5AE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 2" ID="{1D97FF39-0735-4C24-A13F-FA665D5F332D}" ShortID="746449293">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{03E8CFAD-DF71-4FA6-9919-CC86BBA18BE3}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_button_Layer2_1" ID="{4E708EBC-1144-45B0-AE0F-0E5147A3825D}" ShortID="302254166">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer2_1" ID="{43CA72CF-AEB7-4995-B601-1DCF6BABB5F3}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer2_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="184626511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer2_1" ID="{43CA72CF-AEB7-4995-B601-1DCF6BABB5F3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_button_Layer2_2" ID="{4FB57CA2-6F41-41D2-B797-02EDE21955C3}" ShortID="652050932">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer2_2" ID="{C342F0FE-1658-4DAB-AF32-840EC5DEC6EA}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer2_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1002453035"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer2_2" ID="{C342F0FE-1658-4DAB-AF32-840EC5DEC6EA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+						</BlendContainer>
+						<BlendContainer Name="Button_UpgradeClick" ID="{A90EE3A0-3D4B-4F95-8AF6-F0A2DCCC1235}" ShortID="124475756">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Layer 1" ID="{28383A74-B6D0-4554-9B66-3BDA6035B44E}" ShortID="476105273">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>0.25</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{73941DC8-9A80-4E3B-9B7C-7A4FF8EE2570}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_upgradebutton_Layer1_2" ID="{FCE2A6CC-4211-49BD-99D8-5F509A30B4AF}" ShortID="605888814">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer1_2" ID="{FF265B36-8BC3-4452-907A-D3C2A4FBB771}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer1_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="721868370"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer1_2" ID="{FF265B36-8BC3-4452-907A-D3C2A4FBB771}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_upgradebutton_Layer1_1" ID="{B1B9A0A6-61E4-4E42-AEB7-C02B148B84EA}" ShortID="303383224">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer1_1" ID="{1A8B2DAE-DA26-47D1-A26F-A67D47879C75}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer1_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="701810073"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer1_1" ID="{1A8B2DAE-DA26-47D1-A26F-A67D47879C75}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 2" ID="{0F78B250-31BF-4468-844C-CEE014DB565D}" ShortID="234765269">
+									<PropertyList>
+										<Property Name="3DPosition" Type="int16" Value="1"/>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>0.25</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{969E725E-F7FC-4DB4-ACE1-4295F1D39131}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_upgradebutton_Layer2_2" ID="{AD70F183-CB43-4794-9480-DE948DF05DFB}" ShortID="323051220">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer2_2" ID="{FC72B9F6-3D24-44D9-8A51-A71D95BB296C}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer2_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="34910135"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer2_2" ID="{FC72B9F6-3D24-44D9-8A51-A71D95BB296C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_upgradebutton_Layer2_1" ID="{E54C68FD-0A6D-423D-B8F2-D97A23580178}" ShortID="939457634">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer2_1" ID="{9D56A9E0-BA72-493C-9A5C-66F21839C66C}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer2_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="864341479"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer2_1" ID="{9D56A9E0-BA72-493C-9A5C-66F21839C66C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<PositioningInfo>
+										<Panner Name="" ID="{8421BC78-4CCC-4BF8-A1BA-DFCBA1E037E3}"/>
+										<Position Name="" ID="{BD5BA2EB-F5E4-4982-A8F7-4B9597E07BE4}">
+											<ChildrenList>
+												<Path2D Name="Layer 2_Path1" ID="{5E493BFA-D960-4BE2-8E36-9A6A779681B8}">
+													<PointList>
+														<Point>
+															<XPos>-2.53807</XPos>
+															<YPos>96.32768</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+														<Point>
+															<XPos>-25.38071</XPos>
+															<YPos>86.44068</YPos>
+															<Flags>0</Flags>
+															<Time>1666</Time>
+														</Point>
+														<Point>
+															<XPos>-56.8527918781726</XPos>
+															<YPos>85.8757062146893</YPos>
+															<Flags>0</Flags>
+															<Time>3333</Time>
+														</Point>
+														<Point>
+															<XPos>-89.84772</XPos>
+															<YPos>92.65537</YPos>
+															<Flags>0</Flags>
+															<Time>5000</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="Layer 2_Path2" ID="{611BE771-972E-4009-9E65-65C0C7BCA7CE}">
+													<PointList>
+														<Point>
+															<XPos>-1.01523</XPos>
+															<YPos>96.0452</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+														<Point>
+															<XPos>50.76142</XPos>
+															<YPos>93.78531</YPos>
+															<Flags>0</Flags>
+															<Time>2500</Time>
+														</Point>
+														<Point>
+															<XPos>100</XPos>
+															<YPos>97.74011</YPos>
+															<Flags>0</Flags>
+															<Time>5000</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="Layer 2_Path3" ID="{D7566B5E-7305-4236-98F5-3329EF52B53C}">
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>50</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+														<Point>
+															<XPos>-47.71574</XPos>
+															<YPos>76.27119</YPos>
+															<Flags>0</Flags>
+															<Time>2500</Time>
+														</Point>
+														<Point>
+															<XPos>-77.66497</XPos>
+															<YPos>58.75706</YPos>
+															<Flags>0</Flags>
+															<Time>5000</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="Layer 2_Path4" ID="{242FAFF5-D63B-496C-A6A4-E9715E488CE7}">
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>50</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+														<Point>
+															<XPos>52.79188</XPos>
+															<YPos>49.71752</YPos>
+															<Flags>0</Flags>
+															<Time>2500</Time>
+														</Point>
+														<Point>
+															<XPos>94.92386</XPos>
+															<YPos>22.59887</YPos>
+															<Flags>0</Flags>
+															<Time>5000</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+											</ChildrenList>
+										</Position>
+									</PositioningInfo>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 3" ID="{FFD2C169-E6AA-4C49-9384-F0344F940CC1}" ShortID="42412042">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>0.25</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{982CF66B-02E2-4ED5-A648-A279BEEB590E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_upgradebutton_Layer3_1" ID="{30174D6C-C357-4EED-A0D9-6C0C804C5123}" ShortID="948503465">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer3_1" ID="{3D678FD4-112F-4748-80C9-C9F0B0318EBD}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer3_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="731271026"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer3_1" ID="{3D678FD4-112F-4748-80C9-C9F0B0318EBD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_upgradebutton_Layer3_2" ID="{B5228635-58C2-4063-95CF-FAC4B6601115}" ShortID="256469453">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_upgradebutton_Layer3_2" ID="{07AD4C2B-C813-4B69-A4AC-CD591C54C10F}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_upgradebutton_Layer3_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="648996008"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_upgradebutton_Layer3_2" ID="{07AD4C2B-C813-4B69-A4AC-CD591C54C10F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 5" ID="{D247DE71-A572-43D7-B1B3-3C7BD0145E3B}" ShortID="275337571">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{B8965C0D-95AA-4DA4-9A1A-B0F9DD5FE922}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_button_Layer2_1" ID="{F7D46179-6F54-4D56-967E-ABE944296802}" ShortID="423440131">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer2_1" ID="{2FC49786-F8D7-4F8A-BFA6-845490CCCEEE}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer2_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="184626511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer2_1" ID="{2FC49786-F8D7-4F8A-BFA6-845490CCCEEE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_button_Layer2_2" ID="{B373743B-8F5E-46C7-9D7F-6BF778C2AD62}" ShortID="159013523">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer2_2" ID="{DCA05536-DC9E-4310-9B28-0264109DAE30}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer2_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1002453035"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer2_2" ID="{DCA05536-DC9E-4310-9B28-0264109DAE30}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Layer 4" ID="{CCF5B426-FD2E-4E56-9492-CCDFD74E54A3}" ShortID="815905630">
+									<PropertyList>
+										<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{594DD8E3-3990-4863-A8DE-09BE4D5894EC}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="25"/>
+															<Property Name="Min" Type="Real64" Value="-25"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sx_ui_click_button_Layer1_1" ID="{D79EBCC6-4AEF-449F-A797-45676D8421E4}" ShortID="78065813">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer1_1" ID="{618A31B0-8DAA-4DB4-8080-7C508AF6DF36}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer1_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="383764927"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer1_1" ID="{618A31B0-8DAA-4DB4-8080-7C508AF6DF36}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sx_ui_click_button_Layer1_2" ID="{B01C8D79-7E49-4E47-AA31-E3DAA02CAEE1}" ShortID="487825508">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{39DE345C-AB9D-4424-9993-9296AFF898BE}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6D22668E-7B6D-485B-8425-DD2C1455D30A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sx_ui_click_button_Layer1_2" ID="{11EC87B4-0A51-4094-BC8A-A0DD21BA8B56}">
+													<Language>SFX</Language>
+													<AudioFile>sx_ui_click_button_Layer1_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1042871076"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="sx_ui_click_button_Layer1_2" ID="{11EC87B4-0A51-4094-BC8A-A0DD21BA8B56}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+						</BlendContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>

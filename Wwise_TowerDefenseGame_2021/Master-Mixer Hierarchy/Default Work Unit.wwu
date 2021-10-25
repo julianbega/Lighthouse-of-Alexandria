@@ -33,6 +33,12 @@
 									</ReferenceList>
 									<ObjectLists/>
 								</Bus>
+								<Bus Name="UI" ID="{C8DBADF2-1F0B-4340-8E08-04034DCDC1FC}">
+									<ObjectLists/>
+								</Bus>
+								<Bus Name="Ambiences" ID="{1255C2E5-789D-49C7-BCB5-68686EC950B9}">
+									<ObjectLists/>
+								</Bus>
 							</ChildrenList>
 							<ObjectLists/>
 						</Bus>

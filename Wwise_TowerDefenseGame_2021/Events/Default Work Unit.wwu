@@ -106,6 +106,47 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{D05E0B18-2ECB-4F66-B837-E2EC478BDC8D}" ShortID="421755762">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="ui_button_buttonupgrade" ID="{D242E63F-8C8D-48C7-A753-A87438D869E6}">
+							<ChildrenList>
+								<Action Name="" ID="{DDE5A2CC-6819-4473-8C98-A2A04F12F190}" ShortID="291759003">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button_UpgradeClick" ID="{A90EE3A0-3D4B-4F95-8AF6-F0A2DCCC1235}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_button_click" ID="{D7DB557E-A465-4E08-A323-AE1487226042}">
+							<ChildrenList>
+								<Action Name="" ID="{C39E6DD3-EBA5-4E4A-AE80-636AD2143288}" ShortID="624991851">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button_Click" ID="{AEF1B802-FC52-4447-A1A0-4EDFB49CDC59}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ui_button_hover" ID="{00AB6B16-ED1B-403B-8519-22F83D94DEE7}">
+							<ChildrenList>
+								<Action Name="" ID="{F079173C-CDD5-4EFB-87E3-975BFB7961C0}" ShortID="408487651">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button_Hover" ID="{EDDA25E9-BC16-417C-BCC7-49B886CC99FC}" WorkUnitID="{ACB6EA93-BD59-4339-9F5A-B66B97C1B951}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
