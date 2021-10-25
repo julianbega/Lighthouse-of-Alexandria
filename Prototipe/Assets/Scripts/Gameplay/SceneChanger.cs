@@ -12,7 +12,7 @@ public class SceneChanger : MonoBehaviour
 
     public void GoToGame()
     {
-        SceneManager.LoadScene("Prototype3");
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void GoToMainMenu()
