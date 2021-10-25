@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.IO;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class Enemy : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject healthBarGO;
+
+    [SerializeField] private float speedRotation;
+    private float maxTimeAnim = 1.0f;
+    private float timerAnim;
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -33,7 +38,6 @@ public class Enemy : MonoBehaviour
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
-        
     }
 
     private void Update()
@@ -44,24 +48,20 @@ public class Enemy : MonoBehaviour
             if (target != null)
             {
                 Quaternion targetRotation = Quaternion.identity;
-            Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
-            targetRotation = (Quaternion.LookRotation(targetDirection));
-            transform.rotation = targetRotation;
-            firstRotation = !firstRotation;
+                Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
+                targetRotation = (Quaternion.LookRotation(targetDirection));
+                transform.rotation = targetRotation;
+                firstRotation = !firstRotation;
             }
         }
         if (target != null)
         {
             Vector3 direction = target.transform.position - transform.position;           
             transform.Translate(direction.normalized * speed * Time.deltaTime * cheat.speed, Space.World);
-
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
             {
                 SetNextTarget();
-                Quaternion targetRotation = Quaternion.identity;
-                Vector3 targetDirection = ( target.transform.position - transform.position).normalized; //cambiar
-                targetRotation = (Quaternion.LookRotation(targetDirection));
-                transform.rotation = targetRotation;
+                StartCoroutine(RotationInterpolate());
             }
         }
     }
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
             for (int i = 0; i < target.targets.Count; i++)
             {
                 Debug.Log("Llega0");
+                //timerRotation = 0.0f;
                 Ray ray = new Ray(transform.position, -(transform.position - target.targets[i].transform.position).normalized);
                 Debug.DrawLine(transform.position, target.targets[i].transform.position, Color.red);
                 Debug.DrawRay(ray.origin, ray.direction, Color.yellow);
@@ -160,5 +161,19 @@ public class Enemy : MonoBehaviour
     private void OnDisable()
     {
         Cheats.killEnemy -= Kill;
+    }
+
+    IEnumerator RotationInterpolate()
+    {
+        while (timerAnim < maxTimeAnim)
+        {
+            timerAnim += Time.deltaTime;
+            Quaternion targetRotation = Quaternion.identity;
+            Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
+            targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, targetRotation, speedRotation);
+            yield return null;
+        }
+        timerAnim = 0.0f;
     }
 }

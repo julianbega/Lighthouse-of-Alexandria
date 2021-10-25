@@ -376,6 +376,7 @@ MonoBehaviour:
   lvl: {fileID: 0}
   healthBar: {fileID: 3003192618149608987}
   healthBarGO: {fileID: 4402166676287267738}
+  speedRotation: 0.01
 --- !u!54 &2385789709203740909
 Rigidbody:
   m_ObjectHideFlags: 0
