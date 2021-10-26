@@ -1,0 +1,487 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78ae7bf6fe7cd84bbd5f0e701a8aa89, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 751b7de134f21542abbfa6461e8f3454
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 751b7de134f21542abbfa6461e8f3454
+    GuidInternal: 
+    m_lastTime: -8585666599112031723
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8e66226d6d7b5b488425dd2c1455d30a
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: 8e66226d6d7b5b488425dd2c1455d30a
+    GuidInternal: 
+    m_lastTime: -8585665544837194874
+    List:
+    - name: FX
+      guid: df2d0850dd17cb4f9e01b508716bef9e
+      id: 1802970371
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: FX
+        ObjectType: 2
+        guid: df2d0850dd17cb4f9e01b508716bef9e
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 819f2ea40ca4d04092deb8eb248c2f1b
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 819f2ea40ca4d04092deb8eb248c2f1b
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: Reverb
+      guid: cc2e6557e898a54786146a93b95804c3
+      id: 348963605
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Reverb
+        ObjectType: 1
+        guid: cc2e6557e898a54786146a93b95804c3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverb
+    - name: Towers
+      guid: 196788b20c8a164f954905e20a8075ca
+      id: 1982534943
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: FX
+        ObjectType: 2
+        guid: df2d0850dd17cb4f9e01b508716bef9e
+      - ElementName: Towers
+        ObjectType: 2
+        guid: 196788b20c8a164f954905e20a8075ca
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Towers
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: ead45b3196a96c40bb0ebd69af8035b4
+    ParentPath: SoundBanks\Default Work Unit
+    guid: ead45b3196a96c40bb0ebd69af8035b4
+    GuidInternal: 
+    m_lastTime: -8585665544799610705
+    List:
+    - name: main
+      guid: 6cc1069aed667742b52bcd46af8d432c
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ead45b3196a96c40bb0ebd69af8035b4
+      - ElementName: main
+        ObjectType: 7
+        guid: 6cc1069aed667742b52bcd46af8d432c
+      Path: SoundBanks\Default Work Unit\main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 9a2947937886de479a39076ed4811a22
+    ParentPath: Events\Default Work Unit
+    guid: 9a2947937886de479a39076ed4811a22
+    GuidInternal: 
+    m_lastTime: -8585665544837414295
+    List:
+    - name: attack_archertower
+      guid: cba259a192f0364998445e474957d7b0
+      id: 354991228
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: attack_archertower
+        ObjectType: 3
+        guid: cba259a192f0364998445e474957d7b0
+      Path: Events\Default Work Unit\Towers\attack_archertower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: attack_cannontower
+      guid: d390761b56970c4ea225969a3cee828b
+      id: 1825859782
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: attack_cannontower
+        ObjectType: 3
+        guid: d390761b56970c4ea225969a3cee828b
+      Path: Events\Default Work Unit\Towers\attack_cannontower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: attack_crossbowtower
+      guid: e16ff0251192ac47b5775a003fd01731
+      id: 781691411
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: attack_crossbowtower
+        ObjectType: 3
+        guid: e16ff0251192ac47b5775a003fd01731
+      Path: Events\Default Work Unit\Towers\attack_crossbowtower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Global_Game_Events
+      guid: e7a8c3ffe49d7b4f92acc7db5982f32d
+      id: 1091852455
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Global_Game_Events
+        ObjectType: 4
+        guid: e7a8c3ffe49d7b4f92acc7db5982f32d
+      Path: Events\Default Work Unit\Global_Game_Events
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: impact_archertower
+      guid: eb87e9b4bbd41544b1ab2c0e932e8b8d
+      id: 3851137378
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: impact_archertower
+        ObjectType: 3
+        guid: eb87e9b4bbd41544b1ab2c0e932e8b8d
+      Path: Events\Default Work Unit\Towers\impact_archertower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: impact_cannontower
+      guid: 35e5754775bdad4298dfd6ed498a2324
+      id: 3210611180
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: impact_cannontower
+        ObjectType: 3
+        guid: 35e5754775bdad4298dfd6ed498a2324
+      Path: Events\Default Work Unit\Towers\impact_cannontower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: impact_crossbowtower
+      guid: ef386a75dd21304f9573e83cc58e00d7
+      id: 259899085
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      - ElementName: impact_crossbowtower
+        ObjectType: 3
+        guid: ef386a75dd21304f9573e83cc58e00d7
+      Path: Events\Default Work Unit\Towers\impact_crossbowtower
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_gamestart
+      guid: 8bfa39f5c0d1a747ac13af51b9a3effe
+      id: 1497459184
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Global_Game_Events
+        ObjectType: 4
+        guid: e7a8c3ffe49d7b4f92acc7db5982f32d
+      - ElementName: play_gamestart
+        ObjectType: 3
+        guid: 8bfa39f5c0d1a747ac13af51b9a3effe
+      Path: Events\Default Work Unit\Global_Game_Events\play_gamestart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Towers
+      guid: fb66996a2f0b484e8bccdee38bc6b767
+      id: 1982534943
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: Towers
+        ObjectType: 4
+        guid: fb66996a2f0b484e8bccdee38bc6b767
+      Path: Events\Default Work Unit\Towers
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: ffc40ec22310344dbbd8c5c7ba5f85be
+    ParentPath: Game Parameters\Default Work Unit
+    guid: ffc40ec22310344dbbd8c5c7ba5f85be
+    GuidInternal: 
+    m_lastTime: -8585666599118322597
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 95841d8611a8c34cae88f9e370f791c0
+    ParentPath: States\Default Work Unit
+    guid: 95841d8611a8c34cae88f9e370f791c0
+    GuidInternal: 
+    m_lastTime: -8585665544799590743
+    List:
+    - name: daytime
+      guid: 0e3182ed4f4b0c4987aefd7184458a53
+      id: 4206605382
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95841d8611a8c34cae88f9e370f791c0
+      - ElementName: daytime
+        ObjectType: 9
+        guid: 0e3182ed4f4b0c4987aefd7184458a53
+      Path: States\Default Work Unit\daytime
+      values:
+      - name: day
+        guid: c3e7394c067b2b4b885d5962b2b50e8b
+        id: 311764537
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: daytime
+          ObjectType: 9
+          guid: 0e3182ed4f4b0c4987aefd7184458a53
+        - ElementName: day
+          ObjectType: 8
+          guid: c3e7394c067b2b4b885d5962b2b50e8b
+      - name: night
+        guid: fbac6f637055a1448a7d49f3e0afc2ae
+        id: 1011622525
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: daytime
+          ObjectType: 9
+          guid: 0e3182ed4f4b0c4987aefd7184458a53
+        - ElementName: night
+          ObjectType: 8
+          guid: fbac6f637055a1448a7d49f3e0afc2ae
+      - name: None
+        guid: a3431033fd78b845aed315ac24e35356
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: daytime
+          ObjectType: 9
+          guid: 0e3182ed4f4b0c4987aefd7184458a53
+        - ElementName: None
+          ObjectType: 8
+          guid: a3431033fd78b845aed315ac24e35356
+      - name: notime
+        guid: 88219231f5d5744f946d2833c2af7883
+        id: 2947967655
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: daytime
+          ObjectType: 9
+          guid: 0e3182ed4f4b0c4987aefd7184458a53
+        - ElementName: notime
+          ObjectType: 8
+          guid: 88219231f5d5744f946d2833c2af7883
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: ca9d050fe7236e40b1b87cb7e5a7bcb0
+    ParentPath: Switches\Default Work Unit
+    guid: ca9d050fe7236e40b1b87cb7e5a7bcb0
+    GuidInternal: 
+    m_lastTime: -8585666599112041700
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: dfdc68524465144aa158961f401bb98c
+    ParentPath: Triggers\Default Work Unit
+    guid: dfdc68524465144aa158961f401bb98c
+    GuidInternal: 
+    m_lastTime: -8585666599112021753
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 1
+  CurrentPluginConfig: 
