@@ -62,8 +62,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        money.text = "Money: " + gm.GetMoney();
-        //wave.text = "Wave: " + lvl.GetActualWave();
         lives.text = "Lives: " + gm.GetLives();
         
         if (levels.actualLvl > 0)
