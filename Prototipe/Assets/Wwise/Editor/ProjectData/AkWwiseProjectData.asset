@@ -38,8 +38,28 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8e66226d6d7b5b488425dd2c1455d30a
     GuidInternal: 
-    m_lastTime: -8585665544837194874
+    m_lastTime: -8585663933488160747
     List:
+    - name: Ambiences
+      guid: e5c255129d78c749bcb568686ec950b9
+      id: 1017660616
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: FX
+        ObjectType: 2
+        guid: df2d0850dd17cb4f9e01b508716bef9e
+      - ElementName: Ambiences
+        ObjectType: 2
+        guid: e5c255129d78c749bcb568686ec950b9
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Ambiences
     - name: FX
       guid: df2d0850dd17cb4f9e01b508716bef9e
       id: 1802970371
@@ -125,6 +145,26 @@ MonoBehaviour:
         ObjectType: 2
         guid: 196788b20c8a164f954905e20a8075ca
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Towers
+    - name: UI
+      guid: f2addbc80b1f40438e0804034dcdc1fc
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: FX
+        ObjectType: 2
+        guid: df2d0850dd17cb4f9e01b508716bef9e
+      - ElementName: UI
+        ObjectType: 2
+        guid: f2addbc80b1f40438e0804034dcdc1fc
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\UI
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -165,7 +205,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9a2947937886de479a39076ed4811a22
     GuidInternal: 
-    m_lastTime: -8585665544837414295
+    m_lastTime: -8585663933488300376
     List:
     - name: attack_archertower
       guid: cba259a192f0364998445e474957d7b0
@@ -338,6 +378,83 @@ MonoBehaviour:
         ObjectType: 4
         guid: fb66996a2f0b484e8bccdee38bc6b767
       Path: Events\Default Work Unit\Towers
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI
+      guid: 180b5ed0cb2e664fb837e2ec478bdc8d
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: UI
+        ObjectType: 4
+        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
+      Path: Events\Default Work Unit\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_button_buttonupgrade
+      guid: 3fe642d28d8cc748a753a87438d869e6
+      id: 3915957147
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: UI
+        ObjectType: 4
+        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
+      - ElementName: ui_button_buttonupgrade
+        ObjectType: 3
+        guid: 3fe642d28d8cc748a753a87438d869e6
+      Path: Events\Default Work Unit\UI\ui_button_buttonupgrade
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_button_click
+      guid: 7e55dbd765a4084ea323ae1487226042
+      id: 1664509575
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: UI
+        ObjectType: 4
+        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
+      - ElementName: ui_button_click
+        ObjectType: 3
+        guid: 7e55dbd765a4084ea323ae1487226042
+      Path: Events\Default Work Unit\UI\ui_button_click
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_button_hover
+      guid: 166bab001bed3b40851922f83d94dee7
+      id: 610582865
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a2947937886de479a39076ed4811a22
+      - ElementName: UI
+        ObjectType: 4
+        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
+      - ElementName: ui_button_hover
+        ObjectType: 3
+        guid: 166bab001bed3b40851922f83d94dee7
+      Path: Events\Default Work Unit\UI\ui_button_hover
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
