@@ -16,8 +16,8 @@ public class Levels : MonoBehaviour
     public Transform[] allSpawners;
     public static Action<string> SetDayOn;
     public static Action<string> SetNightOn;  
-    public static Action<int, string> ShowNPCs;
-    private bool itIsDay;
+    public static Action<NPC_SO, string> ShowNPCs;
+
 
     private void Start()
     {
@@ -118,7 +118,6 @@ public class Levels : MonoBehaviour
     }
     public void StartDay()
     {
-        itIsDay = true;
         Debug.Log("start day");
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
         
@@ -127,7 +126,6 @@ public class Levels : MonoBehaviour
     }
     public void StartNight()
     {
-        itIsDay = false;
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
         if (!actualLevelDataSO.ItIsDay)
         {

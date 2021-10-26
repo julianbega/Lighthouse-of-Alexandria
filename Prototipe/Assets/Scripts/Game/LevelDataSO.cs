@@ -10,7 +10,7 @@ public class LevelDataSO : ScriptableObject
     public int activateSpawner = -1;
     public int clearRock = -1;
     public int activateWater = -1;
-    public int NPCToTalk = 0;
+    public NPC_SO NPCToTalk;
     public string Dialog = "";
     public List<WaveData> waves;
     public int actualWave = 0;

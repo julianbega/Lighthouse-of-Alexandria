@@ -28,13 +28,14 @@ public class UIManager : MonoBehaviour
     public Image NPCImage;
     public Image DialogeBackground;
     public GameObject startWave;
-    public string gameFirstDialoge;
-    public int gameFirstDialogeNPC;
     public GameObject PauseGO;
     public GameObject EndGameGO;
     public TextMeshProUGUI endGameText;
 
     public static event Action ChangeAllNodesToStartColor;
+       
+    public string gameFirstDialoge;
+    public NPC_SO gameFirstDialogeNPC;
 
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject cheatsButton;
@@ -147,11 +148,11 @@ public class UIManager : MonoBehaviour
         canOpenUpgradeSystem = false;
     }
 
-    private void NPCTalk(int npcIndex, string Dialoge)
+    private void NPCTalk(NPC_SO npc, string Dialoge)
     {
         if (npcsOn)
         {
-            if (npcIndex != 0)
+            if (npc.NPC_name != "none")
             {
                 NPC.SetActive(true);
                 if(canOpenShop && canOpenLibrary)
@@ -162,8 +163,8 @@ public class UIManager : MonoBehaviour
                 HideStartWave();
                 HidePauseBtn();
             }
-            NPCImage.sprite = npcs.SelectNPC(npcIndex);
-            DialogeBackground.sprite = npcs.SelectTextBackground(npcIndex);
+            NPCImage.sprite = npc.image;
+            DialogeBackground.sprite = npc.background;
             NPCDialoge.text = Dialoge;
         }
     }
