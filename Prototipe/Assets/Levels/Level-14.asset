@@ -16,7 +16,7 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: 7
   activateWater: 6
-  NPCToTalk: 0
+  NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
   Dialog: 
   waves:
   - heavyEnemies: 0
