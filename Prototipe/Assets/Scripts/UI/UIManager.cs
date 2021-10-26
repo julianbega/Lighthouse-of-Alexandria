@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
 {
     public GameManager gm;
     public bool npcsOn;
-    private NPCsImages npcs;
     public Levels levels;
     public TextMeshProUGUI money;
     public TextMeshProUGUI wave;
@@ -43,7 +42,6 @@ public class UIManager : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         levels = FindObjectOfType<Levels>();
-        npcs = FindObjectOfType<NPCsImages>();
         Levels.ShowNPCs += NPCTalk;
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
         GameManager.ShowEndGame += ShowEndGameSign;
