@@ -118,13 +118,15 @@ public class GameManager : MonoBehaviour
         if (lvl.actualLvl >= lastLvl)
         {
             victory = true;
-            ShowEndGame?.Invoke();
+            //ShowEndGame?.Invoke();
+            ScenesManager.instanceScenesManager.ChangeScene("Credits");
             StopUIInteractions?.Invoke();
         }
     }
     public void Defeat()
     {
-        ShowEndGame?.Invoke();
+        //ShowEndGame?.Invoke();
+        ScenesManager.instanceScenesManager.ChangeScene("Credits");
         StopUIInteractions?.Invoke();
     }
 
