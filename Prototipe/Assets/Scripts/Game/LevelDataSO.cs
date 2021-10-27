@@ -18,10 +18,15 @@ public class LevelDataSO : ScriptableObject
     [Serializable]
     public class WaveData
     {
-        public int heavyEnemies;
-        public int standardEnemies;
-        public int lightEnemies;
+        public List<enemies> Enemies;
         public float timeBetweenWaves = 4f;
+        
+    }
+
+    public class enemies
+    {
+        public int quantity;
+        public Enemy_SO type;
     }
 
     
