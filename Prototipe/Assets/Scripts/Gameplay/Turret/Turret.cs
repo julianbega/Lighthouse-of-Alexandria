@@ -106,7 +106,7 @@ public class Turret : MonoBehaviour
         OpenUpgradeSystem?.Invoke();
         //actualTurret = this;
         //SelectedTurret?.Invoke(actualTurret);
-        BuildManager.instance.selectedTurret = this;
+        ConstructionManager.instance.selectedTurret = this;
     }
     private void OnMouseEnter()
     {

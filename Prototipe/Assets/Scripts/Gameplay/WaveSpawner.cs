@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class WaveSpawnerProto3 : MonoBehaviour
+public class WaveSpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject HeavyEnemyPrefab;

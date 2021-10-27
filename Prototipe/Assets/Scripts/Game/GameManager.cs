@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         //Levels.SetNightOn += SetNight;
         //Levels.SetDayOn += SetDay;
         // Node.GetMoney += getMoney;
-        WaveSpawnerProto3.SetStateDayAnim += DayCycle;
+        WaveSpawner.SetStateDayAnim += DayCycle;
         Levels.SetDayOn += DayCycle;
         Levels.SetNightOn += DayCycle;
         isDayTime = true;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         Enemy.GainMoney -= AddMoney;
         //Levels.SetNightOn -= SetNight;
         //Levels.SetDayOn -= SetDay;
-        WaveSpawnerProto3.SetStateDayAnim -= DayCycle;
+        WaveSpawner.SetStateDayAnim -= DayCycle;
         Levels.SetDayOn -= DayCycle;
         Levels.SetNightOn -= DayCycle;
     }

@@ -43,14 +43,14 @@ public class Node : MonoBehaviour
     private void OnMouseEnter()
     {
 
-        if (BuildManager.instance.actualNode != this)
+        if (ConstructionManager.instance.actualNode != this)
         {
             render.material = onMouseColor;
         }
     }
     private void OnMouseExit()
     {
-        if (BuildManager.instance.actualNode != this)
+        if (ConstructionManager.instance.actualNode != this)
         {
             changeToStartColor();
         }
@@ -73,7 +73,7 @@ public class Node : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             OpenShop?.Invoke();
-            BuildManager.instance.actualNode = this;
+            ConstructionManager.instance.actualNode = this;
         }
     }
 

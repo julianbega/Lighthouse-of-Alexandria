@@ -31,9 +31,9 @@ public class UIShop : MonoBehaviour
     }
     private void Update()
     {
-        if (BuildManager.instance.actualNode != null && BuildManager.instance.actualNode != node)
+        if (ConstructionManager.instance.actualNode != null && ConstructionManager.instance.actualNode != node)
         { 
-        node = BuildManager.instance.actualNode.transform;
+            node = ConstructionManager.instance.actualNode.transform;
         }
     }
 
@@ -50,40 +50,40 @@ public class UIShop : MonoBehaviour
 
     public void BuyTurret1()
     {
-        GameObject turretToBuild = BuildManager.instance.turretPrefabs[0];
+        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[0];
         if (gm.GetMoney() >= 10)
         {
-            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);
         }   
     }
 
     public void BuyTurret2()
     {
-        GameObject turretToBuild = BuildManager.instance.turretPrefabs[1];
+        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[1];
         if (gm.GetMoney() >= 10)
         {
-            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);
         }
     }
 
     public void BuyTurret3()
     {
-        GameObject turretToBuild = BuildManager.instance.turretPrefabs[2];
+        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[2];
         if (gm.GetMoney() >= 10)
         {
-            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);
         }
     }
 
     public void BuyTurret4()
     {
-        GameObject turretToBuild = BuildManager.instance.turretPrefabs[3];
+        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[3];
         if (gm.GetMoney() >= 10)
         {
-            BuildManager.instance.actualNode.turret = Instantiate(turretToBuild, BuildManager.instance.actualNode.transform.position + offset, transform.rotation);
+            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);
         }
     }

@@ -27,11 +27,11 @@ public class UIUpgradeSystem : MonoBehaviour
     public void UpgradeTurret(string attribute)
     {
         if (attribute == "attacks")
-            BuildManager.instance.selectedTurret.attacksPerSecond += attacksPerSecondsUpgradeValue;
+            ConstructionManager.instance.selectedTurret.attacksPerSecond += attacksPerSecondsUpgradeValue;
         else if (attribute == "power")
-            BuildManager.instance.selectedTurret.power += powerUpgradeValue;
+            ConstructionManager.instance.selectedTurret.power += powerUpgradeValue;
         else if (attribute == "range")
-            BuildManager.instance.selectedTurret.range += rangeUpgradeValue;
+            ConstructionManager.instance.selectedTurret.range += rangeUpgradeValue;
     }
 
     private void ActivateUpgradeSystemPanel()
@@ -58,10 +58,10 @@ public class UIUpgradeSystem : MonoBehaviour
 
     public void ShowTurretStats()
     {
-        if(BuildManager.instance.selectedTurret != null)
-            selectedTurretStats.text = "Attacks per second: " + BuildManager.instance.selectedTurret.attacksPerSecond 
-                + "\n" + "Power: " + BuildManager.instance.selectedTurret.power 
-                + "\n" + "Range: " + BuildManager.instance.selectedTurret.range;
+        if(ConstructionManager.instance.selectedTurret != null)
+            selectedTurretStats.text = "Attacks per second: " + ConstructionManager.instance.selectedTurret.attacksPerSecond 
+                + "\n" + "Power: " + ConstructionManager.instance.selectedTurret.power 
+                + "\n" + "Range: " + ConstructionManager.instance.selectedTurret.range;
     }
 
     private void OnDisable()

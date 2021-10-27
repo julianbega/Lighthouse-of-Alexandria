@@ -25,11 +25,11 @@ public class Levels : MonoBehaviour
         {
             levels[i].actualWave = 0;
         }
-        WaveSpawnerProto3.ShowNPC += InvokeNPCShow;
+        WaveSpawner.ShowNPC += InvokeNPCShow;
     }
     private void OnDisable()
     {
-        WaveSpawnerProto3.ShowNPC -= InvokeNPCShow;
+        WaveSpawner.ShowNPC -= InvokeNPCShow;
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {

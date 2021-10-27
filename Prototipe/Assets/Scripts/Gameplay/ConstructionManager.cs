@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BuildManager : MonoBehaviour
+public class ConstructionManager : MonoBehaviour
 {
-    static public BuildManager instance;
-    static public BuildManager GetInstance { get { return instance; } }
+    static public ConstructionManager instance;
+    static public ConstructionManager GetInstance { get { return instance; } }
     public Node actualNode;
     public Turret selectedTurret;
 
