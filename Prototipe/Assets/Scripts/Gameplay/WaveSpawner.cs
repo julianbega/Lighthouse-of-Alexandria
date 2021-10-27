@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public GameObject HeavyEnemyPrefab;
-    public GameObject LightEnemyPrefab;
-
     private Levels lvl;
-    public float timeBetweenWaves;
     public int enemyCount;
     private bool spawnsAreFinished;
 
@@ -55,20 +49,15 @@ public class WaveSpawner : MonoBehaviour
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
             spawnsAreFinished = false;
-            for (int i = 0; i < lvl.GetStandardEnemies(); i++)
+            for (int i = 0; i < lvl.GetQuantityOfEnemieTypesInThisWave(); i++)
             {
-                SpawnEnemy();
+                int actualWave = lvl.actualLevelDataSO.actualWave;
+                for (int j = 0; j < lvl.actualLevelDataSO.waves[actualWave].Enemies[i].quantity; j++)
+                {
+                   SpawnEnemy(lvl.actualLevelDataSO.waves[actualWave].Enemies[i].type.prefab);
+                }
+
                 yield return new WaitForSeconds(0.75f);
-            }
-            for (int i = 0; i < lvl.GetHeavyEnemies(); i++)
-            {
-                SpawnHeavyEnemy();
-                yield return new WaitForSeconds(1.0f);
-            }
-            for (int i = 0; i < lvl.GetLightEnemies(); i++)
-            {
-                SpawnLightEnemy();
-                yield return new WaitForSeconds(0.5f);
             }
             lvl.IncreaseActualWave();
             if (lvl.CompareActualWaveAndTotalWavesAreEquals())
@@ -79,24 +68,13 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemyPrefab)
     {
         enemyCount++;
         int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
         Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
     }
-    void SpawnHeavyEnemy()
-    {
-        enemyCount++;
-        int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
-        Instantiate(HeavyEnemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
-    }
-    void SpawnLightEnemy()
-    {
-        enemyCount++;
-        int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
-        Instantiate(LightEnemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
-    }
+
 
     void DecreaseEnemyCount()
     {
@@ -118,5 +96,4 @@ public class WaveSpawner : MonoBehaviour
         WaveManager.StartWaveEvent -= StartLvlCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
     }
-
 }

@@ -50176,9 +50176,9 @@ GameObject:
   - component: {fileID: 1847785815}
   - component: {fileID: 1847785814}
   - component: {fileID: 1847785816}
-  - component: {fileID: 1847785817}
   - component: {fileID: 1847785818}
   - component: {fileID: 1847785820}
+  - component: {fileID: 1847785817}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -50250,16 +50250,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847785813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f71f2a1dfa0632f47ada82b678a83f1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 74c31e2365fc3784eaf8a9558379a83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7901156221061492026, guid: 8f2a223bd9111d749a9f9f01df8a64e5,
-    type: 3}
-  HeavyEnemyPrefab: {fileID: 7901156221061492026, guid: 7a37caed5a7f0cb43b0e660845cd45f8,
-    type: 3}
-  LightEnemyPrefab: {fileID: 7901156221061492026, guid: fbdfcf6d3f26b204d9ce5a1183cd1387,
-    type: 3}
-  timeBetweenWaves: 0.5
   enemyCount: 0
 --- !u!114 &1847785818
 MonoBehaviour:

@@ -15,6 +15,8 @@ public class LevelDataSO : ScriptableObject
     public List<WaveData> waves;
     public int actualWave = 0;
 
+
+
     [Serializable]
     public class WaveData
     {
@@ -23,11 +25,12 @@ public class LevelDataSO : ScriptableObject
         
     }
 
+    [Serializable]
     public class enemies
     {
         public int quantity;
         public Enemy_SO type;
     }
 
-    
+
 }

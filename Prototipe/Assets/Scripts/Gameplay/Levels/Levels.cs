@@ -15,7 +15,7 @@ public class Levels : MonoBehaviour
     public List<Transform> activeSpawnStarts;
     public Transform[] allSpawners;
     public static Action<string> SetDayOn;
-    public static Action<string> SetNightOn;  
+    public static Action<string> SetNightOn;
     public static Action<NPC_SO, string> ShowNPCs;
 
 
@@ -33,7 +33,7 @@ public class Levels : MonoBehaviour
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
-        if(GameManager.instance.finishDay)
+        if (GameManager.instance.finishDay)
             StartNight();
         if (actualLevelDataSO.ItIsDay && GameManager.instance.finishNight)
         {
@@ -43,13 +43,13 @@ public class Levels : MonoBehaviour
         ClearRock(actualLevelDataSO.clearRock);
         ActivatePath(actualLevelDataSO.activateWater);
     }
-    
+
     private void ActivateSpawner(int Index)
     {
         if (Index != -1)
-        { 
-        allSpawners[Index].gameObject.SetActive(true);       
-        activeSpawnStarts.Add (allSpawners[Index]);
+        {
+            allSpawners[Index].gameObject.SetActive(true);
+            activeSpawnStarts.Add(allSpawners[Index]);
         }
     }
 
@@ -68,18 +68,11 @@ public class Levels : MonoBehaviour
         }
     }
 
-    public int GetStandardEnemies()
+    public int GetQuantityOfEnemieTypesInThisWave()
     {
-        return actualLevelDataSO.waves[actualLevelDataSO.actualWave].standardEnemies;
+        return actualLevelDataSO.waves[actualLevelDataSO.actualWave].Enemies.Count;
     }
-    public int GetLightEnemies()
-    {
-        return actualLevelDataSO.waves[actualLevelDataSO.actualWave].lightEnemies;
-    }
-    public int GetHeavyEnemies()
-    {
-        return actualLevelDataSO.waves[actualLevelDataSO.actualWave].heavyEnemies;
-    }
+
     public int GetActualLVL()
     {
         return actualLvl;
@@ -87,7 +80,7 @@ public class Levels : MonoBehaviour
     public void IncreaseLVL()
     {
         if (actualLevelDataSO != null)
-        { 
+        {
             actualLvl++;
             actualLevelDataSO = levels[actualLvl];
         }
@@ -95,15 +88,15 @@ public class Levels : MonoBehaviour
     public int GetActualWave()
     {
         if (actualLevelDataSO != null)
-        { 
-        return actualLevelDataSO.actualWave;
+        {
+            return actualLevelDataSO.actualWave;
         }
         return 0;
     }
     public void IncreaseActualWave()
     {
         actualLevelDataSO.actualWave++;
-    }  
+    }
     public int GetTotalWaves()
     {
         return actualLevelDataSO.waves.Count;
@@ -120,9 +113,9 @@ public class Levels : MonoBehaviour
     {
         Debug.Log("start day");
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-        
-            Debug.Log("StartDay2");
-            SetDayOn?.Invoke("Day");
+
+        Debug.Log("StartDay2");
+        SetDayOn?.Invoke("Day");
     }
     public void StartNight()
     {
