@@ -32,8 +32,11 @@ public class WaveSpawner : MonoBehaviour
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
             //SetStateDayAnim?.Invoke("Night");
             //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
-            if (!GameManager.GetInstance.finishNight && GameManager.instance.finishDay)
+
+            Debug.Log("actualLvl: " + lvl.actualLvl);
+            if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == -1))
             {
+                Debug.Log("actualLvl: " + lvl.actualLvl);
                 lvl.IncreaseLVL();
                 Debug.Log("actualLvl: " + lvl.actualLvl);
                 lvl.FindLvlInformation();
