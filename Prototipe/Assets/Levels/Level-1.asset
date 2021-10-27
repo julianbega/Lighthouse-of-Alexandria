@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a918d482185617438640e6b69ac9045, type: 3}
   m_Name: Level-1
   m_EditorClassIdentifier: 
-  ItIsDay: 0
+  ItIsDay: 1
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  Dialog: 
+  NPCToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
+  Dialog: Parece que van a atacarnos de noche, usa el faro para que nuestras torres
+    puedan ver a los enemigos
   waves:
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 1
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 1
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
   actualWave: 0

@@ -16,15 +16,16 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: 1
   activateWater: 1
-  NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  Dialog: 
+  NPCToTalk: {fileID: 11400000, guid: f415d59a1bb82614c8a4b2b3e411448e, type: 2}
+  Dialog: "Parece que colaps\xF3 un bloqueo, habria que cubrir ese nuevo camino con
+    m\xE1s torres"
   waves:
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 2
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  - heavyEnemies: 0
-    standardEnemies: 2
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 2
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  actualWave: 1
+  actualWave: 0

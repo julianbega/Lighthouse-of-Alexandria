@@ -20,12 +20,12 @@ MonoBehaviour:
   Dialog: "Nos van a atacar de noche, us\xE1 el faro para que nuestras torres vean
     a los enemigos"
   waves:
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 1
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 0
+  - Enemies:
+    - quantity: 1
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
   actualWave: 0
