@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class UIShop : MonoBehaviour
 {
@@ -39,10 +40,13 @@ public class UIShop : MonoBehaviour
 
     public void CloseShop()
     {
-        ShopPanel.gameObject.SetActive(false);
-        uiManager.ShowStartWave();
-        uiManager.ShowPauseBtn();
-        changeActualNode?.Invoke();
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            ShopPanel.gameObject.SetActive(false);
+            uiManager.ShowStartWave();
+            uiManager.ShowPauseBtn();
+            changeActualNode?.Invoke();
+        }
     }
 
     public void BuyTurret(int index)
