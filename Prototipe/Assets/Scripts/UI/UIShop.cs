@@ -48,44 +48,14 @@ public class UIShop : MonoBehaviour
         changeActualNode?.Invoke();
     }
 
-    public void BuyTurret1()
+    public void BuyTurret(int index)
     {
-        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[0];
+        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[index];
         if (gm.GetMoney() >= 10)
         {
             ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.moneySubtract(10);
         }   
-    }
-
-    public void BuyTurret2()
-    {
-        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[1];
-        if (gm.GetMoney() >= 10)
-        {
-            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.moneySubtract(10);
-        }
-    }
-
-    public void BuyTurret3()
-    {
-        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[2];
-        if (gm.GetMoney() >= 10)
-        {
-            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.moneySubtract(10);
-        }
-    }
-
-    public void BuyTurret4()
-    {
-        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[3];
-        if (gm.GetMoney() >= 10)
-        {
-            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.moneySubtract(10);
-        }
     }
 
     public void ShowTurret()

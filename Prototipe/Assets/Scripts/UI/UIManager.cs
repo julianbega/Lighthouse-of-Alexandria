@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
     public Button closeCheatsButton;
+    //estos bools no van mas
     public bool canOpenShop;
     public bool canOpenLibrary;
     public bool canOpenUpgradeSystem;
