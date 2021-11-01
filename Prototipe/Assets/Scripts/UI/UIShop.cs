@@ -25,9 +25,9 @@ public class UIShop : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        Node.OpenShop += ActivateShopPanel;
         gm = FindObjectOfType<GameManager>();
         ShowTurretStats(0);
+        UIManager.InteractionWithUI += ActivateShopPanel;
     }
     private void Update()
     {
@@ -40,9 +40,6 @@ public class UIShop : MonoBehaviour
     public void CloseShop()
     {
         ShopPanel.gameObject.SetActive(false);
-        uiManager.CanOpenShopTrue();
-        uiManager.CanOpenLibraryTrue();
-        uiManager.CanOpenUpgradeSystemTrue();
         uiManager.ShowStartWave();
         uiManager.ShowPauseBtn();
         changeActualNode?.Invoke();
@@ -79,17 +76,16 @@ public class UIShop : MonoBehaviour
             + "Range: " + turretComponent[index].range;
     }
 
-    private void ActivateShopPanel()
+    private void ActivateShopPanel(int index)
     {
         ShowTurret();
-        if(uiManager.canOpenShop && !uiManager.NPC.activeSelf)
+        if(index == 0 && !uiManager.NPC.activeSelf)
         {
             ShopPanel.gameObject.SetActive(true);
             StartCoroutine(Wait());
         }
-        //uiManager.CanOpenShopFalse();
-        uiManager.CanOpenLibraryFalse();
-        uiManager.CanOpenUpgradeSystemFalse();
+        else
+            CloseShop();
         uiManager.HideCheats();
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();
@@ -102,6 +98,6 @@ public class UIShop : MonoBehaviour
     }
     private void OnDisable()
     {
-        Node.OpenShop -= ActivateShopPanel;
+        UIManager.InteractionWithUI += ActivateShopPanel;
     }
 }

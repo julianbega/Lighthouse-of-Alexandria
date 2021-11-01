@@ -23,7 +23,7 @@ public class Turret : MonoBehaviour
     public int price;
     //private Turret actualTurret;
 
-    static public event Action OpenUpgradeSystem;
+    static public event Action<int> OpenUpgradeSystem;
     //static public event Action<Turret> SelectedTurret;
 
     public GameObject rangeSprite;
@@ -103,7 +103,7 @@ public class Turret : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenUpgradeSystem?.Invoke();
+        OpenUpgradeSystem?.Invoke(2);
         //actualTurret = this;
         //SelectedTurret?.Invoke(actualTurret);
         ConstructionManager.instance.selectedTurret = this;

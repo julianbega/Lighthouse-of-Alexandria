@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Library : MonoBehaviour
 {
-    static public event Action OpenLibrary;
+    static public event Action<int> OpenLibrary;
     public List<bool> turretUnlocked = new List<bool>();
     private int cantTypeturret;
     void Start()
@@ -19,6 +19,6 @@ public class Library : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenLibrary?.Invoke();
+        OpenLibrary?.Invoke(1);
     }
 }

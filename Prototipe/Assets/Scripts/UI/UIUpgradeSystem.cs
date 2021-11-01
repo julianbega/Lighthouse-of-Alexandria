@@ -14,9 +14,7 @@ public class UIUpgradeSystem : MonoBehaviour
     public static Action changeActualNode;
     void Start()
     {
-        Turret.OpenUpgradeSystem += ActivateUpgradeSystemPanel;
-        //Turret.SelectedTurret += ShowTurretStats;
-        //Turret.SelectedTurret += SetSelectedTurret;
+        UIManager.InteractionWithUI += ActivateUpgradeSystemPanel;
     }
 
     private void Update()
@@ -34,12 +32,10 @@ public class UIUpgradeSystem : MonoBehaviour
             ConstructionManager.instance.selectedTurret.range += rangeUpgradeValue;
     }
 
-    private void ActivateUpgradeSystemPanel()
+    private void ActivateUpgradeSystemPanel(int index)
     {
-        if(uiManager.canOpenUpgradeSystem)
+        if(index == 2)
             upgradeSystemPanel.SetActive(true);
-        uiManager.CanOpenShopFalse();
-        uiManager.CanOpenLibraryFalse();
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();
         ShowTurretStats();
@@ -48,9 +44,6 @@ public class UIUpgradeSystem : MonoBehaviour
     public void DisableUpgradeSystemPanel()
     {
         upgradeSystemPanel.SetActive(false);
-        uiManager.CanOpenShopTrue();
-        uiManager.CanOpenLibraryTrue();
-        uiManager.CanOpenUpgradeSystemTrue();
         uiManager.ShowPauseBtn();
         uiManager.ShowStartWave();
         changeActualNode?.Invoke();
@@ -66,8 +59,6 @@ public class UIUpgradeSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        Turret.OpenUpgradeSystem -= ActivateUpgradeSystemPanel;
-        //Turret.SelectedTurret -= ShowTurretStats;
-        //Turret.SelectedTurret -= SetSelectedTurret;
+        UIManager.InteractionWithUI -= ActivateUpgradeSystemPanel;
     }
 }

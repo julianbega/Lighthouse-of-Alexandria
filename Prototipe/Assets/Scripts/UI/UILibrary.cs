@@ -10,15 +10,13 @@ public class UILibrary : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        Library.OpenLibrary += ActivateLibraryPanel;
+        UIManager.InteractionWithUI += ActivateLibraryPanel;
     }
 
-    public void ActivateLibraryPanel()
+    public void ActivateLibraryPanel(int index)
     {
-        if(uiManager.canOpenLibrary && !uiManager.NPC.activeSelf)
+        if(index == 1 && !uiManager.NPC.activeSelf)
             LibraryPanel.gameObject.SetActive(true);
-        uiManager.CanOpenShopFalse();
-        uiManager.CanOpenUpgradeSystemFalse();
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();
     }
@@ -26,9 +24,6 @@ public class UILibrary : MonoBehaviour
     public void CloseLibraryPanel()
     {
         LibraryPanel.gameObject.SetActive(false);
-        uiManager.CanOpenShopTrue();
-        uiManager.CanOpenLibraryTrue();
-        uiManager.CanOpenUpgradeSystemTrue();
         uiManager.ShowPauseBtn();
         uiManager.ShowStartWave();
     }
@@ -40,6 +35,6 @@ public class UILibrary : MonoBehaviour
 
     private void OnDisable()
     {
-        Library.OpenLibrary -= ActivateLibraryPanel;
+        UIManager.InteractionWithUI -= ActivateLibraryPanel;
     }
 }

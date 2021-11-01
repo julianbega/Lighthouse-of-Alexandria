@@ -19,10 +19,6 @@ public class UIManager : MonoBehaviour
     public Image CheatsButtonImage;    
     public TextMeshProUGUI CheatsText;
     public Button closeCheatsButton;
-    //estos bools no van mas
-    public bool canOpenShop;
-    public bool canOpenLibrary;
-    public bool canOpenUpgradeSystem;
     public GameObject NPC;
     public TextMeshProUGUI NPCDialoge;
     public Image NPCImage;
@@ -33,6 +29,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI endGameText;
 
     public static event Action ChangeAllNodesToStartColor;
+    public static event Action<int> InteractionWithUI;
        
     public string gameFirstDialoge;
     public NPC_SO gameFirstDialogeNPC;
@@ -47,17 +44,19 @@ public class UIManager : MonoBehaviour
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
         GameManager.ShowEndGame += ShowEndGameSign;
         GameManager.StopUIInteractions += StopInteractions;
-        canOpenShop = false;
-        canOpenLibrary = false;
-        canOpenUpgradeSystem = false;
         EndGameGO.SetActive(false);
+        Node.OpenShop += SendInteractionWithUIEvent;
+        Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
+        Library.OpenLibrary += SendInteractionWithUIEvent;
     }
     private void OnDisable()
     {
         Levels.ShowNPCs -= NPCTalk;
         GameManager.ShowEndGame -= ShowEndGameSign;
         GameManager.StopUIInteractions -= StopInteractions;
-
+        Node.OpenShop -= SendInteractionWithUIEvent;
+        Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
+        Library.OpenLibrary -= SendInteractionWithUIEvent;
     }
 
     // Update is called once per frame
@@ -89,8 +88,6 @@ public class UIManager : MonoBehaviour
         CheatsText.enabled = true;
         closeCheatsButton.enabled = true;
         CheatsButtonImage.enabled = true;
-        CanOpenShopFalse();
-        CanOpenLibraryFalse();
     }
     public void HideCheats()
     {
@@ -98,8 +95,6 @@ public class UIManager : MonoBehaviour
         CheatsText.enabled = false;
         closeCheatsButton.enabled = false;
         CheatsButtonImage.enabled = false;
-        CanOpenShopTrue();
-        CanOpenLibraryTrue();
     }
     public void SetAllNodesDefaultColor()
     {
@@ -115,36 +110,6 @@ public class UIManager : MonoBehaviour
         pauseButton.SetActive(false);
     }
 
-    public void CanOpenShopTrue()
-    {
-        canOpenShop = true;
-    }
-
-    public void CanOpenLibraryTrue()
-    {
-        canOpenLibrary = true;
-    }
-
-    public void CanOpenShopFalse()
-    {
-        canOpenShop = false;
-    }
-
-    public void CanOpenLibraryFalse()
-    {
-        canOpenLibrary = false;
-    }
-
-    public void CanOpenUpgradeSystemTrue()
-    {
-        canOpenUpgradeSystem = true;
-    }
-
-    public void CanOpenUpgradeSystemFalse()
-    {
-        canOpenUpgradeSystem = false;
-    }
-
     private void NPCTalk(NPC_SO npc, string Dialoge)
     {
         if (npcsOn)
@@ -152,11 +117,6 @@ public class UIManager : MonoBehaviour
             if (npc.NPC_name != "none")
             {
                 NPC.SetActive(true);
-                if(canOpenShop && canOpenLibrary)
-                {
-                    CanOpenShopFalse();
-                    CanOpenLibraryFalse();
-                }
                 HideStartWave();
                 HidePauseBtn();
             }
@@ -171,8 +131,6 @@ public class UIManager : MonoBehaviour
         if(EventSystem.current.IsPointerOverGameObject())
             NPC.SetActive(false);
         ShowPauseBtn();
-        CanOpenShopTrue();
-        CanOpenLibraryTrue();
     }
     public void Pause()
     {
@@ -181,8 +139,6 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(false);
             PauseGO.SetActive(true);
             Time.timeScale = 0;
-            CanOpenShopFalse();
-            CanOpenLibraryFalse();
         }
         else
         {
@@ -193,8 +149,6 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(true);
             PauseGO.SetActive(false);
             Time.timeScale = 1;
-            CanOpenShopTrue();
-            CanOpenLibraryTrue();
         }
     }
     public void HideStartWave()
@@ -220,11 +174,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void SendInteractionWithUIEvent(int index)
+    {
+        InteractionWithUI?.Invoke(index);
+    }
+
     private void StopInteractions()
     {
-        CanOpenLibraryFalse();
-        CanOpenShopFalse();
-        CanOpenUpgradeSystemFalse();
         HidePauseBtn();
         cheatsButton.SetActive(false);
         Time.timeScale = 0;

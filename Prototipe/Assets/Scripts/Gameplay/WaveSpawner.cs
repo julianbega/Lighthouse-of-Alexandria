@@ -89,7 +89,6 @@ public class WaveSpawner : MonoBehaviour
             lvl.StartDay();
 
             ShowNPC?.Invoke();
-            uim.CanOpenShopTrue();
         }
     }
 

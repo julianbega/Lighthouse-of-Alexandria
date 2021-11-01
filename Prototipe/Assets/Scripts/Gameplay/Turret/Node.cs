@@ -15,7 +15,7 @@ public class Node : MonoBehaviour
 
     public GameManager gm;
 
-    public static event Action OpenShop;
+    public static event Action<int> OpenShop;
     public static event Action ChangeAllNodesToStartColor;
     //public static event Action<int> GetMoney;
 
@@ -72,7 +72,7 @@ public class Node : MonoBehaviour
         render.material = selectedColor;
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            OpenShop?.Invoke();
+            OpenShop?.Invoke(0);
             ConstructionManager.instance.actualNode = this;
         }
     }
