@@ -58,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
                 for (int j = 0; j < lvl.actualLevelDataSO.waves[actualWave].Enemies[i].quantity; j++)
                 {
                    SpawnEnemy(lvl.actualLevelDataSO.waves[actualWave].Enemies[i].type.prefab);
+                    yield return new WaitForSeconds(1.0f);
                 }
 
                 yield return new WaitForSeconds(0.75f);
