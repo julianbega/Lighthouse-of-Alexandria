@@ -80,13 +80,13 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SurfaceDistortionAmount: 0
-    - _SurfaceNoiseCutoff: 0.732
+    - _SurfaceDistortionAmount: 0.113
+    - _SurfaceNoiseCutoff: 0.743
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthGradientDeep: {r: 0, g: 0.2842102, b: 1, a: 1}
-    - _DepthGradientShallow: {r: 0.35857958, g: 0.8085989, b: 0.9622642, a: 0.725}
+    - _DepthGradientDeep: {r: 0.12549019, g: 0.45344785, b: 1, a: 1}
+    - _DepthGradientShallow: {r: 0.3254717, g: 0.84807, b: 1, a: 0.725}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SurfaceNoiseScroll: {r: -0.03, g: 0.03, b: 0, a: 0}
