@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3765670875956951280}
   - component: {fileID: 820497280931888351}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7220580639239358512}
   - component: {fileID: 8952366588904402532}
   - component: {fileID: 6878096595480549119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5503676092919892471}
   - component: {fileID: 7052232980432009279}
   - component: {fileID: 5529081113759405803}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tower-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6218486701108888594}
   - component: {fileID: 3665361648406763579}
   - component: {fileID: 6979281940661788015}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768313229415698501}
   - component: {fileID: 6868483841416201342}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 1918631834570549837}
   - component: {fileID: 8478817679125539898}
   - component: {fileID: 4604836120825542846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 2230299361655379528}
   - component: {fileID: 4254509947655934390}
   - component: {fileID: 720538196699957069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294661020606715403}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 5986664946368848847}
   - component: {fileID: 1664851935658943895}
   - component: {fileID: 3508974269376867075}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 4809856967882937586}
   - component: {fileID: 5856580337451762656}
   - component: {fileID: 6197068970542356819}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

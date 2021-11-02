@@ -68,12 +68,12 @@ public class GameManager : MonoBehaviour
         if(!Light.activeInHierarchy && !isDayTime )
         {
             Light.SetActive(true);
-            waterBarrierForShader.SetActive(true);
+            waterBarrierForShader.SetActive(true); // llamar a la corrutina que lo pasa de transparente a negro
         }
         if (Light.activeInHierarchy && isDayTime)
         {
             Light.SetActive(false);
-            waterBarrierForShader.SetActive(false);
+            waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
         }
     }
 
