@@ -19,16 +19,14 @@ MonoBehaviour:
   NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
   Dialog: 
   waves:
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 1
+  - Enemies:
+    - quantity: 3
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 3
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 1
+  - Enemies:
+    - quantity: 2
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  - heavyEnemies: 0
-    standardEnemies: 1
-    lightEnemies: 1
+  - Enemies: []
     timeBetweenWaves: 4
   actualWave: 0

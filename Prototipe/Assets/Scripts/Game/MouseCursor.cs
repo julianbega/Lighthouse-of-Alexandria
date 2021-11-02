@@ -6,7 +6,7 @@ public class MouseCursor : MonoBehaviour
 {
     void Start()
     {
-       // Cursor.visible = false;
+        Cursor.visible = false;
     }
 
     void Update()
