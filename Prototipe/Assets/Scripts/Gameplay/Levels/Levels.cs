@@ -111,10 +111,6 @@ public class Levels : MonoBehaviour
     }
     public void StartDay()
     {
-        Debug.Log("start day");
-        //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-
-        Debug.Log("StartDay2");
         SetDayOn?.Invoke("Day");
     }
     public void StartNight()

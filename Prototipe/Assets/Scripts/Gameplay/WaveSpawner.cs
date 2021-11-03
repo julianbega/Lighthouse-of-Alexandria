@@ -32,13 +32,9 @@ public class WaveSpawner : MonoBehaviour
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
             //SetStateDayAnim?.Invoke("Night");
             //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
-
-            Debug.Log("actualLvl: " + lvl.actualLvl);
             if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == -1))
             {
-                Debug.Log("actualLvl: " + lvl.actualLvl);
                 lvl.IncreaseLVL();
-                Debug.Log("actualLvl: " + lvl.actualLvl);
                 lvl.FindLvlInformation();
                 StartCoroutine(SpawnWave());
             }
@@ -47,8 +43,6 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-
-        Debug.Log("CompareActualWaveAndTotalWavesAreEquals: " + lvl.CompareActualWaveAndTotalWavesAreEquals());
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
         {
             spawnsAreFinished = false;
@@ -86,7 +80,6 @@ public class WaveSpawner : MonoBehaviour
 
         if (enemyCount <= 0 && spawnsAreFinished)
         {
-            Debug.Log("No hay enemigos vivos ni faltan spawnear");
             lvl.StartDay();
 
             ShowNPC?.Invoke();

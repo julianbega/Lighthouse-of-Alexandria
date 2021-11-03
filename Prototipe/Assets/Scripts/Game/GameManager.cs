@@ -75,6 +75,14 @@ public class GameManager : MonoBehaviour
             Light.SetActive(false);
             waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
         }
+        if (lvl.actualLvl >= lastLvl)
+        {
+            victory = true;
+            Debug.Log("Cambia de escena a creditos, termino el game");
+            ScenesManager.instanceScenesManager.ChangeScene("Credits");
+            StopUIInteractions?.Invoke();
+        }
+
     }
 
     public int GetMoney()
@@ -115,13 +123,7 @@ public class GameManager : MonoBehaviour
     {
         day.enabled = true;
         isDayTime = true;
-        if (lvl.actualLvl >= lastLvl)
-        {
-            victory = true;
-            //ShowEndGame?.Invoke();
-            ScenesManager.instanceScenesManager.ChangeScene("Credits");
-            StopUIInteractions?.Invoke();
-        }
+        
     }
     public void Defeat()
     {
@@ -134,7 +136,6 @@ public class GameManager : MonoBehaviour
     {
         if (state == "Day")
         {
-            Debug.Log("se hace de dia");
             isDayTime = true;
             dayCycle.SetBool("isDay", true);
             StartCoroutine(WaitForDayAnim(state));

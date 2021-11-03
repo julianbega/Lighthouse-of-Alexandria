@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
         lvl = FindObjectOfType<Levels>();
         Cheats.killEnemy += Kill;
         enlightened = lvl.askIfDay();
-        Debug.Log(lvl.askIfDay());
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
@@ -72,7 +71,6 @@ public class Enemy : MonoBehaviour
         {
             for (int i = 0; i < target.targets.Count; i++)
             {
-                Debug.Log("Llega0");
                 //timerRotation = 0.0f;
                 Ray ray = new Ray(transform.position, -(transform.position - target.targets[i].transform.position).normalized);
                 Debug.DrawLine(transform.position, target.targets[i].transform.position, Color.red);
@@ -82,7 +80,6 @@ public class Enemy : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position))){}
                 else
                 {
-                    Debug.Log("Llega2");
                     if (!target.openTargets.Contains(target.targets[i]))
                     {
                         target.openTargets.Add(target.targets[i]);
@@ -97,7 +94,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Start"))
         {
-            Debug.Log("colisona con start");
             target = other.gameObject.GetComponent<Waypoint>().targets[0];
 
         }
