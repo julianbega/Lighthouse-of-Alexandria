@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     public bool npcsOn;
     public Levels levels;
     public TextMeshProUGUI money;
-    public TextMeshProUGUI wave;
     public TextMeshProUGUI lives;
     public TextMeshProUGUI level;
     public Image Cheats;
@@ -62,6 +61,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        money.text = "Money: " + gm.GetMoney();
         lives.text = "Lives: " + gm.GetLives();
         
         if (levels.actualLvl > 0)
