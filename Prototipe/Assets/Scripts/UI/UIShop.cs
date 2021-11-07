@@ -15,7 +15,7 @@ public class UIShop : MonoBehaviour
     public List<Button> turrets = new List<Button>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
     public List<TMP_Text> statsTurrets = new List<TMP_Text>();
-    public UIManager uiManager;
+    private UIManager uiManager;
     public List<Turret> turretComponent = new List<Turret>();
     private Transform node;
     private Camera cam;
@@ -28,6 +28,7 @@ public class UIShop : MonoBehaviour
         cam = Camera.main;
         gm = FindObjectOfType<GameManager>();
         ShowTurretStats(0);
+        uiManager = FindObjectOfType<UIManager>();
         UIManager.InteractionWithUI += ActivateShopPanel;
     }
     private void Update()
@@ -83,16 +84,19 @@ public class UIShop : MonoBehaviour
     private void ActivateShopPanel(int index)
     {
         ShowTurret();
-        if(index == 0 && !uiManager.NPC.activeSelf)
+        if (uiManager != null)
         {
-            ShopPanel.gameObject.SetActive(true);
-            StartCoroutine(Wait());
+            if (index == 0 && !uiManager.NPC.activeSelf)
+            {
+                ShopPanel.gameObject.SetActive(true);
+                StartCoroutine(Wait());
+            }
+            else
+                CloseShop();
+            uiManager.HideCheats();
+            uiManager.HidePauseBtn();
+            uiManager.HideStartWave();
         }
-        else
-            CloseShop();
-        uiManager.HideCheats();
-        uiManager.HidePauseBtn();
-        uiManager.HideStartWave();
     }
 
     IEnumerator Wait()
