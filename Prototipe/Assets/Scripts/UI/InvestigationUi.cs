@@ -7,8 +7,9 @@ using UnityEngine;
 public class InvestigationUi : MonoBehaviour
 {
     public Investigation_SO selectedInvestigation;
+    public Investigation_SO investigationInProgress;
     public List<Investigation_SO> investigations;
-    public int timeSinceStartInvestigation;
+    public int timeToEndInvestigation;
     public TextMeshProUGUI selectedName;
     public TextMeshProUGUI selectedDescription;
     public TextMeshProUGUI selectedPriceAndTime;
@@ -22,8 +23,13 @@ public class InvestigationUi : MonoBehaviour
         {
             investigations[i].AllreadyInvestigated = false;
         }
+        Levels.aDayEnds += aDayOfInvestigation;
     }
 
+    private void OnDisable()
+    {
+        Levels.aDayEnds -= aDayOfInvestigation;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,10 +40,24 @@ public class InvestigationUi : MonoBehaviour
             selectedPriceAndTime.text = "Price " + selectedInvestigation.price + "  Time" + selectedInvestigation.timeInDays;
             icon.sprite = selectedInvestigation.image;
         }
+        if (timeToEndInvestigation <= 0)
+        {
+            investigationInProgress.AllreadyInvestigated = true;
+        }
     }
 
     public void setSelectedInvestigation(Investigation_SO selected)
     {
         selectedInvestigation = selected;
+    }
+
+    public void aDayOfInvestigation()
+    {
+        timeToEndInvestigation--;
+    }
+    public void startInvestigation()
+    {
+        investigationInProgress = selectedInvestigation;
+        timeToEndInvestigation = investigationInProgress.timeInDays;
     }
 }
