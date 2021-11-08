@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Harpoon
   m_EditorClassIdentifier: 
-  name: 
+  name: Harpoon tower
   image: {fileID: 21300000, guid: 82f1d8b2558b9a647b7fda4f4673704c, type: 3}
   imageLedge: {fileID: 0}
-  description: 
+  description: "Desbloquea la torre de arp\xF3n"
   price: 50
   timeInDays: 1
   AllreadyInvestigated: 0

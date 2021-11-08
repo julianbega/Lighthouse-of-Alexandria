@@ -15,7 +15,8 @@ MonoBehaviour:
   name: Spionage
   image: {fileID: 21300000, guid: c4c24ce9a17ab2a48ab5bd44dd301c33, type: 3}
   imageLedge: {fileID: 0}
-  description: 
+  description: En tus filas cuentas con espias capaces de informar los movimientos
+    enemigos
   price: 10
   timeInDays: 0
   AllreadyInvestigated: 0
