@@ -14,6 +14,7 @@ public class InvestigationUi : MonoBehaviour
     public TextMeshProUGUI selectedName;
     public TextMeshProUGUI selectedDescription;
     public TextMeshProUGUI selectedPriceAndTime;
+    public TextMeshProUGUI actualInvestigation;
     public Image icon;
     private GameManager gm;
     public Library library;
@@ -46,7 +47,16 @@ public class InvestigationUi : MonoBehaviour
         {
             selectedName.text = "";
             selectedDescription.text = "";
-            selectedPriceAndTime.text = "";            
+            selectedPriceAndTime.text = "";
+            actualInvestigation.text = "No hay ninguna investigacion en curso";
+        }
+        if(investigationInProgress != NOInvestigation)
+        {
+            actualInvestigation.text = "Investigando " + investigationInProgress.name + " " + timeToEndInvestigation +" dias para finalizar";
+        }
+        else 
+        {
+            actualInvestigation.text = "No hay ninguna investigacion en curso";
         }
         if (timeToEndInvestigation <= 0 && investigationInProgress != NOInvestigation)
         {
