@@ -63,6 +63,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: startDay
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isDay
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 310245695224755524}
   m_Solo: 0
@@ -151,6 +154,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: startDay
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isDay
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8013349334262444191}
   m_Solo: 0
@@ -203,9 +209,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: isDay
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: startDay
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6752141685395016476}
@@ -262,9 +265,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: isDay
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: startDay
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4084979709517201500}

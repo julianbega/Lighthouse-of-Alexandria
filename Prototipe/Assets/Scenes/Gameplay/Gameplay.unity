@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44660026, g: 0.4964391, b: 0.5748325, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659972, g: 0.49643826, b: 0.5748314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1254,7 +1254,7 @@ PrefabInstance:
     - target: {fileID: 8859771084603842031, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8859771084650329795, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
@@ -50286,7 +50286,6 @@ MonoBehaviour:
   - {fileID: 1712215427}
   - {fileID: 1899103972}
   - {fileID: 719159382}
-  uiManager: {fileID: 1577804616}
   turretComponent:
   - {fileID: 5529081113759405803, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
   - {fileID: 5529081113759405803, guid: 0a65e7bdc67623a41b5460fbe6a42c8a, type: 3}
@@ -58655,6 +58654,9 @@ MonoBehaviour:
   lastLvl: 31
   victory: 0
   dayCycle: {fileID: 1528231186}
+  lerpTime: 0
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  endColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1847785815
 Transform:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int gainPerKill;
 
     public GameObject Light;
-    public GameObject waterBarrierForShader;
+    public GameObject waterBarrierForShader; //se debe cambiar por un mesh renderer
     public Light day;
     public bool finishDay { get; set; }
     public bool finishNight { get; set; }
@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     static public event Action StopUIInteractions;
 
     [SerializeField] private Animator dayCycle;
+    [SerializeField] [Range(0.0f, 1.0f)] float lerpTime;
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color endColor;
 
     static public GameManager instance;
 
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         isDayTime = true;
         dayCycle.SetBool("startDay", true);
         dayCycle.SetBool("isDay", false);
+        //waterBarrierForShader.material.color = startColor;
     }
 
     private void OnDisable()
@@ -71,11 +75,13 @@ public class GameManager : MonoBehaviour
         {
             Light.SetActive(true);
             waterBarrierForShader.SetActive(true); // llamar a la corrutina que lo pasa de transparente a negro
+            //StartCoroutine(WaterChangeColor(startColor, endColor));
         }
         if (Light.activeInHierarchy && isDayTime)
         {
             Light.SetActive(false);
             waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
+            //StartCoroutine(WaterChangeColor(endColor, startColor));
         }
         if (lvl.actualLvl >= lastLvl)
         {
@@ -163,4 +169,11 @@ public class GameManager : MonoBehaviour
             finishDay = false;
         }
     }
+
+    //public IEnumerator WaterChangeColor(Color startColor, Color endColor)
+    //{
+    //    yield return new WaitForSeconds(0.02f);
+    //    waterBarrierForShader.material.color = Color.Lerp(startColor, endColor, lerpTime);
+    //    yield return null;
+    //}
 }
