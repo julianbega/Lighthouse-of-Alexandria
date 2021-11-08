@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         Levels.SetDayOn += DayCycle;
         Levels.SetNightOn += DayCycle;
         isDayTime = true;
+        dayCycle.SetBool("startDay", true);
+        dayCycle.SetBool("isDay", false);
     }
 
     private void OnDisable()
@@ -116,7 +118,6 @@ public class GameManager : MonoBehaviour
         {
             day.enabled = false;
             isDayTime = false;
-
         }
     }
     public void SetDay()
@@ -161,15 +162,5 @@ public class GameManager : MonoBehaviour
             finishNight = true;
             finishDay = false;
         }
-    }
-
-    public bool GetFinishDay()
-    {
-        return finishDay;
-    }
-
-    public bool GetFinishNight()
-    {
-        return finishNight;
     }
 }
