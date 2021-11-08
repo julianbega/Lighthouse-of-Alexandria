@@ -40,6 +40,13 @@ public class InvestigationUi : MonoBehaviour
             selectedPriceAndTime.text = "Price " + selectedInvestigation.price + "  Time" + selectedInvestigation.timeInDays;
             icon.sprite = selectedInvestigation.image;
         }
+        else 
+        {
+            selectedName.text = "";
+            selectedDescription.text = "";
+            selectedPriceAndTime.text = "";
+            
+        }
         if (timeToEndInvestigation <= 0)
         {
             investigationInProgress.AllreadyInvestigated = true;
