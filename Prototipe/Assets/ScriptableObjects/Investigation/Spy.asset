@@ -18,7 +18,7 @@ MonoBehaviour:
   description: En tus filas cuentas con espias capaces de informar los movimientos
     enemigos
   price: 10
-  timeInDays: 0
-  AllreadyInvestigated: 0
+  timeInDays: 1
+  AllreadyInvestigated: 1
   previousInvestigation: {fileID: 11400000, guid: 4ee528f27f283074dad85cf15b5b0d79,
     type: 2}

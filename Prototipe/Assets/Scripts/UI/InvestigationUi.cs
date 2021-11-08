@@ -7,6 +7,7 @@ using UnityEngine;
 public class InvestigationUi : MonoBehaviour
 {
     public Investigation_SO selectedInvestigation;
+    public Investigation_SO NOInvestigation;
     public Investigation_SO investigationInProgress;
     public List<Investigation_SO> investigations;
     public int timeToEndInvestigation;
@@ -23,12 +24,12 @@ public class InvestigationUi : MonoBehaviour
         {
             investigations[i].AllreadyInvestigated = false;
         }
-        Levels.aDayEnds += aDayOfInvestigation;
+        Levels.aDayEnds += ADayOfInvestigation;
     }
 
     private void OnDisable()
     {
-        Levels.aDayEnds -= aDayOfInvestigation;
+        Levels.aDayEnds -= ADayOfInvestigation;
     }
     // Update is called once per frame
     void Update()
@@ -46,30 +47,38 @@ public class InvestigationUi : MonoBehaviour
             selectedDescription.text = "";
             selectedPriceAndTime.text = "";            
         }
-        if (timeToEndInvestigation <= 0)
+        if (timeToEndInvestigation <= 0 && investigationInProgress != NOInvestigation)
         {
             investigationInProgress.AllreadyInvestigated = true;
+            investigationInProgress = NOInvestigation;
         }
     }
 
-    public void setSelectedInvestigation(Investigation_SO selected)
+    public void SetSelectedInvestigation(Investigation_SO selected)
     {
         selectedInvestigation = selected;
     }
 
-    public void aDayOfInvestigation()
+    public void ADayOfInvestigation()
     {
         timeToEndInvestigation--;
     }
-    public void startInvestigation()
+    public void StartInvestigation()
     {
-        if (selectedInvestigation.previousInvestigation.AllreadyInvestigated)
+        Debug.Log("llega a llamar a start investigation");
+        if (investigationInProgress == NOInvestigation)
         {
-            if (gm.money >= selectedInvestigation.price)
+            Debug.Log("Pasa la primera validacion de start investigation");
+            if (selectedInvestigation.previousInvestigation.AllreadyInvestigated)
             {
-                investigationInProgress = selectedInvestigation;
-                timeToEndInvestigation = investigationInProgress.timeInDays;
-                gm.money -= selectedInvestigation.price;
+                Debug.Log("Pasa la segunda validacion de start investigation");
+                if (gm.money >= selectedInvestigation.price)
+                {
+                    Debug.Log("Pasa la tercer validacion de start investigation");
+                    investigationInProgress = selectedInvestigation;
+                    timeToEndInvestigation = investigationInProgress.timeInDays;
+                    gm.money -= selectedInvestigation.price;
+                }
             }
         }
     }
