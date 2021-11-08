@@ -9655,6 +9655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: muros10
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0240eba218428fc418eb3c3b747c82b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0240eba218428fc418eb3c3b747c82b1, type: 3}
 --- !u!1 &306001881
@@ -15702,7 +15707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453035828}
   - component: {fileID: 453035829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Waypoint39
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -18555,6 +18560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: muros6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0240eba218428fc418eb3c3b747c82b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0240eba218428fc418eb3c3b747c82b1, type: 3}
@@ -38652,6 +38662,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: muros (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0240eba218428fc418eb3c3b747c82b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0240eba218428fc418eb3c3b747c82b1, type: 3}
 --- !u!1001 &1198762088
@@ -50636,6 +50651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: muros4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0240eba218428fc418eb3c3b747c82b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0240eba218428fc418eb3c3b747c82b1, type: 3}
@@ -63929,6 +63949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: muros
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0240eba218428fc418eb3c3b747c82b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0240eba218428fc418eb3c3b747c82b1, type: 3}
