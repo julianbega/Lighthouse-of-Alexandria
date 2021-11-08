@@ -83,7 +83,7 @@ public class UIShop : MonoBehaviour
 
     private void ActivateShopPanel(int index)
     {
-        ShowTurret();
+        //ShowTurret();
         if (uiManager != null)
         {
             if (index == 0 && !uiManager.NPC.activeSelf)
