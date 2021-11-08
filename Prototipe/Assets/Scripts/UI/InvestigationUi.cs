@@ -16,6 +16,7 @@ public class InvestigationUi : MonoBehaviour
     public TextMeshProUGUI selectedPriceAndTime;
     public Image icon;
     private GameManager gm;
+    public Library library;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,18 @@ public class InvestigationUi : MonoBehaviour
         }
         if (timeToEndInvestigation <= 0 && investigationInProgress != NOInvestigation)
         {
+            if(investigationInProgress.name == "Archer tower")
+            {
+                UnlockTurret(1);
+            }
+            else if (investigationInProgress.name == "Canon tower")
+            {
+                UnlockTurret(3);
+            }
+            else if (investigationInProgress.name == "Harpoon tower")
+            {
+                UnlockTurret(2);
+            }
             investigationInProgress.AllreadyInvestigated = true;
             investigationInProgress = NOInvestigation;
         }
@@ -82,6 +95,9 @@ public class InvestigationUi : MonoBehaviour
             }
         }
     }
-
+    private void UnlockTurret(int index)
+    {
+        library.turretUnlocked[index] = true;
+    }
 
 }
