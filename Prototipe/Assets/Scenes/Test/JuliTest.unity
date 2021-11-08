@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 133864600}
   - component: {fileID: 133864599}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133864600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 496162ba671bf7a4482160ce3e3b9717,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &133864600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +764,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 605460408}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: daf43bc8fec0c14468eba361e5a4906e,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &605460408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +827,7 @@ GameObject:
   - component: {fileID: 641392449}
   - component: {fileID: 641392448}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: SlowDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +894,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 641392449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 1af8111e5ff89ee46b54f18b500004d3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &641392449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,7 +957,7 @@ GameObject:
   - component: {fileID: 783693999}
   - component: {fileID: 783693998}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: DamageUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -988,7 +1024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 783693999}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 8f631505e59bf47448412b5ad7527aa4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &783693999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,7 +1316,7 @@ GameObject:
   - component: {fileID: 1102328720}
   - component: {fileID: 1102328719}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: RangeUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1335,7 +1383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1102328720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 01dc8c74850a6a8409d7d28f84475a5f,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1102328720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1866,7 @@ GameObject:
   - component: {fileID: 1294760145}
   - component: {fileID: 1294760144}
   - component: {fileID: 1294760143}
+  - component: {fileID: 1294760147}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1893,6 +1954,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1294760147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294760142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1299ac859a0745541a06a9a3b697c73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedInvestigation: {fileID: 0}
+  investigations: []
+  timeSinceStartInvestigation: 0
+  selectedName: {fileID: 1123538917}
+  selectedDescription: {fileID: 436093297}
+  selectedPriceAndTime: {fileID: 1948656608}
+  icon: {fileID: 47146233}
 --- !u!1 &1311358299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1986,7 @@ GameObject:
   - component: {fileID: 1311358302}
   - component: {fileID: 1311358301}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: LookOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1973,7 +2053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1311358302}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 760fa32577d1e814da7b383f2d625371,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1311358302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +2116,7 @@ GameObject:
   - component: {fileID: 1447571493}
   - component: {fileID: 1447571492}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2091,7 +2183,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1447571493}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ecb32393c64349f49bfe5d6df497af1c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1447571493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,7 +2753,7 @@ GameObject:
   - component: {fileID: 2035761819}
   - component: {fileID: 2035761818}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2716,7 +2820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2035761819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 8f631505e59bf47448412b5ad7527aa4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2035761819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,7 +2883,7 @@ GameObject:
   - component: {fileID: 2126871462}
   - component: {fileID: 2126871461}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Penetration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2834,7 +2950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2126871462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 448e15756eda81f449721951ce7465d1,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2126871462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2885,7 +3013,7 @@ GameObject:
   - component: {fileID: 2145567628}
   - component: {fileID: 2145567627}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2952,7 +3080,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2145567628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294760147}
+        m_MethodName: setSelectedInvestigation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: b3cca2ac4d25646409722d33c537d9f6,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Investigation_SO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2145567628
 MonoBehaviour:
   m_ObjectHideFlags: 0
