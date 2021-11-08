@@ -32498,6 +32498,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 982382810}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &984291710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4318102294145567985, guid: 2a0bb284c228319449bd89cbba9a0cd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059536059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &999479433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50397,6 +50409,8 @@ MonoBehaviour:
   selectedName: {fileID: 1619173142}
   selectedDescription: {fileID: 715164204}
   selectedPriceAndTime: {fileID: 739651129}
+  actualInvestigation: {fileID: 984291710}
+  errorMessage: {fileID: 1831244959}
   icon: {fileID: 327463725}
   library: {fileID: 1027692164}
 --- !u!114 &1577804620
@@ -57833,6 +57847,18 @@ Transform:
   m_Father: {fileID: 328578644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1831244959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5373697353463654722, guid: 2a0bb284c228319449bd89cbba9a0cd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059536059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1833251261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65498,6 +65524,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 760fa32577d1e814da7b383f2d625371,
         type: 2}
+    - target: {fileID: 5373697353463654722, guid: 2a0bb284c228319449bd89cbba9a0cd3,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0bb284c228319449bd89cbba9a0cd3, type: 3}
 --- !u!1 &2061328595

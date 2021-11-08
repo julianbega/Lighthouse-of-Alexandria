@@ -15,6 +15,7 @@ public class InvestigationUi : MonoBehaviour
     public TextMeshProUGUI selectedDescription;
     public TextMeshProUGUI selectedPriceAndTime;
     public TextMeshProUGUI actualInvestigation;
+    public TextMeshProUGUI errorMessage;
     public Image icon;
     private GameManager gm;
     public Library library;
@@ -80,6 +81,7 @@ public class InvestigationUi : MonoBehaviour
     public void SetSelectedInvestigation(Investigation_SO selected)
     {
         selectedInvestigation = selected;
+        errorMessage.text = " ";
     }
 
     public void ADayOfInvestigation()
@@ -88,21 +90,36 @@ public class InvestigationUi : MonoBehaviour
     }
     public void StartInvestigation()
     {
-        Debug.Log("llega a llamar a start investigation");
         if (investigationInProgress == NOInvestigation)
-        {
-            Debug.Log("Pasa la primera validacion de start investigation");
+        {     
             if (selectedInvestigation.previousInvestigation.AllreadyInvestigated)
             {
-                Debug.Log("Pasa la segunda validacion de start investigation");
-                if (gm.money >= selectedInvestigation.price)
+                if (!selectedInvestigation.AllreadyInvestigated)
                 {
-                    Debug.Log("Pasa la tercer validacion de start investigation");
-                    investigationInProgress = selectedInvestigation;
-                    timeToEndInvestigation = investigationInProgress.timeInDays;
-                    gm.money -= selectedInvestigation.price;
+                    if (gm.money >= selectedInvestigation.price)
+                    {
+                        investigationInProgress = selectedInvestigation;
+                        timeToEndInvestigation = investigationInProgress.timeInDays;
+                        gm.money -= selectedInvestigation.price;
+                    }
+                    else
+                    {
+                        errorMessage.text = "No hay dinero suficiente";
+                    }
+                }
+                else
+                {
+                    errorMessage.text = "Esta investigación ya fue realizada";
                 }
             }
+            else
+            {
+                errorMessage.text = "Es necesaria la investigación previa";
+            }    
+        }
+        else
+        {
+            errorMessage.text = "Ya hay una investigacion en curso";
         }
     }
     private void UnlockTurret(int index)
