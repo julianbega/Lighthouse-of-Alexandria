@@ -17,6 +17,7 @@ public class Levels : MonoBehaviour
     public static Action<string> SetDayOn;
     public static Action<string> SetNightOn;
     public static Action<NPC_SO, string> ShowNPCs;
+    public static Action aDayEnds;
 
 
     private void Start()
@@ -83,7 +84,9 @@ public class Levels : MonoBehaviour
         {
             actualLvl++;
             actualLevelDataSO = levels[actualLvl];
+            aDayEnds?.Invoke();
         }
+
     }
     public int GetActualWave()
     {
