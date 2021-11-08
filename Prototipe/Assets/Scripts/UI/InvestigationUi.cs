@@ -44,8 +44,7 @@ public class InvestigationUi : MonoBehaviour
         {
             selectedName.text = "";
             selectedDescription.text = "";
-            selectedPriceAndTime.text = "";
-            
+            selectedPriceAndTime.text = "";            
         }
         if (timeToEndInvestigation <= 0)
         {
@@ -64,7 +63,16 @@ public class InvestigationUi : MonoBehaviour
     }
     public void startInvestigation()
     {
-        investigationInProgress = selectedInvestigation;
-        timeToEndInvestigation = investigationInProgress.timeInDays;
+        if (selectedInvestigation.previousInvestigation.AllreadyInvestigated)
+        {
+            if (gm.money >= selectedInvestigation.price)
+            {
+                investigationInProgress = selectedInvestigation;
+                timeToEndInvestigation = investigationInProgress.timeInDays;
+                gm.money -= selectedInvestigation.price;
+            }
+        }
     }
+
+
 }
