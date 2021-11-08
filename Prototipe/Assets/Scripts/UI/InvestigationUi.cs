@@ -13,10 +13,15 @@ public class InvestigationUi : MonoBehaviour
     public TextMeshProUGUI selectedDescription;
     public TextMeshProUGUI selectedPriceAndTime;
     public Image icon;
+    private GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = FindObjectOfType<GameManager>();
+        for (int i = 0; i < investigations.Count; i++)
+        {
+            investigations[i].AllreadyInvestigated = false;
+        }
     }
 
     // Update is called once per frame
