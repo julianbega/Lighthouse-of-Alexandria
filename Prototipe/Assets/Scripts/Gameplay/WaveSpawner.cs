@@ -8,22 +8,21 @@ public class WaveSpawner : MonoBehaviour
     private Levels lvl;
     public int enemyCount;
     private bool spawnsAreFinished;
-
-    private UIManager uim;
-
+    
     public static Action ShowNPC;
     static public event Action<string> SetStateDayAnim;
 
     private void Start()
     {
         lvl = GetComponent<Levels>();
-        uim = FindObjectOfType<UIManager>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         enemyCount = 0;
         spawnsAreFinished = true;
         SetStateDayAnim?.Invoke("Day");
+        StartCoroutine(CheckEnemies());
     }
+
 
     void StartLvlCycle()
     {
@@ -66,6 +65,20 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator CheckEnemies()
+    {        
+        Enemy[] missingEnemies;
+        while (enemyCount > 0)
+        {
+            missingEnemies = FindObjectsOfType<Enemy>();
+            if (missingEnemies.Length <= 0)
+            {
+                enemyCount = 0;
+            }
+            yield return new WaitForSeconds(5f);
+        }
+        
+    }
     void SpawnEnemy(GameObject enemyPrefab)
     {
         enemyCount++;
