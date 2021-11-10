@@ -80,9 +80,16 @@ public class WaveSpawner : MonoBehaviour
 
         if (enemyCount <= 0 && spawnsAreFinished)
         {
+            Enemy[] missingEnemies = FindObjectsOfType<Enemy>();
+            if (missingEnemies.Length <= 1)
+            { 
             lvl.StartDay();
-
             ShowNPC?.Invoke();
+            }
+            else 
+            {
+                enemyCount = missingEnemies.Length;
+            }
         }
     }
 
