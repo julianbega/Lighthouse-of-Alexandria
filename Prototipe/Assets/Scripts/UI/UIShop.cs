@@ -27,7 +27,7 @@ public class UIShop : MonoBehaviour
     {
         cam = Camera.main;
         gm = FindObjectOfType<GameManager>();
-        ShowTurretStats(0);
+        //ShowTurretStats(0);
         uiManager = FindObjectOfType<UIManager>();
         UIManager.InteractionWithUI += ActivateShopPanel;
     }
@@ -83,12 +83,12 @@ public class UIShop : MonoBehaviour
 
     private void ActivateShopPanel(int index)
     {
-        //ShowTurret();
         if (uiManager != null)
         {
             if (index == 0 && !uiManager.NPC.activeSelf)
             {
                 ShopPanel.gameObject.SetActive(true);
+                Time.timeScale = 1;
                 StartCoroutine(Wait());
             }
             else
