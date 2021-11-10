@@ -88,6 +88,7 @@ public class UIShop : MonoBehaviour
             if (index == 0 && !uiManager.NPC.activeSelf)
             {
                 ShopPanel.gameObject.SetActive(true);
+                ShowTurret();
                 Time.timeScale = 1;
                 StartCoroutine(Wait());
             }
