@@ -104,7 +104,6 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Finish"))
         {
-
             SubtractLives?.Invoke();
             EnemyDie?.Invoke();
             Destroy(this.gameObject);

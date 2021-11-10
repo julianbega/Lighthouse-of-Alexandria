@@ -26,6 +26,10 @@ public class Bullet : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime * cheat.speed;   
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        if (target == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void HitTarget()

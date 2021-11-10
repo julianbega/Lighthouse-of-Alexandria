@@ -20,12 +20,12 @@ public class WaveSpawner : MonoBehaviour
         enemyCount = 0;
         spawnsAreFinished = true;
         SetStateDayAnim?.Invoke("Day");
-        StartCoroutine(CheckEnemies());
-    }
-
+        
+    }   
 
     void StartLvlCycle()
     {
+     //   StartCoroutine(CheckEnemies());
         if (enemyCount <= 0)
         {
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
@@ -40,6 +40,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+   
     IEnumerator SpawnWave()
     {
         while (!lvl.CompareActualWaveAndTotalWavesAreEquals())
@@ -65,20 +66,25 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator CheckEnemies()
-    {        
-        Enemy[] missingEnemies;
+    /*IEnumerator CheckEnemies()
+    {
+        Debug.Log("check enemies");
+        GameObject[] missingEnemies;
         while (enemyCount > 0)
         {
-            missingEnemies = FindObjectsOfType<Enemy>();
+            missingEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            Debug.Log("enemies alive " + missingEnemies.Length);
             if (missingEnemies.Length <= 0)
             {
                 enemyCount = 0;
+                lvl.StartDay();
+                ShowNPC?.Invoke();
+                StopCoroutine(CheckEnemies());
             }
             yield return new WaitForSeconds(5f);
         }
         
-    }
+    }*/
     void SpawnEnemy(GameObject enemyPrefab)
     {
         enemyCount++;
@@ -98,6 +104,7 @@ public class WaveSpawner : MonoBehaviour
             { 
             lvl.StartDay();
             ShowNPC?.Invoke();
+           // StopCoroutine(CheckEnemies());
             }
             else 
             {
