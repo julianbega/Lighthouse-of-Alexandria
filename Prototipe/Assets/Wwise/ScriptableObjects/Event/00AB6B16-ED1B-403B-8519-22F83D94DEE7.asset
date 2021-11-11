@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fc9a14b5a0a164eb2eef90c8270c2e, type: 3}
+  m_Name: 00AB6B16-ED1B-403B-8519-22F83D94DEE7
+  m_EditorClassIdentifier: 
+  objectName: ui_button_hover
+  id: 610582865
+  guid: 00AB6B16-ED1B-403B-8519-22F83D94DEE7

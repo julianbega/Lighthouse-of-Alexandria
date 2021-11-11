@@ -9,6 +9,7 @@ TagManager:
   - Undefined
   - Light
   - Start
+  - AudioMaster
   layers:
   - Default
   - TransparentFX

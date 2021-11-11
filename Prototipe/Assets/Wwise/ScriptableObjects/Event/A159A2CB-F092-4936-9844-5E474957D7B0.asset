@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fc9a14b5a0a164eb2eef90c8270c2e, type: 3}
+  m_Name: A159A2CB-F092-4936-9844-5E474957D7B0
+  m_EditorClassIdentifier: 
+  objectName: attack_archertower
+  id: 354991228
+  guid: A159A2CB-F092-4936-9844-5E474957D7B0

@@ -110,6 +110,8 @@ public class Levels : MonoBehaviour
     }
     public float GetTimeBetweenWaves()
     {
+        Debug.Log("actual wave " + actualLevelDataSO.actualWave);
+        Debug.Log("actualLevelDataSO " + actualLevelDataSO.waves.Count);
         return actualLevelDataSO.waves[actualLevelDataSO.actualWave].timeBetweenWaves;
     }
     public void StartDay()

@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8e66226d6d7b5b488425dd2c1455d30a
     GuidInternal: 
-    m_lastTime: -8585658143786625047
+    m_lastTime: -8585650237268986290
     List:
     - name: Ambiences
       guid: e5c255129d78c749bcb568686ec950b9
@@ -60,6 +60,26 @@ MonoBehaviour:
         ObjectType: 2
         guid: e5c255129d78c749bcb568686ec950b9
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Ambiences
+    - name: DayMusic
+      guid: 19da5e3b6e68a843ac44ee10a1ea9cbc
+      id: 3231935906
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 819f2ea40ca4d04092deb8eb248c2f1b
+      - ElementName: DayMusic
+        ObjectType: 2
+        guid: 19da5e3b6e68a843ac44ee10a1ea9cbc
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\DayMusic
     - name: FX
       guid: df2d0850dd17cb4f9e01b508716bef9e
       id: 1802970371
@@ -128,6 +148,26 @@ MonoBehaviour:
         ObjectType: 2
         guid: 819f2ea40ca4d04092deb8eb248c2f1b
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: NightMusic
+      guid: 2b40d4fe64cce2419339c1606a0d78f7
+      id: 1030219198
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 819f2ea40ca4d04092deb8eb248c2f1b
+      - ElementName: NightMusic
+        ObjectType: 2
+        guid: 2b40d4fe64cce2419339c1606a0d78f7
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\NightMusic
     - name: Reverb
       guid: cc2e6557e898a54786146a93b95804c3
       id: 348963605
@@ -145,6 +185,26 @@ MonoBehaviour:
         ObjectType: 1
         guid: cc2e6557e898a54786146a93b95804c3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverb
+    - name: ThemeMusic
+      guid: a02ff28bdd83e446be534ada9c8dcc43
+      id: 450773281
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8e66226d6d7b5b488425dd2c1455d30a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 819f2ea40ca4d04092deb8eb248c2f1b
+      - ElementName: ThemeMusic
+        ObjectType: 2
+        guid: a02ff28bdd83e446be534ada9c8dcc43
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\ThemeMusic
     - name: Towers
       guid: 196788b20c8a164f954905e20a8075ca
       id: 1982534943
@@ -197,7 +257,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ead45b3196a96c40bb0ebd69af8035b4
     GuidInternal: 
-    m_lastTime: -8585663471063597664
+    m_lastTime: -8585650198573653915
     List:
     - name: main
       guid: 6cc1069aed667742b52bcd46af8d432c
@@ -245,8 +305,8 @@ MonoBehaviour:
         guid: cba259a192f0364998445e474957d7b0
       Path: Events\Default Work Unit\Towers\attack_archertower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.627874
+      minDuration: 0.592634
     - name: attack_cannontower
       guid: d390761b56970c4ea225969a3cee828b
       id: 1825859782
@@ -265,8 +325,8 @@ MonoBehaviour:
         guid: d390761b56970c4ea225969a3cee828b
       Path: Events\Default Work Unit\Towers\attack_cannontower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 8.226226
+      minDuration: 7.764503
     - name: attack_crossbowtower
       guid: e16ff0251192ac47b5775a003fd01731
       id: 781691411
@@ -285,8 +345,8 @@ MonoBehaviour:
         guid: e16ff0251192ac47b5775a003fd01731
       Path: Events\Default Work Unit\Towers\attack_crossbowtower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.696816
+      minDuration: 0.641839
     - name: Global_Game_Events
       guid: e7a8c3ffe49d7b4f92acc7db5982f32d
       id: 1091852455
@@ -322,8 +382,8 @@ MonoBehaviour:
         guid: eb87e9b4bbd41544b1ab2c0e932e8b8d
       Path: Events\Default Work Unit\Towers\impact_archertower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.746845
+      minDuration: 0.704927
     - name: impact_cannontower
       guid: 35e5754775bdad4298dfd6ed498a2324
       id: 3210611180
@@ -342,8 +402,8 @@ MonoBehaviour:
         guid: 35e5754775bdad4298dfd6ed498a2324
       Path: Events\Default Work Unit\Towers\impact_cannontower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 5.218391
+      minDuration: 4.925505
     - name: impact_crossbowtower
       guid: ef386a75dd21304f9573e83cc58e00d7
       id: 259899085
@@ -362,8 +422,8 @@ MonoBehaviour:
         guid: ef386a75dd21304f9573e83cc58e00d7
       Path: Events\Default Work Unit\Towers\impact_crossbowtower
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.848531
+      minDuration: 0.800907
     - name: Level
       guid: aee6bcc4c3e1a24f9e9ae2e1b6180a56
       id: 2782712965
@@ -399,8 +459,8 @@ MonoBehaviour:
         guid: 102f3e1af5c49b499fcc9b955b19113e
       Path: Events\Default Work Unit\Level\level_towerbuilding
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.73849
+      minDuration: 2.660531
     - name: level_warhorn
       guid: 84f4a4220ece3949852400c466c24dfa
       id: 3676066613
@@ -419,8 +479,8 @@ MonoBehaviour:
         guid: 84f4a4220ece3949852400c466c24dfa
       Path: Events\Default Work Unit\Level\level_warhorn
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.777563
+      minDuration: 4.777563
     - name: play_gamestart
       guid: 8bfa39f5c0d1a747ac13af51b9a3effe
       id: 1497459184
@@ -513,8 +573,8 @@ MonoBehaviour:
         guid: 3fe642d28d8cc748a753a87438d869e6
       Path: Events\Default Work Unit\UI\ui_button_buttonupgrade
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.730523
+      minDuration: 1.647407
     - name: ui_button_click
       guid: 7e55dbd765a4084ea323ae1487226042
       id: 1664509575
@@ -533,8 +593,8 @@ MonoBehaviour:
         guid: 7e55dbd765a4084ea323ae1487226042
       Path: Events\Default Work Unit\UI\ui_button_click
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.540427
+      minDuration: 0.510095
     - name: ui_button_hover
       guid: 166bab001bed3b40851922f83d94dee7
       id: 610582865
@@ -553,8 +613,8 @@ MonoBehaviour:
         guid: 166bab001bed3b40851922f83d94dee7
       Path: Events\Default Work Unit\UI\ui_button_hover
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.207169
+      minDuration: 0.195521
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -623,7 +683,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 95841d8611a8c34cae88f9e370f791c0
     GuidInternal: 
-    m_lastTime: -8585658143777495312
+    m_lastTime: -8585650237263221701
     List:
     - name: daytime
       guid: 0e3182ed4f4b0c4987aefd7184458a53
@@ -707,6 +767,72 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: musicmute
+      guid: 60534b299c9d714989c1485a6034aede
+      id: 153626945
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95841d8611a8c34cae88f9e370f791c0
+      - ElementName: musicmute
+        ObjectType: 9
+        guid: 60534b299c9d714989c1485a6034aede
+      Path: States\Default Work Unit\musicmute
+      values:
+      - name: None
+        guid: 931125c03ae30f4da13102e23b5cfb6d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: musicmute
+          ObjectType: 9
+          guid: 60534b299c9d714989c1485a6034aede
+        - ElementName: None
+          ObjectType: 8
+          guid: 931125c03ae30f4da13102e23b5cfb6d
+      - name: off
+        guid: 4a4b6649be00164f9a9318ba7254dd7d
+        id: 930712164
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: musicmute
+          ObjectType: 9
+          guid: 60534b299c9d714989c1485a6034aede
+        - ElementName: off
+          ObjectType: 8
+          guid: 4a4b6649be00164f9a9318ba7254dd7d
+      - name: on
+        guid: 453fc4ecc006f248872181121ae82991
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: musicmute
+          ObjectType: 9
+          guid: 60534b299c9d714989c1485a6034aede
+        - ElementName: on
+          ObjectType: 8
+          guid: 453fc4ecc006f248872181121ae82991
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: pausemenu
       guid: a3364803b2ee5448b246786933754573
       id: 3494343696
@@ -773,6 +899,72 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: sfxmute
+      guid: 230d36177173534486978e25eb1425cf
+      id: 1264305561
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95841d8611a8c34cae88f9e370f791c0
+      - ElementName: sfxmute
+        ObjectType: 9
+        guid: 230d36177173534486978e25eb1425cf
+      Path: States\Default Work Unit\sfxmute
+      values:
+      - name: None
+        guid: 903139207a991e458f538bcf5f7ff3b8
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: sfxmute
+          ObjectType: 9
+          guid: 230d36177173534486978e25eb1425cf
+        - ElementName: None
+          ObjectType: 8
+          guid: 903139207a991e458f538bcf5f7ff3b8
+      - name: off
+        guid: 32383d34ca8f6841a8157ba82723e592
+        id: 930712164
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: sfxmute
+          ObjectType: 9
+          guid: 230d36177173534486978e25eb1425cf
+        - ElementName: off
+          ObjectType: 8
+          guid: 32383d34ca8f6841a8157ba82723e592
+      - name: on
+        guid: 2b73c71f8e531641accd36466fb84443
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 95841d8611a8c34cae88f9e370f791c0
+        - ElementName: sfxmute
+          ObjectType: 9
+          guid: 230d36177173534486978e25eb1425cf
+        - ElementName: on
+          ObjectType: 8
+          guid: 2b73c71f8e531641accd36466fb84443
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -805,5 +997,5 @@ MonoBehaviour:
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
