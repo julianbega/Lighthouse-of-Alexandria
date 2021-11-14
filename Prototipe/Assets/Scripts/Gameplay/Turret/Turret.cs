@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour
 {
     [Header("TowerStats")]
     public float range;
-    public float power;
+    public int power;
     public float attacksPerSecond;
     private float fireCountdown = 0f;
     private bool preventShootOnSpawn;
@@ -25,6 +25,12 @@ public class Turret : MonoBehaviour
     public int turretLvl;
     //private Turret actualTurret;
 
+    [Header("PowerUps")]
+    public bool fireProyectiles;
+    public bool penetrationProyectiles;
+    public bool slowProyectiles;
+    public bool alarm;
+
     static public event Action<int> OpenUpgradeSystem;
     //static public event Action<Turret> SelectedTurret;
 
@@ -34,6 +40,10 @@ public class Turret : MonoBehaviour
 
     void Start()
     {
+        fireProyectiles = false;
+        penetrationProyectiles = false;
+        slowProyectiles = false;
+        alarm = false;
         cheat = FindObjectOfType<Cheats>();
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
@@ -95,6 +105,10 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
             bullet.Seek(target);
+            bullet.damage = power;
+            bullet.fireProyectiles = fireProyectiles;
+            bullet.penetrationProyectiles = penetrationProyectiles;
+            bullet.slowProyectiles = slowProyectiles; 
         }
         preventShootOnSpawn = true;
     }

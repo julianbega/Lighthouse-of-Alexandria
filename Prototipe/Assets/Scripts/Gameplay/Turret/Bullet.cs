@@ -6,7 +6,12 @@ public class Bullet : MonoBehaviour
 
     public float speed = 70f;
     public int damage;
+
     private Cheats cheat;
+
+    public bool fireProyectiles;
+    public bool penetrationProyectiles;
+    public bool slowProyectiles;
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();

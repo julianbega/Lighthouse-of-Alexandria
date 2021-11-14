@@ -65,8 +65,54 @@ public class UIUpgradeSystem : MonoBehaviour
     {
         UpgradeStore.gameObject.SetActive(false);
     }
-    public void UpgradeTurret(string attribute)
+    public void UpgradeTurret(int index)
     {
+        switch (ConstructionManager.instance.selectedTurret.turretLvl)
+        {
+            case 1:
+                switch (index)
+                {
+                    case 0:
+                        //LookOut
+                        ConstructionManager.instance.selectedTurret.alarm = true;
+                        break;
+                    case 1:
+                        //AttackSpeed
+
+                        ConstructionManager.instance.selectedTurret.attacksPerSecond++;
+                        break;
+                    case 2:
+                        //DamageUp
+                        ConstructionManager.instance.selectedTurret.power ++;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 2:
+                switch (index)
+                {
+                    case 0:
+                        //Fire
+                        ConstructionManager.instance.selectedTurret.fireProyectiles = true;
+                        break;
+                    case 1:
+                        //Pen
+                        ConstructionManager.instance.selectedTurret.penetrationProyectiles = true;
+                        break;
+                    case 2:
+                        //Slow
+                        ConstructionManager.instance.selectedTurret.slowProyectiles = true;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+        ConstructionManager.instance.selectedTurret.turretLvl++;
+        CloseUpShop();
     }
 
     IEnumerator Wait()
