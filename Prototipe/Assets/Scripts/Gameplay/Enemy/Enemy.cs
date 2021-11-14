@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public int life;
     public int myPath;
 
-    public Bullet bullet;
+    private Bullet bullet;
     public static Action SubtractLives;
     public static Action GainMoney;
     static public event Action EnemyDie;
@@ -25,10 +25,13 @@ public class Enemy : MonoBehaviour
     public HealthBar healthBar;
     public GameObject healthBarGO;
     private bool alreadyDie;
+    public bool onFire;
+    public GameObject fire;
 
     [SerializeField] private float speedRotation;
     private float maxTimeAnim = 1.0f;
     private float timerAnim;
+
     private void Start()
     {
         cheat = FindObjectOfType<Cheats>();
@@ -64,6 +67,10 @@ public class Enemy : MonoBehaviour
                 SetNextTarget();
                 StartCoroutine(RotationInterpolate());
             }
+        }
+        while (onFire)
+        {
+            enlightened = true;
         }
     }
 
@@ -113,6 +120,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
+            bullet = other.gameObject.GetComponent<Bullet>();
             DestroyCannonBall?.Invoke();
             life -= bullet.damage;
 
@@ -125,6 +133,10 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
                 return;
             }
+            if (bullet.fireProyectiles)
+            {
+                StartCoroutine(OnFire());
+            }
             return;
         }
     }
@@ -135,6 +147,7 @@ public class Enemy : MonoBehaviour
         {
             if (!lvl.askIfDay())
             {
+                if(onFire == false)
                 enlightened = false;
             }
             return;
@@ -173,5 +186,15 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
         timerAnim = 0.0f;
+    }
+
+    IEnumerator OnFire()
+    {
+        onFire = true;
+        fire.SetActive(true);        
+        yield return new WaitForSeconds(2.0f);
+
+        onFire = false;
+        fire.SetActive(false);
     }
 }

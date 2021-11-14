@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  power: 5
+  power: 2
   attacksPerSecond: 3
   pivot: {fileID: 6294661020606715403}
   target: {fileID: 7784590678315440477, guid: 7717b150c3c258d45aac3c7d6327adf3, type: 3}
@@ -403,8 +403,12 @@ MonoBehaviour:
     type: 3}
   cannonBallSpawn: {fileID: 2875308949640464870}
   turnSpeed: 5
-  price: 50
+  price: 200
   turretLvl: 1
+  fireProyectiles: 0
+  penetrationProyectiles: 0
+  slowProyectiles: 0
+  alarm: 0
   rangeSprite: {fileID: 6260006234507266890}
 --- !u!1 &3049461916471045824
 GameObject:
