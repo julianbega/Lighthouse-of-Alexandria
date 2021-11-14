@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Turret : MonoBehaviour
 {
@@ -21,12 +22,15 @@ public class Turret : MonoBehaviour
 
     private Cheats cheat;
     public int price;
+    public int turretLvl;
     //private Turret actualTurret;
 
     static public event Action<int> OpenUpgradeSystem;
     //static public event Action<Turret> SelectedTurret;
 
     public GameObject rangeSprite;
+
+    public static event Action OpenUpgradeShop;
 
     void Start()
     {
@@ -115,6 +119,16 @@ public class Turret : MonoBehaviour
     private void OnMouseExit()
     {
         rangeSprite.SetActive(false);
+    }
+
+    private void OnMouseUp()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            ConstructionManager.instance.selectedTurret = this;
+            OpenUpgradeShop?.Invoke();
+
+        }
     }
 
 }

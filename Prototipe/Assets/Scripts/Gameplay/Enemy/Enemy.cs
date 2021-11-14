@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject healthBarGO;
+    private bool alreadyDie;
 
     [SerializeField] private float speedRotation;
     private float maxTimeAnim = 1.0f;
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
+        alreadyDie = false;
     }
 
     private void Update()
@@ -115,8 +117,9 @@ public class Enemy : MonoBehaviour
             life -= bullet.damage;
 
             healthBar.SetHealth(life);
-            if (life <= 0)
+            if (life <= 0 && alreadyDie == false)
             {
+                alreadyDie = true;
                 GainMoney?.Invoke();
                 EnemyDie?.Invoke();
                 Destroy(this.gameObject);

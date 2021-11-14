@@ -11,4 +11,5 @@ public class Investigation_SO : ScriptableObject
     public int timeInDays;
     public bool AllreadyInvestigated;
     public Investigation_SO previousInvestigation;
+    public int investigationLvl;
 }

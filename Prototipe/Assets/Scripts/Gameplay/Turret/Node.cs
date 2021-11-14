@@ -29,7 +29,6 @@ public class Node : MonoBehaviour
         UIManager.ChangeAllNodesToStartColor += InvokeChangeToStartColor;
         Node.ChangeAllNodesToStartColor += changeToStartColor;
         UIShop.changeActualNode += changeToStartColor;
-        UIUpgradeSystem.changeActualNode += changeToStartColor;
         gm = FindObjectOfType<GameManager>();
     }
     private void OnDisable()
@@ -37,7 +36,6 @@ public class Node : MonoBehaviour
         UIManager.ChangeAllNodesToStartColor -= InvokeChangeToStartColor;
         Node.ChangeAllNodesToStartColor -= changeToStartColor;
         UIShop.changeActualNode -= changeToStartColor;
-        UIUpgradeSystem.changeActualNode -= changeToStartColor;
 
     }
     private void OnMouseEnter()
@@ -56,10 +54,6 @@ public class Node : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-       
-    }
 
     private void OnMouseUp()
     {

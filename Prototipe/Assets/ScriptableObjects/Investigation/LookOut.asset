@@ -23,3 +23,4 @@ MonoBehaviour:
   AllreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: b3cca2ac4d25646409722d33c537d9f6,
     type: 2}
+  investigationLvl: 1

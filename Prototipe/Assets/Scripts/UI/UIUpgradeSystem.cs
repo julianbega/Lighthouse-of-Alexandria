@@ -1,64 +1,86 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
+using System.Collections;
+using UnityEngine.EventSystems;
+
 public class UIUpgradeSystem : MonoBehaviour
 {
-    public GameObject upgradeSystemPanel;
-    [SerializeField] private UIManager uiManager;
-    [SerializeField] private TMP_Text selectedTurretStats;
-    [SerializeField] private int attacksPerSecondsUpgradeValue;
-    [SerializeField] private float rangeUpgradeValue;
-    [SerializeField] private int powerUpgradeValue;
-    //private Turret actualTurretToUpgrade;
-
-    public static Action changeActualNode;
+    public List<Button> UpgradesButton = new List<Button>();
+    public GameObject UpgradeStore;
+    private Camera cam;
+    public List<Investigation_SO> lvl1UpgradeInvestigations;
+    public List<Investigation_SO> lvl2UpgradeInvestigations;
     void Start()
     {
-        UIManager.InteractionWithUI += ActivateUpgradeSystemPanel;
+        Turret.OpenUpgradeShop += OpenUpShop;
+        cam = Camera.main;
     }
 
     private void Update()
     {
-        ShowTurretStats();
     }
 
+    public void OpenUpShop()
+    {
+        for (int i = 0; i < UpgradesButton.Count; i++)
+        {
+            UpgradesButton[i].gameObject.SetActive(false);
+        }
+        
+        Debug.Log("abre tienda de upgrades");
+        StartCoroutine(Wait());
+        Turret thisTurret = ConstructionManager.instance.selectedTurret;
+        UpgradeStore.gameObject.SetActive(true);
+        switch (ConstructionManager.instance.selectedTurret.turretLvl)
+        {
+            case 1:
+                for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
+                {
+                    if (lvl1UpgradeInvestigations[i].AllreadyInvestigated)
+                    {
+                        UpgradesButton[i].gameObject.SetActive(true);
+                        UpgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
+                    }
+                }
+                break;
+            case 2:
+                for (int i = 0; i < lvl2UpgradeInvestigations.Count; i++)
+                {
+                    if (lvl1UpgradeInvestigations[i].AllreadyInvestigated)
+                    {
+                        UpgradesButton[i].gameObject.SetActive(true);
+                        UpgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
+                    }
+                }
+
+                break;
+            default:
+                break;
+        }
+    }
+    public void CloseUpShop()
+    {
+        UpgradeStore.gameObject.SetActive(false);
+    }
     public void UpgradeTurret(string attribute)
     {
-        if (attribute == "attacks")
-            ConstructionManager.instance.selectedTurret.attacksPerSecond += attacksPerSecondsUpgradeValue;
-        else if (attribute == "power")
-            ConstructionManager.instance.selectedTurret.power += powerUpgradeValue;
-        else if (attribute == "range")
-            ConstructionManager.instance.selectedTurret.range += rangeUpgradeValue;
     }
 
-    private void ActivateUpgradeSystemPanel(int index)
+    IEnumerator Wait()
     {
-        if(index == 2)
-            upgradeSystemPanel.SetActive(true);
-        uiManager.HidePauseBtn();
-        uiManager.HideStartWave();
-        ShowTurretStats();
-    }
-
-    public void DisableUpgradeSystemPanel()
-    {
-        upgradeSystemPanel.SetActive(false);
-        uiManager.ShowPauseBtn();
-        uiManager.ShowStartWave();
-        changeActualNode?.Invoke();
-    }
-
-    public void ShowTurretStats()
-    {
-        if(ConstructionManager.instance.selectedTurret != null)
-            selectedTurretStats.text = "Attacks per second: " + ConstructionManager.instance.selectedTurret.attacksPerSecond 
-                + "\n" + "Power: " + ConstructionManager.instance.selectedTurret.power 
-                + "\n" + "Range: " + ConstructionManager.instance.selectedTurret.range;
+        yield return new WaitForSeconds(0.001f);
+        UpgradeStore.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.selectedTurret.gameObject.transform.position);
     }
 
     private void OnDisable()
     {
-        UIManager.InteractionWithUI -= ActivateUpgradeSystemPanel;
+        Turret.OpenUpgradeShop -= OpenUpShop;
     }
+
+
+
+
 }

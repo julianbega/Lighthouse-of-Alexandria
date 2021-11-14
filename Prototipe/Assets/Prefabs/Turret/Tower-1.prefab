@@ -307,6 +307,7 @@ MonoBehaviour:
   cannonBallSpawn: {fileID: 2875308949640464870}
   turnSpeed: 5
   price: 50
+  turretLvl: 1
   rangeSprite: {fileID: 3501859709254516443}
 --- !u!1 &3049461916471045824
 GameObject:
