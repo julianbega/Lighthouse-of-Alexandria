@@ -23,6 +23,10 @@ public class Turret : MonoBehaviour
     private Cheats cheat;
     public int price;
     public int turretLvl;
+    public Light light;
+
+    public Color baseLightColor;
+    public Color alarmColor;
     //private Turret actualTurret;
 
     [Header("PowerUps")]
@@ -30,7 +34,7 @@ public class Turret : MonoBehaviour
     public bool penetrationProyectiles;
     public bool slowProyectiles;
     public bool alarm;
-
+    private bool alreadyAlarming;
     static public event Action<int> OpenUpgradeSystem;
     //static public event Action<Turret> SelectedTurret;
 
@@ -53,6 +57,7 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
             return;
+
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookrotation = Quaternion.LookRotation(dir);
@@ -78,10 +83,19 @@ public class Turret : MonoBehaviour
             /// apunta al más cercano
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if (distanceToEnemy < shortestDistance && enemy.enlightened)
+            if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                actualEnemyFocus = enemy;
+                if (enemy.enlightened)
+                {
+                    actualEnemyFocus = enemy;
+                }
+                else
+                {
+                    if(alarm && !alreadyAlarming && shortestDistance <= range)
+                    StartCoroutine(Alarm());
+                }
+
             }
         }
 
@@ -145,4 +159,17 @@ public class Turret : MonoBehaviour
         }
     }
 
+    IEnumerator Alarm()
+    {
+        alreadyAlarming = true;
+        light.color = alarmColor;
+        yield return new WaitForSeconds(0.25f);
+        light.color = baseLightColor;
+        yield return new WaitForSeconds(0.25f);
+        light.color = alarmColor;
+        yield return new WaitForSeconds(0.25f);
+        light.color = baseLightColor;
+        alreadyAlarming = false;
+
+    }
 }

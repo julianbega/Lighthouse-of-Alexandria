@@ -405,6 +405,9 @@ MonoBehaviour:
   turnSpeed: 5
   price: 150
   turretLvl: 1
+  light: {fileID: 820497280931888351}
+  baseLightColor: {r: 1, g: 0.96630573, b: 0.6839622, a: 0}
+  alarmColor: {r: 1, g: 0, b: 0, a: 0}
   fireProyectiles: 0
   penetrationProyectiles: 0
   slowProyectiles: 0
