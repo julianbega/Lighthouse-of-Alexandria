@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public bool enlightened;
     public int life;
     public int myPath;
+    private float inicialSpeed;
+    private float halfSpeed;
 
     private Bullet bullet;
     public static Action SubtractLives;
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
     private bool alreadyDie;
     public bool onFire;
     public GameObject fire;
+    public bool armored;
 
     [SerializeField] private float speedRotation;
     private float maxTimeAnim = 1.0f;
@@ -42,6 +45,8 @@ public class Enemy : MonoBehaviour
         firstRotation = true;
         healthBar.SetMaxHealth(life);
         alreadyDie = false;
+        halfSpeed = speed / 2;
+        inicialSpeed = speed;
     }
 
     private void Update()
@@ -122,7 +127,18 @@ public class Enemy : MonoBehaviour
         {
             bullet = other.gameObject.GetComponent<Bullet>();
             DestroyCannonBall?.Invoke();
-            life -= bullet.damage;
+
+            if(armored)
+            { 
+                if(bullet.penetrationProyectiles)
+                {
+                    life -= bullet.damage;
+                }
+            }
+            else
+            {
+                life -= bullet.damage;
+            }
 
             healthBar.SetHealth(life);
             if (life <= 0 && alreadyDie == false)
@@ -136,6 +152,10 @@ public class Enemy : MonoBehaviour
             if (bullet.fireProyectiles)
             {
                 StartCoroutine(OnFire());
+            }
+            if (bullet.slowProyectiles)
+            {
+                StartCoroutine(Slowed());
             }
             return;
         }
@@ -154,6 +174,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Light"))
+        {
+            enlightened = true;
+            return;
+        }
+    }
     private void IncreaseSpeed()
     {
         speed += 10;
@@ -196,5 +224,11 @@ public class Enemy : MonoBehaviour
 
         onFire = false;
         fire.SetActive(false);
+    }
+    IEnumerator Slowed()
+    {
+        speed = halfSpeed;
+        yield return new WaitForSeconds(2.0f);
+        speed = inicialSpeed;
     }
 }
