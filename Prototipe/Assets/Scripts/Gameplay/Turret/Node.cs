@@ -13,8 +13,6 @@ public class Node : MonoBehaviour
     private Renderer render;
     public GameObject turret;
 
-    public GameManager gm;
-
     public static event Action<int> OpenShop;
     public static event Action ChangeAllNodesToStartColor;
     //public static event Action<int> GetMoney;
@@ -29,7 +27,6 @@ public class Node : MonoBehaviour
         UIManager.ChangeAllNodesToStartColor += InvokeChangeToStartColor;
         Node.ChangeAllNodesToStartColor += changeToStartColor;
         UIShop.changeActualNode += changeToStartColor;
-        gm = FindObjectOfType<GameManager>();
     }
     private void OnDisable()
     {
