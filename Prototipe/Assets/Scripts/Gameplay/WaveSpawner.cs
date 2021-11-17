@@ -89,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
     {
         enemyCount++;
         int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
-        Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.localPosition, Quaternion.identity);
+        Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.position, Quaternion.identity);
     }
 
 
