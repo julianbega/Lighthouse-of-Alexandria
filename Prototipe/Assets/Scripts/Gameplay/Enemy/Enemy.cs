@@ -149,7 +149,7 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
                 return;
             }
-            if (bullet.fireProyectiles)
+            if (bullet.fireProyectiles && !onFire)
             {
                 StartCoroutine(OnFire());
             }
