@@ -61,7 +61,7 @@ public class Turret : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookrotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookrotation, Time.deltaTime * turnSpeed * cheat.speed).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookrotation, Time.deltaTime * turnSpeed).eulerAngles;
         pivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (fireCountdown <= 0)
@@ -69,7 +69,7 @@ public class Turret : MonoBehaviour
             Shoot();
             fireCountdown = 1f / attacksPerSecond;
         }
-        fireCountdown -= Time.deltaTime * cheat.speed;
+        fireCountdown -= Time.deltaTime ;
     }
 
     void UpdateTarget()

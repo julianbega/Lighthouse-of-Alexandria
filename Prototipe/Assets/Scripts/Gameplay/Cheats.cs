@@ -10,12 +10,9 @@ public class Cheats : MonoBehaviour
     private UIManager UIm;
     public int MoneyToAdd;
     public int LivesToAdd;
-    public int speed;
-
     static public event Action killEnemy;
     void Start()
     {
-        speed = 1;
         gm = GetComponent<GameManager>();
         UIm = FindObjectOfType<UIManager>();
     }
@@ -42,10 +39,6 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             killEnemy?.Invoke();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            speed ++;
         }
         if (Input.GetKeyDown(KeyCode.N))
         {

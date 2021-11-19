@@ -41268,8 +41268,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\t\tCheats\n\nPush 1 :   Get Money  \nPush 2 :   Set Money to 0\nPush
-    3 :   Get Lives\nPush 4 :   Reduce Lives\nPush S:   Increase Ships speed\nPush
-    M :  Kill all enemies\nPush N :  Enable/Disable NPCs"
+    3 :   Get Lives\nPush 4 :   Reduce Lives\nPush M :  Kill all enemies\nPush N
+    :  Enable/Disable NPCs"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -56910,9 +56910,9 @@ GameObject:
   - component: {fileID: 1847785815}
   - component: {fileID: 1847785814}
   - component: {fileID: 1847785816}
-  - component: {fileID: 1847785818}
   - component: {fileID: 1847785820}
   - component: {fileID: 1847785817}
+  - component: {fileID: 1847785818}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56990,7 +56990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c31e2365fc3784eaf8a9558379a83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 0
+  enemiesAlive: []
 --- !u!114 &1847785818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57003,9 +57003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed13ee8f4fe70a544ad7037881815fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyToAdd: 333
-  LivesToAdd: 2
-  speed: 0
+  MoneyToAdd: 50
+  LivesToAdd: 1
 --- !u!114 &1847785820
 MonoBehaviour:
   m_ObjectHideFlags: 0

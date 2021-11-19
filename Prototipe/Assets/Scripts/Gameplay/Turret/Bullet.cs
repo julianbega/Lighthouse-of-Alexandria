@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
     void Update()
     { 
         Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime * cheat.speed;   
+        float distanceThisFrame = speed * Time.deltaTime;   
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
         if (target == null)
         {

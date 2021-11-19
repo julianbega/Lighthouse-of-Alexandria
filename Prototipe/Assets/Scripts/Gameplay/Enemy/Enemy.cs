@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         if (target != null)
         {
             Vector3 direction = target.transform.position - transform.position;           
-            transform.Translate(direction.normalized * speed * Time.deltaTime * cheat.speed, Space.World);
+            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
             {
                 SetNextTarget();
@@ -189,12 +189,12 @@ public class Enemy : MonoBehaviour
 
     private void Kill()
     {
-        if (life > 0)
-        {
-            life = 0;
-            Destroy(gameObject);
-            EnemyDie?.Invoke();
-        }
+        life = 0;
+        alreadyDie = true;
+        GainMoney?.Invoke();
+        EnemyDie?.Invoke();
+        Destroy(this.gameObject);
+        return;
     }
 
     private void OnDisable()
