@@ -16,9 +16,8 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  NPCToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
-  Dialog: Parece que van a atacarnos de noche, usa el faro para que nuestras torres
-    puedan ver a los enemigos
+  NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
+  Dialog: 
   waves:
   - Enemies:
     - quantity: 1

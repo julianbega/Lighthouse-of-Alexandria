@@ -6,9 +6,9 @@ using System;
 public class WaveSpawner : MonoBehaviour
 {
     private Levels lvl;
-    public int enemyCount;
     private bool spawnsAreFinished;
-    
+    private bool isCombat;
+    public List<GameObject> enemiesAlive;
     public static Action ShowNPC;
     static public event Action<string> SetStateDayAnim;
 
@@ -17,22 +17,23 @@ public class WaveSpawner : MonoBehaviour
         lvl = GetComponent<Levels>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
-        enemyCount = 0;
         spawnsAreFinished = true;
         SetStateDayAnim?.Invoke("Day");
-        
+        isCombat = false;
+        InvokeRepeating("CheckEndLevel", 0f, 0.5f);
     }   
 
     void StartLvlCycle()
     {
      //   StartCoroutine(CheckEnemies());
-        if (enemyCount <= 0)
+        if (enemiesAlive.Count <= 0 )
         {
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
             //SetStateDayAnim?.Invoke("Night");
             //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
             if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == -1))
             {
+                isCombat = true;
                 lvl.IncreaseLVL();
                 lvl.FindLvlInformation();
                 StartCoroutine(SpawnWave());
@@ -87,29 +88,31 @@ public class WaveSpawner : MonoBehaviour
     }*/
     void SpawnEnemy(GameObject enemyPrefab)
     {
-        enemyCount++;
         int spawner = UnityEngine.Random.Range(0, lvl.activeSpawnStarts.Count);
-        Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.position, Quaternion.identity);
+        GameObject newGO = (GameObject)Instantiate(enemyPrefab, lvl.activeSpawnStarts[spawner].transform.position, Quaternion.identity);
+        enemiesAlive.Add(newGO); 
     }
 
 
     void DecreaseEnemyCount()
     {
-        enemyCount--;
-
-        if (enemyCount <= 0 && spawnsAreFinished)
+        for (int i = 0; i < enemiesAlive.Count; i++)
         {
-            Enemy[] missingEnemies = FindObjectsOfType<Enemy>();
-            if (missingEnemies.Length <= 1)
-            { 
+            Enemy enemieToCheck = enemiesAlive[i].GetComponent<Enemy>();
+            if(enemieToCheck.life <= 0)
+            {
+                enemiesAlive.RemoveAt(i);               
+            }
+        }
+    }
+
+    void CheckEndLevel()
+    {
+        if (enemiesAlive.Count <= 0 && spawnsAreFinished && isCombat)
+        {
             lvl.StartDay();
             ShowNPC?.Invoke();
-           // StopCoroutine(CheckEnemies());
-            }
-            else 
-            {
-                enemyCount = missingEnemies.Length;
-            }
+            isCombat = false;
         }
     }
 
