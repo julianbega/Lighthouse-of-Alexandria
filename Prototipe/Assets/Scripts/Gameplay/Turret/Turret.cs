@@ -20,7 +20,6 @@ public class Turret : MonoBehaviour
     public Transform cannonBallSpawn;
     public float turnSpeed = 10.0f;
 
-    private Cheats cheat;
     public int price;
     public int turretLvl;
     public Light light;
@@ -48,7 +47,6 @@ public class Turret : MonoBehaviour
         penetrationProyectiles = false;
         slowProyectiles = false;
         alarm = false;
-        cheat = FindObjectOfType<Cheats>();
         preventShootOnSpawn = false;
         InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }

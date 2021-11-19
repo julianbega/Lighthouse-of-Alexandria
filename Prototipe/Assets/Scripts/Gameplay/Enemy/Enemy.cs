@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
     public Levels lvl;
-    private Cheats cheat;
     private bool firstRotation;
 
     public HealthBar healthBar;
@@ -37,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        cheat = FindObjectOfType<Cheats>();
         lvl = FindObjectOfType<Levels>();
         Cheats.killEnemy += Kill;
         enlightened = lvl.askIfDay();
