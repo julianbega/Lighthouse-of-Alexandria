@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: AttackSpeedUpgrade
   m_EditorClassIdentifier: 
-  name: AttackSpeed
+  name: Velocidad de atque
   image: {fileID: 21300000, guid: b8e9796f2e5eaed44b6362d399383f96, type: 3}
   imageLedge: {fileID: 0}
   description: Mejora el AttackSpeed de las torres, no  es acumulable con damage

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Penetration
   m_EditorClassIdentifier: 
-  name: Penetracion
+  name: Proyectil penetrante
   image: {fileID: 21300000, guid: 81263ee428e13134298bb59c98a43691, type: 3}
   imageLedge: {fileID: 0}
   description: Los proyectiles pueden atravezar el blindaje de los barcos, no es

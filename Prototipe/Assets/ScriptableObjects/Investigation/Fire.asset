@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  name: Fire projectile
+  name: Proyectil de fuego
   image: {fileID: 21300000, guid: a410440a8d1e6df4fbb8ecc87d1c0d47, type: 3}
   imageLedge: {fileID: 0}
   description: "Los proyectiles incendian los barcos, iluminandolos por unos segundos,

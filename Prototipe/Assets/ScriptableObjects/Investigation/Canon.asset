@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Canon
   m_EditorClassIdentifier: 
-  name: Canon tower
+  name: "Torre de ca\xF1on"
   image: {fileID: 21300000, guid: 923e37bb7bbb4d94a924f3fbb9c68bb0, type: 3}
   imageLedge: {fileID: 0}
   description: "Desbloquea la torre de ca\xF1on"
@@ -21,3 +21,4 @@ MonoBehaviour:
   AllreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: daf43bc8fec0c14468eba361e5a4906e,
     type: 2}
+  investigationLvl: 0

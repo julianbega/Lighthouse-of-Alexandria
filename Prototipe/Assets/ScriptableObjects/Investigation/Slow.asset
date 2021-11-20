@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Slow
   m_EditorClassIdentifier: 
-  name: Slow Enemies
+  name: Ataque calculado
   image: {fileID: 21300000, guid: e23f31fc00efeb646bd76a5531799837, type: 3}
   imageLedge: {fileID: 0}
   description: 'Las torres estan entrenadas para atacar puntos clave enlenteciendo

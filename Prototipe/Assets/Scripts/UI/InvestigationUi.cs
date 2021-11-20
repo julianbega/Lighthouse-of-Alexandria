@@ -41,7 +41,7 @@ public class InvestigationUi : MonoBehaviour
         {
             selectedName.text = selectedInvestigation.name;
             selectedDescription.text = selectedInvestigation.description;
-            selectedPriceAndTime.text = "Price " + selectedInvestigation.price + "  Time" + selectedInvestigation.timeInDays;
+            selectedPriceAndTime.text = "Precio " + selectedInvestigation.price + "  Tiempo" + selectedInvestigation.timeInDays;
             icon.sprite = selectedInvestigation.image;
         }
         else 
@@ -61,15 +61,15 @@ public class InvestigationUi : MonoBehaviour
         }
         if (timeToEndInvestigation <= 0 && investigationInProgress != NOInvestigation)
         {
-            if(investigationInProgress.name == "Archer tower")
+            if(investigationInProgress.name == "Torre de arqueros")
             {
                 UnlockTurret(1);
             }
-            else if (investigationInProgress.name == "Canon tower")
+            else if (investigationInProgress.name == "Torre de cañon")
             {
                 UnlockTurret(3);
             }
-            else if (investigationInProgress.name == "Harpoon tower")
+            else if (investigationInProgress.name == "Torre Escorpion")
             {
                 UnlockTurret(2);
             }

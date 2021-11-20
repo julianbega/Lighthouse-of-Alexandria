@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: DamageUpgrade
   m_EditorClassIdentifier: 
-  name: Damage Up
+  name: "Da\xF1o aumentado"
   image: {fileID: 21300000, guid: e988ac8fb2d17fb4e8bb9f2bf36b03dc, type: 3}
   imageLedge: {fileID: 0}
   description: "Desbloquea la mejora de torres para umentar el da\xF1o, esta mejora
