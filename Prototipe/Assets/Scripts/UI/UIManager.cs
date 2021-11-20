@@ -61,8 +61,8 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        money.text = "Money: " + gm.GetMoney();
-        lives.text = "Lives: " + gm.GetLives();
+        money.text = "Dinero: " + gm.GetMoney();
+        lives.text = "Vidas: " + gm.GetLives();
         
         if (levels.actualLvl > 0)
         { 
@@ -166,11 +166,11 @@ public class UIManager : MonoBehaviour
         EndGameGO.SetActive(true);
         if (gm.victory)
         {
-            endGameText.text = "Victory";
+            endGameText.text = "Victoria";
         }
         else 
         {
-            endGameText.text = "Defeat";
+            endGameText.text = "Derota";
         }
     }
 
