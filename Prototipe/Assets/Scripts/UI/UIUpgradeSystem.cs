@@ -112,6 +112,7 @@ public class UIUpgradeSystem : MonoBehaviour
                 break;
         }
         ConstructionManager.instance.selectedTurret.turretLvl++;
+        AkSoundEngine.PostEvent("ui_button_buttonupgrade", this.gameObject);
         CloseUpShop();
     }
 

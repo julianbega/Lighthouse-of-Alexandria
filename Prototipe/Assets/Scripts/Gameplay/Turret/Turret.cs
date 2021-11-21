@@ -6,13 +6,17 @@ using UnityEngine.EventSystems;
 
 public class Turret : MonoBehaviour
 {
+    public enum type
+    {
+        Catapult, Archer, Scorpion, Canon
+    }
     [Header("TowerStats")]
     public float range;
     public int power;
     public float attacksPerSecond;
     private float fireCountdown = 0f;
     private bool preventShootOnSpawn;
-
+    public type towerType;
     [Header("SetUps")]
     public Transform pivot;
     public Transform target;
@@ -118,10 +122,30 @@ public class Turret : MonoBehaviour
         if (bullet != null)
             bullet.Seek(target);
             bullet.damage = power;
+            bullet.towerType = towerType;
             bullet.fireProyectiles = fireProyectiles;
             bullet.penetrationProyectiles = penetrationProyectiles;
             bullet.slowProyectiles = slowProyectiles; 
         }
+        
+        switch (towerType)
+        {
+            case type.Catapult:
+                AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
+                break;
+            case type.Archer:
+                AkSoundEngine.PostEvent("attack_archertower", this.gameObject);
+                break;
+            case type.Scorpion:
+                AkSoundEngine.PostEvent("attack_crossbowtower", this.gameObject);
+                break;
+            case type.Canon:
+                AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
+                break;
+            default:
+                break;
+        }
+
         preventShootOnSpawn = true;
     }
 

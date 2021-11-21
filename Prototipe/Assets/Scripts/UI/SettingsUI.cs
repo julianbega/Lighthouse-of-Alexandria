@@ -1,19 +1,17 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIMenu : MonoBehaviour
+public class SettingsUI : MonoBehaviour
 {
-    public TMP_Text versionText;
     private uint menuMusicID;
+    // Start is called before the first frame update
     void Start()
     {
-        versionText.text = "V" + Application.version;
         menuMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
-
     }
 
-    public void leaveMenu()
+   public void exitSettings()
     {
         AkSoundEngine.StopPlayingID(menuMusicID);
     }

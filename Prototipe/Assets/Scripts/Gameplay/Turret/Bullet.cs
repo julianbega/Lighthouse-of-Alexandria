@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public bool fireProyectiles;
     public bool penetrationProyectiles;
     public bool slowProyectiles;
+    public Turret.type towerType;
     private void Start()
     {
         Enemy.DestroyCannonBall += HitTarget;
@@ -35,6 +36,23 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
+        switch (towerType)
+        {
+            case Turret.type.Catapult:
+                AkSoundEngine.PostEvent("impact_cannontower", this.gameObject);
+                break;
+            case Turret.type.Archer:
+                AkSoundEngine.PostEvent("impact_archertower", this.gameObject);
+                break;
+            case Turret.type.Scorpion:
+                AkSoundEngine.PostEvent("impact_crossbowtower", this.gameObject);
+                break;
+            case Turret.type.Canon:
+                AkSoundEngine.PostEvent("impact_cannontower", this.gameObject);
+                break;
+            default:
+                break;
+        }
         Destroy(this.gameObject);
     }
 }

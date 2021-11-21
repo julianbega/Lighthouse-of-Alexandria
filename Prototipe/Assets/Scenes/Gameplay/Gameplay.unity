@@ -19732,6 +19732,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 609646739}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &610333508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8859771084650329661, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &616942878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26820,6 +26832,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 846760229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &850856970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8859771085558948348, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &853613518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47242,6 +47266,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 1862923559}
+  volumeSFX: 0
+  volumeMusica: 0
+  musicSlider: {fileID: 610333508}
+  sfxSlider: {fileID: 850856970}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0

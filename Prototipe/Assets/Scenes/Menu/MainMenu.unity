@@ -1508,7 +1508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 67.661, y: -140.246, z: -137.697}
 --- !u!1 &405854188
 GameObject:
@@ -1762,7 +1762,7 @@ PrefabInstance:
     - target: {fileID: 1045294807281904758, guid: 42c90b14eda63524da05f2f8577c104d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1045294807281904758, guid: 42c90b14eda63524da05f2f8577c104d,
         type: 3}
@@ -1928,7 +1928,7 @@ RectTransform:
   - {fileID: 2080078933}
   - {fileID: 81664426}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4112,6 +4112,17 @@ MonoBehaviour:
           m_StringArgument: Settings
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 469106528}
+        m_MethodName: leaveMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1081264042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4746,7 +4757,7 @@ Transform:
   - {fileID: 1567417111}
   - {fileID: 1424110816}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314887382
 GameObject:
@@ -4998,6 +5009,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 469106528}
+        m_MethodName: leaveMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1398901647
@@ -6048,6 +6070,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 469106528}
+        m_MethodName: leaveMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 469106527}
         m_MethodName: ChangeSceneWithWaitSeconds
         m_Mode: 5
@@ -6273,6 +6306,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 469106527}
         m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 469106528}
+        m_MethodName: leaveMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6943,7 +6987,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117958108
 GameObject:
@@ -7705,7 +7749,7 @@ Transform:
   - {fileID: 1131874277548677809}
   - {fileID: 8530650027644085309}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -17.372002, z: 0}
 --- !u!1 &6637348877487889270
 GameObject:
