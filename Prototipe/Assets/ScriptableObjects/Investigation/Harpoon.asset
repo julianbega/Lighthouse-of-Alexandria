@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: Harpoon
   m_EditorClassIdentifier: 
-  name: Torre escorpion
+  name: Torre Escorpion
   image: {fileID: 21300000, guid: 82f1d8b2558b9a647b7fda4f4673704c, type: 3}
   imageLedge: {fileID: 0}
   description: "Desbloquea la torre de arp\xF3n"

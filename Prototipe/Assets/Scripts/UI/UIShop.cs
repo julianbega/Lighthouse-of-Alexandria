@@ -103,7 +103,7 @@ public class UIShop : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.001f);
-        ShopPanel.transform.position = cam.WorldToScreenPoint(node.position);
+        ShopPanel.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.actualNode.gameObject.transform.position);
     }
     private void OnDisable()
     {
