@@ -20,7 +20,6 @@ public class VolumeManager : MonoBehaviour
     public void SetMusicVolume(float value)
     {
         musicVolume = value;
-        Debug.Log("valor que llega desde UISettings a Music: " + value);
     }
 
     public void SetSFXVolume(float value)
