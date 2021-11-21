@@ -37,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
                 lvl.IncreaseLVL();
                 lvl.FindLvlInformation();
                 StartCoroutine(SpawnWave());
+                AkSoundEngine.PostEvent("level_warhorn", this.gameObject);
             }
         }
     }
