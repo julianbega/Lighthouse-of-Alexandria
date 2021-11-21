@@ -10,7 +10,6 @@ public class UIMenu : MonoBehaviour
     {
         versionText.text = "V" + Application.version;
         menuMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
-
     }
 
     public void leaveMenu()

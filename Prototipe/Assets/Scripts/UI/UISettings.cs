@@ -11,19 +11,23 @@ public class UISettings : MonoBehaviour
     //public float volumeMaster;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Toggle sfxToggle;
+    public Toggle musicToggle;
     //  public AK.Wwise.RTPC rtpc
     void Start()
     {
         sfxSlider.value = VolumeManager.instanceVolumeManager.GetSFXVolume();
         musicSlider.value = VolumeManager.instanceVolumeManager.GetMusicVolume();
+        sfxToggle.isOn = VolumeManager.instanceVolumeManager.GetSFXOn();
+        musicToggle.isOn = VolumeManager.instanceVolumeManager.GetMusicOn();
     }
 
     void LateUpdate()
     {
-        AkSoundEngine.SetRTPCValue("volume_music", musicSlider.value);
-        AkSoundEngine.SetRTPCValue("volume_sfx", sfxSlider.value);
         VolumeManager.instanceVolumeManager.SetMusicVolume(musicSlider.value);
         VolumeManager.instanceVolumeManager.SetSFXVolume(sfxSlider.value);
+        VolumeManager.instanceVolumeManager.SetSFXOn(sfxToggle.isOn);
+        VolumeManager.instanceVolumeManager.SetMusicOn(musicToggle.isOn);
         // rtpc.SetGlobalValue(volume_master,)
     }
 
@@ -35,5 +39,31 @@ public class UISettings : MonoBehaviour
     public void CloseSettingsPanel()
     {
         settingsPanel.gameObject.SetActive(false);
+    }
+
+    public void SFXMute()
+    {
+        if (sfxToggle.isOn)
+        {
+            AkSoundEngine.SetState("sfxmute", "off");
+        }
+        else
+        {
+            AkSoundEngine.SetState("sfxmute", "on");
+        } 
+    }
+    public void MusicMute()
+    {
+        if (musicToggle.isOn)
+        {
+            Debug.Log("MusicaOn ");
+            AkSoundEngine.SetState("musicmute", "off");
+        }
+        else
+        {
+            Debug.Log("MusicaOff ");
+            AkSoundEngine.SetState("musicmute", "on");
+        }
+        
     }
 }

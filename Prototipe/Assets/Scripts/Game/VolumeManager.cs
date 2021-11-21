@@ -7,7 +7,8 @@ public class VolumeManager : MonoBehaviour
 
     public float musicVolume;
     public float sfxVolume;
-
+    public bool sfxOn;
+    public bool musicOn;
     private void Awake()
     {
         if (instanceVolumeManager != this && instanceVolumeManager != null)
@@ -35,5 +36,30 @@ public class VolumeManager : MonoBehaviour
     public float GetSFXVolume()
     {
         return sfxVolume;
+    }
+
+    public void SetMusicOn(bool value)
+    {
+        musicOn = value;
+    }
+
+    public void SetSFXOn(bool value)
+    {
+        sfxOn = value;
+    }
+
+    public bool GetMusicOn()
+    {
+        return musicOn;
+    }
+
+    public bool GetSFXOn()
+    {
+        return sfxOn;
+    }
+    private void Update()
+    {
+        AkSoundEngine.SetRTPCValue("volume_music", musicVolume);
+        AkSoundEngine.SetRTPCValue("volume_sfx", sfxVolume);
     }
 }

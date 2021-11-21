@@ -139,6 +139,7 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(false);
             PauseGO.SetActive(true);
             Time.timeScale = 0;
+            AkSoundEngine.SetState("pausemenu ", "pause");
         }
         else
         {
@@ -149,6 +150,7 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(true);
             PauseGO.SetActive(false);
             Time.timeScale = 1;
+            AkSoundEngine.SetState("pausemenu ", "nopause");
         }
     }
     public void HideStartWave()

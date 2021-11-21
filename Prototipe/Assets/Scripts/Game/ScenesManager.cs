@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
+    private uint sceneManagerMusicID;
     static public ScenesManager instanceScenesManager;
 
     static public ScenesManager Instance { get { return instanceScenesManager; } }
@@ -19,6 +20,9 @@ public class ScenesManager : MonoBehaviour
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
+
+        if(scene == "Settings")
+        sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
     }
 
     public void ChangeSceneWithWaitSeconds(string scene)
@@ -43,4 +47,10 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(scene);
         yield return null;
     }
+
+    public void exitSettings()
+    {
+        AkSoundEngine.StopPlayingID(sceneManagerMusicID);
+    }
+
 }
