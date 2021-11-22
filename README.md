@@ -18,7 +18,7 @@ Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de a
     </a>
 </div>
 
-##Credits
+## Credits
 
 - **Julian Bega** *Programming*
 - **Elias Brucart** *Programming*
@@ -26,6 +26,6 @@ Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de a
 - **Horacio Valdivieso** *Audio*
 
 
-##Links
+## Links
 
 Download it from https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege
