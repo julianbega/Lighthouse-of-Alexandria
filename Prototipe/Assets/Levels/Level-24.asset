@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a918d482185617438640e6b69ac9045, type: 3}
   m_Name: Level-24
   m_EditorClassIdentifier: 
-  ItIsDay: 0
+  itIsDay: 0
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  NPCToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  Dialog: 
+  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
+  dialog: 
   waves:
   - Enemies:
     - quantity: 3

@@ -76,6 +76,8 @@ public class Enemy : MonoBehaviour
         {
             enlightened = true;
         }
+        if (life <= 0)
+        { Kill(); }
     }
 
     void SetNextTarget()

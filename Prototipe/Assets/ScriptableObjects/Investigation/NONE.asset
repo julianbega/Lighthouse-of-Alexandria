@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610554436c9b20840b32c71387313c65, type: 3}
   m_Name: NONE
   m_EditorClassIdentifier: 
-  name: 
+  name: none
   image: {fileID: 0}
   imageLedge: {fileID: 0}
   description: 
   price: 0
   timeInDays: 0
-  AllreadyInvestigated: 1
+  allreadyInvestigated: 1
   previousInvestigation: {fileID: 0}
+  investigationLvl: 0

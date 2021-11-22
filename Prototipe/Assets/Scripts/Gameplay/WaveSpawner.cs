@@ -104,6 +104,10 @@ public class WaveSpawner : MonoBehaviour
             {
                 enemiesAlive.RemoveAt(i);               
             }
+            if (enemiesAlive[i] == null)
+            {
+                enemiesAlive.RemoveAt(i);
+            }
         }
     }
 

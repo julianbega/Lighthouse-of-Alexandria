@@ -1848,7 +1848,6 @@ GameObject:
   m_Component:
   - component: {fileID: 53767333}
   - component: {fileID: 53767335}
-  - component: {fileID: 53767334}
   m_Layer: 9
   m_Name: Library
   m_TagString: Untagged
@@ -1876,35 +1875,6 @@ RectTransform:
   m_AnchoredPosition: {x: -658.5, y: 0}
   m_SizeDelta: {x: -1316.9956, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &53767334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53767332}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c206882f3d5f6044976e07e0b8fd80a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &53767335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47221,21 +47191,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1847785814}
   npcsOn: 1
-  levels: {fileID: 0}
+  levels: {fileID: 1847785820}
   money: {fileID: 1108440321}
   lives: {fileID: 2107276833}
   level: {fileID: 567258129}
-  Cheats: {fileID: 296384442}
-  CheatsButtonImage: {fileID: 220195589}
-  CheatsText: {fileID: 1297297453}
+  cheats: {fileID: 296384442}
+  cheatsButtonImage: {fileID: 220195589}
+  cheatsText: {fileID: 1297297453}
   closeCheatsButton: {fileID: 220195586}
-  NPC: {fileID: 270171239}
-  NPCDialoge: {fileID: 1393418031}
-  NPCImage: {fileID: 1816053292}
-  DialogeBackground: {fileID: 1563656287}
+  npc: {fileID: 270171239}
+  npcDialoge: {fileID: 1393418031}
+  npcImage: {fileID: 1816053292}
+  dialogeBackground: {fileID: 1563656287}
   startWave: {fileID: 1993826924}
-  PauseGO: {fileID: 222443896}
-  EndGameGO: {fileID: 1181557538}
+  pauseGO: {fileID: 222443896}
+  endGameGO: {fileID: 1181557538}
   endGameText: {fileID: 1225060355}
   gameFirstDialoge: "Se acercan enemigos por la ruta central, deber\xEDamos poner
     unas torres para frenar su ataque.                                                                           
@@ -47258,7 +47228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e4adc5304110944aa91a62aab9f7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopPanel: {fileID: 1107044765}
+  shopPanel: {fileID: 1107044765}
   offset: {x: 0, y: 0, z: 0}
   library: {fileID: 1027692164}
   turrets:
@@ -47293,8 +47263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef21c71768f6620458f4247706297b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LibraryPanel: {fileID: 53767332}
-  library: {fileID: 0}
+  libraryPanel: {fileID: 53767332}
+  library: {fileID: 1027692164}
   uiManager: {fileID: 1577804616}
 --- !u!114 &1577804619
 MonoBehaviour:
@@ -47309,7 +47279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedInvestigation: {fileID: 0}
-  NOInvestigation: {fileID: 11400000, guid: 4ee528f27f283074dad85cf15b5b0d79, type: 2}
+  noInvestigation: {fileID: 0}
   investigationInProgress: {fileID: 11400000, guid: 4ee528f27f283074dad85cf15b5b0d79,
     type: 2}
   investigations:
@@ -47343,12 +47313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5323dbe03837b884c900ff5a1dbfa614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradesButton:
-  - {fileID: 1105266575}
-  - {fileID: 507710649}
-  - {fileID: 390071884}
-  - {fileID: 982124000}
-  UpgradeStore: {fileID: 911096148}
+  upgradesButton: []
+  upgradeStore: {fileID: 911096148}
   lvl1UpgradeInvestigations:
   - {fileID: 11400000, guid: 760fa32577d1e814da7b383f2d625371, type: 2}
   - {fileID: 11400000, guid: 01dc8c74850a6a8409d7d28f84475a5f, type: 2}
@@ -54717,11 +54683,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 20
   lives: 5
-  gainPerKill: 10
-  Light: {fileID: 5128339851379413112}
+  light: {fileID: 5128339851379413112}
   waterBarrierForShader: {fileID: 417515232}
   day: {fileID: 1528231184}
-  isDayTime: 0
+  isDayTime: 1
   lastLvl: 31
   victory: 0
   dayCycle: {fileID: 1528231186}
@@ -54786,8 +54751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed13ee8f4fe70a544ad7037881815fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyToAdd: 50
-  LivesToAdd: 1
+  moneyToAdd: 100
+  livesToAdd: 1
 --- !u!114 &1847785820
 MonoBehaviour:
   m_ObjectHideFlags: 0
