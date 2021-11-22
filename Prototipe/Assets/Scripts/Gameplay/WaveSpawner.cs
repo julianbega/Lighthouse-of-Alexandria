@@ -100,13 +100,9 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < enemiesAlive.Count; i++)
         {
             Enemy enemieToCheck = enemiesAlive[i].GetComponent<Enemy>();
-            if(enemieToCheck.life <= 0)
+            if(enemieToCheck.life <= 0 || enemiesAlive[i] == null)
             {
-                enemiesAlive.RemoveAt(i);               
-            }
-            if (enemiesAlive[i] == null)
-            {
-                enemiesAlive.RemoveAt(i);
+                enemiesAlive.RemoveAt(i);                
             }
         }
     }
