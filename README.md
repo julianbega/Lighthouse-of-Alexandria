@@ -12,4 +12,20 @@ Además de ser un gran estratega tendrás que manejar el faro de alejandría dur
 
 Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de alejandría te ayudaran y brindaran consejo, la ciudad y la biblioteca de alejandría deben sobrevivir. Ilumina tu camino a la victoria.
 
-<img src="logo-image-campus.png">
+<div align="center">
+    <a href="https://www.imagecampus.edu.ar">
+        <img src="logo-image-campus.png">
+    </a>
+</div>
+
+##Credits
+
+- **Julian Bega** *Programming*
+- **Elias Brucart** *Programming*
+- **Jail Rivas** *Art*
+- **Horacio Valdivieso** *Audio*
+
+
+##Links
+
+Download it from https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege
