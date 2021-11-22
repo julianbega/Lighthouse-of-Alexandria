@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowMouse : MonoBehaviour
+public class LightHouseLightMovement : MonoBehaviour
 {
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;

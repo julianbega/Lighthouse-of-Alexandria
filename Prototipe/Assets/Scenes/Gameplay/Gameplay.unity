@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44660026, g: 0.4964391, b: 0.5748325, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659972, g: 0.49643826, b: 0.5748314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -990,6 +990,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1577804614}
     m_Modifications:
+    - target: {fileID: 1425149214424127893, guid: a160be2a7652c724ab756b8e32e4c4de,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8859771083661819147, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
       propertyPath: m_Layer
@@ -11218,7 +11223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390071883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15996,7 +16001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &507710648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30080,7 +30085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &982123999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33091,7 +33096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105266574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47232,10 +47237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 1862923559}
-  volumeSFX: 0
-  volumeMusica: 0
   musicSlider: {fileID: 610333508}
   sfxSlider: {fileID: 850856970}
+  sfxToggle: {fileID: 0}
+  musicToggle: {fileID: 0}
+  fullScreenToggle: {fileID: 0}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0

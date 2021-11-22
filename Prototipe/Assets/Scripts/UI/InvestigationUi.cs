@@ -27,12 +27,12 @@ public class InvestigationUi : MonoBehaviour
         {
             investigations[i].allreadyInvestigated = false;
         }
-        Levels.DayEnds += ADayOfInvestigation;
+        LevelManager.DayEnds += ADayOfInvestigation;
     }
 
     private void OnDisable()
     {
-        Levels.DayEnds -= ADayOfInvestigation;
+        LevelManager.DayEnds -= ADayOfInvestigation;
     }
     // Update is called once per frame
     void Update()

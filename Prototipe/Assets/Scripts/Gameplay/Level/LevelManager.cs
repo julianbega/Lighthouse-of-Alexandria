@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Levels : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public List<LevelDataSO> levels;
     public LevelDataSO actualLevelDataSO;

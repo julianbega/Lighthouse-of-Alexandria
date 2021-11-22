@@ -5,7 +5,7 @@ using System;
 
 public class WaveSpawner : MonoBehaviour
 {
-    private Levels lvl;
+    private LevelManager lvl;
     private bool spawnsAreFinished;
     private bool isCombat;
     public List<GameObject> enemiesAlive;
@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        lvl = GetComponent<Levels>();
+        lvl = GetComponent<LevelManager>();
         WaveManager.StartWaveEvent += StartLvlCycle;
         Enemy.EnemyDie += DecreaseEnemyCount;
         spawnsAreFinished = true;

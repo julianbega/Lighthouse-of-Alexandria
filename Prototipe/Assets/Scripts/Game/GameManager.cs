@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool finishNight { get; set; }
     public bool isDayTime;
     public int lastLvl;
-    private Levels lvl;
+    private LevelManager lvl;
 
     public bool victory;
     static public event Action ShowEndGame;
@@ -42,15 +42,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         victory = false;
-        lvl = FindObjectOfType<Levels>();
+        lvl = FindObjectOfType<LevelManager>();
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney; 
         //Levels.SetNightOn += SetNight;
         //Levels.SetDayOn += SetDay;
         // Node.GetMoney += getMoney;
         WaveSpawner.SetStateDayAnim += DayCycle;
-        Levels.SetDayOn += DayCycle;
-        Levels.SetNightOn += DayCycle;
+        LevelManager.SetDayOn += DayCycle;
+        LevelManager.SetNightOn += DayCycle;
         isDayTime = true;
         dayCycle.SetBool("startDay", true);
         dayCycle.SetBool("isDay", false);
@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
         //Levels.SetNightOn -= SetNight;
         //Levels.SetDayOn -= SetDay;
         WaveSpawner.SetStateDayAnim -= DayCycle;
-        Levels.SetDayOn -= DayCycle;
-        Levels.SetNightOn -= DayCycle;
+        LevelManager.SetDayOn -= DayCycle;
+        LevelManager.SetNightOn -= DayCycle;
     }
 
     private void Update()

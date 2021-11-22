@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 {
     public GameManager gm;
     public bool npcsOn;
-    public Levels levels;
+    public LevelManager levels;
     public TextMeshProUGUI money;
     public TextMeshProUGUI lives;
     public TextMeshProUGUI level;
@@ -38,8 +38,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        levels = FindObjectOfType<Levels>();
-        Levels.ShowNPCs += NPCTalk;
+        levels = FindObjectOfType<LevelManager>();
+        LevelManager.ShowNPCs += NPCTalk;
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
         GameManager.ShowEndGame += ShowEndGameSign;
         GameManager.StopUIInteractions += StopInteractions;
@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        Levels.ShowNPCs -= NPCTalk;
+        LevelManager.ShowNPCs -= NPCTalk;
         GameManager.ShowEndGame -= ShowEndGameSign;
         GameManager.StopUIInteractions -= StopInteractions;
         Node.OpenShop -= SendInteractionWithUIEvent;

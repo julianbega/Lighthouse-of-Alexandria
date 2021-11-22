@@ -21,10 +21,10 @@ public class Enemy : MonoBehaviour
     public static Action <int>GainMoney;
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
-    public Levels lvl;
+    public LevelManager lvl;
     private bool firstRotation;
 
-    public HealthBar healthBar;
+    public UIHealthBar healthBar;
     public GameObject healthBarGO;
     private bool alreadyDie;
     public bool onFire;
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        lvl = FindObjectOfType<Levels>();
+        lvl = FindObjectOfType<LevelManager>();
         Cheats.killEnemy += Kill;
         enlightened = lvl.AskIfDay();
         wayPointIndex = 0;
