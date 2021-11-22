@@ -28,4 +28,4 @@ Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de a
 
 ## Links
 
-Download it from https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege
+Download it from <a href="https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege" target="_blank">https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege</a>
