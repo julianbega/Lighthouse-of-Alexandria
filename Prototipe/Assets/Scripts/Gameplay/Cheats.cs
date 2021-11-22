@@ -8,8 +8,8 @@ public class Cheats : MonoBehaviour
 {
     private GameManager gm;
     private UIManager UIm;
-    public int MoneyToAdd;
-    public int LivesToAdd;
+    public int moneyToAdd;
+    public int livesToAdd;
     static public event Action killEnemy;
     void Start()
     {
@@ -22,7 +22,7 @@ public class Cheats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            gm.money += MoneyToAdd;
+            gm.money += moneyToAdd;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -30,7 +30,7 @@ public class Cheats : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            gm.lives += LivesToAdd;
+            gm.lives += livesToAdd;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {

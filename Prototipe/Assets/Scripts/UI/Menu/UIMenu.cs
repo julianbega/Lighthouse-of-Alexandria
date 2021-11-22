@@ -12,7 +12,7 @@ public class UIMenu : MonoBehaviour
         menuMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
     }
 
-    public void leaveMenu()
+    public void LeaveMenu()
     {
         AkSoundEngine.StopPlayingID(menuMusicID);
     }

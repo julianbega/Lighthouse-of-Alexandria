@@ -7,27 +7,27 @@ public class InvestigationButton : MonoBehaviour
 {
    public Investigation_SO so;
    public Image color;
-    public Color OpenToInvestigate;
-    public Color Ready;
-    public Color Locked;
+    public Color openToInvestigate;
+    public Color ready;
+    public Color locked;
     void Update()
     {
         if (so.previousInvestigation != null)
         {
-            if (so.previousInvestigation.AllreadyInvestigated)
+            if (so.previousInvestigation.allreadyInvestigated)
             {
-                if(so.AllreadyInvestigated)
+                if(so.allreadyInvestigated)
                 {
-                    color.color = Ready;
+                    color.color = ready;
                 }
                 else 
                 {
-                    color.color = OpenToInvestigate;
+                    color.color = openToInvestigate;
                 }
             }
             else
             {
-                color.color = Locked;
+                color.color = locked;
             }
         }
     }

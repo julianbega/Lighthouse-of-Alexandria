@@ -6,11 +6,9 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public int money;
-    public int lives;
-   
-    public int gainPerKill;
+    public int lives;  
 
-    public GameObject Light;
+    public GameObject light;
     public GameObject waterBarrierForShader; //se debe cambiar por un mesh renderer
     public Light day;
     public bool finishDay { get; set; }
@@ -74,15 +72,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(!Light.activeInHierarchy && !isDayTime )
+        if(!light.activeInHierarchy && !isDayTime )
         {
-            Light.SetActive(true);
+            light.SetActive(true);
             waterBarrierForShader.SetActive(true); // llamar a la corrutina que lo pasa de transparente a negro
             //StartCoroutine(WaterChangeColor(startColor, endColor));
         }
-        if (Light.activeInHierarchy && isDayTime)
+        if (light.activeInHierarchy && isDayTime)
         {
-            Light.SetActive(false);
+            light.SetActive(false);
             waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
             //StartCoroutine(WaterChangeColor(endColor, startColor));
         }
@@ -100,13 +98,13 @@ public class GameManager : MonoBehaviour
     {
         return money;
     }
-    public void moneySubtract(int price)
+    public void SubtractMoney(int price)
     {
         money = money - price;
     }
-    public void AddMoney()
+    public void AddMoney(int moneyToAdd)
     {
-        money += gainPerKill;
+        money += moneyToAdd;
     }
     public int GetLives()
     {

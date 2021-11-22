@@ -8,8 +8,8 @@ using UnityEngine.EventSystems;
 
 public class UIUpgradeSystem : MonoBehaviour
 {
-    public List<Button> UpgradesButton = new List<Button>();
-    public GameObject UpgradeStore;
+    public List<Button> upgradesButton = new List<Button>();
+    public GameObject upgradeStore;
     private Camera cam;
     public List<Investigation_SO> lvl1UpgradeInvestigations;
     public List<Investigation_SO> lvl2UpgradeInvestigations;
@@ -25,34 +25,34 @@ public class UIUpgradeSystem : MonoBehaviour
 
     public void OpenUpShop()
     {
-        for (int i = 0; i < UpgradesButton.Count; i++)
+        for (int i = 0; i < upgradesButton.Count; i++)
         {
-            UpgradesButton[i].gameObject.SetActive(false);
+            upgradesButton[i].gameObject.SetActive(false);
         }
         
         Debug.Log("abre tienda de upgrades");
         StartCoroutine(Wait());
         Turret thisTurret = ConstructionManager.instance.selectedTurret;
-        UpgradeStore.gameObject.SetActive(true);
+        upgradeStore.gameObject.SetActive(true);
         switch (ConstructionManager.instance.selectedTurret.turretLvl)
         {
             case 1:
                 for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
                 {
-                    if (lvl1UpgradeInvestigations[i].AllreadyInvestigated)
+                    if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
                     {
-                        UpgradesButton[i].gameObject.SetActive(true);
-                        UpgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
+                        upgradesButton[i].gameObject.SetActive(true);
+                        upgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
                     }
                 }
                 break;
             case 2:
                 for (int i = 0; i < lvl2UpgradeInvestigations.Count; i++)
                 {
-                    if (lvl1UpgradeInvestigations[i].AllreadyInvestigated)
+                    if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
                     {
-                        UpgradesButton[i].gameObject.SetActive(true);
-                        UpgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
+                        upgradesButton[i].gameObject.SetActive(true);
+                        upgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
                     }
                 }
 
@@ -63,7 +63,7 @@ public class UIUpgradeSystem : MonoBehaviour
     }
     public void CloseUpShop()
     {
-        UpgradeStore.gameObject.SetActive(false);
+        upgradeStore.gameObject.SetActive(false);
     }
     public void UpgradeTurret(int index)
     {
@@ -119,7 +119,7 @@ public class UIUpgradeSystem : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.001f);
-        UpgradeStore.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.selectedTurret.gameObject.transform.position);
+        upgradeStore.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.selectedTurret.gameObject.transform.position);
     }
 
     private void OnDisable()

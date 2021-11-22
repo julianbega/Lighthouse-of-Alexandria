@@ -13,6 +13,7 @@ public class UISettings : MonoBehaviour
     public Slider sfxSlider;
     public Toggle sfxToggle;
     public Toggle musicToggle;
+    public Toggle fullScreenToggle;
     //  public AK.Wwise.RTPC rtpc
     void Start()
     {
@@ -20,6 +21,7 @@ public class UISettings : MonoBehaviour
         musicSlider.value = VolumeManager.instanceVolumeManager.GetMusicVolume();
         sfxToggle.isOn = VolumeManager.instanceVolumeManager.GetSFXOn();
         musicToggle.isOn = VolumeManager.instanceVolumeManager.GetMusicOn();
+        fullScreenToggle.isOn = VolumeManager.instanceVolumeManager.GetFullScren();
     }
 
     void LateUpdate()
@@ -28,6 +30,7 @@ public class UISettings : MonoBehaviour
         VolumeManager.instanceVolumeManager.SetSFXVolume(sfxSlider.value);
         VolumeManager.instanceVolumeManager.SetSFXOn(sfxToggle.isOn);
         VolumeManager.instanceVolumeManager.SetMusicOn(musicToggle.isOn);
+        VolumeManager.instanceVolumeManager.SetFullScren(fullScreenToggle.isOn);
         // rtpc.SetGlobalValue(volume_master,)
     }
 
@@ -63,7 +66,18 @@ public class UISettings : MonoBehaviour
         {
             Debug.Log("MusicaOff ");
             AkSoundEngine.SetState("musicmute", "on");
+        }        
+    }
+
+    public void FullScreen()
+    {
+        if (fullScreenToggle.isOn)
+        {
+            Screen.fullScreen = true;
         }
-        
+        else
+        {
+            Screen.fullScreen = false;
+        }
     }
 }

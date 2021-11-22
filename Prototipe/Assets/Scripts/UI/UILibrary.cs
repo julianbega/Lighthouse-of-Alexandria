@@ -4,7 +4,7 @@ using System;
 public class UILibrary : MonoBehaviour
 {
     private GameManager gm;
-    public GameObject LibraryPanel;
+    public GameObject libraryPanel;
     public Library library;
     public UIManager uiManager;
     void Start()
@@ -15,15 +15,15 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel(int index)
     {
-        if(index == 1 && !uiManager.NPC.activeSelf)
-            LibraryPanel.gameObject.SetActive(true);
+        if(index == 1 && !uiManager.npc.activeSelf)
+            libraryPanel.gameObject.SetActive(true);
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();
     }
 
     public void CloseLibraryPanel()
     {
-        LibraryPanel.gameObject.SetActive(false);
+        libraryPanel.gameObject.SetActive(false);
         uiManager.ShowPauseBtn();
         uiManager.ShowStartWave();
     }

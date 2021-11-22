@@ -11,13 +11,14 @@ public class Enemy : MonoBehaviour
     public int wayPointIndex;
     public bool enlightened;
     public int life;
+    public int moneyAtDeath;
     public int myPath;
     private float inicialSpeed;
     private float halfSpeed;
 
     private Bullet bullet;
     public static Action SubtractLives;
-    public static Action GainMoney;
+    public static Action <int>GainMoney;
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
     public Levels lvl;
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         lvl = FindObjectOfType<Levels>();
         Cheats.killEnemy += Kill;
-        enlightened = lvl.askIfDay();
+        enlightened = lvl.AskIfDay();
         wayPointIndex = 0;
         firstRotation = true;
         healthBar.SetMaxHealth(life);
@@ -142,7 +143,7 @@ public class Enemy : MonoBehaviour
             if (life <= 0 && alreadyDie == false)
             {
                 alreadyDie = true;
-                GainMoney?.Invoke();
+                GainMoney?.Invoke(moneyAtDeath);
                 EnemyDie?.Invoke();
                 Destroy(this.gameObject);
                 return;
@@ -163,7 +164,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Light"))
         {
-            if (!lvl.askIfDay())
+            if (!lvl.AskIfDay())
             {
                 if(onFire == false)
                 enlightened = false;
@@ -189,7 +190,7 @@ public class Enemy : MonoBehaviour
     {
         life = 0;
         alreadyDie = true;
-        GainMoney?.Invoke();
+        GainMoney?.Invoke(moneyAtDeath);
         EnemyDie?.Invoke();
         Destroy(this.gameObject);
         return;

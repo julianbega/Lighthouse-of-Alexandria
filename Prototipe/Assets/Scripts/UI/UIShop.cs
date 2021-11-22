@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class UIShop : MonoBehaviour
 {
-    public RectTransform ShopPanel;
+    public RectTransform shopPanel;
     public Vector3 offset;
     private GameManager gm;
     public Library library;
@@ -43,7 +43,7 @@ public class UIShop : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            ShopPanel.gameObject.SetActive(false);
+            shopPanel.gameObject.SetActive(false);
             uiManager.ShowStartWave();
             uiManager.ShowPauseBtn();
             changeActualNode?.Invoke();
@@ -56,7 +56,7 @@ public class UIShop : MonoBehaviour
         if (gm.GetMoney() >= 10)
         {
             ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.moneySubtract(10);
+            gm.SubtractMoney(10);
             AkSoundEngine.PostEvent("level_towerbuilding", this.gameObject);
         }   
     }
@@ -86,9 +86,9 @@ public class UIShop : MonoBehaviour
     {
         if (uiManager != null)
         {
-            if (index == 0 && !uiManager.NPC.activeSelf)
+            if (index == 0 && !uiManager.npc.activeSelf)
             {
-                ShopPanel.gameObject.SetActive(true);
+                shopPanel.gameObject.SetActive(true);
                 ShowTurret();
                 Time.timeScale = 1;
                 StartCoroutine(Wait());
@@ -104,7 +104,7 @@ public class UIShop : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.001f);
-        ShopPanel.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.actualNode.gameObject.transform.position);
+        shopPanel.transform.position = cam.WorldToScreenPoint(ConstructionManager.instance.actualNode.gameObject.transform.position);
     }
     private void OnDisable()
     {

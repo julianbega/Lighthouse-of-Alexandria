@@ -17,7 +17,7 @@ public class Levels : MonoBehaviour
     public static Action<string> SetDayOn;
     public static Action<string> SetNightOn;
     public static Action<NPC_SO, string> ShowNPCs;
-    public static Action aDayEnds;
+    public static Action DayEnds;
 
 
     private void Start()
@@ -36,7 +36,7 @@ public class Levels : MonoBehaviour
     {
         if (GameManager.instance.finishDay)
             StartNight();
-        if (actualLevelDataSO.ItIsDay && GameManager.instance.finishNight)
+        if (actualLevelDataSO.itIsDay && GameManager.instance.finishNight)
         {
             StartDay();
         }
@@ -84,7 +84,7 @@ public class Levels : MonoBehaviour
         {
             actualLvl++;
             actualLevelDataSO = levels[actualLvl];
-            aDayEnds?.Invoke();
+            DayEnds?.Invoke();
         }
 
     }
@@ -122,17 +122,17 @@ public class Levels : MonoBehaviour
     public void StartNight()
     {
         //Con este evento llamar a la funcion del gamemanager que controla los ciclos
-        if (!actualLevelDataSO.ItIsDay)
+        if (!actualLevelDataSO.itIsDay)
         {
             SetNightOn?.Invoke("Night");
         }
     }
     public void InvokeNPCShow()
     {
-        ShowNPCs?.Invoke(actualLevelDataSO.NPCToTalk, actualLevelDataSO.Dialog);
+        ShowNPCs?.Invoke(actualLevelDataSO.npcToTalk, actualLevelDataSO.dialog);
     }
-    public bool askIfDay()
+    public bool AskIfDay()
     {
-        return actualLevelDataSO.ItIsDay;
+        return actualLevelDataSO.itIsDay;
     }
 }

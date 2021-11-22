@@ -9,6 +9,8 @@ public class VolumeManager : MonoBehaviour
     public float sfxVolume;
     public bool sfxOn;
     public bool musicOn;
+
+    public bool fullScreen;
     private void Awake()
     {
         if (instanceVolumeManager != this && instanceVolumeManager != null)
@@ -57,6 +59,18 @@ public class VolumeManager : MonoBehaviour
     {
         return sfxOn;
     }
+
+
+    public bool GetFullScren()
+    {
+        return fullScreen;
+    }
+
+    public void SetFullScren(bool value)
+    {
+        fullScreen = value;
+    }
+
     private void Update()
     {
         AkSoundEngine.SetRTPCValue("volume_music", musicVolume);

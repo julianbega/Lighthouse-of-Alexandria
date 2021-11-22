@@ -25,14 +25,14 @@ public class Node : MonoBehaviour
     private void Start()
     {
         UIManager.ChangeAllNodesToStartColor += InvokeChangeToStartColor;
-        Node.ChangeAllNodesToStartColor += changeToStartColor;
-        UIShop.changeActualNode += changeToStartColor;
+        Node.ChangeAllNodesToStartColor += ChangeToStartColor;
+        UIShop.changeActualNode += ChangeToStartColor;
     }
     private void OnDisable()
     {
         UIManager.ChangeAllNodesToStartColor -= InvokeChangeToStartColor;
-        Node.ChangeAllNodesToStartColor -= changeToStartColor;
-        UIShop.changeActualNode -= changeToStartColor;
+        Node.ChangeAllNodesToStartColor -= ChangeToStartColor;
+        UIShop.changeActualNode -= ChangeToStartColor;
 
     }
     private void OnMouseEnter()
@@ -47,7 +47,7 @@ public class Node : MonoBehaviour
     {
         if (ConstructionManager.instance.actualNode != this)
         {
-            changeToStartColor();
+            ChangeToStartColor();
         }
     }
 
@@ -73,7 +73,7 @@ public class Node : MonoBehaviour
         ChangeAllNodesToStartColor?.Invoke();
     }
 
-    private void changeToStartColor()
+    private void ChangeToStartColor()
     {
         render.material = startColor;
     }

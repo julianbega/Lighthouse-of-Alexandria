@@ -7,7 +7,7 @@ public class ScenesManager : MonoBehaviour
     private uint sceneManagerMusicID;
     static public ScenesManager instanceScenesManager;
 
-    static public ScenesManager Instance { get { return instanceScenesManager; } }
+    static public ScenesManager instance { get { return instanceScenesManager; } }
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class ScenesManager : MonoBehaviour
         yield return null;
     }
 
-    public void exitSettings()
+    public void ExitSettings()
     {
         AkSoundEngine.StopPlayingID(sceneManagerMusicID);
     }

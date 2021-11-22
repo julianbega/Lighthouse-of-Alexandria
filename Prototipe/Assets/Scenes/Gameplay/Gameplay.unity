@@ -995,6 +995,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1577804622}
+    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FullScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8859771083661819147, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
       propertyPath: m_Layer
@@ -1614,6 +1629,18 @@ MonoBehaviour:
 --- !u!114 &27986234 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &27986235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
     type: 3}
   m_PrefabInstance: {fileID: 27986231}
   m_PrefabAsset: {fileID: 0}
@@ -47359,6 +47386,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 850856970}
   sfxToggle: {fileID: 27986234}
   musicToggle: {fileID: 27986233}
+  fullScreenToggle: {fileID: 27986235}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54687,9 +54715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d38b623fcc03364bb1efb601b62820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
+  money: 20
   lives: 5
-  gainPerKill: 333
+  gainPerKill: 10
   Light: {fileID: 5128339851379413112}
   waterBarrierForShader: {fileID: 417515232}
   day: {fileID: 1528231184}

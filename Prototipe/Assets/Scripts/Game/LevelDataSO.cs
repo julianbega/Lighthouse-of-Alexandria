@@ -6,12 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 public class LevelDataSO : ScriptableObject
 {
-    public bool ItIsDay;
+    public bool itIsDay;
     public int activateSpawner = -1;
     public int clearRock = -1;
     public int activateWater = -1;
-    public NPC_SO NPCToTalk;
-    public string Dialog = "";
+    public NPC_SO npcToTalk;
+    public string dialog = "";
     public List<WaveData> waves;
     public int actualWave = 0;
 

@@ -2042,6 +2042,7 @@ MonoBehaviour:
   sfxVolume: 50
   sfxOn: 1
   musicOn: 1
+  fullScreen: 1
 --- !u!1 &492855904
 GameObject:
   m_ObjectHideFlags: 0

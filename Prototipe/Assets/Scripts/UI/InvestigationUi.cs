@@ -7,7 +7,7 @@ using UnityEngine;
 public class InvestigationUi : MonoBehaviour
 {
     public Investigation_SO selectedInvestigation;
-    public Investigation_SO NOInvestigation;
+    public Investigation_SO noInvestigation;
     public Investigation_SO investigationInProgress;
     public List<Investigation_SO> investigations;
     public int timeToEndInvestigation;
@@ -25,14 +25,14 @@ public class InvestigationUi : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         for (int i = 0; i < investigations.Count; i++)
         {
-            investigations[i].AllreadyInvestigated = false;
+            investigations[i].allreadyInvestigated = false;
         }
-        Levels.aDayEnds += ADayOfInvestigation;
+        Levels.DayEnds += ADayOfInvestigation;
     }
 
     private void OnDisable()
     {
-        Levels.aDayEnds -= ADayOfInvestigation;
+        Levels.DayEnds -= ADayOfInvestigation;
     }
     // Update is called once per frame
     void Update()
@@ -51,7 +51,7 @@ public class InvestigationUi : MonoBehaviour
             selectedPriceAndTime.text = "";
             actualInvestigation.text = "No hay ninguna investigacion en curso";
         }
-        if(investigationInProgress != NOInvestigation)
+        if(investigationInProgress != noInvestigation)
         {
             actualInvestigation.text = "Investigando " + investigationInProgress.name + " " + timeToEndInvestigation +" dias para finalizar";
         }
@@ -59,7 +59,7 @@ public class InvestigationUi : MonoBehaviour
         {
             actualInvestigation.text = "No hay ninguna investigacion en curso";
         }
-        if (timeToEndInvestigation <= 0 && investigationInProgress != NOInvestigation)
+        if (timeToEndInvestigation <= 0 && investigationInProgress != noInvestigation)
         {
             if(investigationInProgress.name == "Torre de arqueros")
             {
@@ -73,8 +73,8 @@ public class InvestigationUi : MonoBehaviour
             {
                 UnlockTurret(2);
             }
-            investigationInProgress.AllreadyInvestigated = true;
-            investigationInProgress = NOInvestigation;
+            investigationInProgress.allreadyInvestigated = true;
+            investigationInProgress = noInvestigation;
         }
     }
 
@@ -90,11 +90,11 @@ public class InvestigationUi : MonoBehaviour
     }
     public void StartInvestigation()
     {
-        if (investigationInProgress == NOInvestigation)
+        if (investigationInProgress == noInvestigation)
         {     
-            if (selectedInvestigation.previousInvestigation.AllreadyInvestigated)
+            if (selectedInvestigation.previousInvestigation.allreadyInvestigated)
             {
-                if (!selectedInvestigation.AllreadyInvestigated)
+                if (!selectedInvestigation.allreadyInvestigated)
                 {
                     if (gm.money >= selectedInvestigation.price)
                     {
