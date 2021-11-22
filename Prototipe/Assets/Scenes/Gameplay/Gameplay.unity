@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659972, g: 0.49643826, b: 0.5748314, a: 1}
+  m_IndirectSpecularColor: {r: 0.44660026, g: 0.4964391, b: 0.5748325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1539,6 +1539,42 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 27986231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &27986233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &27986234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &27986235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
+    type: 3}
+  m_PrefabInstance: {fileID: 27986231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &28233617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47202,7 +47238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5323dbe03837b884c900ff5a1dbfa614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradesButton: []
+  upgradesButton:
+  - {fileID: 1105266575}
+  - {fileID: 507710649}
+  - {fileID: 390071884}
+  - {fileID: 982124000}
   upgradeStore: {fileID: 911096148}
   lvl1UpgradeInvestigations:
   - {fileID: 11400000, guid: 760fa32577d1e814da7b383f2d625371, type: 2}
@@ -47239,9 +47279,9 @@ MonoBehaviour:
   settingsPanel: {fileID: 1862923559}
   musicSlider: {fileID: 610333508}
   sfxSlider: {fileID: 850856970}
-  sfxToggle: {fileID: 0}
-  musicToggle: {fileID: 0}
-  fullScreenToggle: {fileID: 0}
+  sfxToggle: {fileID: 27986235}
+  musicToggle: {fileID: 27986234}
+  fullScreenToggle: {fileID: 27986233}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
