@@ -990,26 +990,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1577804614}
     m_Modifications:
-    - target: {fileID: 1425149214424127893, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1577804622}
-    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FullScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8859771083661819147, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
       propertyPath: m_Layer
@@ -1201,36 +1181,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1577804622}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SFXMute
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8859771084501157802, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
       propertyPath: m_Layer
@@ -1370,36 +1320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1577804622}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MusicMute
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8859771085016610479, guid: a160be2a7652c724ab756b8e32e4c4de,
         type: 3}
@@ -1614,42 +1534,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 27986231}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &27986233 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8859771084989000271, guid: a160be2a7652c724ab756b8e32e4c4de,
-    type: 3}
-  m_PrefabInstance: {fileID: 27986231}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &27986234 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8859771084501157796, guid: a160be2a7652c724ab756b8e32e4c4de,
-    type: 3}
-  m_PrefabInstance: {fileID: 27986231}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &27986235 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6840765012950288087, guid: a160be2a7652c724ab756b8e32e4c4de,
-    type: 3}
-  m_PrefabInstance: {fileID: 27986231}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &28233617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47348,11 +47232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 1862923559}
+  volumeSFX: 0
+  volumeMusica: 0
   musicSlider: {fileID: 610333508}
   sfxSlider: {fileID: 850856970}
-  sfxToggle: {fileID: 27986234}
-  musicToggle: {fileID: 27986233}
-  fullScreenToggle: {fileID: 27986235}
 --- !u!1001 &1579233200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54681,7 +54564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d38b623fcc03364bb1efb601b62820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 20
+  money: 100
   lives: 5
   light: {fileID: 5128339851379413112}
   waterBarrierForShader: {fileID: 417515232}

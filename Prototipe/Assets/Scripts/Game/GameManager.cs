@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     public void SubtractLives()
     {
         lives--;
-        if (lives<= 0)
+        if (lives <= 0)
         {
             Defeat();
         }
