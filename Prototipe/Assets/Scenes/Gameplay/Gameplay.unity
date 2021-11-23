@@ -31959,7 +31959,7 @@ Transform:
   m_Children:
   - {fileID: 881980709}
   m_Father: {fileID: 1572952988}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -108.879005, z: 0}
 --- !u!65 &1036365174
 BoxCollider:
@@ -54610,7 +54610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d38b623fcc03364bb1efb601b62820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
+  money: 110
   lives: 5
   light: {fileID: 5128339851379413112}
   waterBarrierForShader: {fileID: 417515232}
@@ -62986,7 +62986,7 @@ Transform:
   m_Children:
   - {fileID: 1820155567}
   m_Father: {fileID: 1876649232}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -241.57199, z: 0}
 --- !u!65 &2095501069
 BoxCollider:
@@ -65711,7 +65711,7 @@ Transform:
   m_Children:
   - {fileID: 2018798243}
   m_Father: {fileID: 248308291}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -108.879005, z: 0}
 --- !u!4 &1402183897094203423
 Transform:
@@ -65810,7 +65810,7 @@ Transform:
   m_Children:
   - {fileID: 1915433478}
   m_Father: {fileID: 1189064111}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -241.57199, z: 0}
 --- !u!65 &1474032736512981810
 BoxCollider:
