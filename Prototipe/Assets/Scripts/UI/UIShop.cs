@@ -52,11 +52,12 @@ public class UIShop : MonoBehaviour
 
     public void BuyTurret(int index)
     {
+        float turretPrice = ConstructionManager.instance.turretPrefabs[index].GetComponent<Turret>().price;
         GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[index];
-        if (gm.GetMoney() >= 10)
+        if (gm.GetMoney() >= turretPrice)
         {
             ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.SubtractMoney(10);
+            gm.SubtractMoney((int)turretPrice);
             AkSoundEngine.PostEvent("level_towerbuilding", this.gameObject);
         }   
     }

@@ -24,6 +24,10 @@ Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de a
 - **Elias Brucart** *Programming*
 - **Jail Rivas** *Art*
 - **Horacio Valdivieso** *Audio*
+- **Carlos Ignacio Tapia** *Audio*
+- **Javier Fernandez Scianca** *Tester*
+- **Javier Santagiuliana** *Tester*
+- **Nicolas Luna** *Tester*
 
 
 ## Links
