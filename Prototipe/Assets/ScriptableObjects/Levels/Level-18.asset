@@ -16,8 +16,9 @@ MonoBehaviour:
   activateSpawner: 3
   clearRock: 9
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
+  dialog: "Esta flota parece haber traido barcos pesados, van a ser duros de destruir
+    pero se les dificultar\xE1 moverse en estos caminos tan angostos"
   waves:
   - Enemies:
     - quantity: 3

@@ -20,13 +20,15 @@ MonoBehaviour:
   dialog: 
   waves:
   - Enemies:
-    - quantity: 3
+    - quantity: 4
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
-    timeBetweenWaves: 3
+    timeBetweenWaves: 2
+  - Enemies:
+    - quantity: 2
+      type: {fileID: 11400000, guid: d9a6972982511354ca735f848b384392, type: 2}
+    timeBetweenWaves: 4
   - Enemies:
     - quantity: 2
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
-    timeBetweenWaves: 4
-  - Enemies: []
     timeBetweenWaves: 4
   actualWave: 0

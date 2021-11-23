@@ -16,8 +16,9 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: 11
   activateWater: 9
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: b87cb5db24bc0e04e845ff604dd96813, type: 2}
+  dialog: "Si tienen nuevo trabajo que darnos este podr\xEDa ser un buen momento,
+    quiz\xE1 alguna investigacion sin terminar pueda ser util"
   waves:
   - Enemies:
     - quantity: 3

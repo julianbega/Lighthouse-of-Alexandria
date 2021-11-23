@@ -16,8 +16,8 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
+  dialog: "Nueva flota en el horizonte, esto no hace m\xE1s que empeorar"
   waves:
   - Enemies:
     - quantity: 3
