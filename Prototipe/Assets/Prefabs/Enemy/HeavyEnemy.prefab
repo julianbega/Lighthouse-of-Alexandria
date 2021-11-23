@@ -665,12 +665,13 @@ MonoBehaviour:
   wayPointIndex: 0
   enlightened: 0
   life: 7
+  moneyAtDeath: 50
   myPath: 0
   lvl: {fileID: 0}
-  healthBar: {fileID: 0}
-  healthBarGO: {fileID: 0}
+  healthBar: {fileID: 479975928623063010}
+  healthBarGO: {fileID: 7755598849710619883}
   onFire: 0
-  fire: {fileID: 0}
+  fire: {fileID: 5258345811580882219}
   armored: 0
   speedRotation: 0.02
 --- !u!54 &3972194967381228752
@@ -862,6 +863,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5213825588861173588, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
+--- !u!1 &7755598849710619883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6692879273845498581, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3981338395112595006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7755598849710619882 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6692879273845498580, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,

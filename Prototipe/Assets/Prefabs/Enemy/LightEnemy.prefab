@@ -418,14 +418,13 @@ MonoBehaviour:
   wayPointIndex: 0
   enlightened: 0
   life: 1
+  moneyAtDeath: 20
   myPath: 0
   lvl: {fileID: 0}
-  healthBar: {fileID: 3003192618149608987, guid: fbdfcf6d3f26b204d9ce5a1183cd1387,
-    type: 3}
-  healthBarGO: {fileID: 4402166676287267738, guid: fbdfcf6d3f26b204d9ce5a1183cd1387,
-    type: 3}
+  healthBar: {fileID: 4031089557754108438}
+  healthBarGO: {fileID: 6555293926050593055}
   onFire: 0
-  fire: {fileID: 5934167502080214102, guid: fbdfcf6d3f26b204d9ce5a1183cd1387, type: 3}
+  fire: {fileID: 8764317891552708831}
   armored: 0
   speedRotation: 0.01
 --- !u!54 &466240547484514596
@@ -864,6 +863,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5213825588861173588, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c, type: 3}
+--- !u!1 &6555293926050593055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6692879273845498581, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,
+    type: 3}
+  m_PrefabInstance: {fileID: 439372702468791242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6555293926050593054 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6692879273845498580, guid: c3bf1b6e1d4ec7c46a17dd5a4789b66c,

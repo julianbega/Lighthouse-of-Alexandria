@@ -664,7 +664,8 @@ MonoBehaviour:
   target: {fileID: 0}
   wayPointIndex: 0
   enlightened: 0
-  life: 3
+  life: 6
+  moneyAtDeath: 25
   myPath: 0
   lvl: {fileID: 0}
   healthBar: {fileID: 217539220905344174}

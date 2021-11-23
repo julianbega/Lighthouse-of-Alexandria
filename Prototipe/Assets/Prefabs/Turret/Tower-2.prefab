@@ -238,7 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   power: 1
-  attacksPerSecond: 2
+  attacksPerSecond: 4
+  towerType: 1
   pivot: {fileID: 6294661020606715403}
   target: {fileID: 7784590678315440477, guid: 7717b150c3c258d45aac3c7d6327adf3, type: 3}
   cannonBallPrefab: {fileID: 8659034383587714299, guid: 72b313382b80198419ee3248f8006961,
