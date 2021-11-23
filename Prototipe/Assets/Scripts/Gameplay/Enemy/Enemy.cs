@@ -121,6 +121,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Finish"))
         {
+            life = 0;
             SubtractLives?.Invoke();
             EnemyDie?.Invoke();
             Destroy(this.gameObject);
@@ -183,6 +184,14 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Light"))
         {
             enlightened = true;
+            return;
+        }
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            life = 0;
+            SubtractLives?.Invoke();
+            EnemyDie?.Invoke();
+            Destroy(this.gameObject);
             return;
         }
     }
