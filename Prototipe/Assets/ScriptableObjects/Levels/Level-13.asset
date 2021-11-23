@@ -16,8 +16,9 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: f415d59a1bb82614c8a4b2b3e411448e, type: 2}
+  dialog: "Parece que el bloqueo del norte de la ciudad est\xE1 por colapsar, habr\xEDa
+    que poner torres por esa ruta"
   waves:
   - Enemies:
     - quantity: 3

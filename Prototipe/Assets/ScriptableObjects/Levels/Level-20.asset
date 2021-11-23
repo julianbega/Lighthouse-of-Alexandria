@@ -24,9 +24,17 @@ MonoBehaviour:
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 3
   - Enemies:
-    - quantity: 2
+    - quantity: 3
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
+    - quantity: 2
+      type: {fileID: 11400000, guid: 59d8ec3fb11eccf4988c2f14d2faa37b, type: 2}
+    - quantity: 1
+      type: {fileID: 11400000, guid: d9a6972982511354ca735f848b384392, type: 2}
     timeBetweenWaves: 4
-  - Enemies: []
+  - Enemies:
+    - quantity: 1
+      type: {fileID: 11400000, guid: 59d8ec3fb11eccf4988c2f14d2faa37b, type: 2}
+    - quantity: 3
+      type: {fileID: 11400000, guid: d9a6972982511354ca735f848b384392, type: 2}
     timeBetweenWaves: 4
   actualWave: 0
