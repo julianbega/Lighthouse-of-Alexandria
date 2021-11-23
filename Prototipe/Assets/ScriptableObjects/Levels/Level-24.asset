@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level-24
   m_EditorClassIdentifier: 
   itIsDay: 0
-  activateSpawner: -1
-  clearRock: -1
+  activateSpawner: 4
+  clearRock: 12
   activateWater: -1
   npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
   dialog: 

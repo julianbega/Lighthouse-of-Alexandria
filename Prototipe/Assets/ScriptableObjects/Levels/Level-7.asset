@@ -16,11 +16,17 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
+  dialog: Parece que la nueva flota trajo barcos ligeros, son rapidos pero tambien
+    son fragiles, hay que intentar acabar con ellos antes de que se acerquen mucho
+    a la ciudad
   waves:
   - Enemies:
     - quantity: 3
+      type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
+    timeBetweenWaves: 4
+  - Enemies:
+    - quantity: 2
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
   - Enemies:

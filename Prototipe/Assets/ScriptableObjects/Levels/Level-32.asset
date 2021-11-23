@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a918d482185617438640e6b69ac9045, type: 3}
-  m_Name: Level-1
+  m_Name: Level-32
   m_EditorClassIdentifier: 
   itIsDay: 0
   activateSpawner: -1
-  clearRock: -1
+  clearRock: 16
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: f415d59a1bb82614c8a4b2b3e411448e, type: 2}
-  dialog: "Ten cuidado, las barricadas no estan en su mejor estado y hay varias que
-    podr\xEDan caer en cualquier momento, si eso pasa habr\xE1 que cubrir esas nuevas
-    rutas con m\xE1s torres"
+  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
+  dialog: 
   waves:
   - Enemies:
-    - quantity: 1
+    - quantity: 3
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
-    timeBetweenWaves: 4
+    timeBetweenWaves: 3
   - Enemies:
-    - quantity: 1
+    - quantity: 2
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  actualWave: 1
+  - Enemies: []
+    timeBetweenWaves: 4
+  actualWave: 0

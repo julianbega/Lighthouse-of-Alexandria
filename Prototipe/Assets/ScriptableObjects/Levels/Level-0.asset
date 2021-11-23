@@ -16,8 +16,10 @@ MonoBehaviour:
   activateSpawner: 2
   clearRock: -1
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: 289c2aee9b38f454f95ecce66084012a, type: 2}
+  dialog: "Parece que van a intentar atacarnos de noche, te encargo el faro, alguien
+    tiene que iluminar a los barcos enemigos, de otra forma nuestras torres no podr\xE1n
+    verlos"
   waves:
   - Enemies:
     - quantity: 1
@@ -27,4 +29,4 @@ MonoBehaviour:
     - quantity: 1
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
-  actualWave: 0
+  actualWave: 2

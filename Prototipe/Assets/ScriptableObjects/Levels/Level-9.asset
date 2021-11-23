@@ -16,8 +16,9 @@ MonoBehaviour:
   activateSpawner: -1
   clearRock: -1
   activateWater: -1
-  npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
-  dialog: 
+  npcToTalk: {fileID: 11400000, guid: b87cb5db24bc0e04e845ff604dd96813, type: 2}
+  dialog: No te olvides de pasarte por la biblioteca, seguramente haya algo que nos
+    pueda ayudar con esta situacion
   waves:
   - Enemies:
     - quantity: 3

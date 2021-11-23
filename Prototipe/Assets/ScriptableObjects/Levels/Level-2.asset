@@ -24,7 +24,7 @@ MonoBehaviour:
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
   - Enemies:
-    - quantity: 2
+    - quantity: 1
       type: {fileID: 11400000, guid: 535ac1beb97c4934998ee0ce5e5924f8, type: 2}
     timeBetweenWaves: 4
   actualWave: 0

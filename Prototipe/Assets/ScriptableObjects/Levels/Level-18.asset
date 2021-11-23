@@ -15,7 +15,7 @@ MonoBehaviour:
   itIsDay: 0
   activateSpawner: 3
   clearRock: 9
-  activateWater: 7
+  activateWater: -1
   npcToTalk: {fileID: 11400000, guid: d9e910b41d4c27249a9105b56db9e484, type: 2}
   dialog: 
   waves:
