@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290443a924420754788f31829ba3b3d6, type: 3}
   m_Name: FastEnemy
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7901156221061492026, guid: fbdfcf6d3f26b204d9ce5a1183cd1387, type: 3}
+  prefab: {fileID: 6436523356660665218, guid: ded89c2387ca0eb4a946f07950f077af, type: 3}

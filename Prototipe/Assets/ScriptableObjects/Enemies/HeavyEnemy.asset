@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290443a924420754788f31829ba3b3d6, type: 3}
   m_Name: HeavyEnemy
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7901156221061492026, guid: 7a37caed5a7f0cb43b0e660845cd45f8, type: 3}
+  prefab: {fileID: 7497199169487703670, guid: 945d0eb5278097348bad29cadfe5620c, type: 3}
