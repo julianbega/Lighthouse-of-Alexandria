@@ -77,7 +77,9 @@ public class Enemy : MonoBehaviour
             enlightened = true;
         }
         if (life <= 0)
-        { Kill(); }
+        {
+            Kill();
+        }
     }
 
     void SetNextTarget()
@@ -144,6 +146,7 @@ public class Enemy : MonoBehaviour
             healthBar.SetHealth(life);
             if (life <= 0 && alreadyDie == false)
             {
+                life = 0;
                 alreadyDie = true;
                 GainMoney?.Invoke(moneyAtDeath);
                 EnemyDie?.Invoke();
