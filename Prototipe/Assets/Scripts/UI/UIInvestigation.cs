@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
-public class InvestigationUi : MonoBehaviour
+public class UIInvestigation : MonoBehaviour
 {
     public Investigation_SO selectedInvestigation;
     public Investigation_SO noInvestigation;
