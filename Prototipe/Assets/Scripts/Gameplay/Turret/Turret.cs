@@ -26,7 +26,7 @@ public class Turret : MonoBehaviour
 
     public int price;
     public int turretLvl;
-    public Light light;
+    public new Light light;
 
     public Color baseLightColor;
     public Color alarmColor;

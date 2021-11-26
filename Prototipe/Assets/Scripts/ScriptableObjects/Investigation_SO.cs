@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "Investigation", menuName = "ScriptableObjects/InvestigationScriptableObject", order = 1)]
 public class Investigation_SO : ScriptableObject
 {
-    public string name;
+    public new string name;
     public Sprite image;
     public Sprite imageLedge;
     public string description;

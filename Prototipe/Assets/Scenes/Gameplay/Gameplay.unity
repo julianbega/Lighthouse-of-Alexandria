@@ -42778,10 +42778,10 @@ MonoBehaviour:
   - {fileID: 1250711207}
   - {fileID: 65641754}
   buyTurretButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2670055620850643100, guid: 1323538a69d78ff4cbc6ac4a04f62f20, type: 3}
+  - {fileID: 2670055620850643100, guid: 0a65e7bdc67623a41b5460fbe6a42c8a, type: 3}
+  - {fileID: 2670055620850643100, guid: 2945eedd0ee054742973320f5caad765, type: 3}
+  - {fileID: 2670055620850643100, guid: accb889a177b24d449fb792bd2110815, type: 3}
   statsTurrets:
   - {fileID: 0}
   - {fileID: 0}

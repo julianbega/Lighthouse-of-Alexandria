@@ -116,8 +116,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653465274070316918}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.111, z: 0}
-  m_LocalScale: {x: 0.0013237396, y: 0.0008824933, z: 0.0013237396}
+  m_LocalPosition: {x: -0.00083112, y: 0.085743, z: -0.012682}
+  m_LocalScale: {x: 0.0015916645, y: 0.00106111, z: 0.0015916645}
   m_Children:
   - {fileID: 2101431462564367183}
   - {fileID: 6179144462424431968}
@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 9114437367871097253}
   - component: {fileID: 3300050372561102305}
   - component: {fileID: 5503676092919892471}
-  - component: {fileID: 7052232980432009279}
   - component: {fileID: 5529081113759405803}
   m_Layer: 10
   m_Name: Tower-2
@@ -211,19 +210,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7052232980432009279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670055620850643100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5529081113759405803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,17 +653,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2c45eb83f00e01d409fce3c2dac01567,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.86343
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c45eb83f00e01d409fce3c2dac01567,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.86343
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c45eb83f00e01d409fce3c2dac01567,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.86343
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c45eb83f00e01d409fce3c2dac01567,
         type: 3}
@@ -824,6 +810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreArquero (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c45eb83f00e01d409fce3c2dac01567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c45eb83f00e01d409fce3c2dac01567, type: 3}
 --- !u!4 &2829935345839333291 stripped
@@ -913,6 +904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TorreArquero (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c45eb83f00e01d409fce3c2dac01567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c45eb83f00e01d409fce3c2dac01567, type: 3}
@@ -1004,6 +1000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreArquero (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c45eb83f00e01d409fce3c2dac01567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c45eb83f00e01d409fce3c2dac01567, type: 3}
 --- !u!4 &6179144462424431968 stripped
@@ -1093,6 +1094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TorreArquero (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c45eb83f00e01d409fce3c2dac01567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c45eb83f00e01d409fce3c2dac01567, type: 3}

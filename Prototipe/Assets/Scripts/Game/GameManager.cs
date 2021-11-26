@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public int money;
     public int lives;  
 
-    public GameObject light;
+    public new GameObject light;
     public GameObject waterBarrierForShader; //se debe cambiar por un mesh renderer
     public Light day;
     public bool finishDay { get; set; }
