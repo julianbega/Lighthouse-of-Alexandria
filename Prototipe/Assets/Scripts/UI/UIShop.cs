@@ -41,7 +41,7 @@ public class UIShop : MonoBehaviour
 
     public void CloseShop()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (shopPanel.gameObject.activeSelf)
         {
             shopPanel.gameObject.SetActive(false);
             uiManager.ShowStartWave();
@@ -87,7 +87,7 @@ public class UIShop : MonoBehaviour
     {
         if (uiManager != null)
         {
-            if (index == 0 && !uiManager.npc.activeSelf)
+            if (index == 1 && !uiManager.npc.activeSelf)
             {
                 shopPanel.gameObject.SetActive(true);
                 ShowTurret();

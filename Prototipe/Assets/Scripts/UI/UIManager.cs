@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
         Node.OpenShop += SendInteractionWithUIEvent;
         Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
         Library.OpenLibrary += SendInteractionWithUIEvent;
+        Turret.OpenUpgradeSystem += SendInteractionWithUIEvent;
     }
     private void OnDisable()
     {
@@ -56,6 +57,7 @@ public class UIManager : MonoBehaviour
         Node.OpenShop -= SendInteractionWithUIEvent;
         Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
         Library.OpenLibrary -= SendInteractionWithUIEvent;
+        Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
     }
 
     // Update is called once per frame

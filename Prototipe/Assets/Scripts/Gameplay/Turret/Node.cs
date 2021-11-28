@@ -63,7 +63,7 @@ public class Node : MonoBehaviour
         render.material = selectedColor;
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            OpenShop?.Invoke(0);
+            OpenShop?.Invoke(1);
             ConstructionManager.instance.actualNode = this;
         }
     }

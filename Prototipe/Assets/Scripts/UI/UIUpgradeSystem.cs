@@ -15,7 +15,8 @@ public class UIUpgradeSystem : MonoBehaviour
     public List<Investigation_SO> lvl2UpgradeInvestigations;
     void Start()
     {
-        Turret.OpenUpgradeShop += OpenUpShop;
+        //Turret.OpenUpgradeShop += OpenUpShop;
+        UIManager.InteractionWithUI += OpenUpShop;
         cam = Camera.main;
     }
 
@@ -23,43 +24,48 @@ public class UIUpgradeSystem : MonoBehaviour
     {
     }
 
-    public void OpenUpShop()
+    public void OpenUpShop(int index)
     {
-        for (int i = 0; i < upgradesButton.Count; i++)
+        if (index == 2)
         {
-            upgradesButton[i].gameObject.SetActive(false);
-        }
-        
-        Debug.Log("abre tienda de upgrades");
-        StartCoroutine(Wait());
-        Turret thisTurret = ConstructionManager.instance.selectedTurret;
-        upgradeStore.gameObject.SetActive(true);
-        switch (ConstructionManager.instance.selectedTurret.turretLvl)
-        {
-            case 1:
-                for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
-                {
-                    if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
-                    {
-                        upgradesButton[i].gameObject.SetActive(true);
-                        upgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
-                    }
-                }
-                break;
-            case 2:
-                for (int i = 0; i < lvl2UpgradeInvestigations.Count; i++)
-                {
-                    if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
-                    {
-                        upgradesButton[i].gameObject.SetActive(true);
-                        upgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
-                    }
-                }
+            for (int i = 0; i < upgradesButton.Count; i++)
+            {
+                upgradesButton[i].gameObject.SetActive(false);
+            }
 
-                break;
-            default:
-                break;
+            Debug.Log("abre tienda de upgrades");
+            StartCoroutine(Wait());
+            Turret thisTurret = ConstructionManager.instance.selectedTurret;
+            upgradeStore.gameObject.SetActive(true);
+            switch (ConstructionManager.instance.selectedTurret.turretLvl)
+            {
+                case 1:
+                    for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
+                    {
+                        if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
+                        {
+                            upgradesButton[i].gameObject.SetActive(true);
+                            upgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < lvl2UpgradeInvestigations.Count; i++)
+                    {
+                        if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
+                        {
+                            upgradesButton[i].gameObject.SetActive(true);
+                            upgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
+                        }
+                    }
+
+                    break;
+                default:
+                    break;
+            }
         }
+        else
+            CloseUpShop();
     }
     public void CloseUpShop()
     {
@@ -124,7 +130,8 @@ public class UIUpgradeSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        Turret.OpenUpgradeShop -= OpenUpShop;
+        //Turret.OpenUpgradeShop -= OpenUpShop;
+        UIManager.InteractionWithUI -= OpenUpShop;
     }
 
 

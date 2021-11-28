@@ -15,7 +15,7 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel(int index)
     {
-        if(index == 1 && !uiManager.npc.activeSelf)
+        if(index == 3 && !uiManager.npc.activeSelf)
             libraryPanel.gameObject.SetActive(true);
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();

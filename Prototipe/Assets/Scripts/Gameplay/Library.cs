@@ -19,6 +19,6 @@ public class Library : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenLibrary?.Invoke(1);
+        OpenLibrary?.Invoke(3);
     }
 }
