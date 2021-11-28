@@ -20,7 +20,6 @@ public class UIShop : MonoBehaviour
     private Transform node;
     private Camera cam;
     public static Action changeActualNode;
-
     public object EventSystemManager { get; private set; }
 
     void Start()
@@ -116,4 +115,6 @@ public class UIShop : MonoBehaviour
     {
         UIManager.InteractionWithUI += ActivateShopPanel;
     }
+
+
 }
