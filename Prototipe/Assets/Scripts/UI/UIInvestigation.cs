@@ -87,6 +87,10 @@ public class UIInvestigation : MonoBehaviour
     public void ADayOfInvestigation()
     {
         timeToEndInvestigation--;
+        if (timeToEndInvestigation == 0)
+        {
+            AkSoundEngine.PostEvent("ui_button_researchend", this.gameObject);
+        }
     }
     public void StartInvestigation()
     {
@@ -101,10 +105,13 @@ public class UIInvestigation : MonoBehaviour
                         investigationInProgress = selectedInvestigation;
                         timeToEndInvestigation = investigationInProgress.timeInDays;
                         gm.money -= selectedInvestigation.price;
+                        AkSoundEngine.PostEvent("ui_button_researchstart", this.gameObject);
                     }
                     else
                     {
                         errorMessage.text = "No hay dinero suficiente";
+                        AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
+
                     }
                 }
                 else

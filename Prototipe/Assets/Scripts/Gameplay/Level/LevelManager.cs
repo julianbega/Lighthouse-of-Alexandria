@@ -60,6 +60,8 @@ public class LevelManager : MonoBehaviour
         {
             rocks[Index - 1].SetActive(false);
         }
+        AkSoundEngine.PostEvent("level_wallcollapse", this.gameObject);
+
     }
     private void ActivatePath(int Index)
     {
@@ -67,6 +69,7 @@ public class LevelManager : MonoBehaviour
         {
             WaterPaths[Index - 1].SetActive(true);
         }
+        AkSoundEngine.PostEvent("level_newriver_play", this.gameObject);
     }
 
     public int GetQuantityOfEnemieTypesInThisWave()

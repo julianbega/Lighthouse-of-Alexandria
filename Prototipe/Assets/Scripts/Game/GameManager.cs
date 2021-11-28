@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Color endColor;
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject defeatPanel;
+    private uint gameManagerMusicID;
 
     static public GameManager instance;
     static public GameManager GetInstance { get { return instance; } }
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Cambia de escena a creditos, termino el game");
             if (victoryPanel != null)
                 victoryPanel.SetActive(true);
+            gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
             //ScenesManager.instanceScenesManager.ChangeScene("Credits");
             StopUIInteractions?.Invoke();
         }
@@ -116,6 +118,8 @@ public class GameManager : MonoBehaviour
     public void SubtractLives()
     {
         lives--;
+        AkSoundEngine.PostEvent("level_player_lifedecrease", this.gameObject);
+
         if (lives <= 0)
         {
             Defeat();
@@ -142,6 +146,7 @@ public class GameManager : MonoBehaviour
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         if(defeatPanel != null)
             defeatPanel.SetActive(true);
+        gameManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
         StopUIInteractions?.Invoke();
     }
 
@@ -176,6 +181,11 @@ public class GameManager : MonoBehaviour
             finishDay = false;
             AkSoundEngine.SetState("daytime", "night");
         }
+    }
+
+    public void StopMusic()
+    {
+        AkSoundEngine.StopPlayingID(gameManagerMusicID);
     }
 
     //public IEnumerator WaterChangeColor(Color startColor, Color endColor)

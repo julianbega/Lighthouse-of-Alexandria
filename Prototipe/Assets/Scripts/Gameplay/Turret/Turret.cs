@@ -134,13 +134,28 @@ public class Turret : MonoBehaviour
                 AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
                 break;
             case type.Archer:
-                AkSoundEngine.PostEvent("attack_archertower", this.gameObject);
+                if (fireProyectiles)
+                {
+                    AkSoundEngine.PostEvent("attack_archertower_fire", this.gameObject);
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("attack_archertower", this.gameObject);
+                }
                 break;
             case type.Scorpion:
-                AkSoundEngine.PostEvent("attack_crossbowtower", this.gameObject);
+                if (fireProyectiles)
+                {
+                    AkSoundEngine.PostEvent("attack_crossbowtower_fire", this.gameObject);
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("attack_crossbowtower", this.gameObject);
+                }
                 break;
             case type.Canon:
                 AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
+
                 break;
             default:
                 break;

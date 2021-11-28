@@ -59,7 +59,12 @@ public class UIShop : MonoBehaviour
             ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
             gm.SubtractMoney((int)turretPrice);
             AkSoundEngine.PostEvent("level_towerbuilding", this.gameObject);
-        }   
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
+            
+        }
     }
 
     public void ShowTurret()

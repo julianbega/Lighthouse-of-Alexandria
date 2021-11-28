@@ -101,6 +101,7 @@ public class UIUpgradeSystem : MonoBehaviour
                     case 0:
                         //Fire
                         ConstructionManager.instance.selectedTurret.fireProyectiles = true;
+                        AkSoundEngine.PostEvent("ui_button_buttonupgrade_fire", this.gameObject);
                         break;
                     case 1:
                         //Pen
