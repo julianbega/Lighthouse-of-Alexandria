@@ -143,3 +143,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Menú funcional v2.
 - Upgrade torres.
 - Conectar Jira al Git.
+
+## [0.11.0] - 2021-11-23
+### Added
+- Fix index error.
+- Tag line.
+- Solucionar prefabs de enemigos.
+- Cambiar escala de prefabs.
+- Chequeo de enemigos.
+- Arreglar cheats y sacar los que no van.
+- Tower prefabs.
+- Cambiar todo lo de UI y menues y etc al mismo idioma.
+- Hacer un CHANGELOG.md.
+- Checkear coupling.
+- Descripción completa.
+- VolumeManager (singleton).
+- Checkeo UI escalable.
+- Implementacion sonidos y musica.
+- Configurar el About del repo.
+- Cambiar de fullscreen a modo ventana en settings.
+- Checkeo de standards de C#.
+- Nuevo: Cada barco da una cantidad de dinero distinto al morir.
+- Hacer un Read.me.
+- SplashScreen.
+- Nuevo: Mas niveles.
+- Estructura: Nuevos nombres de carpetas y de scripts.
+- Credits completar nombres.
+- Nuevo: Balanceo del juego.
