@@ -15,17 +15,22 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel(int index)
     {
-        if(index == 3 && !uiManager.npc.activeSelf)
+        if (index == 3 && !uiManager.npc.activeSelf)
             libraryPanel.gameObject.SetActive(true);
+        else
+            CloseLibraryPanel();
         uiManager.HidePauseBtn();
         uiManager.HideStartWave();
     }
 
     public void CloseLibraryPanel()
     {
-        libraryPanel.gameObject.SetActive(false);
-        uiManager.ShowPauseBtn();
-        uiManager.ShowStartWave();
+        if (libraryPanel.gameObject.activeSelf)
+        {
+            libraryPanel.gameObject.SetActive(false);
+            uiManager.ShowPauseBtn();
+            uiManager.ShowStartWave();
+        }
     }
 
     public void UnlockTurret(int index)
