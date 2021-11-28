@@ -19,6 +19,8 @@ public class UIInvestigation : MonoBehaviour
     public Image icon;
     private GameManager gm;
     public Library library;
+    public Image buttonImage;
+    public Sprite noInvestigationImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +92,7 @@ public class UIInvestigation : MonoBehaviour
         if (timeToEndInvestigation == 0)
         {
             AkSoundEngine.PostEvent("ui_button_researchend", this.gameObject);
+            buttonImage.sprite = noInvestigationImage; 
         }
     }
     public void StartInvestigation()
@@ -106,6 +109,7 @@ public class UIInvestigation : MonoBehaviour
                         timeToEndInvestigation = investigationInProgress.timeInDays;
                         gm.money -= selectedInvestigation.price;
                         AkSoundEngine.PostEvent("ui_button_researchstart", this.gameObject);
+                        buttonImage.sprite = selectedInvestigation.image;
                     }
                     else
                     {
