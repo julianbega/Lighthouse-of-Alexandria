@@ -21,8 +21,11 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
 
-        if(scene == "Settings")
-        sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
+        if (scene == "Settings")
+            sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
+        if (scene == "Credits")
+            sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_credits", this.gameObject);
+
     }
 
     public void ChangeSceneWithWaitSeconds(string scene)
@@ -48,7 +51,7 @@ public class ScenesManager : MonoBehaviour
         yield return null;
     }
 
-    public void ExitSettings()
+    public void StopMusic()
     {
         AkSoundEngine.StopPlayingID(sceneManagerMusicID);
     }
