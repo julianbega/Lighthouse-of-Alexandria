@@ -178,7 +178,10 @@ public class UIManager : MonoBehaviour
 
     public void SendInteractionWithUIEvent(int index)
     {
-        InteractionWithUI?.Invoke(index);
+        if (Time.timeScale == 1)
+            InteractionWithUI?.Invoke(index);
+        else
+            Debug.Log("No se puede interactuar, pausa!!");
     }
 
     private void StopInteractions()
