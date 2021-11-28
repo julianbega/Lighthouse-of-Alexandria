@@ -25,9 +25,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] [Range(0.0f, 1.0f)] float lerpTime;
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
+    [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject defeatPanel;
 
     static public GameManager instance;
-
     static public GameManager GetInstance { get { return instance; } }
 
     private uint gameMusicID;
@@ -88,7 +89,9 @@ public class GameManager : MonoBehaviour
         {
             victory = true;
             Debug.Log("Cambia de escena a creditos, termino el game");
-            ScenesManager.instanceScenesManager.ChangeScene("Credits");
+            if (victoryPanel != null)
+                victoryPanel.SetActive(true);
+            //ScenesManager.instanceScenesManager.ChangeScene("Credits");
             StopUIInteractions?.Invoke();
         }
 
@@ -136,7 +139,9 @@ public class GameManager : MonoBehaviour
     public void Defeat()
     {
         //ShowEndGame?.Invoke();
-        ScenesManager.instanceScenesManager.ChangeScene("Credits");
+        //ScenesManager.instanceScenesManager.ChangeScene("Credits");
+        if(defeatPanel != null)
+            defeatPanel.SetActive(true);
         StopUIInteractions?.Invoke();
     }
 
