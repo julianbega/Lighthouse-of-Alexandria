@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 751b7de134f21542abbfa6461e8f3454
     GuidInternal: 
-    m_lastTime: -8585645061921270804
+    m_lastTime: -8585663471063667473
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8e66226d6d7b5b488425dd2c1455d30a
     GuidInternal: 
-    m_lastTime: -8585638181535111715
+    m_lastTime: -8585650237268986290
     List:
     - name: Ambiences
       guid: e5c255129d78c749bcb568686ec950b9
@@ -60,26 +60,6 @@ MonoBehaviour:
         ObjectType: 2
         guid: e5c255129d78c749bcb568686ec950b9
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Ambiences
-    - name: CreditsMusic
-      guid: 8b10e5333dcb5f4bba7a8de9f4d718bb
-      id: 4107189454
-      PathAndIcons:
-      - ElementName: Master-Mixer Hierarchy
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 8e66226d6d7b5b488425dd2c1455d30a
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-        guid: d8a41415a61d2a41a17e75ca0c2149f3
-      - ElementName: Music
-        ObjectType: 2
-        guid: 819f2ea40ca4d04092deb8eb248c2f1b
-      - ElementName: CreditsMusic
-        ObjectType: 2
-        guid: 8b10e5333dcb5f4bba7a8de9f4d718bb
-      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\CreditsMusic
     - name: DayMusic
       guid: 19da5e3b6e68a843ac44ee10a1ea9cbc
       id: 3231935906
@@ -277,7 +257,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ead45b3196a96c40bb0ebd69af8035b4
     GuidInternal: 
-    m_lastTime: -8585645061921420793
+    m_lastTime: -8585650198573653915
     List:
     - name: main
       guid: 6cc1069aed667742b52bcd46af8d432c
@@ -305,7 +285,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9a2947937886de479a39076ed4811a22
     GuidInternal: 
-    m_lastTime: -8585638181535181707
+    m_lastTime: -8585658143786644989
     List:
     - name: attack_archertower
       guid: cba259a192f0364998445e474957d7b0
@@ -461,66 +441,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: level_newriver_play
-      guid: 4e76240edf1217438e0f1599af69b35d
-      id: 1932380825
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: Level
-        ObjectType: 4
-        guid: aee6bcc4c3e1a24f9e9ae2e1b6180a56
-      - ElementName: level_newriver_play
-        ObjectType: 3
-        guid: 4e76240edf1217438e0f1599af69b35d
-      Path: Events\Default Work Unit\Level\level_newriver_play
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: level_newriver_stop
-      guid: c5fc69a0bdda0b4bb80b428cf41f7d7e
-      id: 228478431
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: Level
-        ObjectType: 4
-        guid: aee6bcc4c3e1a24f9e9ae2e1b6180a56
-      - ElementName: level_newriver_stop
-        ObjectType: 3
-        guid: c5fc69a0bdda0b4bb80b428cf41f7d7e
-      Path: Events\Default Work Unit\Level\level_newriver_stop
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: level_player_lifedecrease
-      guid: d586f8455321dc409d32ea05d5888417
-      id: 3135830688
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: Level
-        ObjectType: 4
-        guid: aee6bcc4c3e1a24f9e9ae2e1b6180a56
-      - ElementName: level_player_lifedecrease
-        ObjectType: 3
-        guid: d586f8455321dc409d32ea05d5888417
-      Path: Events\Default Work Unit\Level\level_player_lifedecrease
-      maxAttenuation: 0
-      maxDuration: 4
-      minDuration: 4
     - name: level_towerbuilding
       guid: 102f3e1af5c49b499fcc9b955b19113e
       id: 3525318799
@@ -541,26 +461,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.73849
       minDuration: 2.660531
-    - name: level_wallcollapse
-      guid: d4746507bd9bd44e8592a179d420a65c
-      id: 3911213433
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: Level
-        ObjectType: 4
-        guid: aee6bcc4c3e1a24f9e9ae2e1b6180a56
-      - ElementName: level_wallcollapse
-        ObjectType: 3
-        guid: d4746507bd9bd44e8592a179d420a65c
-      Path: Events\Default Work Unit\Level\level_wallcollapse
-      maxAttenuation: 0
-      maxDuration: 3
-      minDuration: 3
     - name: level_warhorn
       guid: 84f4a4220ece3949852400c466c24dfa
       id: 3676066613
@@ -598,26 +498,6 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8bfa39f5c0d1a747ac13af51b9a3effe
       Path: Events\Default Work Unit\Global_Game_Events\play_gamestart
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: play_music_credits
-      guid: 25b00a6f265cab44b644f5b272a92184
-      id: 4121310008
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: Global_Game_Events
-        ObjectType: 4
-        guid: e7a8c3ffe49d7b4f92acc7db5982f32d
-      - ElementName: play_music_credits
-        ObjectType: 3
-        guid: 25b00a6f265cab44b644f5b272a92184
-      Path: Events\Default Work Unit\Global_Game_Events\play_music_credits
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -733,68 +613,8 @@ MonoBehaviour:
         guid: 166bab001bed3b40851922f83d94dee7
       Path: Events\Default Work Unit\UI\ui_button_hover
       maxAttenuation: 0
-      maxDuration: 0.195541
-      minDuration: 0.184547
-    - name: ui_button_nomoney
-      guid: 8461577ee5b0214ca8e5e8f7bc3c605f
-      id: 3548983204
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: UI
-        ObjectType: 4
-        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
-      - ElementName: ui_button_nomoney
-        ObjectType: 3
-        guid: 8461577ee5b0214ca8e5e8f7bc3c605f
-      Path: Events\Default Work Unit\UI\ui_button_nomoney
-      maxAttenuation: 0
-      maxDuration: 1.049001
-      minDuration: 1.013268
-    - name: ui_button_researchend
-      guid: a97fc8fbf1d5f54f97b424357f6c22c9
-      id: 1168892205
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: UI
-        ObjectType: 4
-        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
-      - ElementName: ui_button_researchend
-        ObjectType: 3
-        guid: a97fc8fbf1d5f54f97b424357f6c22c9
-      Path: Events\Default Work Unit\UI\ui_button_researchend
-      maxAttenuation: 0
-      maxDuration: 6.657454
-      minDuration: 6.543083
-    - name: ui_button_researchstart
-      guid: d678b9eed9db7b449095bf099b646ba0
-      id: 2567008422
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 9a2947937886de479a39076ed4811a22
-      - ElementName: UI
-        ObjectType: 4
-        guid: 180b5ed0cb2e664fb837e2ec478bdc8d
-      - ElementName: ui_button_researchstart
-        ObjectType: 3
-        guid: d678b9eed9db7b449095bf099b646ba0
-      Path: Events\Default Work Unit\UI\ui_button_researchstart
-      maxAttenuation: 0
-      maxDuration: 4.535842
-      minDuration: 4.406715
+      maxDuration: 0.207169
+      minDuration: 0.195521
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -807,7 +627,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ffc40ec22310344dbbd8c5c7ba5f85be
     GuidInternal: 
-    m_lastTime: -8585645062007936476
+    m_lastTime: -8585658143786644989
     List:
     - name: volume_master
       guid: ea6e877187196d4c9b8da0129e82e1e6
@@ -863,7 +683,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 95841d8611a8c34cae88f9e370f791c0
     GuidInternal: 
-    m_lastTime: -8585638181531539436
+    m_lastTime: -8585650237263221701
     List:
     - name: daytime
       guid: 0e3182ed4f4b0c4987aefd7184458a53
@@ -1157,7 +977,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ca9d050fe7236e40b1b87cb7e5a7bcb0
     GuidInternal: 
-    m_lastTime: -8585645061921330797
+    m_lastTime: -8585663471063727315
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -1171,7 +991,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: dfdc68524465144aa158961f401bb98c
     GuidInternal: 
-    m_lastTime: -8585645061921310797
+    m_lastTime: -8585663471063707361
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
