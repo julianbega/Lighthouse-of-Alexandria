@@ -42,6 +42,7 @@ public class UIShop : MonoBehaviour
         if (shopPanel.gameObject.activeSelf)
         {
             shopPanel.gameObject.SetActive(false);
+            //CursorController.instanceCursorController.ActivateNormalCursor();
             uiManager.ShowStartWave();
             uiManager.ShowPauseBtn();
             changeActualNode?.Invoke();
@@ -84,6 +85,8 @@ public class UIShop : MonoBehaviour
             if (index == indexToActivate && !uiManager.npc.activeSelf)
             {
                 shopPanel.gameObject.SetActive(true);
+                //CursorController.instanceCursorController.ActivateNormalCursor();
+                CursorController.instanceCursorController.ActivateConstructionCursor();
                 ShowTurret();
                 Time.timeScale = 1;
                 StartCoroutine(Wait());

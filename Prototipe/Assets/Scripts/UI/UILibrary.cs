@@ -17,7 +17,11 @@ public class UILibrary : MonoBehaviour
     public void ActivateLibraryPanel(int index)
     {
         if (index == indexToActivate && !uiManager.npc.activeSelf)
+        {
             libraryPanel.gameObject.SetActive(true);
+            //CursorController.instanceCursorController.ActivateNormalCursor();
+            CursorController.instanceCursorController.ActivateInvestigationCursor();
+        }
         else
             CloseLibraryPanel();
         uiManager.HidePauseBtn();
@@ -29,6 +33,7 @@ public class UILibrary : MonoBehaviour
         if (libraryPanel.gameObject.activeSelf)
         {
             libraryPanel.gameObject.SetActive(false);
+            //CursorController.instanceCursorController.ActivateNormalCursor();
             uiManager.ShowPauseBtn();
             uiManager.ShowStartWave();
         }

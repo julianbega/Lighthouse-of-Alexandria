@@ -45744,12 +45744,12 @@ GameObject:
   - component: {fileID: 1629865062}
   - component: {fileID: 1629865064}
   m_Layer: 0
-  m_Name: Cursor
+  m_Name: CursorController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1629865062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45823,9 +45823,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629865061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8474ce259cef73d418a0bcdc2840311a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d61e814acd62d14fbb4f3bad942f736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalCursor: {fileID: 2800000, guid: 2694cab8e4e23a84ca4eef14d812df6c, type: 3}
+  constructionCursor: {fileID: 2800000, guid: c2dc77779f8c4db4f9f7721e0dd3afe9, type: 3}
+  investigationCursor: {fileID: 2800000, guid: d1f1f3aca438705408dbcd2db35d2745, type: 3}
+  upgradeCursor: {fileID: 2800000, guid: 3f0809b3d91af804681cebfb30035011, type: 3}
+  transparentCursor: {fileID: 2800000, guid: af2d2a3d1b437ff418ab9beca62581e6, type: 3}
 --- !u!1001 &1630819745
 PrefabInstance:
   m_ObjectHideFlags: 0
