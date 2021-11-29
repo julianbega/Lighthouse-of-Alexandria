@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="logo.png" alt="PONER NOMBRE DEL JUEGO ACA"/>
+    <img src="banner.jpg" alt="LoA logo"/>
 </p>
 
 La ciudad de Alejandría enfrenta un gran asedio, las defensas no están listas, pero aún estamos a tiempo. Nuestros investigadores en la biblioteca se encuentran trabajando a toda velocidad para encontrar formas de mejorar nuestras defensas.
