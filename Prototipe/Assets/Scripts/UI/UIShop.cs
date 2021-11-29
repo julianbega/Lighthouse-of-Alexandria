@@ -14,9 +14,7 @@ public class UIShop : MonoBehaviour
     public Library library;
     public List<Button> turrets = new List<Button>();
     public List<GameObject> buyTurretButtons = new List<GameObject>();
-    public List<TMP_Text> statsTurrets = new List<TMP_Text>();
     private UIManager uiManager;
-    public List<Turret> turretComponent = new List<Turret>();
     private Transform node;
     private Camera cam;
     public static Action changeActualNode;
@@ -74,17 +72,8 @@ public class UIShop : MonoBehaviour
             {
                 turrets[i].gameObject.SetActive(true);
                 buyTurretButtons[i].gameObject.SetActive(true);
-                statsTurrets[i].gameObject.SetActive(true);
-                ShowTurretStats(i);
             }
         }   
-    }
-
-    private void ShowTurretStats(int index)
-    {
-        statsTurrets[index].text = "Attack per second: " + turretComponent[index].attacksPerSecond + "\n"
-            + "Power: " + turretComponent[index].power + "\n"
-            + "Range: " + turretComponent[index].range;
     }
 
     private void ActivateShopPanel(int index)
@@ -100,9 +89,9 @@ public class UIShop : MonoBehaviour
             }
             else
                 CloseShop();
-            uiManager.HideCheats();
-            uiManager.HidePauseBtn();
-            uiManager.HideStartWave();
+            //uiManager.HideCheats();
+            //uiManager.HidePauseBtn();
+            //uiManager.HideStartWave();
         }
     }
 
