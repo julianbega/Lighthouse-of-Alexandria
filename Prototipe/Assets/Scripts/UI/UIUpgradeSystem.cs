@@ -13,11 +13,13 @@ public class UIUpgradeSystem : MonoBehaviour
     private Camera cam;
     public List<Investigation_SO> lvl1UpgradeInvestigations;
     public List<Investigation_SO> lvl2UpgradeInvestigations;
+    private UIManager uiManager;
     void Start()
     {
         //Turret.OpenUpgradeShop += OpenUpShop;
         UIManager.InteractionWithUI += OpenUpShop;
         cam = Camera.main;
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -70,6 +72,8 @@ public class UIUpgradeSystem : MonoBehaviour
     public void CloseUpShop()
     {
         upgradeStore.gameObject.SetActive(false);
+        uiManager.ShowStartWave();
+        uiManager.ShowPauseBtn();
     }
     public void UpgradeTurret(int index)
     {
