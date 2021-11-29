@@ -20,7 +20,7 @@ public class UILibrary : MonoBehaviour
         {
             libraryPanel.gameObject.SetActive(true);
             //CursorController.instanceCursorController.ActivateNormalCursor();
-            CursorController.instanceCursorController.ActivateInvestigationCursor();
+            //CursorController.instanceCursorController.ActivateInvestigationCursor();
         }
         else
             CloseLibraryPanel();

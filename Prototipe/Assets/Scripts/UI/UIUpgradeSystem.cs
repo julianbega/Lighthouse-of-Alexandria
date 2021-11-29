@@ -37,8 +37,8 @@ public class UIUpgradeSystem : MonoBehaviour
             }
 
             Debug.Log("abre tienda de upgrades");
-           // CursorController.instanceCursorController.ActivateNormalCursor();
-            CursorController.instanceCursorController.ActivateUpgradeCursor();
+            //CursorController.instanceCursorController.ActivateNormalCursor();
+            //CursorController.instanceCursorController.ActivateUpgradeCursor();
             StartCoroutine(Wait());
             Turret thisTurret = ConstructionManager.instance.selectedTurret;
             upgradeStore.gameObject.SetActive(true);

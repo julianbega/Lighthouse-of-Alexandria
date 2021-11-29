@@ -86,7 +86,7 @@ public class UIShop : MonoBehaviour
             {
                 shopPanel.gameObject.SetActive(true);
                 //CursorController.instanceCursorController.ActivateNormalCursor();
-                CursorController.instanceCursorController.ActivateConstructionCursor();
+                //CursorController.instanceCursorController.ActivateConstructionCursor();
                 ShowTurret();
                 Time.timeScale = 1;
                 StartCoroutine(Wait());
