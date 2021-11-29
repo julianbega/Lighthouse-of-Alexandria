@@ -1,4 +1,6 @@
-## Lighthouse of Alexandria: The story of a siege
+<p align="center">
+    <img src="logo.png" alt="PONER NOMBRE DEL JUEGO ACA"/>
+</p>
 
 La ciudad de Alejandría enfrenta un gran asedio, las defensas no están listas, pero aún estamos a tiempo. Nuestros investigadores en la biblioteca se encuentran trabajando a toda velocidad para encontrar formas de mejorar nuestras defensas.
 
@@ -12,11 +14,13 @@ Además de ser un gran estratega tendrás que manejar el faro de alejandría dur
 
 Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de alejandría te ayudaran y brindaran consejo, la ciudad y la biblioteca de alejandría deben sobrevivir. Ilumina tu camino a la victoria.
 
-<div align="center">
+This is a game being developed by students from <a href="https://www.imagecampus.edu.ar/">Image Campus</a>
+
+<p align="center">
     <a href="https://www.imagecampus.edu.ar">
         <img src="logo-image-campus.png">
     </a>
-</div>
+</p>
 
 ## Credits
 
@@ -29,7 +33,16 @@ Pero tranquilo/a, durante el asedio tendrás compañía las grandes figuras de a
 - **Javier Santagiuliana** *Tester*
 - **Nicolas Luna** *Tester*
 
+This game was also possible thanks to the support of these professors:
+
+- **Sergio Baretto**
+- **Federico Barra**
+- **Ramiro Cabrera**
+- **Lucía Inés Patetta**
+- **Nazareno Rivero**
+- **Eugenio Taboada**
+
 
 ## Links
 
-Download it from <a href="https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege" target="_blank">https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege</a>
+Download it from itch.io: <a href="https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege" target="_blank">https://eliasbrucart.itch.io/lighthouse-of-alexandria-the-story-of-a-siege</a>
