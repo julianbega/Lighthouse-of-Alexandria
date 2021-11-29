@@ -7,6 +7,7 @@ public class UILibrary : MonoBehaviour
     public GameObject libraryPanel;
     public Library library;
     public UIManager uiManager;
+    private const int indexToActivate = 3;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -15,7 +16,7 @@ public class UILibrary : MonoBehaviour
 
     public void ActivateLibraryPanel(int index)
     {
-        if (index == 3 && !uiManager.npc.activeSelf)
+        if (index == indexToActivate && !uiManager.npc.activeSelf)
             libraryPanel.gameObject.SetActive(true);
         else
             CloseLibraryPanel();

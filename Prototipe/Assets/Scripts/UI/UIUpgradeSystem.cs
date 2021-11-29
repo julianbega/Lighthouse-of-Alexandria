@@ -14,6 +14,7 @@ public class UIUpgradeSystem : MonoBehaviour
     public List<Investigation_SO> lvl1UpgradeInvestigations;
     public List<Investigation_SO> lvl2UpgradeInvestigations;
     private UIManager uiManager;
+    private const int indexToActivate = 2;
     void Start()
     {
         //Turret.OpenUpgradeShop += OpenUpShop;
@@ -28,7 +29,7 @@ public class UIUpgradeSystem : MonoBehaviour
 
     public void OpenUpShop(int index)
     {
-        if (index == 2)
+        if (index == indexToActivate)
         {
             for (int i = 0; i < upgradesButton.Count; i++)
             {

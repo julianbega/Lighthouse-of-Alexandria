@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour
     public List<GameObject> enemiesAlive;
     public static Action ShowNPC;
     static public event Action<string> SetStateDayAnim;
+    private const int startIndexOfLevel = -1;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
             /// arranca el ciclo dia noche, se hace de noche y despues pasa esto
             //SetStateDayAnim?.Invoke("Night");
             //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
-            if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == -1))
+            if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == startIndexOfLevel))
             {
                 isCombat = true;
                 lvl.IncreaseLVL();

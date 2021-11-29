@@ -15,6 +15,7 @@ public class Node : MonoBehaviour
 
     public static event Action<int> OpenShop;
     public static event Action ChangeAllNodesToStartColor;
+    private const int indexActivation = 1;
     //public static event Action<int> GetMoney;
 
     private void Awake()
@@ -63,7 +64,7 @@ public class Node : MonoBehaviour
         render.material = selectedColor;
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            OpenShop?.Invoke(1);
+            OpenShop?.Invoke(indexActivation);
             ConstructionManager.instance.actualNode = this;
         }
     }

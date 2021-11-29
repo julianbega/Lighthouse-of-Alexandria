@@ -7,6 +7,7 @@ public class Library : MonoBehaviour
     static public event Action<int> OpenLibrary;
     public List<bool> turretUnlocked = new List<bool>();
     private int cantTypeturret;
+    private const int indexActivation = 3;
     void Start()
     {
         cantTypeturret = 4;
@@ -19,6 +20,6 @@ public class Library : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenLibrary?.Invoke(3);
+        OpenLibrary?.Invoke(indexActivation);
     }
 }

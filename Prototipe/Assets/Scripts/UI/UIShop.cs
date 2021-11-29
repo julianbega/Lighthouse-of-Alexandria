@@ -19,6 +19,7 @@ public class UIShop : MonoBehaviour
     private Camera cam;
     public static Action changeActualNode;
     public object EventSystemManager { get; private set; }
+    private const int indexToActivate = 1;
 
     void Start()
     {
@@ -80,7 +81,7 @@ public class UIShop : MonoBehaviour
     {
         if (uiManager != null)
         {
-            if (index == 1 && !uiManager.npc.activeSelf)
+            if (index == indexToActivate && !uiManager.npc.activeSelf)
             {
                 shopPanel.gameObject.SetActive(true);
                 ShowTurret();
