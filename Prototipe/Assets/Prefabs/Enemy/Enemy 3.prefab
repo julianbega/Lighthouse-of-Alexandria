@@ -1,19 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2905872651462565909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4997834810322385310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e3f5e6d91850f64cac4f667dff6c1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 4997834810322385308}
---- !u!1 &3233819946832596871
+--- !u!1 &1946756888862114882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8749107339910310470}
-  - component: {fileID: 5353131739038158304}
-  - component: {fileID: 4993465304730024804}
-  - component: {fileID: 6084599789617016395}
+  - component: {fileID: 2723518188004703226}
+  - component: {fileID: 1026852457683046528}
+  - component: {fileID: 5932513672235990619}
+  - component: {fileID: 4967027498779369084}
   m_Layer: 10
   m_Name: LightCollider
   m_TagString: Light
@@ -32,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8749107339910310470
+--- !u!4 &2723518188004703226
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233819946832596871}
+  m_GameObject: {fileID: 1946756888862114882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.69}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -125334}
+  m_LocalScale: {x: 4084152.2, y: -147337.48, z: 4084152.2}
   m_Children: []
   m_Father: {fileID: 7164290286771945054}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5353131739038158304
+--- !u!33 &1026852457683046528
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233819946832596871}
+  m_GameObject: {fileID: 1946756888862114882}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4993465304730024804
+--- !u!23 &5932513672235990619
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233819946832596871}
+  m_GameObject: {fileID: 1946756888862114882}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
@@ -93,20 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6084599789617016395
+--- !u!136 &4967027498779369084
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233819946832596871}
+  m_GameObject: {fileID: 1946756888862114882}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5500
+  m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &3410218631254004496
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +366,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2905872651462565909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997834810322385310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3f5e6d91850f64cac4f667dff6c1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 4997834810322385308}
 --- !u!1 &5112125143288197505
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,11 +431,13 @@ MonoBehaviour:
   wayPointIndex: 0
   enlightened: 0
   life: 3
+  moneyAtDeath: 0
   myPath: 0
   lvl: {fileID: 0}
   healthBar: {fileID: 2905872651462565909}
   healthBarGO: {fileID: 4997834809994625820}
   onFire: 0
+  slowed: 0
   fire: {fileID: 7350976235609207516}
   armored: 0
   speedRotation: 0.03
@@ -470,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7164290286771945054
 Transform:
   m_ObjectHideFlags: 0
@@ -483,7 +485,7 @@ Transform:
   m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_Children:
   - {fileID: 6674364006819723411}
-  - {fileID: 8749107339910310470}
+  - {fileID: 2723518188004703226}
   m_Father: {fileID: 2396597868482307365}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

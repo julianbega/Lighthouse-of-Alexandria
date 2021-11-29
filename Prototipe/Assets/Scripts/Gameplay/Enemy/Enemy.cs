@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     public GameObject healthBarGO;
     private bool alreadyDie;
     public bool onFire;
+    public bool slowed;
     public GameObject fire;
     public bool armored;
 
@@ -71,10 +72,6 @@ public class Enemy : MonoBehaviour
                 SetNextTarget();
                 StartCoroutine(RotationInterpolate());
             }
-        }
-        while (onFire)
-        {
-            enlightened = true;
         }
         if (life <= 0)
         {
@@ -154,11 +151,11 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
                 return;
             }
-            if (bullet.fireProyectiles && !onFire)
+            if (bullet.fireProyectiles && !onFire && life >= 1)
             {
                 StartCoroutine(OnFire());
             }
-            if (bullet.slowProyectiles)
+            if (bullet.slowProyectiles && !slowed && life >= 1)
             {
                 StartCoroutine(Slowed());
             }
@@ -232,16 +229,22 @@ public class Enemy : MonoBehaviour
     IEnumerator OnFire()
     {
         onFire = true;
-        fire.SetActive(true);        
-        yield return new WaitForSeconds(2.0f);
+        fire.SetActive(true);
+        enlightened = true;
+
+        yield return new WaitForSeconds(2.0f);        
 
         onFire = false;
         fire.SetActive(false);
+        enlightened = false;
+
     }
     IEnumerator Slowed()
     {
+        slowed = true;
         speed = halfSpeed;
         yield return new WaitForSeconds(2.0f);
+        slowed = false;
         speed = inicialSpeed;
     }
 }
