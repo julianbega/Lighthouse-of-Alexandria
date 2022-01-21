@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
 
     public static event Action ChangeAllNodesToStartColor;
     public static event Action<int> InteractionWithUI;
+    public static event Action<string> SendPauseGame;
        
     public string gameFirstDialoge;
     public NPC_SO gameFirstDialogeNPC;
@@ -140,7 +141,7 @@ public class UIManager : MonoBehaviour
         {
             startWave.SetActive(false);
             pauseGO.SetActive(true);
-            Time.timeScale = 0;
+            SendPauseGame?.Invoke("pause");
             AkSoundEngine.SetState("pausemenu ", "pause");
         }
         else
@@ -151,7 +152,7 @@ public class UIManager : MonoBehaviour
             Debug.Log("despausa");
             startWave.SetActive(true);
             pauseGO.SetActive(false);
-            Time.timeScale = 1;
+            SendPauseGame?.Invoke("unpause");
             AkSoundEngine.SetState("pausemenu ", "nopause");
         }
     }

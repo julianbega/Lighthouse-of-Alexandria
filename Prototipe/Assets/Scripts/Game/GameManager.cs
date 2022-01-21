@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         WaveSpawner.SetStateDayAnim += DayCycle;
         LevelManager.SetDayOn += DayCycle;
         LevelManager.SetNightOn += DayCycle;
+        UIManager.SendPauseGame += PauseGame;
         isDayTime = true;
         dayCycle.SetBool("startDay", true);
         dayCycle.SetBool("isDay", false);
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
         WaveSpawner.SetStateDayAnim -= DayCycle;
         LevelManager.SetDayOn -= DayCycle;
         LevelManager.SetNightOn -= DayCycle;
+        UIManager.SendPauseGame -= PauseGame;
     }
 
     private void Update()
@@ -186,6 +188,14 @@ public class GameManager : MonoBehaviour
     public void StopMusic()
     {
         AkSoundEngine.StopPlayingID(gameManagerMusicID);
+    }
+
+    public void PauseGame(string state)
+    {
+        if (state == "pause")
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
     }
 
     //public IEnumerator WaterChangeColor(Color startColor, Color endColor)
