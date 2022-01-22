@@ -9,7 +9,7 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
-  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2021.1.4.7707</WwiseInstallationPathWindows>
+  <WwiseInstallationPathWindows>D:\Archivos de programa\Wwise</WwiseInstallationPathWindows>
   <WwiseProjectPath>../../../Wwise_Lighthouse_of_Alexandria/Wwise_TowerDefenseGame_2021/Wwise_TowerDefenseGame_2021.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
