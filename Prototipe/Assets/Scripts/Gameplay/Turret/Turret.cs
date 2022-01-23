@@ -72,7 +72,7 @@ public class Turret : MonoBehaviour
             Shoot();
             fireCountdown = 1f / attacksPerSecond;
         }
-        fireCountdown -= Time.deltaTime ;
+        fireCountdown -= Time.deltaTime;
     }
 
     void UpdateTarget()
@@ -95,8 +95,8 @@ public class Turret : MonoBehaviour
                 }
                 else
                 {
-                    if(alarm && !alreadyAlarming && shortestDistance <= range)
-                    StartCoroutine(Alarm());
+                    if (alarm && !alreadyAlarming && shortestDistance <= range)
+                        StartCoroutine(Alarm());
                 }
 
             }
@@ -106,7 +106,7 @@ public class Turret : MonoBehaviour
         {
             target = actualEnemyFocus.transform;
         }
-        else 
+        else
         {
             target = null;
         }
@@ -114,21 +114,21 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
-        if(preventShootOnSpawn)
-        { 
-        Debug.Log("Shoot");
-        GameObject bulletGO = (GameObject)Instantiate(cannonBallPrefab, cannonBallSpawn.position, cannonBallSpawn.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        if (preventShootOnSpawn)
+        {
+            Debug.Log("Shoot");
+            GameObject bulletGO = (GameObject)Instantiate(cannonBallPrefab, cannonBallSpawn.position, cannonBallSpawn.rotation);
+            Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-        if (bullet != null)
-            bullet.Seek(target);
+            if (bullet != null)
+                bullet.Seek(target);
             bullet.damage = power;
             bullet.towerType = towerType;
             bullet.fireProyectiles = fireProyectiles;
             bullet.penetrationProyectiles = penetrationProyectiles;
-            bullet.slowProyectiles = slowProyectiles; 
+            bullet.slowProyectiles = slowProyectiles;
         }
-        
+
         switch (towerType)
         {
             case type.Catapult:

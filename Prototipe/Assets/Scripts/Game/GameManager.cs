@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         WaveSpawner.SetStateDayAnim += DayCycle;
         LevelManager.SetDayOn += DayCycle;
         LevelManager.SetNightOn += DayCycle;
+        LevelManager.FinishLastLevel += Victory;
         UIManager.SendPauseGame += PauseGame;
         isDayTime = true;
         dayCycle.SetBool("startDay", true);
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         WaveSpawner.SetStateDayAnim -= DayCycle;
         LevelManager.SetDayOn -= DayCycle;
         LevelManager.SetNightOn -= DayCycle;
+        LevelManager.FinishLastLevel -= Victory;
         UIManager.SendPauseGame -= PauseGame;
     }
 
@@ -88,17 +90,16 @@ public class GameManager : MonoBehaviour
             waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
             //StartCoroutine(WaterChangeColor(endColor, startColor));
         }
-        if (lvl.actualLvl >= lastLvl)
-        {
-            victory = true;
-            Debug.Log("Cambia de escena a creditos, termino el game");
-            if (victoryPanel != null)
-                victoryPanel.SetActive(true);
-            gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
-            //ScenesManager.instanceScenesManager.ChangeScene("Credits");
-            StopUIInteractions?.Invoke();
-        }
-
+        //if (lvl.actualLvl >= lastLvl)
+        //{
+        //    victory = true;
+        //    Debug.Log("Cambia de escena a creditos, termino el game");
+        //    if (victoryPanel != null)
+        //        victoryPanel.SetActive(true);
+        //    gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
+        //    //ScenesManager.instanceScenesManager.ChangeScene("Credits");
+        //    StopUIInteractions?.Invoke();
+        //}
     }
 
     public int GetMoney()
@@ -196,6 +197,17 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
+    }
+
+    public void Victory()
+    {
+        victory = true;
+        Debug.Log("Cambia de escena a creditos, termino el game");
+        if (victoryPanel != null)
+            victoryPanel.SetActive(true);
+        gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
+        //ScenesManager.instanceScenesManager.ChangeScene("Credits");
+        StopUIInteractions?.Invoke();
     }
 
     //public IEnumerator WaterChangeColor(Color startColor, Color endColor)

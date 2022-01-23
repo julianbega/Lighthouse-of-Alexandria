@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     public static Action<string> SetNightOn;
     public static Action<NPC_SO, string> ShowNPCs;
     public static Action DayEnds;
-
+    public static event Action FinishLastLevel;
 
     private void Start()
     {
@@ -88,6 +88,7 @@ public class LevelManager : MonoBehaviour
             actualLvl++;
             actualLevelDataSO = levels[actualLvl];
             DayEnds?.Invoke();
+            CheckLastLevel();
         }
 
     }
@@ -137,5 +138,11 @@ public class LevelManager : MonoBehaviour
     public bool AskIfDay()
     {
         return actualLevelDataSO.itIsDay;
+    }
+
+    public void CheckLastLevel()
+    {
+        if (actualLvl >= GameManager.instance.lastLvl)
+            FinishLastLevel?.Invoke();
     }
 }
