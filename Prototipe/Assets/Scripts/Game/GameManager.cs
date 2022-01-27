@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         Enemy.GainMoney += AddMoney; 
         //Levels.SetNightOn += SetNight;
         //Levels.SetDayOn += SetDay;
-        // Node.GetMoney += getMoney;
+        //Node.GetMoney += getMoney;
         WaveSpawner.SetStateDayAnim += DayCycle;
         LevelManager.SetDayOn += DayCycle;
         LevelManager.SetNightOn += DayCycle;
@@ -76,9 +76,9 @@ public class GameManager : MonoBehaviour
         UIManager.SendPauseGame -= PauseGame;
     }
 
-    private void Update()
+    public void ActivateDayLight()
     {
-        if(!light.activeInHierarchy && !isDayTime )
+        if (!light.activeInHierarchy && !isDayTime)
         {
             light.SetActive(true);
             waterBarrierForShader.SetActive(true); // llamar a la corrutina que lo pasa de transparente a negro
@@ -90,16 +90,6 @@ public class GameManager : MonoBehaviour
             waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
             //StartCoroutine(WaterChangeColor(endColor, startColor));
         }
-        //if (lvl.actualLvl >= lastLvl)
-        //{
-        //    victory = true;
-        //    Debug.Log("Cambia de escena a creditos, termino el game");
-        //    if (victoryPanel != null)
-        //        victoryPanel.SetActive(true);
-        //    gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
-        //    //ScenesManager.instanceScenesManager.ChangeScene("Credits");
-        //    StopUIInteractions?.Invoke();
-        //}
     }
 
     public int GetMoney()
@@ -141,7 +131,6 @@ public class GameManager : MonoBehaviour
     {
         day.enabled = true;
         isDayTime = true;
-        
     }
     public void Defeat()
     {
@@ -160,12 +149,14 @@ public class GameManager : MonoBehaviour
             isDayTime = true;
             dayCycle.SetBool("isDay", true);
             StartCoroutine(WaitForDayAnim(state));
+            ActivateDayLight();
         }
         else
         {
             isDayTime = false;
             dayCycle.SetBool("isDay", false);
             StartCoroutine(WaitForDayAnim(state));
+            ActivateDayLight();
         }
     }
 
