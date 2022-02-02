@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private Bullet bullet;
     public static Action SubtractLives;
-    public static Action <int>GainMoney;
+    public static Action<int> GainMoney;
     static public event Action EnemyDie;
     static public event Action DestroyCannonBall;
     public LevelManager lvl;
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
         }
         if (target != null)
         {
-            Vector3 direction = target.transform.position - transform.position;           
+            Vector3 direction = target.transform.position - transform.position;
             transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
             {
@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction, Color.yellow);
                 Debug.DrawRay(ray.origin, ray.direction, Color.green, 3f);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position))){}
+                if (Physics.Raycast(ray, out hit, Vector3.Distance(transform.position, target.targets[i].transform.position))) { }
                 else
                 {
                     if (!target.openTargets.Contains(target.targets[i]))
@@ -109,7 +109,6 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Start"))
         {
             target = other.gameObject.GetComponent<Waypoint>().targets[0];
-
         }
         if (other.gameObject.CompareTag("Light"))
         {
@@ -129,9 +128,9 @@ public class Enemy : MonoBehaviour
             bullet = other.gameObject.GetComponent<Bullet>();
             DestroyCannonBall?.Invoke();
 
-            if(armored)
-            { 
-                if(bullet.penetrationProyectiles)
+            if (armored)
+            {
+                if (bullet.penetrationProyectiles)
                 {
                     life -= bullet.damage;
                 }
@@ -169,8 +168,8 @@ public class Enemy : MonoBehaviour
         {
             if (!lvl.AskIfDay())
             {
-                if(onFire == false)
-                enlightened = false;
+                if (onFire == false)
+                    enlightened = false;
             }
             return;
         }
@@ -232,7 +231,7 @@ public class Enemy : MonoBehaviour
         fire.SetActive(true);
         enlightened = true;
 
-        yield return new WaitForSeconds(2.0f);        
+        yield return new WaitForSeconds(2.0f);
 
         onFire = false;
         fire.SetActive(false);

@@ -7377,6 +7377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: faro UV
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5f7e4611875ff40b541c79e4303507,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5f7e4611875ff40b541c79e4303507, type: 3}
 --- !u!4 &244032859 stripped
@@ -12698,7 +12703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 2029383377}
+  - {fileID: 1431238671}
   openTargets: []
 --- !u!1001 &421307999
 PrefabInstance:
@@ -22241,6 +22246,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &720722459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fc5f7e4611875ff40b541c79e4303507,
+    type: 3}
+  m_PrefabInstance: {fileID: 244032858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &720722460
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720722459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.21, y: 10, z: 7}
+  m_Center: {x: -1.68, y: 1.07, z: 0}
 --- !u!1001 &729213539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42423,7 +42447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 2029383377}
+  - {fileID: 1843503876}
   openTargets: []
 --- !u!1001 &1431344455
 PrefabInstance:
@@ -53182,7 +53206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 2029383377}
+  - {fileID: 1579953702}
   openTargets: []
 --- !u!1 &1844226928
 GameObject:
@@ -58780,7 +58804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029383375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 2, z: 36.5}
+  m_LocalPosition: {x: -1.4, y: 2, z: 36.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1354460484}
@@ -58798,7 +58822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a5258b082abd847afa29227dcf63de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
+  targets:
+  - {fileID: 0}
   openTargets: []
 --- !u!1 &2032337287
 GameObject:
