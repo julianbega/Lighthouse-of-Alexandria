@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
     {
         Catapult, Archer, Scorpion, Canon
     }
+    [SerializeField] private string soundEvent;
     [Header("TowerStats")]
     public float range;
     public int power;
@@ -129,40 +130,17 @@ public class Turret : MonoBehaviour
             bullet.slowProyectiles = slowProyectiles;
         }
 
-        switch (towerType)
-        {
-            case type.Catapult:
-                AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
-                break;
-            case type.Archer:
-                if (fireProyectiles)
-                {
-                    AkSoundEngine.PostEvent("attack_archertower_fire", this.gameObject);
-                }
-                else
-                {
-                    AkSoundEngine.PostEvent("attack_archertower", this.gameObject);
-                }
-                break;
-            case type.Scorpion:
-                if (fireProyectiles)
-                {
-                    AkSoundEngine.PostEvent("attack_crossbowtower_fire", this.gameObject);
-                }
-                else
-                {
-                    AkSoundEngine.PostEvent("attack_crossbowtower", this.gameObject);
-                }
-                break;
-            case type.Canon:
-                AkSoundEngine.PostEvent("attack_cannontower", this.gameObject);
-
-                break;
-            default:
-                break;
-        }
+        RunTurretSound(fireProyectiles, soundEvent);
 
         preventShootOnSpawn = true;
+    }
+
+    public void RunTurretSound(bool isFireProyectile, string soundEvent)
+    {
+        if(isFireProyectile)
+            AkSoundEngine.PostEvent(soundEvent + "_fire", this.gameObject);
+        else
+            AkSoundEngine.PostEvent(soundEvent, this.gameObject);
     }
 
     private void OnDrawGizmosSelected()

@@ -759,6 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351ac21eba134784d899824aaa333689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEvent: attack_cannontower
   range: 5
   power: 10
   attacksPerSecond: 0.5
