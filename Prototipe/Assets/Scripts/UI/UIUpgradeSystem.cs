@@ -142,8 +142,4 @@ public class UIUpgradeSystem : MonoBehaviour
         //Turret.OpenUpgradeShop -= OpenUpShop;
         UIManager.InteractionWithUI -= OpenUpShop;
     }
-
-
-
-
 }
