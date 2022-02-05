@@ -40,7 +40,6 @@ public class ScenesManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        //Time.timeScale = 1;
         GameManager.instance.PauseGame("unpause");
         GameManager.instance.StopMusic();
         sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
