@@ -204,18 +204,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1329762201}
-        m_MethodName: StopMusic
-        m_Mode: 1
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1329762201}
-        m_MethodName: GoToMainMenu
+        m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -686,8 +686,8 @@ GameObject:
   - component: {fileID: 1329762199}
   - component: {fileID: 1329762198}
   - component: {fileID: 1329762197}
-  - component: {fileID: 1329762201}
   - component: {fileID: 1329762203}
+  - component: {fileID: 1329762201}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8652c5b7a4b8a3e428ab1b19d0addb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPanel: {fileID: 0}
+  settingsPanel: {fileID: 8859771085128188482}
   musicSlider: {fileID: 8859771084462296956}
   sfxSlider: {fileID: 8859771083536963773}
   sfxToggle: {fileID: 8859771084610944741}

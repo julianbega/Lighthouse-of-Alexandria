@@ -17,11 +17,6 @@ public class ScenesManager : MonoBehaviour
             instanceScenesManager = this;
     }
 
-    private void OnDisable()
-    {
-        StopMusic();
-    }
-
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
@@ -41,7 +36,6 @@ public class ScenesManager : MonoBehaviour
     public void GoToMainMenu()
     {
         GameManager.instance.PauseGame("unpause");
-        GameManager.instance.StopMusic();
         sceneManagerMusicID = AkSoundEngine.PostEvent("play_music_menu", this.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
