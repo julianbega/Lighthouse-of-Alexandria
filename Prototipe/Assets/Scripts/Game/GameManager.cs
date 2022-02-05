@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
 
     static public GameManager instance;
     static public GameManager GetInstance { get { return instance; } }
-
-    private uint gameMusicID;
     private void Awake()
     {
         if (instance != this && instance != null)
@@ -59,7 +57,7 @@ public class GameManager : MonoBehaviour
         dayCycle.SetBool("startDay", true);
         dayCycle.SetBool("isDay", false);
 
-        gameMusicID = AkSoundEngine.PostEvent("play_gamestart", this.gameObject);
+        gameManagerMusicID = AkSoundEngine.PostEvent("play_gamestart", this.gameObject);
         //waterBarrierForShader.material.color = startColor;
     }
 
@@ -74,6 +72,7 @@ public class GameManager : MonoBehaviour
         LevelManager.SetNightOn -= DayCycle;
         LevelManager.FinishLastLevel -= Victory;
         UIManager.SendPauseGame -= PauseGame;
+        StopMusic();
     }
 
     public void ActivateDayLight()

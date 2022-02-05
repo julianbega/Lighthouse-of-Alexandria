@@ -13,6 +13,8 @@ public class WaveSpawner : MonoBehaviour
     static public event Action<string> SetStateDayAnim;
     private const int startIndexOfLevel = -1;
 
+    private uint waveSpawnerMusicID;
+
     private void Start()
     {
         lvl = GetComponent<LevelManager>();
@@ -38,7 +40,7 @@ public class WaveSpawner : MonoBehaviour
                 lvl.IncreaseLVL();
                 lvl.FindLvlInformation();
                 StartCoroutine(SpawnWave());
-                AkSoundEngine.PostEvent("level_warhorn", this.gameObject);
+                waveSpawnerMusicID = AkSoundEngine.PostEvent("level_warhorn", this.gameObject);
             }
         }
     }
@@ -118,6 +120,10 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        AkSoundEngine.StopPlayingID(waveSpawnerMusicID);
+    }
 
     private void OnDisable()
     {

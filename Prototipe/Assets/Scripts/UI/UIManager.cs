@@ -142,18 +142,18 @@ public class UIManager : MonoBehaviour
             startWave.SetActive(false);
             pauseGO.SetActive(true);
             SendPauseGame?.Invoke("pause");
-            AkSoundEngine.SetState("pausemenu ", "pause");
+            AkSoundEngine.SetState("pausemenu", "pause");
         }
         else
         {
-            if (!gm.day.isActiveAndEnabled)
-            {
-            }
+            //if (!gm.day.isActiveAndEnabled)
+            //{
+            //}
             Debug.Log("despausa");
             startWave.SetActive(true);
             pauseGO.SetActive(false);
             SendPauseGame?.Invoke("unpause");
-            AkSoundEngine.SetState("pausemenu ", "nopause");
+            AkSoundEngine.SetState("pausemenu", "nopause");
         }
     }
     public void HideStartWave()
