@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 72134590}
   - component: {fileID: 72134589}
   m_Layer: 9
-  m_Name: Defeat Text
+  m_Name: Result Game Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2861,7 +2861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perdiste
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ecc04e99edaf10b40973d6a0f7a38b31, type: 2}
   m_sharedMaterial: {fileID: -1851761490918783184, guid: ecc04e99edaf10b40973d6a0f7a38b31,
@@ -15994,7 +15994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11fea8d2ed7c34b4eba240125216a263, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34259,8 +34259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dias
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ecc04e99edaf10b40973d6a0f7a38b31, type: 2}
-  m_sharedMaterial: {fileID: -1851761490918783184, guid: ecc04e99edaf10b40973d6a0f7a38b31,
+  m_fontAsset: {fileID: 11400000, guid: 6df13cfffdcabc949957c4b2840401ab, type: 2}
+  m_sharedMaterial: {fileID: 3725554113729840414, guid: 6df13cfffdcabc949957c4b2840401ab,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -34670,7 +34670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181557539}
   m_Layer: 9
-  m_Name: Defeat
+  m_Name: Result Game Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46045,6 +46045,14 @@ MonoBehaviour:
     type: 2}
   pauseButton: {fileID: 759296664}
   cheatsButton: {fileID: 394241695}
+  gameResultPanel: {fileID: 1181557538}
+  resultGameText: {fileID: 72134589}
+  resultDayText: {fileID: 1166083635}
+  resultMoneyText: {fileID: 2032337289}
+  resultGameBackgroundGO: {fileID: 505407166}
+  resultGameBackground:
+  - {fileID: 21300000, guid: 8d29fdd52b6b1ea4db8f0a466a0785d4, type: 3}
+  - {fileID: 21300000, guid: 11fea8d2ed7c34b4eba240125216a263, type: 3}
 --- !u!114 &1577804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53307,7 +53315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 110
-  lives: 5
+  lives: 1
   light: {fileID: 5128339851379413112}
   waterBarrierForShader: {fileID: 417515232}
   day: {fileID: 1528231184}
@@ -58976,8 +58984,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dinero
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ecc04e99edaf10b40973d6a0f7a38b31, type: 2}
-  m_sharedMaterial: {fileID: -1851761490918783184, guid: ecc04e99edaf10b40973d6a0f7a38b31,
+  m_fontAsset: {fileID: 11400000, guid: 6df13cfffdcabc949957c4b2840401ab, type: 2}
+  m_sharedMaterial: {fileID: 3725554113729840414, guid: 6df13cfffdcabc949957c4b2840401ab,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -59002,7 +59010,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

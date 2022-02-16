@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private LevelManager lvl;
 
     public bool victory;
-    static public event Action ShowEndGame;
+    static public event Action<string> ShowEndGame;
     static public event Action StopUIInteractions;
 
     [SerializeField] private Animator dayCycle;
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         victory = false;
         lvl = FindObjectOfType<LevelManager>();
         Enemy.SubtractLives += SubtractLives;
-        Enemy.GainMoney += AddMoney; 
+        Enemy.GainMoney += AddMoney;
         //Levels.SetNightOn += SetNight;
         //Levels.SetDayOn += SetDay;
         //Node.GetMoney += getMoney;
@@ -133,10 +133,10 @@ public class GameManager : MonoBehaviour
     }
     public void Defeat()
     {
-        //ShowEndGame?.Invoke();
+        ShowEndGame?.Invoke("defeat");
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
-        if(defeatPanel != null)
-            defeatPanel.SetActive(true);
+        //if(defeatPanel != null)
+        //    defeatPanel.SetActive(true);
         gameManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
         StopUIInteractions?.Invoke();
     }
@@ -192,9 +192,10 @@ public class GameManager : MonoBehaviour
     public void Victory()
     {
         victory = true;
+        ShowEndGame?.Invoke("victory");
         Debug.Log("Cambia de escena a creditos, termino el game");
-        if (victoryPanel != null)
-            victoryPanel.SetActive(true);
+        //if (victoryPanel != null)
+        //    victoryPanel.SetActive(true);
         gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         StopUIInteractions?.Invoke();

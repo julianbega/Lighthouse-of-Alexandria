@@ -36,13 +36,19 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject cheatsButton;
+    [SerializeField] private GameObject gameResultPanel;
+    [SerializeField] private TMP_Text resultGameText;
+    [SerializeField] private TMP_Text resultDayText;
+    [SerializeField] private TMP_Text resultMoneyText;
+    [SerializeField] private Image resultGameBackgroundGO;
+    [SerializeField] private List<Sprite> resultGameBackground = new List<Sprite>();
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
         levels = FindObjectOfType<LevelManager>();
         LevelManager.ShowNPCs += NPCTalk;
         NPCTalk(gameFirstDialogeNPC, gameFirstDialoge);
-        GameManager.ShowEndGame += ShowEndGameSign;
+        GameManager.ShowEndGame += ShowEndGame;
         GameManager.StopUIInteractions += StopInteractions;
         endGameGO.SetActive(false);
         Node.OpenShop += SendInteractionWithUIEvent;
@@ -53,7 +59,7 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         LevelManager.ShowNPCs -= NPCTalk;
-        GameManager.ShowEndGame -= ShowEndGameSign;
+        GameManager.ShowEndGame -= ShowEndGame;
         GameManager.StopUIInteractions -= StopInteractions;
         Node.OpenShop -= SendInteractionWithUIEvent;
         Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
@@ -165,18 +171,22 @@ public class UIManager : MonoBehaviour
         startWave.SetActive(true);
     }
 
-    public void ShowEndGameSign()
+    public void ShowEndGame(string state)
     {
-        Time.timeScale = 0;
-        endGameGO.SetActive(true);
-        if (gm.victory)
+        gameResultPanel.SetActive(true);
+        if (state == "victory")
         {
-            endGameText.text = "Victoria";
+            resultGameText.text = "Victoria";
+            resultGameBackgroundGO.sprite = resultGameBackground[0];
         }
-        else 
+        else
         {
-            endGameText.text = "Derota";
+            resultGameText.text = "Perdiste";
+            resultGameBackgroundGO.sprite = resultGameBackground[1];
         }
+        resultDayText.text = "Dias: " + levels.actualLvl;
+        resultMoneyText.text = "Dinero: " + gm.money;
+        gm.PauseGame("pause");
     }
 
     public void SendInteractionWithUIEvent(int index)
