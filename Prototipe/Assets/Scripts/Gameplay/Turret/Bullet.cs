@@ -10,13 +10,15 @@ public class Bullet : MonoBehaviour
     public bool penetrationProyectiles;
     public bool slowProyectiles;
     public Turret.type towerType;
+    private Turret turret;
     private void Start()
     {
-        Enemy.DestroyCannonBall += HitTarget;
+        Enemy.DestroyCannonBall += HitTargett;
+        turret = FindObjectOfType<Turret>();
     }
     private void OnDisable()
     {
-        Enemy.DestroyCannonBall -= HitTarget;
+        Enemy.DestroyCannonBall -= HitTargett;
     }
     public void Seek(Transform _target)
     {
@@ -32,6 +34,12 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    void HitTargett()
+    {
+        AkSoundEngine.PostEvent("impact_" + turret.soundEvent, this.gameObject);
+        Destroy(gameObject);
     }
 
     void HitTarget()

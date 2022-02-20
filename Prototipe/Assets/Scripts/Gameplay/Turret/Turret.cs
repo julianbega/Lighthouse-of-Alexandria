@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     {
         Catapult, Archer, Scorpion, Canon
     }
-    [SerializeField] private string soundEvent;
+    public string soundEvent;
     [Header("TowerStats")]
     public float range;
     public int power;
@@ -138,9 +138,9 @@ public class Turret : MonoBehaviour
     public void RunTurretSound(bool isFireProyectile, string soundEvent)
     {
         if(isFireProyectile)
-            AkSoundEngine.PostEvent(soundEvent + "_fire", this.gameObject);
+            AkSoundEngine.PostEvent("attack_" + soundEvent + "_fire", this.gameObject);
         else
-            AkSoundEngine.PostEvent(soundEvent, this.gameObject);
+            AkSoundEngine.PostEvent("attack_" + soundEvent, this.gameObject);
     }
 
     private void OnDrawGizmosSelected()
