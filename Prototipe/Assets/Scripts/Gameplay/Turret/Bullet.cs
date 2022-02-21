@@ -10,15 +10,14 @@ public class Bullet : MonoBehaviour
     public bool penetrationProyectiles;
     public bool slowProyectiles;
     public Turret.type towerType;
-    private Turret turret;
+    public string soundEvent;
     private void Start()
     {
-        Enemy.DestroyCannonBall += HitTargett;
-        turret = FindObjectOfType<Turret>();
+        Enemy.DestroyCannonBall += HitTarget;
     }
     private void OnDisable()
     {
-        Enemy.DestroyCannonBall -= HitTargett;
+        Enemy.DestroyCannonBall -= HitTarget;
     }
     public void Seek(Transform _target)
     {
@@ -36,31 +35,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void HitTargett()
-    {
-        AkSoundEngine.PostEvent("impact_" + turret.soundEvent, this.gameObject);
-        Destroy(gameObject);
-    }
-
     void HitTarget()
     {
-        switch (towerType)
-        {
-            case Turret.type.Catapult:
-                AkSoundEngine.PostEvent("impact_cannontower", this.gameObject);
-                break;
-            case Turret.type.Archer:
-                AkSoundEngine.PostEvent("impact_archertower", this.gameObject);
-                break;
-            case Turret.type.Scorpion:
-                AkSoundEngine.PostEvent("impact_crossbowtower", this.gameObject);
-                break;
-            case Turret.type.Canon:
-                AkSoundEngine.PostEvent("impact_cannontower", this.gameObject);
-                break;
-            default:
-                break;
-        }
-        Destroy(this.gameObject);
+        AkSoundEngine.PostEvent("impact_" + soundEvent, this.gameObject);
+        Destroy(gameObject);
     }
 }

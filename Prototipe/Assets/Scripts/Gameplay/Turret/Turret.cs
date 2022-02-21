@@ -128,6 +128,7 @@ public class Turret : MonoBehaviour
             bullet.fireProyectiles = fireProyectiles;
             bullet.penetrationProyectiles = penetrationProyectiles;
             bullet.slowProyectiles = slowProyectiles;
+            bullet.soundEvent = soundEvent;
         }
 
         RunTurretSound(fireProyectiles, soundEvent);
