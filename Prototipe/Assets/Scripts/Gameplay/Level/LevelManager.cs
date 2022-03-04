@@ -21,6 +21,9 @@ public class LevelManager : MonoBehaviour
     public static event Action FinishLastLevel;
     private GameManager gameManager;
 
+    static public LevelManager instanceLevelManager;
+    static public LevelManager instance { get { return instanceLevelManager; } }
+
     private uint levelManagerMusicID;
 
     private void Start()
@@ -31,6 +34,13 @@ public class LevelManager : MonoBehaviour
         }
         WaveSpawner.ShowNPC += InvokeNPCShow;
         gameManager = FindObjectOfType<GameManager>();
+    }
+    private void Awake()
+    {
+        if (instanceLevelManager != null && instanceLevelManager != this)
+            Destroy(this.gameObject);
+        else
+            instanceLevelManager = this;
     }
     private void OnDisable()
     {
