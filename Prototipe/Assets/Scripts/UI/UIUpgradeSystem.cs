@@ -6,13 +6,20 @@ using System;
 using System.Collections;
 using UnityEngine.EventSystems;
 
+
+[System.Serializable]
+public class ListWrapper
+{
+    public List<Investigation_SO> myUpgradesInTowerLevel;
+}
 public class UIUpgradeSystem : MonoBehaviour
 {
     public List<Button> upgradesButton = new List<Button>();
     public GameObject upgradeStore;
     private Camera cam;
-    public List<Investigation_SO> lvl1UpgradeInvestigations;
-    public List<Investigation_SO> lvl2UpgradeInvestigations;
+    
+    public List<ListWrapper> upgradeInvestigationPerLvl;
+   
     private UIManager uiManager;
     private const int indexToActivate = 2;
     void Start()
@@ -42,7 +49,9 @@ public class UIUpgradeSystem : MonoBehaviour
             StartCoroutine(Wait());
             Turret thisTurret = ConstructionManager.instance.selectedTurret;
             upgradeStore.gameObject.SetActive(true);
-            switch (ConstructionManager.instance.selectedTurret.turretLvl)
+
+            uiShopUpdate(ConstructionManager.instance.selectedTurret.turretLvl);
+            /*switch (ConstructionManager.instance.selectedTurret.turretLvl)
             {
                 case 1:
                     for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
@@ -67,7 +76,7 @@ public class UIUpgradeSystem : MonoBehaviour
                     break;
                 default:
                     break;
-            }
+            }*/
         }
         else
             CloseUpShop();
@@ -130,6 +139,21 @@ public class UIUpgradeSystem : MonoBehaviour
         AkSoundEngine.PostEvent("ui_button_buttonupgrade", this.gameObject);
         CloseUpShop();
     }
+
+
+    public void uiShopUpdate(int turretLvl)
+    {
+        int index = turretLvl - 1;
+        for (int i = 0; i < upgradeInvestigationPerLvl[index].myUpgradesInTowerLevel.Count; i++)
+        {
+            if (upgradeInvestigationPerLvl[index].myUpgradesInTowerLevel[i].allreadyInvestigated)
+            {
+                upgradesButton[i].gameObject.SetActive(true);
+                upgradesButton[i].image.sprite = upgradeInvestigationPerLvl[index].myUpgradesInTowerLevel[i].image;
+            }
+        }
+    }
+
 
     IEnumerator Wait()
     {
