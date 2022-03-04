@@ -12,4 +12,5 @@ public class Investigation_SO : ScriptableObject
     public bool allreadyInvestigated;
     public Investigation_SO previousInvestigation;
     public int investigationLvl;
+    public int investigationIndex;
 }

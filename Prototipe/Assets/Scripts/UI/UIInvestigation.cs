@@ -63,17 +63,9 @@ public class UIInvestigation : MonoBehaviour
         }
         if (timeToEndInvestigation <= 0 && investigationInProgress != noInvestigation)
         {
-            if(investigationInProgress.name == "Torre de arqueros")
+            if (investigationInProgress.investigationLvl == 0)
             {
-                UnlockTurret(1);
-            }
-            else if (investigationInProgress.name == "Torre de cañon")
-            {
-                UnlockTurret(3);
-            }
-            else if (investigationInProgress.name == "Torre Escorpion")
-            {
-                UnlockTurret(2);
+                UnlockTurret(investigationInProgress.investigationIndex);
             }
             investigationInProgress.allreadyInvestigated = true;
             investigationInProgress = noInvestigation;
@@ -97,7 +89,7 @@ public class UIInvestigation : MonoBehaviour
     }
     public void StartInvestigation()
     {
-        if (investigationInProgress == noInvestigation)
+      /*  if (investigationInProgress == noInvestigation)
         {     
             if (selectedInvestigation.previousInvestigation.allreadyInvestigated)
             {
@@ -131,8 +123,40 @@ public class UIInvestigation : MonoBehaviour
         else
         {
             errorMessage.text = "Ya hay una investigacion en curso";
+        }*/
+
+
+        if (investigationInProgress != noInvestigation)
+        {
+            errorMessage.text = "Ya hay una investigacion en curso";
+            return;
         }
+        if (!selectedInvestigation.previousInvestigation.allreadyInvestigated)
+        {
+            errorMessage.text = "Es necesaria la investigación previa";
+            return;
+        }
+        if (selectedInvestigation.allreadyInvestigated)
+        {
+            errorMessage.text = "Esta investigación ya fue realizada";
+            return;
+        }
+        if (gm.money < selectedInvestigation.price)
+        {
+            errorMessage.text = "No hay dinero suficiente";
+            AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
+            return;
+        }
+        investigationInProgress = selectedInvestigation;
+        timeToEndInvestigation = investigationInProgress.timeInDays;
+        gm.money -= selectedInvestigation.price;
+        AkSoundEngine.PostEvent("ui_button_researchstart", this.gameObject);
+        buttonImage.sprite = selectedInvestigation.image;
     }
+
+
+
+
     private void UnlockTurret(int index)
     {
         library.turretUnlocked[index] = true;

@@ -51,32 +51,6 @@ public class UIUpgradeSystem : MonoBehaviour
             upgradeStore.gameObject.SetActive(true);
 
             uiShopUpdate(ConstructionManager.instance.selectedTurret.turretLvl);
-            /*switch (ConstructionManager.instance.selectedTurret.turretLvl)
-            {
-                case 1:
-                    for (int i = 0; i < lvl1UpgradeInvestigations.Count; i++)
-                    {
-                        if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
-                        {
-                            upgradesButton[i].gameObject.SetActive(true);
-                            upgradesButton[i].image.sprite = lvl1UpgradeInvestigations[i].image;
-                        }
-                    }
-                    break;
-                case 2:
-                    for (int i = 0; i < lvl2UpgradeInvestigations.Count; i++)
-                    {
-                        if (lvl1UpgradeInvestigations[i].allreadyInvestigated)
-                        {
-                            upgradesButton[i].gameObject.SetActive(true);
-                            upgradesButton[i].image.sprite = lvl2UpgradeInvestigations[i].image;
-                        }
-                    }
-
-                    break;
-                default:
-                    break;
-            }*/
         }
         else
             CloseUpShop();
