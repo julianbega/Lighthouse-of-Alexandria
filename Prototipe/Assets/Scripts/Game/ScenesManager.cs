@@ -17,6 +17,11 @@ public class ScenesManager : MonoBehaviour
             instanceScenesManager = this;
     }
 
+    private void OnDisable()
+    {
+        StopMusic();
+    }
+
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);

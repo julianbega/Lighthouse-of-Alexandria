@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     public void SubtractLives()
     {
         lives--;
-        AkSoundEngine.PostEvent("level_player_lifedecrease", this.gameObject);
+        gameManagerMusicID = AkSoundEngine.PostEvent("level_player_lifedecrease", this.gameObject);
 
         if (lives <= 0)
         {
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         //if(defeatPanel != null)
         //    defeatPanel.SetActive(true);
-        gameManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
+        //gameManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
         StopUIInteractions?.Invoke();
     }
 
@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Cambia de escena a creditos, termino el game");
         //if (victoryPanel != null)
         //    victoryPanel.SetActive(true);
-        gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
+        //gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         StopUIInteractions?.Invoke();
     }

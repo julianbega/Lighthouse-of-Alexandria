@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour
     public static Action ShowNPC;
     static public event Action<string> SetStateDayAnim;
     private const int startIndexOfLevel = -1;
+    private GameManager gameManager;
 
     private uint waveSpawnerMusicID;
 
@@ -24,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
         SetStateDayAnim?.Invoke("Day");
         isCombat = false;
         InvokeRepeating("CheckEndLevel", 0f, 0.5f);
+        gameManager = FindObjectOfType<GameManager>();
     }   
 
     void StartLvlCycle()

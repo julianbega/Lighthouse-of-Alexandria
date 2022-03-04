@@ -19,6 +19,9 @@ public class LevelManager : MonoBehaviour
     public static Action<NPC_SO, string> ShowNPCs;
     public static Action DayEnds;
     public static event Action FinishLastLevel;
+    private GameManager gameManager;
+
+    private uint levelManagerMusicID;
 
     private void Start()
     {
@@ -27,10 +30,12 @@ public class LevelManager : MonoBehaviour
             levels[i].actualWave = 0;
         }
         WaveSpawner.ShowNPC += InvokeNPCShow;
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void OnDisable()
     {
         WaveSpawner.ShowNPC -= InvokeNPCShow;
+        AkSoundEngine.StopPlayingID(levelManagerMusicID);
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
@@ -60,7 +65,7 @@ public class LevelManager : MonoBehaviour
         {
             rocks[Index - 1].SetActive(false);
         }
-        AkSoundEngine.PostEvent("level_wallcollapse", this.gameObject);
+        levelManagerMusicID = AkSoundEngine.PostEvent("level_wallcollapse", this.gameObject);
 
     }
     private void ActivatePath(int Index)
@@ -69,7 +74,7 @@ public class LevelManager : MonoBehaviour
         {
             WaterPaths[Index - 1].SetActive(true);
         }
-        AkSoundEngine.PostEvent("level_newriver_play", this.gameObject);
+        levelManagerMusicID = AkSoundEngine.PostEvent("level_newriver_play", this.gameObject);
     }
 
     public int GetQuantityOfEnemieTypesInThisWave()

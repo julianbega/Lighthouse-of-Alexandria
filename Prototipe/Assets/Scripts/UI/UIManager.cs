@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text resultMoneyText;
     [SerializeField] private Image resultGameBackgroundGO;
     [SerializeField] private List<Sprite> resultGameBackground = new List<Sprite>();
+
+    private uint uiManagerMusicID;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -65,6 +67,7 @@ public class UIManager : MonoBehaviour
         Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
         Library.OpenLibrary -= SendInteractionWithUIEvent;
         Turret.OpenUpgradeSystem -= SendInteractionWithUIEvent;
+        AkSoundEngine.StopPlayingID(uiManagerMusicID);
     }
 
     // Update is called once per frame
@@ -178,11 +181,13 @@ public class UIManager : MonoBehaviour
         {
             resultGameText.text = "Victoria";
             resultGameBackgroundGO.sprite = resultGameBackground[0];
+            uiManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
         }
         else
         {
             resultGameText.text = "Perdiste";
             resultGameBackgroundGO.sprite = resultGameBackground[1];
+            uiManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
         }
         resultDayText.text = "Dias: " + levels.actualLvl;
         resultMoneyText.text = "Dinero: " + gm.money;
