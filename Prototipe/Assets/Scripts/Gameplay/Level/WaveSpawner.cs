@@ -12,7 +12,6 @@ public class WaveSpawner : MonoBehaviour
     public static Action ShowNPC;
     static public event Action<string> SetStateDayAnim;
     private const int startIndexOfLevel = -1;
-    private GameManager gameManager;
 
     private uint waveSpawnerMusicID;
 
@@ -25,7 +24,6 @@ public class WaveSpawner : MonoBehaviour
         SetStateDayAnim?.Invoke("Day");
         isCombat = false;
         InvokeRepeating("CheckEndLevel", 0f, 0.5f);
-        gameManager = FindObjectOfType<GameManager>();
     }   
 
     void StartLvlCycle()
@@ -38,7 +36,8 @@ public class WaveSpawner : MonoBehaviour
             //Chequear con algun get de un bool si ya termino de girar y que ahi se haga todo esto
             if ((!GameManager.GetInstance.finishNight && GameManager.instance.finishDay) || (lvl.actualLvl == startIndexOfLevel))
             {
-                isCombat = true;
+                ConstructionManager.instance.buildAvailable = false;                
+                    isCombat = true;
                 lvl.IncreaseLVL();
                 lvl.FindLvlInformation();
                 StartCoroutine(SpawnWave());
@@ -67,6 +66,7 @@ public class WaveSpawner : MonoBehaviour
             lvl.IncreaseActualWave();
             if (lvl.CompareActualWaveAndTotalWavesAreEquals())
             {
+                ConstructionManager.instance.buildAvailable = true;
                 spawnsAreFinished = true;
             }
             yield return new WaitForSeconds(lvl.GetTimeBetweenWaves());

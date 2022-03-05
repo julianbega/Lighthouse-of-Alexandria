@@ -9,6 +9,7 @@ public class ConstructionManager : MonoBehaviour
     static public ConstructionManager GetInstance { get { return instance; } }
     public Node actualNode;
     public Turret selectedTurret;
+    public bool buildAvailable;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class ConstructionManager : MonoBehaviour
         {
             instance = this;
         }
+        buildAvailable = true;
     }
 
     public GameObject[] turretPrefabs;

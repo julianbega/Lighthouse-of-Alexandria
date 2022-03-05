@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         if (light.activeInHierarchy && isDayTime)
         {
             light.SetActive(false);
-            waterBarrierForShader.SetActive(false);// llamar a la corrutina que lo pasa de negro a transparente
+            waterBarrierForShader.SetActive(false);// llamar a la crutina que lo pasa de negro a transparente
             //StartCoroutine(WaterChangeColor(endColor, startColor));
         }
     }
@@ -111,7 +111,6 @@ public class GameManager : MonoBehaviour
     {
         lives--;
         gameManagerMusicID = AkSoundEngine.PostEvent("level_player_lifedecrease", this.gameObject);
-
         if (lives <= 0)
         {
             Defeat();

@@ -55,17 +55,20 @@ public class Node : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (turret != null)
+        if (ConstructionManager.instance.buildAvailable == true)
         {
-            Debug.Log("not Buildable");
-            return;
-        }
-        ChangeAllNodesToStartColor?.Invoke();
-        render.material = selectedColor;
-        if (!EventSystem.current.IsPointerOverGameObject())
-        {
-            OpenShop?.Invoke(indexActivation);
-            ConstructionManager.instance.actualNode = this;
+            if (turret != null)
+            {
+                Debug.Log("not Buildable");
+                return;
+            }
+            ChangeAllNodesToStartColor?.Invoke();
+            render.material = selectedColor;
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                OpenShop?.Invoke(indexActivation);
+                ConstructionManager.instance.actualNode = this;
+            }
         }
     }
 

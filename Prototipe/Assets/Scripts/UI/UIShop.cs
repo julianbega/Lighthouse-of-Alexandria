@@ -51,19 +51,23 @@ public class UIShop : MonoBehaviour
 
     public void BuyTurret(int index)
     {
-        float turretPrice = ConstructionManager.instance.turretPrefabs[index].GetComponent<Turret>().price;
-        GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[index];
-        if (gm.GetMoney() >= turretPrice)
+        if (ConstructionManager.instance.buildAvailable == true)
         {
-            ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
-            gm.SubtractMoney((int)turretPrice);
-            AkSoundEngine.PostEvent("level_towerbuilding", this.gameObject);
+            float turretPrice = ConstructionManager.instance.turretPrefabs[index].GetComponent<Turret>().price;
+            GameObject turretToBuild = ConstructionManager.instance.turretPrefabs[index];
+            if (gm.GetMoney() >= turretPrice)
+            {
+                ConstructionManager.instance.actualNode.turret = Instantiate(turretToBuild, ConstructionManager.instance.actualNode.transform.position + offset, transform.rotation);
+                gm.SubtractMoney((int)turretPrice);
+                AkSoundEngine.PostEvent("level_towerbuilding", this.gameObject);
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
+
+            }
         }
-        else
-        {
-            AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
-            
-        }
+       
     }
 
     public void ShowTurret()
@@ -97,6 +101,7 @@ public class UIShop : MonoBehaviour
             //uiManager.HidePauseBtn();
             //uiManager.HideStartWave();
         }
+
     }
 
     IEnumerator Wait()

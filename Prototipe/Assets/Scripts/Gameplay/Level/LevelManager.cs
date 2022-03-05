@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour
     public static Action<NPC_SO, string> ShowNPCs;
     public static Action DayEnds;
     public static event Action FinishLastLevel;
-    private GameManager gameManager;
 
     static public LevelManager instanceLevelManager;
     static public LevelManager instance { get { return instanceLevelManager; } }
@@ -33,7 +32,6 @@ public class LevelManager : MonoBehaviour
             levels[i].actualWave = 0;
         }
         WaveSpawner.ShowNPC += InvokeNPCShow;
-        gameManager = FindObjectOfType<GameManager>();
     }
     private void Awake()
     {
