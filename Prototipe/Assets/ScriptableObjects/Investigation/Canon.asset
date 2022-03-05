@@ -18,7 +18,8 @@ MonoBehaviour:
   description: "Desbloquea la torre de ca\xF1on"
   price: 50
   timeInDays: 1
-  AllreadyInvestigated: 0
+  allreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: daf43bc8fec0c14468eba361e5a4906e,
     type: 2}
   investigationLvl: 0
+  investigationIndex: 3

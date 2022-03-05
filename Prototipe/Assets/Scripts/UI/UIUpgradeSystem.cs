@@ -80,7 +80,7 @@ public class UIUpgradeSystem : MonoBehaviour
                         break;
                     case 2:
                         //DamageUp
-                        ConstructionManager.instance.selectedTurret.power ++;
+                        ConstructionManager.instance.selectedTurret.power++;
                         break;
                     default:
                         break;

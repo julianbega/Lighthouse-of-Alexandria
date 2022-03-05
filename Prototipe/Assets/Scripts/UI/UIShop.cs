@@ -64,7 +64,6 @@ public class UIShop : MonoBehaviour
             else
             {
                 AkSoundEngine.PostEvent("ui_button_nomoney", this.gameObject);
-
             }
         }
        
