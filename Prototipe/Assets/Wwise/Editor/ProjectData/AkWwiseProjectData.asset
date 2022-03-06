@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 751b7de134f21542abbfa6461e8f3454
     GuidInternal: 
-    m_lastTime: -8585663471063667473
+    m_lastTime: -8585645061921270804
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -277,7 +277,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ead45b3196a96c40bb0ebd69af8035b4
     GuidInternal: 
-    m_lastTime: -8585650198573653915
+    m_lastTime: -8585645061921420793
     List:
     - name: main
       guid: 6cc1069aed667742b52bcd46af8d432c
@@ -305,7 +305,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9a2947937886de479a39076ed4811a22
     GuidInternal: 
-    m_lastTime: -8585557793841261686
+    m_lastTime: -8585552495621559444
     List:
     - name: attack_archertower
       guid: cba259a192f0364998445e474957d7b0
@@ -345,8 +345,8 @@ MonoBehaviour:
         guid: 6dadc051cd978748bd7b74799eb7349b
       Path: Events\Default Work Unit\Towers\attack_archertower_fire
       maxAttenuation: 0
-      maxDuration: 1.792939
-      minDuration: 1.575158
+      maxDuration: -1
+      minDuration: -1
     - name: attack_cannontower
       guid: d390761b56970c4ea225969a3cee828b
       id: 1825859782
@@ -405,8 +405,8 @@ MonoBehaviour:
         guid: db6dbce73245bc43afb4da2b225729e5
       Path: Events\Default Work Unit\Towers\attack_crossbowtower_fire
       maxAttenuation: 0
-      maxDuration: 1.792939
-      minDuration: 1.575158
+      maxDuration: -1
+      minDuration: -1
     - name: Global_Game_Events
       guid: e7a8c3ffe49d7b4f92acc7db5982f32d
       id: 1091852455
@@ -679,8 +679,8 @@ MonoBehaviour:
         guid: 00c38585d3d12b4990dd05baa87c5ae6
       Path: Events\Default Work Unit\Global_Game_Events\play_music_defeat
       maxAttenuation: 0
-      maxDuration: 68
-      minDuration: 68
+      maxDuration: -1
+      minDuration: -1
     - name: play_music_menu
       guid: ff417aa9cdc8e84f8b8e9fa9ab7d248d
       id: 1699343283
@@ -793,8 +793,8 @@ MonoBehaviour:
         guid: 25690a85de7cf746be412e5228c48711
       Path: Events\Default Work Unit\UI\ui_button_buttonupgrade_fire
       maxAttenuation: 0
-      maxDuration: 3.026106
-      minDuration: 2.974119
+      maxDuration: -1
+      minDuration: -1
     - name: ui_button_click
       guid: 7e55dbd765a4084ea323ae1487226042
       id: 1664509575
@@ -907,7 +907,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ffc40ec22310344dbbd8c5c7ba5f85be
     GuidInternal: 
-    m_lastTime: -8585658143786644989
+    m_lastTime: -8585645062007936476
     List:
     - name: volume_master
       guid: ea6e877187196d4c9b8da0129e82e1e6
@@ -1257,7 +1257,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ca9d050fe7236e40b1b87cb7e5a7bcb0
     GuidInternal: 
-    m_lastTime: -8585663471063727315
+    m_lastTime: -8585645061921330797
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -1271,7 +1271,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: dfdc68524465144aa158961f401bb98c
     GuidInternal: 
-    m_lastTime: -8585663471063707361
+    m_lastTime: -8585645061921310797
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
