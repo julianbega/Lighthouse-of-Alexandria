@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f0e9021ef974046b8bcfb688212993, type: 3}
   m_Name: Builder
   m_EditorClassIdentifier: 
-  NPC_name: Builder
-  image: {fileID: 21300000, guid: 85d85690e022a934d8a97c907707126a, type: 3}
+  npc_name: 
+  image: {fileID: 21300000, guid: eb6ba6349d7a8514092451f038d78d1c, type: 3}
   background: {fileID: 21300000, guid: b1173ec8f2774364f9430d4c3728ec20, type: 3}

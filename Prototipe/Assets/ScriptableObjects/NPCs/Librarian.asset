@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f0e9021ef974046b8bcfb688212993, type: 3}
   m_Name: Librarian
   m_EditorClassIdentifier: 
-  NPC_name: Librarian
-  image: {fileID: 21300000, guid: 5efe96c26ba2bdc45b36178081b6122c, type: 3}
+  npc_name: 
+  image: {fileID: 21300000, guid: cd229b6c5b039c04fbd06eb217bc512d, type: 3}
   background: {fileID: 21300000, guid: b1173ec8f2774364f9430d4c3728ec20, type: 3}
