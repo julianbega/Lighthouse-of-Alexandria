@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using System;
+using System.Collections;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
@@ -14,6 +15,7 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         Enemy.DestroyCannonBall += HitTarget;
+        StartCoroutine(DestroyOnTime());
     }
     private void OnDisable()
     {
@@ -25,18 +27,25 @@ public class Bullet : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
         Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;   
+        float distanceThisFrame = speed * Time.deltaTime;
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
         if (target == null)
         {
             Destroy(this.gameObject);
         }
+
     }
 
     void HitTarget()
     {
         AkSoundEngine.PostEvent("impact_" + soundEvent, this.gameObject);
+    }
+
+    public IEnumerator DestroyOnTime()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(this.gameObject);
     }
 }
