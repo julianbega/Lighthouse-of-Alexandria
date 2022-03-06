@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
     }
     public void Defeat()
     {
+        victory = false;
         ShowEndGame?.Invoke("defeat", victory);
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         //if(defeatPanel != null)
@@ -190,6 +191,7 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
+        victory = true;
         ShowEndGame?.Invoke("victory", victory);
         Debug.Log("Cambia de escena a creditos, termino el game");
         //if (victoryPanel != null)
