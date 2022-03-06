@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Spy
   m_EditorClassIdentifier: 
   name: Espionaje
-  image: {fileID: 21300000, guid: c4c24ce9a17ab2a48ab5bd44dd301c33, type: 3}
+  image: {fileID: 21300000, guid: 8963b1d6fcc4c7e48830c7b6187efd42, type: 3}
   imageLedge: {fileID: 0}
   description: En tus filas cuentas con espias capaces de informar los movimientos
     enemigos
   price: 10
   timeInDays: 1
-  AllreadyInvestigated: 0
+  allreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: 4ee528f27f283074dad85cf15b5b0d79,
     type: 2}
   investigationLvl: 0
+  investigationIndex: 0

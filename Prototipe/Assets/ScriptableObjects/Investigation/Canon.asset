@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Canon
   m_EditorClassIdentifier: 
   name: "Torre de ca\xF1on"
-  image: {fileID: 21300000, guid: 923e37bb7bbb4d94a924f3fbb9c68bb0, type: 3}
+  image: {fileID: 21300000, guid: b78e39f3edbd32443817132fac0bc5da, type: 3}
   imageLedge: {fileID: 0}
   description: "Desbloquea la torre de ca\xF1on"
   price: 50

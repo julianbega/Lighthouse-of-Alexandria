@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Penetration
   m_EditorClassIdentifier: 
   name: Proyectil penetrante
-  image: {fileID: 21300000, guid: 81263ee428e13134298bb59c98a43691, type: 3}
+  image: {fileID: 21300000, guid: 3895fca2f233f2243b2e334793ef7733, type: 3}
   imageLedge: {fileID: 0}
   description: Los proyectiles pueden atravezar el blindaje de los barcos, no es
     acumulable con la mejora de fuego ni de slow
   price: 100
   timeInDays: 3
-  AllreadyInvestigated: 0
+  allreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: 01dc8c74850a6a8409d7d28f84475a5f,
     type: 2}
   investigationLvl: 2
+  investigationIndex: 3

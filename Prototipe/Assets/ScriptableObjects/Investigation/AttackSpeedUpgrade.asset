@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: AttackSpeedUpgrade
   m_EditorClassIdentifier: 
   name: Velocidad de atque
-  image: {fileID: 21300000, guid: b8e9796f2e5eaed44b6362d399383f96, type: 3}
+  image: {fileID: 21300000, guid: 672cbb5f7556d564eac627280bceb3e6, type: 3}
   imageLedge: {fileID: 0}
   description: Mejora el AttackSpeed de las torres, no  es acumulable con damage
     up ni con vigia
   price: 75
   timeInDays: 2
-  AllreadyInvestigated: 0
+  allreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: 496162ba671bf7a4482160ce3e3b9717,
     type: 2}
   investigationLvl: 1
+  investigationIndex: 2

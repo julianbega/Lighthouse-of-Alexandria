@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: LookOut
   m_EditorClassIdentifier: 
   name: Vigia
-  image: {fileID: 21300000, guid: fd8a965a428a0d04895e5f4c21dab5ec, type: 3}
+  image: {fileID: 21300000, guid: 09aac6b2a889d944d9ec668320d5f227, type: 3}
   imageLedge: {fileID: 0}
   description: "Las torres son entrenadas para saber si un barco pasa por delante
     suyo y emitiran un aviso al faro en caso de avisar un enemigo, esta mejora no
     es acumulable con mejora de rango ni de da\xF1o"
   price: 75
   timeInDays: 2
-  AllreadyInvestigated: 0
+  allreadyInvestigated: 0
   previousInvestigation: {fileID: 11400000, guid: b3cca2ac4d25646409722d33c537d9f6,
     type: 2}
   investigationLvl: 1
+  investigationIndex: 1
