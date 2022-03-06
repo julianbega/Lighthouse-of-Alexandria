@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text resultMoneyText;
     [SerializeField] private Image resultGameBackgroundGO;
     [SerializeField] private List<Sprite> resultGameBackground = new List<Sprite>();
+    [SerializeField] private GameObject investigationButton;
 
     private uint uiManagerMusicID;
     void Start()
@@ -70,7 +71,6 @@ public class UIManager : MonoBehaviour
         AkSoundEngine.StopPlayingID(uiManagerMusicID);
     }
 
-    // Update is called once per frame
     void Update()
     {
         money.text = "Dinero: " + gm.GetMoney();
@@ -174,16 +174,26 @@ public class UIManager : MonoBehaviour
         startWave.SetActive(true);
     }
 
-    public void ShowEndGame(string state)
+    public void ShowInvestigationButton()
+    {
+        investigationButton.SetActive(true);
+    }
+
+    public void HideInvestigationButton()
+    {
+        investigationButton.SetActive(false);
+    }
+
+    public void ShowEndGame(string state, bool isVictory)
     {
         gameResultPanel.SetActive(true);
-        if (state == "victory")
+        if (state == "victory" && isVictory)
         {
             resultGameText.text = "Victoria";
             resultGameBackgroundGO.sprite = resultGameBackground[0];
             uiManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
         }
-        else
+        else if(state == "defeat" && !isVictory)
         {
             resultGameText.text = "Perdiste";
             resultGameBackgroundGO.sprite = resultGameBackground[1];
@@ -191,6 +201,7 @@ public class UIManager : MonoBehaviour
         }
         resultDayText.text = "Dias: " + levels.actualLvl;
         resultMoneyText.text = "Dinero: " + gm.money;
+        StopInteractions();
         gm.PauseGame("pause");
     }
 
@@ -205,7 +216,7 @@ public class UIManager : MonoBehaviour
     private void StopInteractions()
     {
         HidePauseBtn();
-        cheatsButton.SetActive(false);
-        Time.timeScale = 0;
+        HideStartWave();
+        HideInvestigationButton();
     }
 }

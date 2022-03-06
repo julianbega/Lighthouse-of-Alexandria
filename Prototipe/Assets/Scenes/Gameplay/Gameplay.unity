@@ -46205,6 +46205,7 @@ MonoBehaviour:
   resultGameBackground:
   - {fileID: 21300000, guid: 8d29fdd52b6b1ea4db8f0a466a0785d4, type: 3}
   - {fileID: 21300000, guid: 11fea8d2ed7c34b4eba240125216a263, type: 3}
+  investigationButton: {fileID: 540590965}
 --- !u!114 &1577804617
 MonoBehaviour:
   m_ObjectHideFlags: 0

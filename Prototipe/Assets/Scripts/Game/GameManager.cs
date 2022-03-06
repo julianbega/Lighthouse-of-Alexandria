@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private LevelManager lvl;
 
     public bool victory;
-    static public event Action<string> ShowEndGame;
+    static public event Action<string, bool> ShowEndGame;
     static public event Action StopUIInteractions;
 
     [SerializeField] private Animator dayCycle;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         isDayTime = true;
         dayCycle.SetBool("startDay", true);
         dayCycle.SetBool("isDay", false);
-
+        PauseGame("unpause");
         gameManagerMusicID = AkSoundEngine.PostEvent("play_gamestart", this.gameObject);
         //waterBarrierForShader.material.color = startColor;
     }
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
     }
     public void Defeat()
     {
-        ShowEndGame?.Invoke("defeat");
+        ShowEndGame?.Invoke("defeat", victory);
         //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         //if(defeatPanel != null)
         //    defeatPanel.SetActive(true);
@@ -190,8 +190,7 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
-        victory = true;
-        ShowEndGame?.Invoke("victory");
+        ShowEndGame?.Invoke("victory", victory);
         Debug.Log("Cambia de escena a creditos, termino el game");
         //if (victoryPanel != null)
         //    victoryPanel.SetActive(true);
