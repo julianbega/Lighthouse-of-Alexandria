@@ -17,21 +17,27 @@ public class UISettings : MonoBehaviour
     //  public AK.Wwise.RTPC rtpc
     void Start()
     {
-        sfxSlider.value = VolumeManager.instanceVolumeManager.GetSFXVolume();
-        musicSlider.value = VolumeManager.instanceVolumeManager.GetMusicVolume();
-        sfxToggle.isOn = VolumeManager.instanceVolumeManager.GetSFXOn();
-        musicToggle.isOn = VolumeManager.instanceVolumeManager.GetMusicOn();
-        fullScreenToggle.isOn = VolumeManager.instanceVolumeManager.GetFullScren();
+        if (VolumeManager.instanceVolumeManager != null)
+        {
+            sfxSlider.value = VolumeManager.instanceVolumeManager.GetSFXVolume();
+            musicSlider.value = VolumeManager.instanceVolumeManager.GetMusicVolume();
+            sfxToggle.isOn = VolumeManager.instanceVolumeManager.GetSFXOn();
+            musicToggle.isOn = VolumeManager.instanceVolumeManager.GetMusicOn();
+            fullScreenToggle.isOn = VolumeManager.instanceVolumeManager.GetFullScren();
+        }
     }
 
     void LateUpdate()
     {
-        VolumeManager.instanceVolumeManager.SetMusicVolume(musicSlider.value);
-        VolumeManager.instanceVolumeManager.SetSFXVolume(sfxSlider.value);
-        VolumeManager.instanceVolumeManager.SetSFXOn(sfxToggle.isOn);
-        VolumeManager.instanceVolumeManager.SetMusicOn(musicToggle.isOn);
-        VolumeManager.instanceVolumeManager.SetFullScren(fullScreenToggle.isOn);
-        // rtpc.SetGlobalValue(volume_master,)
+        if (VolumeManager.instanceVolumeManager != null)
+        {
+            VolumeManager.instanceVolumeManager.SetMusicVolume(musicSlider.value);
+            VolumeManager.instanceVolumeManager.SetSFXVolume(sfxSlider.value);
+            VolumeManager.instanceVolumeManager.SetSFXOn(sfxToggle.isOn);
+            VolumeManager.instanceVolumeManager.SetMusicOn(musicToggle.isOn);
+            VolumeManager.instanceVolumeManager.SetFullScren(fullScreenToggle.isOn);
+            // rtpc.SetGlobalValue(volume_master,)
+        }
     }
 
     public void ActivateSettingsPanel()
