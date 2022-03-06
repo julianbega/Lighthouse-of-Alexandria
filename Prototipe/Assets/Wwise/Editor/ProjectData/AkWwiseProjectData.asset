@@ -345,8 +345,8 @@ MonoBehaviour:
         guid: 6dadc051cd978748bd7b74799eb7349b
       Path: Events\Default Work Unit\Towers\attack_archertower_fire
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.792939
+      minDuration: 1.575158
     - name: attack_cannontower
       guid: d390761b56970c4ea225969a3cee828b
       id: 1825859782
@@ -405,8 +405,8 @@ MonoBehaviour:
         guid: db6dbce73245bc43afb4da2b225729e5
       Path: Events\Default Work Unit\Towers\attack_crossbowtower_fire
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.792939
+      minDuration: 1.575158
     - name: Global_Game_Events
       guid: e7a8c3ffe49d7b4f92acc7db5982f32d
       id: 1091852455
@@ -679,8 +679,8 @@ MonoBehaviour:
         guid: 00c38585d3d12b4990dd05baa87c5ae6
       Path: Events\Default Work Unit\Global_Game_Events\play_music_defeat
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 68
+      minDuration: 68
     - name: play_music_menu
       guid: ff417aa9cdc8e84f8b8e9fa9ab7d248d
       id: 1699343283
@@ -793,8 +793,8 @@ MonoBehaviour:
         guid: 25690a85de7cf746be412e5228c48711
       Path: Events\Default Work Unit\UI\ui_button_buttonupgrade_fire
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.026106
+      minDuration: 2.974119
     - name: ui_button_click
       guid: 7e55dbd765a4084ea323ae1487226042
       id: 1664509575
