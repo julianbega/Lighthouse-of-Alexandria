@@ -154,9 +154,6 @@ public class UIInvestigation : MonoBehaviour
         buttonImage.sprite = selectedInvestigation.image;
     }
 
-
-
-
     private void UnlockTurret(int index)
     {
         library.turretUnlocked[index] = true;

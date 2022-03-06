@@ -19,11 +19,13 @@ public class LevelManager : MonoBehaviour
     public static Action<NPC_SO, string> ShowNPCs;
     public static Action DayEnds;
     public static event Action FinishLastLevel;
+    [SerializeField] private LevelSounds levelSounds;
+    static public event Action<string> ExecutelevelSounds;
 
     static public LevelManager instanceLevelManager;
     static public LevelManager instance { get { return instanceLevelManager; } }
 
-    private uint levelManagerMusicID;
+    //private uint levelManagerMusicID;
 
     private void Start()
     {
@@ -43,7 +45,7 @@ public class LevelManager : MonoBehaviour
     private void OnDisable()
     {
         WaveSpawner.ShowNPC -= InvokeNPCShow;
-        AkSoundEngine.StopPlayingID(levelManagerMusicID);
+        //AkSoundEngine.StopPlayingID(levelManagerMusicID);
     }
     public void FindLvlInformation()  /// setea cantidad de waves, habilita spawners o limpia piedras
     {
@@ -73,7 +75,9 @@ public class LevelManager : MonoBehaviour
         {
             rocks[Index - 1].SetActive(false);
         }
-        levelManagerMusicID = AkSoundEngine.PostEvent("level_wallcollapse", this.gameObject);
+        //levelManagerMusicID = AkSoundEngine.PostEvent("level_wallcollapse", this.gameObject);
+        ExecutelevelSounds?.Invoke("level_wallcollapse");
+        //levelSounds.ExecuteSound("level_wallcollapse");
 
     }
     private void ActivatePath(int Index)
@@ -82,7 +86,9 @@ public class LevelManager : MonoBehaviour
         {
             WaterPaths[Index - 1].SetActive(true);
         }
-        levelManagerMusicID = AkSoundEngine.PostEvent("level_newriver_play", this.gameObject);
+        //levelManagerMusicID = AkSoundEngine.PostEvent("level_newriver_play", this.gameObject);
+        ExecutelevelSounds?.Invoke("level_newriver_play");
+        //levelSounds.ExecuteSound("level_newriver_play");
     }
 
     public int GetQuantityOfEnemieTypesInThisWave()
@@ -158,4 +164,9 @@ public class LevelManager : MonoBehaviour
         if (actualLvl >= GameManager.instance.lastLvl)
             FinishLastLevel?.Invoke();
     }
+
+    //public void StopMusic()
+    //{
+    //    AkSoundEngine.StopPlayingID(levelManagerMusicID);
+    //}
 }

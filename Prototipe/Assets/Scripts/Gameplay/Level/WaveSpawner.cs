@@ -24,7 +24,7 @@ public class WaveSpawner : MonoBehaviour
         SetStateDayAnim?.Invoke("Day");
         isCombat = false;
         InvokeRepeating("CheckEndLevel", 0f, 0.5f);
-    }   
+    }
 
     void StartLvlCycle()
     {
@@ -131,5 +131,6 @@ public class WaveSpawner : MonoBehaviour
     {
         WaveManager.StartWaveEvent -= StartLvlCycle;
         Enemy.EnemyDie -= DecreaseEnemyCount;
+        StopMusic();
     }
 }
