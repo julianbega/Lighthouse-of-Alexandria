@@ -38,6 +38,5 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         AkSoundEngine.PostEvent("impact_" + soundEvent, this.gameObject);
-        Destroy(gameObject);
     }
 }

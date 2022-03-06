@@ -7,30 +7,26 @@ public class GameManager : MonoBehaviour
 {
     public int money;
     public int lives;  
+    public int lastLvl;
+    public bool isDayTime;
+    public bool victory;
 
     public new GameObject light;
     public GameObject waterBarrierForShader; //se debe cambiar por un mesh renderer
     public Light day;
-    public bool finishDay { get; set; }
-    public bool finishNight { get; set; }
-    public bool isDayTime;
-    public int lastLvl;
-    private LevelManager lvl;
 
-    public bool victory;
+
     static public event Action<string, bool> ShowEndGame;
     static public event Action StopUIInteractions;
 
     [SerializeField] private Animator dayCycle;
-    [SerializeField] [Range(0.0f, 1.0f)] float lerpTime;
-    [SerializeField] private Color startColor;
-    [SerializeField] private Color endColor;
-    [SerializeField] private GameObject victoryPanel;
-    [SerializeField] private GameObject defeatPanel;
     private uint gameManagerMusicID;
+    private LevelManager lvl;
 
     static public GameManager instance;
     static public GameManager GetInstance { get { return instance; } }
+    public bool finishDay { get; set; }
+    public bool finishNight { get; set; }
     private void Awake()
     {
         if (instance != this && instance != null)
@@ -45,9 +41,6 @@ public class GameManager : MonoBehaviour
         lvl = FindObjectOfType<LevelManager>();
         Enemy.SubtractLives += SubtractLives;
         Enemy.GainMoney += AddMoney;
-        //Levels.SetNightOn += SetNight;
-        //Levels.SetDayOn += SetDay;
-        //Node.GetMoney += getMoney;
         WaveSpawner.SetStateDayAnim += DayCycle;
         LevelManager.SetDayOn += DayCycle;
         LevelManager.SetNightOn += DayCycle;
@@ -58,15 +51,12 @@ public class GameManager : MonoBehaviour
         dayCycle.SetBool("isDay", false);
         PauseGame("unpause");
         gameManagerMusicID = AkSoundEngine.PostEvent("play_gamestart", this.gameObject);
-        //waterBarrierForShader.material.color = startColor;
     }
 
     private void OnDisable()
     {
         Enemy.SubtractLives -= SubtractLives;
         Enemy.GainMoney -= AddMoney;
-        //Levels.SetNightOn -= SetNight;
-        //Levels.SetDayOn -= SetDay;
         WaveSpawner.SetStateDayAnim -= DayCycle;
         LevelManager.SetDayOn -= DayCycle;
         LevelManager.SetNightOn -= DayCycle;
@@ -80,14 +70,12 @@ public class GameManager : MonoBehaviour
         if (!light.activeInHierarchy && !isDayTime)
         {
             light.SetActive(true);
-            waterBarrierForShader.SetActive(true); // llamar a la corrutina que lo pasa de transparente a negro
-            //StartCoroutine(WaterChangeColor(startColor, endColor));
+            waterBarrierForShader.SetActive(true);
         }
         if (light.activeInHierarchy && isDayTime)
         {
             light.SetActive(false);
-            waterBarrierForShader.SetActive(false);// llamar a la crutina que lo pasa de negro a transparente
-            //StartCoroutine(WaterChangeColor(endColor, startColor));
+            waterBarrierForShader.SetActive(false);
         }
     }
 
@@ -133,11 +121,7 @@ public class GameManager : MonoBehaviour
     public void Defeat()
     {
         victory = false;
-        ShowEndGame?.Invoke("defeat", victory);
-        //ScenesManager.instanceScenesManager.ChangeScene("Credits");
-        //if(defeatPanel != null)
-        //    defeatPanel.SetActive(true);
-        //gameManagerMusicID = AkSoundEngine.PostEvent("play_music_defeat", this.gameObject);
+        ShowEndGame?.Invoke("defeat", victory);       
         StopUIInteractions?.Invoke();
     }
 
@@ -194,17 +178,7 @@ public class GameManager : MonoBehaviour
         victory = true;
         ShowEndGame?.Invoke("victory", victory);
         Debug.Log("Cambia de escena a creditos, termino el game");
-        //if (victoryPanel != null)
-        //    victoryPanel.SetActive(true);
-        //gameManagerMusicID = AkSoundEngine.PostEvent("play_music_victory", this.gameObject);
-        //ScenesManager.instanceScenesManager.ChangeScene("Credits");
         StopUIInteractions?.Invoke();
     }
 
-    //public IEnumerator WaterChangeColor(Color startColor, Color endColor)
-    //{
-    //    yield return new WaitForSeconds(0.02f);
-    //    waterBarrierForShader.material.color = Color.Lerp(startColor, endColor, lerpTime);
-    //    yield return null;
-    //}
 }

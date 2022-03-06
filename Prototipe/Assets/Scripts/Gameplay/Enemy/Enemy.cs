@@ -52,19 +52,18 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         healthBarGO.SetActive(enlightened);  // activa o desactiva la barra de vida si está o no iluminada
-        if (firstRotation)
+        if (target != null)
         {
-            if (target != null)
+            if (firstRotation)
             {
+
                 Quaternion targetRotation = Quaternion.identity;
                 Vector3 targetDirection = (target.transform.position - transform.position).normalized; //cambiar
                 targetRotation = (Quaternion.LookRotation(targetDirection));
                 transform.rotation = targetRotation;
                 firstRotation = !firstRotation;
             }
-        }
-        if (target != null)
-        {
+
             Vector3 direction = target.transform.position - transform.position;
             transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.1f)
@@ -127,7 +126,7 @@ public class Enemy : MonoBehaviour
         {
             bullet = other.gameObject.GetComponent<Bullet>();
             DestroyCannonBall?.Invoke();
-
+            Destroy(other.gameObject);
             if (armored)
             {
                 if (bullet.penetrationProyectiles)
