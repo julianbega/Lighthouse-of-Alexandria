@@ -170,3 +170,73 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Estructura: Nuevos nombres de carpetas y de scripts.
 - Credits completar nombres.
 - Nuevo: Balanceo del juego.
+
+## [0.12.0] - 2021-11-29
+### Added
+
+- boton de play y pausa para gameplay.
+- iconos investigaciones.
+- textura barcos.
+- textura faro.
+- textura biblioteca.
+- textura torre arquero.
+- logo.
+- icono.
+- pagina fondo para itch.io.
+- textura muro de rocas.
+- textura muros.
+- banner para itch.io.
+- Al perder o ganar aparece un cartel de victory o defeat.
+- FixBug: Interaccion con tienda rompe la pausa.
+- Fix bug: Shop y upgrade se muestran a la misma vez.
+- Implementacion de audio v2.
+- Codigo de UIShop agregado.
+- Fonts agregadas.
+
+## [0.13.0] - 2022-02-1
+### Added
+
+- Pausa en GameManager.
+- Aplicadas texturas de todos los objetos.
+- Mejorado GameManager.
+- Nueva tipografia paa UI.
+- Nuevos sprites de victoria/derrota.
+
+## [0.13.1] - 2022-02-6
+### Added
+
+- Fix bug: barco no muere al final.
+- Fix bug: barco rapido aparece iluminado.
+- Fix bug: generalizar metodo shoot de turret.
+- Fix Animator controller en el Menu.
+- Fix canvas scaler en settings.
+- Fix canvas scaler en credits.
+
+## [0.14.0] - 2022-03-5
+### Added
+
+- Nueva UI.
+- Nuevas pantallas de victory/defeat.
+- Mejorado metodo HitTarget.
+- Nuevo panel de settings.
+- Mejorado script de UIUpgradeSystem.
+- Mejorado script de UIInvestigation.
+- Solucionado algunos errores en sonidos.
+- LevelManager singleton.
+- Fix: no se puede comprar durante waves.
+
+## [0.15.0] - 2022-03-6
+### Added
+
+- Consistencia del idioma en todo el juego.
+- Al perder no se puede interactuar con la UI.
+- Removidas imagenes de NPCs.
+- Actualizadas imagenes de la libreria.
+
+## [1.0.0] - 2022-03-6
+### Added
+
+- Fix: bullet no se destruye al impactar con enemigo.
+- pueblo - prototipo1
+- presskit completo
+- Post mortem de desarrollo.
